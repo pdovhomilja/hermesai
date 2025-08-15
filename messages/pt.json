@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Bem-vindo ao IALchemist",
+    "subtitle": "Comunique-se com Hermes Trismegisto",
+    "description": "Descubra a sabedoria antiga através de conversas alimentadas por IA com a figura lendária do hermetismo e alquimia.",
+    "startChat": "Comece Sua Jornada",
+    "learnMore": "Aprenda sobre Hermetismo"
+  },
+  "Navigation": {
+    "home": "Início",
+    "chat": "Chat",
+    "about": "Sobre",
+    "wisdom": "Sabedoria"
+  },
+  "Chat": {
+    "welcome": "Saudações, buscador de sabedoria. Eu sou Hermes Trismegisto, o Três Vezes Grande. Como posso guiá-lo em seu caminho para o entendimento?",
+    "placeholder": "Pergunte sobre princípios herméticos, alquimia ou sabedoria antiga...",
+    "send": "Enviar",
+    "thinking": "Hermes está contemplando sua pergunta..."
+  },
+  "Common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "close": "Fechar"
+  }
+}

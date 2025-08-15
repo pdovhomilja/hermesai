@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Bienvenue sur IALchemist",
+    "subtitle": "Communiquez avec Hermès Trismégiste",
+    "description": "Découvrez la sagesse ancienne grâce à des conversations alimentées par l'IA avec la figure légendaire de l'hermétisme et de l'alchimie.",
+    "startChat": "Commencez Votre Voyage",
+    "learnMore": "En savoir plus sur l'Hermétisme"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "chat": "Chat",
+    "about": "À propos",
+    "wisdom": "Sagesse"
+  },
+  "Chat": {
+    "welcome": "Salutations, chercheur de sagesse. Je suis Hermès Trismégiste, le Trois fois Grand. Comment puis-je vous guider sur votre chemin vers la compréhension?",
+    "placeholder": "Posez des questions sur les principes hermétiques, l'alchimie ou la sagesse ancienne...",
+    "send": "Envoyer",
+    "thinking": "Hermès contemple votre question..."
+  },
+  "Common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "close": "Fermer"
+  }
+}

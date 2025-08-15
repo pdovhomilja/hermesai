@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Willkommen bei IALchemist",
+    "subtitle": "Kommuniziere mit Hermes Trismegistos",
+    "description": "Entdecke alte Weisheit durch KI-gestützte Gespräche mit der legendären Figur der Hermetik und Alchemie.",
+    "startChat": "Beginne Deine Reise",
+    "learnMore": "Lerne über Hermetik"
+  },
+  "Navigation": {
+    "home": "Startseite",
+    "chat": "Chat",
+    "about": "Über",
+    "wisdom": "Weisheit"
+  },
+  "Chat": {
+    "welcome": "Grüße, Suchender der Weisheit. Ich bin Hermes Trismegistos, der Dreimal Große. Wie kann ich dich auf deinem Weg zum Verständnis führen?",
+    "placeholder": "Frage nach hermetischen Prinzipien, Alchemie oder alter Weisheit...",
+    "send": "Senden",
+    "thinking": "Hermes denkt über deine Frage nach..."
+  },
+  "Common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Erneut versuchen",
+    "close": "Schließen"
+  }
+}

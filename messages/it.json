@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "title": "Benvenuto in IALchemist",
+    "subtitle": "Comunica con Ermete Trismegisto",
+    "description": "Scopri la saggezza antica attraverso conversazioni alimentate dall'IA con la figura leggendaria dell'ermetismo e dell'alchimia.",
+    "startChat": "Inizia il Tuo Viaggio",
+    "learnMore": "Scopri l'Ermetismo"
+  },
+  "Navigation": {
+    "home": "Home",
+    "chat": "Chat",
+    "about": "Informazioni",
+    "wisdom": "Saggezza"
+  },
+  "Chat": {
+    "welcome": "Saluti, cercatore di saggezza. Sono Ermete Trismegisto, il Tre Volte Grande. Come posso guidarti nel tuo cammino verso la comprensione?",
+    "placeholder": "Chiedi dei principi ermetici, alchimia o saggezza antica...",
+    "send": "Invia",
+    "thinking": "Ermete sta contemplando la tua domanda..."
+  },
+  "Common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova",
+    "close": "Chiudi"
+  }
+}

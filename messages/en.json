@@ -1,0 +1,38 @@
+{
+  "HomePage": {
+    "title": "Welcome to IALchemist",
+    "subtitle": "Commune with Hermes Trismegistus",
+    "description": "Discover ancient wisdom through AI-powered conversations with the legendary figure of Hermeticism and alchemy.",
+    "startChat": "Begin Your Journey",
+    "learnMore": "Learn About Hermeticism"
+  },
+  "Navigation": {
+    "home": "Home",
+    "chat": "Chat",
+    "about": "About",
+    "wisdom": "Wisdom"
+  },
+  "Chat": {
+    "welcome": "Greetings, seeker of wisdom. I am Hermes Trismegistus, the Thrice-Great. How may I guide you on your path to understanding?",
+    "placeholder": "Ask about hermetic principles, alchemy, or ancient wisdom...",
+    "send": "Send",
+    "thinking": "Hermes is contemplating your question..."
+  },
+  "Auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signInWithGoogle": "Continue with Google",
+    "signInWithGitHub": "Continue with GitHub",
+    "welcomeBack": "Welcome back",
+    "signInToAccess": "Sign in to access the wisdom of Hermes",
+    "authError": "Authentication Error",
+    "tryAgain": "Try Again",
+    "returnHome": "Return Home"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "close": "Close"
+  }
+}
