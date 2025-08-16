@@ -50,6 +50,7 @@
     "next": "15.4.6",
     "next-auth": "5.0.0-beta.29",
     "next-intl": "^4.3.4",
+    "openai": "^5.12.2",
     "openai-edge": "^1.2.3",
     "pdf-lib": "^1.17.1",
     "pgvector": "^0.2.1",
