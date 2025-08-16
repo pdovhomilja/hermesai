@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@import "../styles/mystical-theme.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--obsidian-900);
+  --foreground: var(--moonstone-100);
 }
 
 @theme inline {
@@ -10,17 +11,100 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-sacred: var(--font-sacred);
+  --font-mystical: var(--font-mystical);
+  --font-ancient: var(--font-ancient);
+  
+  /* Mystical color extensions */
+  --color-cosmos-50: var(--cosmos-50);
+  --color-cosmos-100: var(--cosmos-100);
+  --color-cosmos-200: var(--cosmos-200);
+  --color-cosmos-300: var(--cosmos-300);
+  --color-cosmos-400: var(--cosmos-400);
+  --color-cosmos-500: var(--cosmos-500);
+  --color-cosmos-600: var(--cosmos-600);
+  --color-cosmos-700: var(--cosmos-700);
+  --color-cosmos-800: var(--cosmos-800);
+  --color-cosmos-900: var(--cosmos-900);
+  
+  --color-celestial-50: var(--celestial-50);
+  --color-celestial-100: var(--celestial-100);
+  --color-celestial-200: var(--celestial-200);
+  --color-celestial-300: var(--celestial-300);
+  --color-celestial-400: var(--celestial-400);
+  --color-celestial-500: var(--celestial-500);
+  --color-celestial-600: var(--celestial-600);
+  --color-celestial-700: var(--celestial-700);
+  --color-celestial-800: var(--celestial-800);
+  --color-celestial-900: var(--celestial-900);
+  
+  --color-amethyst-50: var(--amethyst-50);
+  --color-amethyst-100: var(--amethyst-100);
+  --color-amethyst-200: var(--amethyst-200);
+  --color-amethyst-300: var(--amethyst-300);
+  --color-amethyst-400: var(--amethyst-400);
+  --color-amethyst-500: var(--amethyst-500);
+  --color-amethyst-600: var(--amethyst-600);
+  --color-amethyst-700: var(--amethyst-700);
+  --color-amethyst-800: var(--amethyst-800);
+  --color-amethyst-900: var(--amethyst-900);
+  
+  --color-gold-50: var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+  
+  --color-emerald-50: var(--emerald-50);
+  --color-emerald-100: var(--emerald-100);
+  --color-emerald-200: var(--emerald-200);
+  --color-emerald-300: var(--emerald-300);
+  --color-emerald-400: var(--emerald-400);
+  --color-emerald-500: var(--emerald-500);
+  --color-emerald-600: var(--emerald-600);
+  --color-emerald-700: var(--emerald-700);
+  --color-emerald-800: var(--emerald-800);
+  --color-emerald-900: var(--emerald-900);
+  
+  --color-moonstone-50: var(--moonstone-50);
+  --color-moonstone-100: var(--moonstone-100);
+  --color-moonstone-200: var(--moonstone-200);
+  --color-moonstone-300: var(--moonstone-300);
+  --color-moonstone-400: var(--moonstone-400);
+  --color-moonstone-500: var(--moonstone-500);
+  --color-moonstone-600: var(--moonstone-600);
+  --color-moonstone-700: var(--moonstone-700);
+  --color-moonstone-800: var(--moonstone-800);
+  --color-moonstone-900: var(--moonstone-900);
+  
+  --color-obsidian-50: var(--obsidian-50);
+  --color-obsidian-100: var(--obsidian-100);
+  --color-obsidian-200: var(--obsidian-200);
+  --color-obsidian-300: var(--obsidian-300);
+  --color-obsidian-400: var(--obsidian-400);
+  --color-obsidian-500: var(--obsidian-500);
+  --color-obsidian-600: var(--obsidian-600);
+  --color-obsidian-700: var(--obsidian-700);
+  --color-obsidian-800: var(--obsidian-800);
+  --color-obsidian-900: var(--obsidian-900);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--moonstone-50);
+    --foreground: var(--obsidian-800);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ancient), Georgia, serif;
+  background-image: var(--void-gradient);
+  min-height: 100vh;
 }

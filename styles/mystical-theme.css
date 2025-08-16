@@ -1,0 +1,397 @@
+/* Mystical Design System - Sacred Visual Language for IALchemist.app */
+
+/* Import ancient fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Sacred Geometry Constants */
+:root {
+  /* Golden Ratio & Sacred Proportions */
+  --golden-ratio: 1.618;
+  --sacred-angle: 137.5deg; /* Golden angle */
+  --phi: 1.618034;
+  --inverse-phi: 0.618034;
+  
+  /* Sacred Geometry Dimensions */
+  --sacred-circle-radius: 60px;
+  --sacred-line-width: 1.618px;
+  --merkaba-size: 120px;
+  --flower-of-life-petals: 7;
+  
+  /* Mystical Color Palette */
+  --cosmos-50: #faf7ff;
+  --cosmos-100: #f0ebff;
+  --cosmos-200: #e2d6ff;
+  --cosmos-300: #cdb3ff;
+  --cosmos-400: #b085ff;
+  --cosmos-500: #9147ff;
+  --cosmos-600: #7c2d12;
+  --cosmos-700: #6a1b9a;
+  --cosmos-800: #4a148c;
+  --cosmos-900: #1a0e33;
+  
+  --celestial-50: #f8fafc;
+  --celestial-100: #f1f5f9;
+  --celestial-200: #e2e8f0;
+  --celestial-300: #cbd5e1;
+  --celestial-400: #94a3b8;
+  --celestial-500: #64748b;
+  --celestial-600: #475569;
+  --celestial-700: #334155;
+  --celestial-800: #1e293b;
+  --celestial-900: #0f172a;
+  
+  --amethyst-50: #faf5ff;
+  --amethyst-100: #f3e8ff;
+  --amethyst-200: #e9d5ff;
+  --amethyst-300: #d8b4fe;
+  --amethyst-400: #c084fc;
+  --amethyst-500: #a855f7;
+  --amethyst-600: #9333ea;
+  --amethyst-700: #7c2d12;
+  --amethyst-800: #581c87;
+  --amethyst-900: #3b0764;
+  
+  --gold-50: #fefce8;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b;
+  --gold-600: #d97706;
+  --gold-700: #b45309;
+  --gold-800: #92400e;
+  --gold-900: #78350f;
+  
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  
+  --moonstone-50: #f8fafc;
+  --moonstone-100: #f1f5f9;
+  --moonstone-200: #e2e8f0;
+  --moonstone-300: #cbd5e1;
+  --moonstone-400: #94a3b8;
+  --moonstone-500: #64748b;
+  --moonstone-600: #475569;
+  --moonstone-700: #334155;
+  --moonstone-800: #1e293b;
+  --moonstone-900: #0f172a;
+  
+  --obsidian-50: #f9fafb;
+  --obsidian-100: #f3f4f6;
+  --obsidian-200: #e5e7eb;
+  --obsidian-300: #d1d5db;
+  --obsidian-400: #9ca3af;
+  --obsidian-500: #6b7280;
+  --obsidian-600: #4b5563;
+  --obsidian-700: #374151;
+  --obsidian-800: #1f2937;
+  --obsidian-900: #111827;
+  
+  /* Mystical Gradients */
+  --cosmos-gradient: linear-gradient(135deg, var(--cosmos-500) 0%, var(--amethyst-600) 100%);
+  --celestial-gradient: linear-gradient(135deg, var(--celestial-300) 0%, var(--cosmos-500) 100%);
+  --sacred-gradient: radial-gradient(ellipse at center, var(--gold-400) 0%, var(--cosmos-700) 70%);
+  --ethereal-gradient: linear-gradient(45deg, var(--amethyst-500) 0%, var(--emerald-500) 50%, var(--gold-400) 100%);
+  --void-gradient: linear-gradient(180deg, var(--obsidian-900) 0%, var(--cosmos-900) 100%);
+  --aurora-gradient: linear-gradient(90deg, var(--emerald-400) 0%, var(--amethyst-500) 25%, var(--gold-400) 50%, var(--cosmos-500) 75%, var(--celestial-400) 100%);
+  
+  /* Sacred Typography */
+  --font-sacred: 'Cinzel', serif;
+  --font-mystical: 'Philosopher', serif;
+  --font-ancient: 'Crimson Text', serif;
+  
+  /* Animation Variables */
+  --ethereal-duration: 3s;
+  --pulse-glow-duration: 2s;
+  --float-duration: 4s;
+  --sacred-spin-duration: 20s;
+  --particle-drift-duration: 8s;
+  
+  /* Sacred Shadows and Effects */
+  --sacred-glow: 0 0 20px var(--gold-400), 0 0 40px var(--gold-500), 0 0 60px var(--gold-600);
+  --mystical-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3), 0 8px 10px -6px rgba(139, 92, 246, 0.1);
+  --ethereal-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.4);
+  --void-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.8);
+  
+  /* Particle System Variables */
+  --particle-count: 50;
+  --particle-size-min: 1px;
+  --particle-size-max: 4px;
+  --particle-opacity-min: 0.3;
+  --particle-opacity-max: 0.8;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--obsidian-900);
+    --foreground: var(--moonstone-100);
+    --sacred-glow: 0 0 20px var(--gold-300), 0 0 40px var(--gold-400), 0 0 60px var(--gold-500);
+  }
+}
+
+/* Sacred Animations */
+@keyframes ethereal {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: translateY(0px) scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: var(--sacred-glow);
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: var(--sacred-glow), 0 0 80px var(--gold-300);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-15px) rotate(2deg);
+  }
+  75% { 
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes sacred-spin {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% { 
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: var(--particle-opacity-min);
+  }
+  25% {
+    opacity: var(--particle-opacity-max);
+  }
+  50% {
+    transform: translateX(20px) translateY(-30px) rotate(180deg);
+    opacity: var(--particle-opacity-max);
+  }
+  75% {
+    opacity: var(--particle-opacity-min);
+  }
+  100% {
+    transform: translateX(-10px) translateY(-60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes merkaba-rotation {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  33% {
+    transform: rotateX(120deg) rotateY(120deg) rotateZ(0deg);
+  }
+  66% {
+    transform: rotateX(240deg) rotateY(240deg) rotateZ(120deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes flower-bloom {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sacred Geometry Utility Classes */
+.sacred-circle {
+  border-radius: 50%;
+  border: var(--sacred-line-width) solid var(--gold-400);
+}
+
+.golden-ratio-container {
+  aspect-ratio: var(--golden-ratio);
+}
+
+.sacred-glow {
+  box-shadow: var(--sacred-glow);
+}
+
+.mystical-shadow {
+  box-shadow: var(--mystical-shadow);
+}
+
+.ethereal-shadow {
+  box-shadow: var(--ethereal-shadow);
+}
+
+.void-shadow {
+  box-shadow: var(--void-shadow);
+}
+
+/* Animation Classes */
+.animate-ethereal {
+  animation: ethereal var(--ethereal-duration) ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow var(--pulse-glow-duration) ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float var(--float-duration) ease-in-out infinite;
+}
+
+.animate-sacred-spin {
+  animation: sacred-spin var(--sacred-spin-duration) linear infinite;
+}
+
+.animate-particle-drift {
+  animation: particle-drift var(--particle-drift-duration) ease-in-out infinite;
+}
+
+.animate-merkaba-rotation {
+  animation: merkaba-rotation 15s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-flower-bloom {
+  animation: flower-bloom 8s ease-in-out infinite;
+}
+
+.animate-aurora-flow {
+  animation: aurora-flow 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Sacred Text Styles */
+.text-sacred {
+  font-family: var(--font-sacred);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+.text-mystical {
+  font-family: var(--font-mystical);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.text-ancient {
+  font-family: var(--font-ancient);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Sacred Geometry */
+@media (max-width: 768px) {
+  :root {
+    --sacred-circle-radius: 40px;
+    --merkaba-size: 80px;
+    --sacred-line-width: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --sacred-circle-radius: 30px;
+    --merkaba-size: 60px;
+    --sacred-line-width: 0.8px;
+  }
+}
+
+/* Accessibility Considerations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ethereal,
+  .animate-pulse-glow,
+  .animate-float,
+  .animate-sacred-spin,
+  .animate-particle-drift,
+  .animate-merkaba-rotation,
+  .animate-flower-bloom,
+  .animate-aurora-flow {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --sacred-glow: 0 0 10px var(--gold-600);
+    --mystical-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+  
+  .sacred-circle {
+    border-width: 2px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .animate-ethereal,
+  .animate-pulse-glow,
+  .animate-float,
+  .animate-sacred-spin,
+  .animate-particle-drift,
+  .animate-merkaba-rotation,
+  .animate-flower-bloom,
+  .animate-aurora-flow {
+    animation: none !important;
+  }
+  
+  .sacred-glow,
+  .mystical-shadow,
+  .ethereal-shadow,
+  .void-shadow {
+    box-shadow: none !important;
+  }
+}
