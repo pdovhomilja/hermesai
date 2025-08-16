@@ -33,6 +33,51 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  * 
  */
 export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTokenPayload>
+/**
+ * Model Conversation
+ * 
+ */
+export type Conversation = $Result.DefaultSelection<Prisma.$ConversationPayload>
+/**
+ * Model Message
+ * 
+ */
+export type Message = $Result.DefaultSelection<Prisma.$MessagePayload>
+/**
+ * Model Topic
+ * 
+ */
+export type Topic = $Result.DefaultSelection<Prisma.$TopicPayload>
+/**
+ * Model ConversationTopic
+ * 
+ */
+export type ConversationTopic = $Result.DefaultSelection<Prisma.$ConversationTopicPayload>
+/**
+ * Model UserInsight
+ * 
+ */
+export type UserInsight = $Result.DefaultSelection<Prisma.$UserInsightPayload>
+/**
+ * Model SpiritualProfile
+ * 
+ */
+export type SpiritualProfile = $Result.DefaultSelection<Prisma.$SpiritualProfilePayload>
+/**
+ * Model Subscription
+ * 
+ */
+export type Subscription = $Result.DefaultSelection<Prisma.$SubscriptionPayload>
+/**
+ * Model UsageRecord
+ * 
+ */
+export type UsageRecord = $Result.DefaultSelection<Prisma.$UsageRecordPayload>
+/**
+ * Model UserPreference
+ * 
+ */
+export type UserPreference = $Result.DefaultSelection<Prisma.$UserPreferencePayload>
 
 /**
  * Enums
@@ -48,11 +93,170 @@ export namespace $Enums {
 
 export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
+
+export const MessageRole: {
+  USER: 'USER',
+  ASSISTANT: 'ASSISTANT',
+  SYSTEM: 'SYSTEM'
+};
+
+export type MessageRole = (typeof MessageRole)[keyof typeof MessageRole]
+
+
+export const ConversationStatus: {
+  ACTIVE: 'ACTIVE',
+  ARCHIVED: 'ARCHIVED',
+  DELETED: 'DELETED'
+};
+
+export type ConversationStatus = (typeof ConversationStatus)[keyof typeof ConversationStatus]
+
+
+export const TopicCategory: {
+  HERMETIC_PRINCIPLE: 'HERMETIC_PRINCIPLE',
+  LIFE_CHALLENGE: 'LIFE_CHALLENGE',
+  DAILY_PRACTICE: 'DAILY_PRACTICE',
+  TRANSFORMATION: 'TRANSFORMATION',
+  PHILOSOPHY: 'PHILOSOPHY',
+  RITUAL: 'RITUAL',
+  OTHER: 'OTHER'
+};
+
+export type TopicCategory = (typeof TopicCategory)[keyof typeof TopicCategory]
+
+
+export const InsightType: {
+  BREAKTHROUGH: 'BREAKTHROUGH',
+  REALIZATION: 'REALIZATION',
+  CHALLENGE: 'CHALLENGE',
+  PRACTICE: 'PRACTICE',
+  TRANSFORMATION: 'TRANSFORMATION',
+  MILESTONE: 'MILESTONE'
+};
+
+export type InsightType = (typeof InsightType)[keyof typeof InsightType]
+
+
+export const SignificanceLevel: {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH',
+  CRITICAL: 'CRITICAL'
+};
+
+export type SignificanceLevel = (typeof SignificanceLevel)[keyof typeof SignificanceLevel]
+
+
+export const SpiritualLevel: {
+  SEEKER: 'SEEKER',
+  STUDENT: 'STUDENT',
+  ADEPT: 'ADEPT',
+  MASTER: 'MASTER'
+};
+
+export type SpiritualLevel = (typeof SpiritualLevel)[keyof typeof SpiritualLevel]
+
+
+export const SubscriptionPlan: {
+  FREE_TRIAL: 'FREE_TRIAL',
+  SEEKER: 'SEEKER',
+  ADEPT: 'ADEPT',
+  MASTER: 'MASTER'
+};
+
+export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan]
+
+
+export const SubscriptionStatus: {
+  TRIAL: 'TRIAL',
+  ACTIVE: 'ACTIVE',
+  PAST_DUE: 'PAST_DUE',
+  CANCELED: 'CANCELED',
+  PAUSED: 'PAUSED'
+};
+
+export type SubscriptionStatus = (typeof SubscriptionStatus)[keyof typeof SubscriptionStatus]
+
+
+export const UsageMetric: {
+  CONVERSATIONS: 'CONVERSATIONS',
+  MESSAGES: 'MESSAGES',
+  TOKENS: 'TOKENS',
+  EXPORTS: 'EXPORTS',
+  API_CALLS: 'API_CALLS'
+};
+
+export type UsageMetric = (typeof UsageMetric)[keyof typeof UsageMetric]
+
+
+export const VerbosityLevel: {
+  CONCISE: 'CONCISE',
+  BALANCED: 'BALANCED',
+  DETAILED: 'DETAILED',
+  EXTENSIVE: 'EXTENSIVE'
+};
+
+export type VerbosityLevel = (typeof VerbosityLevel)[keyof typeof VerbosityLevel]
+
+
+export const EmailDigestFrequency: {
+  NEVER: 'NEVER',
+  DAILY: 'DAILY',
+  WEEKLY: 'WEEKLY',
+  MONTHLY: 'MONTHLY'
+};
+
+export type EmailDigestFrequency = (typeof EmailDigestFrequency)[keyof typeof EmailDigestFrequency]
+
 }
 
 export type UserRole = $Enums.UserRole
 
 export const UserRole: typeof $Enums.UserRole
+
+export type MessageRole = $Enums.MessageRole
+
+export const MessageRole: typeof $Enums.MessageRole
+
+export type ConversationStatus = $Enums.ConversationStatus
+
+export const ConversationStatus: typeof $Enums.ConversationStatus
+
+export type TopicCategory = $Enums.TopicCategory
+
+export const TopicCategory: typeof $Enums.TopicCategory
+
+export type InsightType = $Enums.InsightType
+
+export const InsightType: typeof $Enums.InsightType
+
+export type SignificanceLevel = $Enums.SignificanceLevel
+
+export const SignificanceLevel: typeof $Enums.SignificanceLevel
+
+export type SpiritualLevel = $Enums.SpiritualLevel
+
+export const SpiritualLevel: typeof $Enums.SpiritualLevel
+
+export type SubscriptionPlan = $Enums.SubscriptionPlan
+
+export const SubscriptionPlan: typeof $Enums.SubscriptionPlan
+
+export type SubscriptionStatus = $Enums.SubscriptionStatus
+
+export const SubscriptionStatus: typeof $Enums.SubscriptionStatus
+
+export type UsageMetric = $Enums.UsageMetric
+
+export const UsageMetric: typeof $Enums.UsageMetric
+
+export type VerbosityLevel = $Enums.VerbosityLevel
+
+export const VerbosityLevel: typeof $Enums.VerbosityLevel
+
+export type EmailDigestFrequency = $Enums.EmailDigestFrequency
+
+export const EmailDigestFrequency: typeof $Enums.EmailDigestFrequency
 
 /**
  * ##  Prisma Client ʲˢ
@@ -149,16 +353,6 @@ export class PrismaClient<
    */
   $queryRawUnsafe<T = unknown>(query: string, ...values: any[]): Prisma.PrismaPromise<T>;
 
-  /**
-   * Executes a typed SQL query and returns a typed result
-   * @example
-   * ```
-   * import { myQuery } from '@prisma/client/sql'
-   * 
-   * const result = await prisma.$queryRawTyped(myQuery())
-   * ```
-   */
-  $queryRawTyped<T>(typedSql: runtime.TypedSql<unknown[], T>): Prisma.PrismaPromise<T[]>
 
   /**
    * Allows the running of a sequence of read/write operations that are guaranteed to either succeed or fail as a whole.
@@ -221,6 +415,96 @@ export class PrismaClient<
     * ```
     */
   get verificationToken(): Prisma.VerificationTokenDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.conversation`: Exposes CRUD operations for the **Conversation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Conversations
+    * const conversations = await prisma.conversation.findMany()
+    * ```
+    */
+  get conversation(): Prisma.ConversationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.message`: Exposes CRUD operations for the **Message** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Messages
+    * const messages = await prisma.message.findMany()
+    * ```
+    */
+  get message(): Prisma.MessageDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.topic`: Exposes CRUD operations for the **Topic** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Topics
+    * const topics = await prisma.topic.findMany()
+    * ```
+    */
+  get topic(): Prisma.TopicDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.conversationTopic`: Exposes CRUD operations for the **ConversationTopic** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ConversationTopics
+    * const conversationTopics = await prisma.conversationTopic.findMany()
+    * ```
+    */
+  get conversationTopic(): Prisma.ConversationTopicDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.userInsight`: Exposes CRUD operations for the **UserInsight** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more UserInsights
+    * const userInsights = await prisma.userInsight.findMany()
+    * ```
+    */
+  get userInsight(): Prisma.UserInsightDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.spiritualProfile`: Exposes CRUD operations for the **SpiritualProfile** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more SpiritualProfiles
+    * const spiritualProfiles = await prisma.spiritualProfile.findMany()
+    * ```
+    */
+  get spiritualProfile(): Prisma.SpiritualProfileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.subscription`: Exposes CRUD operations for the **Subscription** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Subscriptions
+    * const subscriptions = await prisma.subscription.findMany()
+    * ```
+    */
+  get subscription(): Prisma.SubscriptionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.usageRecord`: Exposes CRUD operations for the **UsageRecord** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more UsageRecords
+    * const usageRecords = await prisma.usageRecord.findMany()
+    * ```
+    */
+  get usageRecord(): Prisma.UsageRecordDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.userPreference`: Exposes CRUD operations for the **UserPreference** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more UserPreferences
+    * const userPreferences = await prisma.userPreference.findMany()
+    * ```
+    */
+  get userPreference(): Prisma.UserPreferenceDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -664,7 +948,16 @@ export namespace Prisma {
     Account: 'Account',
     Session: 'Session',
     User: 'User',
-    VerificationToken: 'VerificationToken'
+    VerificationToken: 'VerificationToken',
+    Conversation: 'Conversation',
+    Message: 'Message',
+    Topic: 'Topic',
+    ConversationTopic: 'ConversationTopic',
+    UserInsight: 'UserInsight',
+    SpiritualProfile: 'SpiritualProfile',
+    Subscription: 'Subscription',
+    UsageRecord: 'UsageRecord',
+    UserPreference: 'UserPreference'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -683,7 +976,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "account" | "session" | "user" | "verificationToken"
+      modelProps: "account" | "session" | "user" | "verificationToken" | "conversation" | "message" | "topic" | "conversationTopic" | "userInsight" | "spiritualProfile" | "subscription" | "usageRecord" | "userPreference"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -983,6 +1276,672 @@ export namespace Prisma {
           }
         }
       }
+      Conversation: {
+        payload: Prisma.$ConversationPayload<ExtArgs>
+        fields: Prisma.ConversationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ConversationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ConversationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          findFirst: {
+            args: Prisma.ConversationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ConversationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          findMany: {
+            args: Prisma.ConversationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          create: {
+            args: Prisma.ConversationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          createMany: {
+            args: Prisma.ConversationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ConversationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          delete: {
+            args: Prisma.ConversationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          update: {
+            args: Prisma.ConversationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          deleteMany: {
+            args: Prisma.ConversationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ConversationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ConversationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          upsert: {
+            args: Prisma.ConversationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          aggregate: {
+            args: Prisma.ConversationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateConversation>
+          }
+          groupBy: {
+            args: Prisma.ConversationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ConversationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ConversationCountArgs<ExtArgs>
+            result: $Utils.Optional<ConversationCountAggregateOutputType> | number
+          }
+        }
+      }
+      Message: {
+        payload: Prisma.$MessagePayload<ExtArgs>
+        fields: Prisma.MessageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MessageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MessageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          findFirst: {
+            args: Prisma.MessageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MessageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          findMany: {
+            args: Prisma.MessageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          create: {
+            args: Prisma.MessageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          createMany: {
+            args: Prisma.MessageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MessageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          delete: {
+            args: Prisma.MessageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          update: {
+            args: Prisma.MessageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          deleteMany: {
+            args: Prisma.MessageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MessageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MessageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          upsert: {
+            args: Prisma.MessageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          aggregate: {
+            args: Prisma.MessageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMessage>
+          }
+          groupBy: {
+            args: Prisma.MessageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MessageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MessageCountArgs<ExtArgs>
+            result: $Utils.Optional<MessageCountAggregateOutputType> | number
+          }
+        }
+      }
+      Topic: {
+        payload: Prisma.$TopicPayload<ExtArgs>
+        fields: Prisma.TopicFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TopicFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TopicFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          findFirst: {
+            args: Prisma.TopicFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TopicFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          findMany: {
+            args: Prisma.TopicFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>[]
+          }
+          create: {
+            args: Prisma.TopicCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          createMany: {
+            args: Prisma.TopicCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TopicCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>[]
+          }
+          delete: {
+            args: Prisma.TopicDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          update: {
+            args: Prisma.TopicUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          deleteMany: {
+            args: Prisma.TopicDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TopicUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TopicUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>[]
+          }
+          upsert: {
+            args: Prisma.TopicUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TopicPayload>
+          }
+          aggregate: {
+            args: Prisma.TopicAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTopic>
+          }
+          groupBy: {
+            args: Prisma.TopicGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TopicGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TopicCountArgs<ExtArgs>
+            result: $Utils.Optional<TopicCountAggregateOutputType> | number
+          }
+        }
+      }
+      ConversationTopic: {
+        payload: Prisma.$ConversationTopicPayload<ExtArgs>
+        fields: Prisma.ConversationTopicFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ConversationTopicFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ConversationTopicFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          findFirst: {
+            args: Prisma.ConversationTopicFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ConversationTopicFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          findMany: {
+            args: Prisma.ConversationTopicFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>[]
+          }
+          create: {
+            args: Prisma.ConversationTopicCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          createMany: {
+            args: Prisma.ConversationTopicCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ConversationTopicCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>[]
+          }
+          delete: {
+            args: Prisma.ConversationTopicDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          update: {
+            args: Prisma.ConversationTopicUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          deleteMany: {
+            args: Prisma.ConversationTopicDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ConversationTopicUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ConversationTopicUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>[]
+          }
+          upsert: {
+            args: Prisma.ConversationTopicUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationTopicPayload>
+          }
+          aggregate: {
+            args: Prisma.ConversationTopicAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateConversationTopic>
+          }
+          groupBy: {
+            args: Prisma.ConversationTopicGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ConversationTopicGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ConversationTopicCountArgs<ExtArgs>
+            result: $Utils.Optional<ConversationTopicCountAggregateOutputType> | number
+          }
+        }
+      }
+      UserInsight: {
+        payload: Prisma.$UserInsightPayload<ExtArgs>
+        fields: Prisma.UserInsightFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.UserInsightFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.UserInsightFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          findFirst: {
+            args: Prisma.UserInsightFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.UserInsightFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          findMany: {
+            args: Prisma.UserInsightFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>[]
+          }
+          create: {
+            args: Prisma.UserInsightCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          createMany: {
+            args: Prisma.UserInsightCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.UserInsightCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>[]
+          }
+          delete: {
+            args: Prisma.UserInsightDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          update: {
+            args: Prisma.UserInsightUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          deleteMany: {
+            args: Prisma.UserInsightDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.UserInsightUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.UserInsightUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>[]
+          }
+          upsert: {
+            args: Prisma.UserInsightUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserInsightPayload>
+          }
+          aggregate: {
+            args: Prisma.UserInsightAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateUserInsight>
+          }
+          groupBy: {
+            args: Prisma.UserInsightGroupByArgs<ExtArgs>
+            result: $Utils.Optional<UserInsightGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.UserInsightCountArgs<ExtArgs>
+            result: $Utils.Optional<UserInsightCountAggregateOutputType> | number
+          }
+        }
+      }
+      SpiritualProfile: {
+        payload: Prisma.$SpiritualProfilePayload<ExtArgs>
+        fields: Prisma.SpiritualProfileFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SpiritualProfileFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SpiritualProfileFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          findFirst: {
+            args: Prisma.SpiritualProfileFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SpiritualProfileFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          findMany: {
+            args: Prisma.SpiritualProfileFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>[]
+          }
+          create: {
+            args: Prisma.SpiritualProfileCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          createMany: {
+            args: Prisma.SpiritualProfileCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SpiritualProfileCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>[]
+          }
+          delete: {
+            args: Prisma.SpiritualProfileDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          update: {
+            args: Prisma.SpiritualProfileUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          deleteMany: {
+            args: Prisma.SpiritualProfileDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SpiritualProfileUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SpiritualProfileUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>[]
+          }
+          upsert: {
+            args: Prisma.SpiritualProfileUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SpiritualProfilePayload>
+          }
+          aggregate: {
+            args: Prisma.SpiritualProfileAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSpiritualProfile>
+          }
+          groupBy: {
+            args: Prisma.SpiritualProfileGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SpiritualProfileGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SpiritualProfileCountArgs<ExtArgs>
+            result: $Utils.Optional<SpiritualProfileCountAggregateOutputType> | number
+          }
+        }
+      }
+      Subscription: {
+        payload: Prisma.$SubscriptionPayload<ExtArgs>
+        fields: Prisma.SubscriptionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SubscriptionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SubscriptionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          findFirst: {
+            args: Prisma.SubscriptionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SubscriptionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          findMany: {
+            args: Prisma.SubscriptionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>[]
+          }
+          create: {
+            args: Prisma.SubscriptionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          createMany: {
+            args: Prisma.SubscriptionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SubscriptionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>[]
+          }
+          delete: {
+            args: Prisma.SubscriptionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          update: {
+            args: Prisma.SubscriptionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          deleteMany: {
+            args: Prisma.SubscriptionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SubscriptionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SubscriptionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>[]
+          }
+          upsert: {
+            args: Prisma.SubscriptionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubscriptionPayload>
+          }
+          aggregate: {
+            args: Prisma.SubscriptionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSubscription>
+          }
+          groupBy: {
+            args: Prisma.SubscriptionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SubscriptionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SubscriptionCountArgs<ExtArgs>
+            result: $Utils.Optional<SubscriptionCountAggregateOutputType> | number
+          }
+        }
+      }
+      UsageRecord: {
+        payload: Prisma.$UsageRecordPayload<ExtArgs>
+        fields: Prisma.UsageRecordFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.UsageRecordFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.UsageRecordFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          findFirst: {
+            args: Prisma.UsageRecordFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.UsageRecordFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          findMany: {
+            args: Prisma.UsageRecordFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>[]
+          }
+          create: {
+            args: Prisma.UsageRecordCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          createMany: {
+            args: Prisma.UsageRecordCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.UsageRecordCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>[]
+          }
+          delete: {
+            args: Prisma.UsageRecordDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          update: {
+            args: Prisma.UsageRecordUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          deleteMany: {
+            args: Prisma.UsageRecordDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.UsageRecordUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.UsageRecordUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>[]
+          }
+          upsert: {
+            args: Prisma.UsageRecordUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsageRecordPayload>
+          }
+          aggregate: {
+            args: Prisma.UsageRecordAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateUsageRecord>
+          }
+          groupBy: {
+            args: Prisma.UsageRecordGroupByArgs<ExtArgs>
+            result: $Utils.Optional<UsageRecordGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.UsageRecordCountArgs<ExtArgs>
+            result: $Utils.Optional<UsageRecordCountAggregateOutputType> | number
+          }
+        }
+      }
+      UserPreference: {
+        payload: Prisma.$UserPreferencePayload<ExtArgs>
+        fields: Prisma.UserPreferenceFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.UserPreferenceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.UserPreferenceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          findFirst: {
+            args: Prisma.UserPreferenceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.UserPreferenceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          findMany: {
+            args: Prisma.UserPreferenceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>[]
+          }
+          create: {
+            args: Prisma.UserPreferenceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          createMany: {
+            args: Prisma.UserPreferenceCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.UserPreferenceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>[]
+          }
+          delete: {
+            args: Prisma.UserPreferenceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          update: {
+            args: Prisma.UserPreferenceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          deleteMany: {
+            args: Prisma.UserPreferenceDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.UserPreferenceUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.UserPreferenceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>[]
+          }
+          upsert: {
+            args: Prisma.UserPreferenceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPreferencePayload>
+          }
+          aggregate: {
+            args: Prisma.UserPreferenceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateUserPreference>
+          }
+          groupBy: {
+            args: Prisma.UserPreferenceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<UserPreferenceGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.UserPreferenceCountArgs<ExtArgs>
+            result: $Utils.Optional<UserPreferenceCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1003,10 +1962,6 @@ export namespace Prisma {
         $queryRawUnsafe: {
           args: [query: string, ...values: any[]],
           result: any
-        }
-        $queryRawTyped: {
-          args: runtime.UnknownTypedSql,
-          result: Prisma.JsonObject
         }
       }
     }
@@ -1083,6 +2038,15 @@ export namespace Prisma {
     session?: SessionOmit
     user?: UserOmit
     verificationToken?: VerificationTokenOmit
+    conversation?: ConversationOmit
+    message?: MessageOmit
+    topic?: TopicOmit
+    conversationTopic?: ConversationTopicOmit
+    userInsight?: UserInsightOmit
+    spiritualProfile?: SpiritualProfileOmit
+    subscription?: SubscriptionOmit
+    usageRecord?: UsageRecordOmit
+    userPreference?: UserPreferenceOmit
   }
 
   /* Types for Logging */
@@ -1165,11 +2129,17 @@ export namespace Prisma {
   export type UserCountOutputType = {
     accounts: number
     sessions: number
+    conversations: number
+    insights: number
+    subscriptions: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | UserCountOutputTypeCountAccountsArgs
     sessions?: boolean | UserCountOutputTypeCountSessionsArgs
+    conversations?: boolean | UserCountOutputTypeCountConversationsArgs
+    insights?: boolean | UserCountOutputTypeCountInsightsArgs
+    subscriptions?: boolean | UserCountOutputTypeCountSubscriptionsArgs
   }
 
   // Custom InputTypes
@@ -1195,6 +2165,138 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: SessionWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountConversationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountInsightsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserInsightWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountSubscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SubscriptionWhereInput
+  }
+
+
+  /**
+   * Count Type ConversationCountOutputType
+   */
+
+  export type ConversationCountOutputType = {
+    messages: number
+    topics: number
+    insights: number
+  }
+
+  export type ConversationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    messages?: boolean | ConversationCountOutputTypeCountMessagesArgs
+    topics?: boolean | ConversationCountOutputTypeCountTopicsArgs
+    insights?: boolean | ConversationCountOutputTypeCountInsightsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationCountOutputType
+     */
+    select?: ConversationCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeCountMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
+  }
+
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeCountTopicsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationTopicWhereInput
+  }
+
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeCountInsightsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserInsightWhereInput
+  }
+
+
+  /**
+   * Count Type TopicCountOutputType
+   */
+
+  export type TopicCountOutputType = {
+    conversations: number
+  }
+
+  export type TopicCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversations?: boolean | TopicCountOutputTypeCountConversationsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * TopicCountOutputType without action
+   */
+  export type TopicCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TopicCountOutputType
+     */
+    select?: TopicCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * TopicCountOutputType without action
+   */
+  export type TopicCountOutputTypeCountConversationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationTopicWhereInput
+  }
+
+
+  /**
+   * Count Type SubscriptionCountOutputType
+   */
+
+  export type SubscriptionCountOutputType = {
+    usageRecords: number
+  }
+
+  export type SubscriptionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    usageRecords?: boolean | SubscriptionCountOutputTypeCountUsageRecordsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SubscriptionCountOutputType without action
+   */
+  export type SubscriptionCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SubscriptionCountOutputType
+     */
+    select?: SubscriptionCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SubscriptionCountOutputType without action
+   */
+  export type SubscriptionCountOutputTypeCountUsageRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UsageRecordWhereInput
   }
 
 
@@ -3449,10 +4551,11 @@ export namespace Prisma {
     emailTokenExpires: Date | null
     image: string | null
     password: string | null
-    cid: string | null
-    locale: string | null
+    preferredLanguage: string | null
+    timezone: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    lastActiveAt: Date | null
     role: $Enums.UserRole | null
   }
 
@@ -3465,10 +4568,11 @@ export namespace Prisma {
     emailTokenExpires: Date | null
     image: string | null
     password: string | null
-    cid: string | null
-    locale: string | null
+    preferredLanguage: string | null
+    timezone: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    lastActiveAt: Date | null
     role: $Enums.UserRole | null
   }
 
@@ -3481,10 +4585,11 @@ export namespace Prisma {
     emailTokenExpires: number
     image: number
     password: number
-    cid: number
-    locale: number
+    preferredLanguage: number
+    timezone: number
     createdAt: number
     updatedAt: number
+    lastActiveAt: number
     role: number
     _all: number
   }
@@ -3499,10 +4604,11 @@ export namespace Prisma {
     emailTokenExpires?: true
     image?: true
     password?: true
-    cid?: true
-    locale?: true
+    preferredLanguage?: true
+    timezone?: true
     createdAt?: true
     updatedAt?: true
+    lastActiveAt?: true
     role?: true
   }
 
@@ -3515,10 +4621,11 @@ export namespace Prisma {
     emailTokenExpires?: true
     image?: true
     password?: true
-    cid?: true
-    locale?: true
+    preferredLanguage?: true
+    timezone?: true
     createdAt?: true
     updatedAt?: true
+    lastActiveAt?: true
     role?: true
   }
 
@@ -3531,10 +4638,11 @@ export namespace Prisma {
     emailTokenExpires?: true
     image?: true
     password?: true
-    cid?: true
-    locale?: true
+    preferredLanguage?: true
+    timezone?: true
     createdAt?: true
     updatedAt?: true
+    lastActiveAt?: true
     role?: true
     _all?: true
   }
@@ -3620,10 +4728,11 @@ export namespace Prisma {
     emailTokenExpires: Date | null
     image: string | null
     password: string | null
-    cid: string | null
-    locale: string
+    preferredLanguage: string
+    timezone: string
     createdAt: Date
     updatedAt: Date
+    lastActiveAt: Date | null
     role: $Enums.UserRole
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
@@ -3653,13 +4762,19 @@ export namespace Prisma {
     emailTokenExpires?: boolean
     image?: boolean
     password?: boolean
-    cid?: boolean
-    locale?: boolean
+    preferredLanguage?: boolean
+    timezone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    lastActiveAt?: boolean
     role?: boolean
     accounts?: boolean | User$accountsArgs<ExtArgs>
     sessions?: boolean | User$sessionsArgs<ExtArgs>
+    conversations?: boolean | User$conversationsArgs<ExtArgs>
+    insights?: boolean | User$insightsArgs<ExtArgs>
+    subscriptions?: boolean | User$subscriptionsArgs<ExtArgs>
+    spiritualProfile?: boolean | User$spiritualProfileArgs<ExtArgs>
+    preferences?: boolean | User$preferencesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -3672,10 +4787,11 @@ export namespace Prisma {
     emailTokenExpires?: boolean
     image?: boolean
     password?: boolean
-    cid?: boolean
-    locale?: boolean
+    preferredLanguage?: boolean
+    timezone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    lastActiveAt?: boolean
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -3688,10 +4804,11 @@ export namespace Prisma {
     emailTokenExpires?: boolean
     image?: boolean
     password?: boolean
-    cid?: boolean
-    locale?: boolean
+    preferredLanguage?: boolean
+    timezone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    lastActiveAt?: boolean
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -3704,17 +4821,23 @@ export namespace Prisma {
     emailTokenExpires?: boolean
     image?: boolean
     password?: boolean
-    cid?: boolean
-    locale?: boolean
+    preferredLanguage?: boolean
+    timezone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    lastActiveAt?: boolean
     role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "emailVerificationToken" | "emailTokenExpires" | "image" | "password" | "cid" | "locale" | "createdAt" | "updatedAt" | "role", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "emailVerificationToken" | "emailTokenExpires" | "image" | "password" | "preferredLanguage" | "timezone" | "createdAt" | "updatedAt" | "lastActiveAt" | "role", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | User$accountsArgs<ExtArgs>
     sessions?: boolean | User$sessionsArgs<ExtArgs>
+    conversations?: boolean | User$conversationsArgs<ExtArgs>
+    insights?: boolean | User$insightsArgs<ExtArgs>
+    subscriptions?: boolean | User$subscriptionsArgs<ExtArgs>
+    spiritualProfile?: boolean | User$spiritualProfileArgs<ExtArgs>
+    preferences?: boolean | User$preferencesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3725,6 +4848,11 @@ export namespace Prisma {
     objects: {
       accounts: Prisma.$AccountPayload<ExtArgs>[]
       sessions: Prisma.$SessionPayload<ExtArgs>[]
+      conversations: Prisma.$ConversationPayload<ExtArgs>[]
+      insights: Prisma.$UserInsightPayload<ExtArgs>[]
+      subscriptions: Prisma.$SubscriptionPayload<ExtArgs>[]
+      spiritualProfile: Prisma.$SpiritualProfilePayload<ExtArgs> | null
+      preferences: Prisma.$UserPreferencePayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3735,10 +4863,11 @@ export namespace Prisma {
       emailTokenExpires: Date | null
       image: string | null
       password: string | null
-      cid: string | null
-      locale: string
+      preferredLanguage: string
+      timezone: string
       createdAt: Date
       updatedAt: Date
+      lastActiveAt: Date | null
       role: $Enums.UserRole
     }, ExtArgs["result"]["user"]>
     composites: {}
@@ -4136,6 +5265,11 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     accounts<T extends User$accountsArgs<ExtArgs> = {}>(args?: Subset<T, User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     sessions<T extends User$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    conversations<T extends User$conversationsArgs<ExtArgs> = {}>(args?: Subset<T, User$conversationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    insights<T extends User$insightsArgs<ExtArgs> = {}>(args?: Subset<T, User$insightsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    subscriptions<T extends User$subscriptionsArgs<ExtArgs> = {}>(args?: Subset<T, User$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    spiritualProfile<T extends User$spiritualProfileArgs<ExtArgs> = {}>(args?: Subset<T, User$spiritualProfileArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    preferences<T extends User$preferencesArgs<ExtArgs> = {}>(args?: Subset<T, User$preferencesArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4173,10 +5307,11 @@ export namespace Prisma {
     readonly emailTokenExpires: FieldRef<"User", 'DateTime'>
     readonly image: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
-    readonly cid: FieldRef<"User", 'String'>
-    readonly locale: FieldRef<"User", 'String'>
+    readonly preferredLanguage: FieldRef<"User", 'String'>
+    readonly timezone: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
+    readonly lastActiveAt: FieldRef<"User", 'DateTime'>
     readonly role: FieldRef<"User", 'UserRole'>
   }
     
@@ -4611,6 +5746,116 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: SessionScalarFieldEnum | SessionScalarFieldEnum[]
+  }
+
+  /**
+   * User.conversations
+   */
+  export type User$conversationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    where?: ConversationWhereInput
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    cursor?: ConversationWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * User.insights
+   */
+  export type User$insightsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    where?: UserInsightWhereInput
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    cursor?: UserInsightWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UserInsightScalarFieldEnum | UserInsightScalarFieldEnum[]
+  }
+
+  /**
+   * User.subscriptions
+   */
+  export type User$subscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    where?: SubscriptionWhereInput
+    orderBy?: SubscriptionOrderByWithRelationInput | SubscriptionOrderByWithRelationInput[]
+    cursor?: SubscriptionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SubscriptionScalarFieldEnum | SubscriptionScalarFieldEnum[]
+  }
+
+  /**
+   * User.spiritualProfile
+   */
+  export type User$spiritualProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    where?: SpiritualProfileWhereInput
+  }
+
+  /**
+   * User.preferences
+   */
+  export type User$preferencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    where?: UserPreferenceWhereInput
   }
 
   /**
@@ -5602,6 +6847,10194 @@ export namespace Prisma {
 
 
   /**
+   * Model Conversation
+   */
+
+  export type AggregateConversation = {
+    _count: ConversationCountAggregateOutputType | null
+    _min: ConversationMinAggregateOutputType | null
+    _max: ConversationMaxAggregateOutputType | null
+  }
+
+  export type ConversationMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    title: string | null
+    summary: string | null
+    language: string | null
+    status: $Enums.ConversationStatus | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    lastMessageAt: Date | null
+  }
+
+  export type ConversationMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    title: string | null
+    summary: string | null
+    language: string | null
+    status: $Enums.ConversationStatus | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    lastMessageAt: Date | null
+  }
+
+  export type ConversationCountAggregateOutputType = {
+    id: number
+    userId: number
+    title: number
+    summary: number
+    language: number
+    status: number
+    metadata: number
+    createdAt: number
+    updatedAt: number
+    lastMessageAt: number
+    _all: number
+  }
+
+
+  export type ConversationMinAggregateInputType = {
+    id?: true
+    userId?: true
+    title?: true
+    summary?: true
+    language?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    lastMessageAt?: true
+  }
+
+  export type ConversationMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    title?: true
+    summary?: true
+    language?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    lastMessageAt?: true
+  }
+
+  export type ConversationCountAggregateInputType = {
+    id?: true
+    userId?: true
+    title?: true
+    summary?: true
+    language?: true
+    status?: true
+    metadata?: true
+    createdAt?: true
+    updatedAt?: true
+    lastMessageAt?: true
+    _all?: true
+  }
+
+  export type ConversationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Conversation to aggregate.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Conversations
+    **/
+    _count?: true | ConversationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ConversationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ConversationMaxAggregateInputType
+  }
+
+  export type GetConversationAggregateType<T extends ConversationAggregateArgs> = {
+        [P in keyof T & keyof AggregateConversation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateConversation[P]>
+      : GetScalarType<T[P], AggregateConversation[P]>
+  }
+
+
+
+
+  export type ConversationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationWhereInput
+    orderBy?: ConversationOrderByWithAggregationInput | ConversationOrderByWithAggregationInput[]
+    by: ConversationScalarFieldEnum[] | ConversationScalarFieldEnum
+    having?: ConversationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ConversationCountAggregateInputType | true
+    _min?: ConversationMinAggregateInputType
+    _max?: ConversationMaxAggregateInputType
+  }
+
+  export type ConversationGroupByOutputType = {
+    id: string
+    userId: string
+    title: string | null
+    summary: string | null
+    language: string
+    status: $Enums.ConversationStatus
+    metadata: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    lastMessageAt: Date | null
+    _count: ConversationCountAggregateOutputType | null
+    _min: ConversationMinAggregateOutputType | null
+    _max: ConversationMaxAggregateOutputType | null
+  }
+
+  type GetConversationGroupByPayload<T extends ConversationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ConversationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ConversationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ConversationGroupByOutputType[P]>
+            : GetScalarType<T[P], ConversationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ConversationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    title?: boolean
+    summary?: boolean
+    language?: boolean
+    status?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    lastMessageAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    messages?: boolean | Conversation$messagesArgs<ExtArgs>
+    topics?: boolean | Conversation$topicsArgs<ExtArgs>
+    insights?: boolean | Conversation$insightsArgs<ExtArgs>
+    _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    title?: boolean
+    summary?: boolean
+    language?: boolean
+    status?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    lastMessageAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    title?: boolean
+    summary?: boolean
+    language?: boolean
+    status?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    lastMessageAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    title?: boolean
+    summary?: boolean
+    language?: boolean
+    status?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    lastMessageAt?: boolean
+  }
+
+  export type ConversationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "title" | "summary" | "language" | "status" | "metadata" | "createdAt" | "updatedAt" | "lastMessageAt", ExtArgs["result"]["conversation"]>
+  export type ConversationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    messages?: boolean | Conversation$messagesArgs<ExtArgs>
+    topics?: boolean | Conversation$topicsArgs<ExtArgs>
+    insights?: boolean | Conversation$insightsArgs<ExtArgs>
+    _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ConversationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type ConversationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $ConversationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Conversation"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      messages: Prisma.$MessagePayload<ExtArgs>[]
+      topics: Prisma.$ConversationTopicPayload<ExtArgs>[]
+      insights: Prisma.$UserInsightPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      title: string | null
+      summary: string | null
+      language: string
+      status: $Enums.ConversationStatus
+      metadata: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+      lastMessageAt: Date | null
+    }, ExtArgs["result"]["conversation"]>
+    composites: {}
+  }
+
+  type ConversationGetPayload<S extends boolean | null | undefined | ConversationDefaultArgs> = $Result.GetResult<Prisma.$ConversationPayload, S>
+
+  type ConversationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ConversationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ConversationCountAggregateInputType | true
+    }
+
+  export interface ConversationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Conversation'], meta: { name: 'Conversation' } }
+    /**
+     * Find zero or one Conversation that matches the filter.
+     * @param {ConversationFindUniqueArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ConversationFindUniqueArgs>(args: SelectSubset<T, ConversationFindUniqueArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Conversation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ConversationFindUniqueOrThrowArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ConversationFindUniqueOrThrowArgs>(args: SelectSubset<T, ConversationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Conversation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindFirstArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ConversationFindFirstArgs>(args?: SelectSubset<T, ConversationFindFirstArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Conversation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindFirstOrThrowArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ConversationFindFirstOrThrowArgs>(args?: SelectSubset<T, ConversationFindFirstOrThrowArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Conversations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Conversations
+     * const conversations = await prisma.conversation.findMany()
+     * 
+     * // Get first 10 Conversations
+     * const conversations = await prisma.conversation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const conversationWithIdOnly = await prisma.conversation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ConversationFindManyArgs>(args?: SelectSubset<T, ConversationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Conversation.
+     * @param {ConversationCreateArgs} args - Arguments to create a Conversation.
+     * @example
+     * // Create one Conversation
+     * const Conversation = await prisma.conversation.create({
+     *   data: {
+     *     // ... data to create a Conversation
+     *   }
+     * })
+     * 
+     */
+    create<T extends ConversationCreateArgs>(args: SelectSubset<T, ConversationCreateArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Conversations.
+     * @param {ConversationCreateManyArgs} args - Arguments to create many Conversations.
+     * @example
+     * // Create many Conversations
+     * const conversation = await prisma.conversation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ConversationCreateManyArgs>(args?: SelectSubset<T, ConversationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Conversations and returns the data saved in the database.
+     * @param {ConversationCreateManyAndReturnArgs} args - Arguments to create many Conversations.
+     * @example
+     * // Create many Conversations
+     * const conversation = await prisma.conversation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Conversations and only return the `id`
+     * const conversationWithIdOnly = await prisma.conversation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ConversationCreateManyAndReturnArgs>(args?: SelectSubset<T, ConversationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Conversation.
+     * @param {ConversationDeleteArgs} args - Arguments to delete one Conversation.
+     * @example
+     * // Delete one Conversation
+     * const Conversation = await prisma.conversation.delete({
+     *   where: {
+     *     // ... filter to delete one Conversation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ConversationDeleteArgs>(args: SelectSubset<T, ConversationDeleteArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Conversation.
+     * @param {ConversationUpdateArgs} args - Arguments to update one Conversation.
+     * @example
+     * // Update one Conversation
+     * const conversation = await prisma.conversation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ConversationUpdateArgs>(args: SelectSubset<T, ConversationUpdateArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Conversations.
+     * @param {ConversationDeleteManyArgs} args - Arguments to filter Conversations to delete.
+     * @example
+     * // Delete a few Conversations
+     * const { count } = await prisma.conversation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ConversationDeleteManyArgs>(args?: SelectSubset<T, ConversationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Conversations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Conversations
+     * const conversation = await prisma.conversation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ConversationUpdateManyArgs>(args: SelectSubset<T, ConversationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Conversations and returns the data updated in the database.
+     * @param {ConversationUpdateManyAndReturnArgs} args - Arguments to update many Conversations.
+     * @example
+     * // Update many Conversations
+     * const conversation = await prisma.conversation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Conversations and only return the `id`
+     * const conversationWithIdOnly = await prisma.conversation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ConversationUpdateManyAndReturnArgs>(args: SelectSubset<T, ConversationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Conversation.
+     * @param {ConversationUpsertArgs} args - Arguments to update or create a Conversation.
+     * @example
+     * // Update or create a Conversation
+     * const conversation = await prisma.conversation.upsert({
+     *   create: {
+     *     // ... data to create a Conversation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Conversation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ConversationUpsertArgs>(args: SelectSubset<T, ConversationUpsertArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Conversations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationCountArgs} args - Arguments to filter Conversations to count.
+     * @example
+     * // Count the number of Conversations
+     * const count = await prisma.conversation.count({
+     *   where: {
+     *     // ... the filter for the Conversations we want to count
+     *   }
+     * })
+    **/
+    count<T extends ConversationCountArgs>(
+      args?: Subset<T, ConversationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ConversationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Conversation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ConversationAggregateArgs>(args: Subset<T, ConversationAggregateArgs>): Prisma.PrismaPromise<GetConversationAggregateType<T>>
+
+    /**
+     * Group by Conversation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ConversationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ConversationGroupByArgs['orderBy'] }
+        : { orderBy?: ConversationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ConversationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConversationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Conversation model
+   */
+  readonly fields: ConversationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Conversation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ConversationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    messages<T extends Conversation$messagesArgs<ExtArgs> = {}>(args?: Subset<T, Conversation$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    topics<T extends Conversation$topicsArgs<ExtArgs> = {}>(args?: Subset<T, Conversation$topicsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    insights<T extends Conversation$insightsArgs<ExtArgs> = {}>(args?: Subset<T, Conversation$insightsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Conversation model
+   */
+  interface ConversationFieldRefs {
+    readonly id: FieldRef<"Conversation", 'String'>
+    readonly userId: FieldRef<"Conversation", 'String'>
+    readonly title: FieldRef<"Conversation", 'String'>
+    readonly summary: FieldRef<"Conversation", 'String'>
+    readonly language: FieldRef<"Conversation", 'String'>
+    readonly status: FieldRef<"Conversation", 'ConversationStatus'>
+    readonly metadata: FieldRef<"Conversation", 'Json'>
+    readonly createdAt: FieldRef<"Conversation", 'DateTime'>
+    readonly updatedAt: FieldRef<"Conversation", 'DateTime'>
+    readonly lastMessageAt: FieldRef<"Conversation", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Conversation findUnique
+   */
+  export type ConversationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation findUniqueOrThrow
+   */
+  export type ConversationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation findFirst
+   */
+  export type ConversationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Conversations.
+     */
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation findFirstOrThrow
+   */
+  export type ConversationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Conversations.
+     */
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation findMany
+   */
+  export type ConversationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversations to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation create
+   */
+  export type ConversationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Conversation.
+     */
+    data: XOR<ConversationCreateInput, ConversationUncheckedCreateInput>
+  }
+
+  /**
+   * Conversation createMany
+   */
+  export type ConversationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Conversations.
+     */
+    data: ConversationCreateManyInput | ConversationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Conversation createManyAndReturn
+   */
+  export type ConversationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * The data used to create many Conversations.
+     */
+    data: ConversationCreateManyInput | ConversationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Conversation update
+   */
+  export type ConversationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Conversation.
+     */
+    data: XOR<ConversationUpdateInput, ConversationUncheckedUpdateInput>
+    /**
+     * Choose, which Conversation to update.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation updateMany
+   */
+  export type ConversationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Conversations.
+     */
+    data: XOR<ConversationUpdateManyMutationInput, ConversationUncheckedUpdateManyInput>
+    /**
+     * Filter which Conversations to update
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Conversation updateManyAndReturn
+   */
+  export type ConversationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * The data used to update Conversations.
+     */
+    data: XOR<ConversationUpdateManyMutationInput, ConversationUncheckedUpdateManyInput>
+    /**
+     * Filter which Conversations to update
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Conversation upsert
+   */
+  export type ConversationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Conversation to update in case it exists.
+     */
+    where: ConversationWhereUniqueInput
+    /**
+     * In case the Conversation found by the `where` argument doesn't exist, create a new Conversation with this data.
+     */
+    create: XOR<ConversationCreateInput, ConversationUncheckedCreateInput>
+    /**
+     * In case the Conversation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ConversationUpdateInput, ConversationUncheckedUpdateInput>
+  }
+
+  /**
+   * Conversation delete
+   */
+  export type ConversationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter which Conversation to delete.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation deleteMany
+   */
+  export type ConversationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Conversations to delete
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Conversation.messages
+   */
+  export type Conversation$messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    cursor?: MessageWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation.topics
+   */
+  export type Conversation$topicsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    where?: ConversationTopicWhereInput
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    cursor?: ConversationTopicWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ConversationTopicScalarFieldEnum | ConversationTopicScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation.insights
+   */
+  export type Conversation$insightsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    where?: UserInsightWhereInput
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    cursor?: UserInsightWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UserInsightScalarFieldEnum | UserInsightScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation without action
+   */
+  export type ConversationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Message
+   */
+
+  export type AggregateMessage = {
+    _count: MessageCountAggregateOutputType | null
+    _min: MessageMinAggregateOutputType | null
+    _max: MessageMaxAggregateOutputType | null
+  }
+
+  export type MessageMinAggregateOutputType = {
+    id: string | null
+    conversationId: string | null
+    role: $Enums.MessageRole | null
+    content: string | null
+    emotionalState: string | null
+    createdAt: Date | null
+  }
+
+  export type MessageMaxAggregateOutputType = {
+    id: string | null
+    conversationId: string | null
+    role: $Enums.MessageRole | null
+    content: string | null
+    emotionalState: string | null
+    createdAt: Date | null
+  }
+
+  export type MessageCountAggregateOutputType = {
+    id: number
+    conversationId: number
+    role: number
+    content: number
+    metadata: number
+    hermeticPrinciples: number
+    emotionalState: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type MessageMinAggregateInputType = {
+    id?: true
+    conversationId?: true
+    role?: true
+    content?: true
+    emotionalState?: true
+    createdAt?: true
+  }
+
+  export type MessageMaxAggregateInputType = {
+    id?: true
+    conversationId?: true
+    role?: true
+    content?: true
+    emotionalState?: true
+    createdAt?: true
+  }
+
+  export type MessageCountAggregateInputType = {
+    id?: true
+    conversationId?: true
+    role?: true
+    content?: true
+    metadata?: true
+    hermeticPrinciples?: true
+    emotionalState?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type MessageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Message to aggregate.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Messages
+    **/
+    _count?: true | MessageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MessageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MessageMaxAggregateInputType
+  }
+
+  export type GetMessageAggregateType<T extends MessageAggregateArgs> = {
+        [P in keyof T & keyof AggregateMessage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMessage[P]>
+      : GetScalarType<T[P], AggregateMessage[P]>
+  }
+
+
+
+
+  export type MessageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithAggregationInput | MessageOrderByWithAggregationInput[]
+    by: MessageScalarFieldEnum[] | MessageScalarFieldEnum
+    having?: MessageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MessageCountAggregateInputType | true
+    _min?: MessageMinAggregateInputType
+    _max?: MessageMaxAggregateInputType
+  }
+
+  export type MessageGroupByOutputType = {
+    id: string
+    conversationId: string
+    role: $Enums.MessageRole
+    content: string
+    metadata: JsonValue | null
+    hermeticPrinciples: string[]
+    emotionalState: string | null
+    createdAt: Date
+    _count: MessageCountAggregateOutputType | null
+    _min: MessageMinAggregateOutputType | null
+    _max: MessageMaxAggregateOutputType | null
+  }
+
+  type GetMessageGroupByPayload<T extends MessageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MessageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MessageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MessageGroupByOutputType[P]>
+            : GetScalarType<T[P], MessageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MessageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    role?: boolean
+    content?: boolean
+    metadata?: boolean
+    hermeticPrinciples?: boolean
+    emotionalState?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    role?: boolean
+    content?: boolean
+    metadata?: boolean
+    hermeticPrinciples?: boolean
+    emotionalState?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    role?: boolean
+    content?: boolean
+    metadata?: boolean
+    hermeticPrinciples?: boolean
+    emotionalState?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectScalar = {
+    id?: boolean
+    conversationId?: boolean
+    role?: boolean
+    content?: boolean
+    metadata?: boolean
+    hermeticPrinciples?: boolean
+    emotionalState?: boolean
+    createdAt?: boolean
+  }
+
+  export type MessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "conversationId" | "role" | "content" | "metadata" | "hermeticPrinciples" | "emotionalState" | "createdAt", ExtArgs["result"]["message"]>
+  export type MessageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }
+  export type MessageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }
+  export type MessageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+  }
+
+  export type $MessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Message"
+    objects: {
+      conversation: Prisma.$ConversationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      conversationId: string
+      role: $Enums.MessageRole
+      content: string
+      metadata: Prisma.JsonValue | null
+      hermeticPrinciples: string[]
+      emotionalState: string | null
+      createdAt: Date
+    }, ExtArgs["result"]["message"]>
+    composites: {}
+  }
+
+  type MessageGetPayload<S extends boolean | null | undefined | MessageDefaultArgs> = $Result.GetResult<Prisma.$MessagePayload, S>
+
+  type MessageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MessageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MessageCountAggregateInputType | true
+    }
+
+  export interface MessageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Message'], meta: { name: 'Message' } }
+    /**
+     * Find zero or one Message that matches the filter.
+     * @param {MessageFindUniqueArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MessageFindUniqueArgs>(args: SelectSubset<T, MessageFindUniqueArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Message that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MessageFindUniqueOrThrowArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MessageFindUniqueOrThrowArgs>(args: SelectSubset<T, MessageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Message that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindFirstArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MessageFindFirstArgs>(args?: SelectSubset<T, MessageFindFirstArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Message that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindFirstOrThrowArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MessageFindFirstOrThrowArgs>(args?: SelectSubset<T, MessageFindFirstOrThrowArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Messages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Messages
+     * const messages = await prisma.message.findMany()
+     * 
+     * // Get first 10 Messages
+     * const messages = await prisma.message.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const messageWithIdOnly = await prisma.message.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MessageFindManyArgs>(args?: SelectSubset<T, MessageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Message.
+     * @param {MessageCreateArgs} args - Arguments to create a Message.
+     * @example
+     * // Create one Message
+     * const Message = await prisma.message.create({
+     *   data: {
+     *     // ... data to create a Message
+     *   }
+     * })
+     * 
+     */
+    create<T extends MessageCreateArgs>(args: SelectSubset<T, MessageCreateArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Messages.
+     * @param {MessageCreateManyArgs} args - Arguments to create many Messages.
+     * @example
+     * // Create many Messages
+     * const message = await prisma.message.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MessageCreateManyArgs>(args?: SelectSubset<T, MessageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Messages and returns the data saved in the database.
+     * @param {MessageCreateManyAndReturnArgs} args - Arguments to create many Messages.
+     * @example
+     * // Create many Messages
+     * const message = await prisma.message.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Messages and only return the `id`
+     * const messageWithIdOnly = await prisma.message.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MessageCreateManyAndReturnArgs>(args?: SelectSubset<T, MessageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Message.
+     * @param {MessageDeleteArgs} args - Arguments to delete one Message.
+     * @example
+     * // Delete one Message
+     * const Message = await prisma.message.delete({
+     *   where: {
+     *     // ... filter to delete one Message
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MessageDeleteArgs>(args: SelectSubset<T, MessageDeleteArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Message.
+     * @param {MessageUpdateArgs} args - Arguments to update one Message.
+     * @example
+     * // Update one Message
+     * const message = await prisma.message.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MessageUpdateArgs>(args: SelectSubset<T, MessageUpdateArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Messages.
+     * @param {MessageDeleteManyArgs} args - Arguments to filter Messages to delete.
+     * @example
+     * // Delete a few Messages
+     * const { count } = await prisma.message.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MessageDeleteManyArgs>(args?: SelectSubset<T, MessageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Messages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Messages
+     * const message = await prisma.message.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MessageUpdateManyArgs>(args: SelectSubset<T, MessageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Messages and returns the data updated in the database.
+     * @param {MessageUpdateManyAndReturnArgs} args - Arguments to update many Messages.
+     * @example
+     * // Update many Messages
+     * const message = await prisma.message.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Messages and only return the `id`
+     * const messageWithIdOnly = await prisma.message.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MessageUpdateManyAndReturnArgs>(args: SelectSubset<T, MessageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Message.
+     * @param {MessageUpsertArgs} args - Arguments to update or create a Message.
+     * @example
+     * // Update or create a Message
+     * const message = await prisma.message.upsert({
+     *   create: {
+     *     // ... data to create a Message
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Message we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MessageUpsertArgs>(args: SelectSubset<T, MessageUpsertArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Messages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageCountArgs} args - Arguments to filter Messages to count.
+     * @example
+     * // Count the number of Messages
+     * const count = await prisma.message.count({
+     *   where: {
+     *     // ... the filter for the Messages we want to count
+     *   }
+     * })
+    **/
+    count<T extends MessageCountArgs>(
+      args?: Subset<T, MessageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MessageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Message.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MessageAggregateArgs>(args: Subset<T, MessageAggregateArgs>): Prisma.PrismaPromise<GetMessageAggregateType<T>>
+
+    /**
+     * Group by Message.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MessageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MessageGroupByArgs['orderBy'] }
+        : { orderBy?: MessageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MessageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMessageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Message model
+   */
+  readonly fields: MessageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Message.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    conversation<T extends ConversationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConversationDefaultArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Message model
+   */
+  interface MessageFieldRefs {
+    readonly id: FieldRef<"Message", 'String'>
+    readonly conversationId: FieldRef<"Message", 'String'>
+    readonly role: FieldRef<"Message", 'MessageRole'>
+    readonly content: FieldRef<"Message", 'String'>
+    readonly metadata: FieldRef<"Message", 'Json'>
+    readonly hermeticPrinciples: FieldRef<"Message", 'String[]'>
+    readonly emotionalState: FieldRef<"Message", 'String'>
+    readonly createdAt: FieldRef<"Message", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Message findUnique
+   */
+  export type MessageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message findUniqueOrThrow
+   */
+  export type MessageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message findFirst
+   */
+  export type MessageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Messages.
+     */
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message findFirstOrThrow
+   */
+  export type MessageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Messages.
+     */
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message findMany
+   */
+  export type MessageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Messages to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message create
+   */
+  export type MessageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Message.
+     */
+    data: XOR<MessageCreateInput, MessageUncheckedCreateInput>
+  }
+
+  /**
+   * Message createMany
+   */
+  export type MessageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Messages.
+     */
+    data: MessageCreateManyInput | MessageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Message createManyAndReturn
+   */
+  export type MessageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * The data used to create many Messages.
+     */
+    data: MessageCreateManyInput | MessageCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Message update
+   */
+  export type MessageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Message.
+     */
+    data: XOR<MessageUpdateInput, MessageUncheckedUpdateInput>
+    /**
+     * Choose, which Message to update.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message updateMany
+   */
+  export type MessageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Messages.
+     */
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyInput>
+    /**
+     * Filter which Messages to update
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Message updateManyAndReturn
+   */
+  export type MessageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * The data used to update Messages.
+     */
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyInput>
+    /**
+     * Filter which Messages to update
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Message upsert
+   */
+  export type MessageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Message to update in case it exists.
+     */
+    where: MessageWhereUniqueInput
+    /**
+     * In case the Message found by the `where` argument doesn't exist, create a new Message with this data.
+     */
+    create: XOR<MessageCreateInput, MessageUncheckedCreateInput>
+    /**
+     * In case the Message was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MessageUpdateInput, MessageUncheckedUpdateInput>
+  }
+
+  /**
+   * Message delete
+   */
+  export type MessageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter which Message to delete.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message deleteMany
+   */
+  export type MessageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Messages to delete
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Message without action
+   */
+  export type MessageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Topic
+   */
+
+  export type AggregateTopic = {
+    _count: TopicCountAggregateOutputType | null
+    _min: TopicMinAggregateOutputType | null
+    _max: TopicMaxAggregateOutputType | null
+  }
+
+  export type TopicMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    hermeticPrinciple: string | null
+    category: $Enums.TopicCategory | null
+  }
+
+  export type TopicMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    hermeticPrinciple: string | null
+    category: $Enums.TopicCategory | null
+  }
+
+  export type TopicCountAggregateOutputType = {
+    id: number
+    name: number
+    nameTranslations: number
+    description: number
+    hermeticPrinciple: number
+    category: number
+    _all: number
+  }
+
+
+  export type TopicMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    hermeticPrinciple?: true
+    category?: true
+  }
+
+  export type TopicMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    hermeticPrinciple?: true
+    category?: true
+  }
+
+  export type TopicCountAggregateInputType = {
+    id?: true
+    name?: true
+    nameTranslations?: true
+    description?: true
+    hermeticPrinciple?: true
+    category?: true
+    _all?: true
+  }
+
+  export type TopicAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Topic to aggregate.
+     */
+    where?: TopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Topics to fetch.
+     */
+    orderBy?: TopicOrderByWithRelationInput | TopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Topics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Topics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Topics
+    **/
+    _count?: true | TopicCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TopicMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TopicMaxAggregateInputType
+  }
+
+  export type GetTopicAggregateType<T extends TopicAggregateArgs> = {
+        [P in keyof T & keyof AggregateTopic]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTopic[P]>
+      : GetScalarType<T[P], AggregateTopic[P]>
+  }
+
+
+
+
+  export type TopicGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TopicWhereInput
+    orderBy?: TopicOrderByWithAggregationInput | TopicOrderByWithAggregationInput[]
+    by: TopicScalarFieldEnum[] | TopicScalarFieldEnum
+    having?: TopicScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TopicCountAggregateInputType | true
+    _min?: TopicMinAggregateInputType
+    _max?: TopicMaxAggregateInputType
+  }
+
+  export type TopicGroupByOutputType = {
+    id: string
+    name: string
+    nameTranslations: JsonValue
+    description: string | null
+    hermeticPrinciple: string | null
+    category: $Enums.TopicCategory
+    _count: TopicCountAggregateOutputType | null
+    _min: TopicMinAggregateOutputType | null
+    _max: TopicMaxAggregateOutputType | null
+  }
+
+  type GetTopicGroupByPayload<T extends TopicGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TopicGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TopicGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TopicGroupByOutputType[P]>
+            : GetScalarType<T[P], TopicGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TopicSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    nameTranslations?: boolean
+    description?: boolean
+    hermeticPrinciple?: boolean
+    category?: boolean
+    conversations?: boolean | Topic$conversationsArgs<ExtArgs>
+    _count?: boolean | TopicCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["topic"]>
+
+  export type TopicSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    nameTranslations?: boolean
+    description?: boolean
+    hermeticPrinciple?: boolean
+    category?: boolean
+  }, ExtArgs["result"]["topic"]>
+
+  export type TopicSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    nameTranslations?: boolean
+    description?: boolean
+    hermeticPrinciple?: boolean
+    category?: boolean
+  }, ExtArgs["result"]["topic"]>
+
+  export type TopicSelectScalar = {
+    id?: boolean
+    name?: boolean
+    nameTranslations?: boolean
+    description?: boolean
+    hermeticPrinciple?: boolean
+    category?: boolean
+  }
+
+  export type TopicOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "nameTranslations" | "description" | "hermeticPrinciple" | "category", ExtArgs["result"]["topic"]>
+  export type TopicInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversations?: boolean | Topic$conversationsArgs<ExtArgs>
+    _count?: boolean | TopicCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type TopicIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type TopicIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $TopicPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Topic"
+    objects: {
+      conversations: Prisma.$ConversationTopicPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      nameTranslations: Prisma.JsonValue
+      description: string | null
+      hermeticPrinciple: string | null
+      category: $Enums.TopicCategory
+    }, ExtArgs["result"]["topic"]>
+    composites: {}
+  }
+
+  type TopicGetPayload<S extends boolean | null | undefined | TopicDefaultArgs> = $Result.GetResult<Prisma.$TopicPayload, S>
+
+  type TopicCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TopicFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TopicCountAggregateInputType | true
+    }
+
+  export interface TopicDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Topic'], meta: { name: 'Topic' } }
+    /**
+     * Find zero or one Topic that matches the filter.
+     * @param {TopicFindUniqueArgs} args - Arguments to find a Topic
+     * @example
+     * // Get one Topic
+     * const topic = await prisma.topic.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TopicFindUniqueArgs>(args: SelectSubset<T, TopicFindUniqueArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Topic that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TopicFindUniqueOrThrowArgs} args - Arguments to find a Topic
+     * @example
+     * // Get one Topic
+     * const topic = await prisma.topic.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TopicFindUniqueOrThrowArgs>(args: SelectSubset<T, TopicFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Topic that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicFindFirstArgs} args - Arguments to find a Topic
+     * @example
+     * // Get one Topic
+     * const topic = await prisma.topic.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TopicFindFirstArgs>(args?: SelectSubset<T, TopicFindFirstArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Topic that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicFindFirstOrThrowArgs} args - Arguments to find a Topic
+     * @example
+     * // Get one Topic
+     * const topic = await prisma.topic.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TopicFindFirstOrThrowArgs>(args?: SelectSubset<T, TopicFindFirstOrThrowArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Topics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Topics
+     * const topics = await prisma.topic.findMany()
+     * 
+     * // Get first 10 Topics
+     * const topics = await prisma.topic.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const topicWithIdOnly = await prisma.topic.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TopicFindManyArgs>(args?: SelectSubset<T, TopicFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Topic.
+     * @param {TopicCreateArgs} args - Arguments to create a Topic.
+     * @example
+     * // Create one Topic
+     * const Topic = await prisma.topic.create({
+     *   data: {
+     *     // ... data to create a Topic
+     *   }
+     * })
+     * 
+     */
+    create<T extends TopicCreateArgs>(args: SelectSubset<T, TopicCreateArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Topics.
+     * @param {TopicCreateManyArgs} args - Arguments to create many Topics.
+     * @example
+     * // Create many Topics
+     * const topic = await prisma.topic.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TopicCreateManyArgs>(args?: SelectSubset<T, TopicCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Topics and returns the data saved in the database.
+     * @param {TopicCreateManyAndReturnArgs} args - Arguments to create many Topics.
+     * @example
+     * // Create many Topics
+     * const topic = await prisma.topic.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Topics and only return the `id`
+     * const topicWithIdOnly = await prisma.topic.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TopicCreateManyAndReturnArgs>(args?: SelectSubset<T, TopicCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Topic.
+     * @param {TopicDeleteArgs} args - Arguments to delete one Topic.
+     * @example
+     * // Delete one Topic
+     * const Topic = await prisma.topic.delete({
+     *   where: {
+     *     // ... filter to delete one Topic
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TopicDeleteArgs>(args: SelectSubset<T, TopicDeleteArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Topic.
+     * @param {TopicUpdateArgs} args - Arguments to update one Topic.
+     * @example
+     * // Update one Topic
+     * const topic = await prisma.topic.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TopicUpdateArgs>(args: SelectSubset<T, TopicUpdateArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Topics.
+     * @param {TopicDeleteManyArgs} args - Arguments to filter Topics to delete.
+     * @example
+     * // Delete a few Topics
+     * const { count } = await prisma.topic.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TopicDeleteManyArgs>(args?: SelectSubset<T, TopicDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Topics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Topics
+     * const topic = await prisma.topic.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TopicUpdateManyArgs>(args: SelectSubset<T, TopicUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Topics and returns the data updated in the database.
+     * @param {TopicUpdateManyAndReturnArgs} args - Arguments to update many Topics.
+     * @example
+     * // Update many Topics
+     * const topic = await prisma.topic.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Topics and only return the `id`
+     * const topicWithIdOnly = await prisma.topic.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TopicUpdateManyAndReturnArgs>(args: SelectSubset<T, TopicUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Topic.
+     * @param {TopicUpsertArgs} args - Arguments to update or create a Topic.
+     * @example
+     * // Update or create a Topic
+     * const topic = await prisma.topic.upsert({
+     *   create: {
+     *     // ... data to create a Topic
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Topic we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TopicUpsertArgs>(args: SelectSubset<T, TopicUpsertArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Topics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicCountArgs} args - Arguments to filter Topics to count.
+     * @example
+     * // Count the number of Topics
+     * const count = await prisma.topic.count({
+     *   where: {
+     *     // ... the filter for the Topics we want to count
+     *   }
+     * })
+    **/
+    count<T extends TopicCountArgs>(
+      args?: Subset<T, TopicCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TopicCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Topic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TopicAggregateArgs>(args: Subset<T, TopicAggregateArgs>): Prisma.PrismaPromise<GetTopicAggregateType<T>>
+
+    /**
+     * Group by Topic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TopicGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TopicGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TopicGroupByArgs['orderBy'] }
+        : { orderBy?: TopicGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TopicGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTopicGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Topic model
+   */
+  readonly fields: TopicFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Topic.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TopicClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    conversations<T extends Topic$conversationsArgs<ExtArgs> = {}>(args?: Subset<T, Topic$conversationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Topic model
+   */
+  interface TopicFieldRefs {
+    readonly id: FieldRef<"Topic", 'String'>
+    readonly name: FieldRef<"Topic", 'String'>
+    readonly nameTranslations: FieldRef<"Topic", 'Json'>
+    readonly description: FieldRef<"Topic", 'String'>
+    readonly hermeticPrinciple: FieldRef<"Topic", 'String'>
+    readonly category: FieldRef<"Topic", 'TopicCategory'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Topic findUnique
+   */
+  export type TopicFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter, which Topic to fetch.
+     */
+    where: TopicWhereUniqueInput
+  }
+
+  /**
+   * Topic findUniqueOrThrow
+   */
+  export type TopicFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter, which Topic to fetch.
+     */
+    where: TopicWhereUniqueInput
+  }
+
+  /**
+   * Topic findFirst
+   */
+  export type TopicFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter, which Topic to fetch.
+     */
+    where?: TopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Topics to fetch.
+     */
+    orderBy?: TopicOrderByWithRelationInput | TopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Topics.
+     */
+    cursor?: TopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Topics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Topics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Topics.
+     */
+    distinct?: TopicScalarFieldEnum | TopicScalarFieldEnum[]
+  }
+
+  /**
+   * Topic findFirstOrThrow
+   */
+  export type TopicFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter, which Topic to fetch.
+     */
+    where?: TopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Topics to fetch.
+     */
+    orderBy?: TopicOrderByWithRelationInput | TopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Topics.
+     */
+    cursor?: TopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Topics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Topics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Topics.
+     */
+    distinct?: TopicScalarFieldEnum | TopicScalarFieldEnum[]
+  }
+
+  /**
+   * Topic findMany
+   */
+  export type TopicFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter, which Topics to fetch.
+     */
+    where?: TopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Topics to fetch.
+     */
+    orderBy?: TopicOrderByWithRelationInput | TopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Topics.
+     */
+    cursor?: TopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Topics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Topics.
+     */
+    skip?: number
+    distinct?: TopicScalarFieldEnum | TopicScalarFieldEnum[]
+  }
+
+  /**
+   * Topic create
+   */
+  export type TopicCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Topic.
+     */
+    data: XOR<TopicCreateInput, TopicUncheckedCreateInput>
+  }
+
+  /**
+   * Topic createMany
+   */
+  export type TopicCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Topics.
+     */
+    data: TopicCreateManyInput | TopicCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Topic createManyAndReturn
+   */
+  export type TopicCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * The data used to create many Topics.
+     */
+    data: TopicCreateManyInput | TopicCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Topic update
+   */
+  export type TopicUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Topic.
+     */
+    data: XOR<TopicUpdateInput, TopicUncheckedUpdateInput>
+    /**
+     * Choose, which Topic to update.
+     */
+    where: TopicWhereUniqueInput
+  }
+
+  /**
+   * Topic updateMany
+   */
+  export type TopicUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Topics.
+     */
+    data: XOR<TopicUpdateManyMutationInput, TopicUncheckedUpdateManyInput>
+    /**
+     * Filter which Topics to update
+     */
+    where?: TopicWhereInput
+    /**
+     * Limit how many Topics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Topic updateManyAndReturn
+   */
+  export type TopicUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * The data used to update Topics.
+     */
+    data: XOR<TopicUpdateManyMutationInput, TopicUncheckedUpdateManyInput>
+    /**
+     * Filter which Topics to update
+     */
+    where?: TopicWhereInput
+    /**
+     * Limit how many Topics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Topic upsert
+   */
+  export type TopicUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Topic to update in case it exists.
+     */
+    where: TopicWhereUniqueInput
+    /**
+     * In case the Topic found by the `where` argument doesn't exist, create a new Topic with this data.
+     */
+    create: XOR<TopicCreateInput, TopicUncheckedCreateInput>
+    /**
+     * In case the Topic was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TopicUpdateInput, TopicUncheckedUpdateInput>
+  }
+
+  /**
+   * Topic delete
+   */
+  export type TopicDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+    /**
+     * Filter which Topic to delete.
+     */
+    where: TopicWhereUniqueInput
+  }
+
+  /**
+   * Topic deleteMany
+   */
+  export type TopicDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Topics to delete
+     */
+    where?: TopicWhereInput
+    /**
+     * Limit how many Topics to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Topic.conversations
+   */
+  export type Topic$conversationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    where?: ConversationTopicWhereInput
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    cursor?: ConversationTopicWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ConversationTopicScalarFieldEnum | ConversationTopicScalarFieldEnum[]
+  }
+
+  /**
+   * Topic without action
+   */
+  export type TopicDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Topic
+     */
+    select?: TopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Topic
+     */
+    omit?: TopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TopicInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ConversationTopic
+   */
+
+  export type AggregateConversationTopic = {
+    _count: ConversationTopicCountAggregateOutputType | null
+    _avg: ConversationTopicAvgAggregateOutputType | null
+    _sum: ConversationTopicSumAggregateOutputType | null
+    _min: ConversationTopicMinAggregateOutputType | null
+    _max: ConversationTopicMaxAggregateOutputType | null
+  }
+
+  export type ConversationTopicAvgAggregateOutputType = {
+    relevanceScore: number | null
+  }
+
+  export type ConversationTopicSumAggregateOutputType = {
+    relevanceScore: number | null
+  }
+
+  export type ConversationTopicMinAggregateOutputType = {
+    id: string | null
+    conversationId: string | null
+    topicId: string | null
+    relevanceScore: number | null
+    createdAt: Date | null
+  }
+
+  export type ConversationTopicMaxAggregateOutputType = {
+    id: string | null
+    conversationId: string | null
+    topicId: string | null
+    relevanceScore: number | null
+    createdAt: Date | null
+  }
+
+  export type ConversationTopicCountAggregateOutputType = {
+    id: number
+    conversationId: number
+    topicId: number
+    relevanceScore: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type ConversationTopicAvgAggregateInputType = {
+    relevanceScore?: true
+  }
+
+  export type ConversationTopicSumAggregateInputType = {
+    relevanceScore?: true
+  }
+
+  export type ConversationTopicMinAggregateInputType = {
+    id?: true
+    conversationId?: true
+    topicId?: true
+    relevanceScore?: true
+    createdAt?: true
+  }
+
+  export type ConversationTopicMaxAggregateInputType = {
+    id?: true
+    conversationId?: true
+    topicId?: true
+    relevanceScore?: true
+    createdAt?: true
+  }
+
+  export type ConversationTopicCountAggregateInputType = {
+    id?: true
+    conversationId?: true
+    topicId?: true
+    relevanceScore?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type ConversationTopicAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ConversationTopic to aggregate.
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ConversationTopics to fetch.
+     */
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ConversationTopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ConversationTopics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ConversationTopics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ConversationTopics
+    **/
+    _count?: true | ConversationTopicCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ConversationTopicAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ConversationTopicSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ConversationTopicMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ConversationTopicMaxAggregateInputType
+  }
+
+  export type GetConversationTopicAggregateType<T extends ConversationTopicAggregateArgs> = {
+        [P in keyof T & keyof AggregateConversationTopic]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateConversationTopic[P]>
+      : GetScalarType<T[P], AggregateConversationTopic[P]>
+  }
+
+
+
+
+  export type ConversationTopicGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationTopicWhereInput
+    orderBy?: ConversationTopicOrderByWithAggregationInput | ConversationTopicOrderByWithAggregationInput[]
+    by: ConversationTopicScalarFieldEnum[] | ConversationTopicScalarFieldEnum
+    having?: ConversationTopicScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ConversationTopicCountAggregateInputType | true
+    _avg?: ConversationTopicAvgAggregateInputType
+    _sum?: ConversationTopicSumAggregateInputType
+    _min?: ConversationTopicMinAggregateInputType
+    _max?: ConversationTopicMaxAggregateInputType
+  }
+
+  export type ConversationTopicGroupByOutputType = {
+    id: string
+    conversationId: string
+    topicId: string
+    relevanceScore: number
+    createdAt: Date
+    _count: ConversationTopicCountAggregateOutputType | null
+    _avg: ConversationTopicAvgAggregateOutputType | null
+    _sum: ConversationTopicSumAggregateOutputType | null
+    _min: ConversationTopicMinAggregateOutputType | null
+    _max: ConversationTopicMaxAggregateOutputType | null
+  }
+
+  type GetConversationTopicGroupByPayload<T extends ConversationTopicGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ConversationTopicGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ConversationTopicGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ConversationTopicGroupByOutputType[P]>
+            : GetScalarType<T[P], ConversationTopicGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ConversationTopicSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    topicId?: boolean
+    relevanceScore?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversationTopic"]>
+
+  export type ConversationTopicSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    topicId?: boolean
+    relevanceScore?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversationTopic"]>
+
+  export type ConversationTopicSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    topicId?: boolean
+    relevanceScore?: boolean
+    createdAt?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversationTopic"]>
+
+  export type ConversationTopicSelectScalar = {
+    id?: boolean
+    conversationId?: boolean
+    topicId?: boolean
+    relevanceScore?: boolean
+    createdAt?: boolean
+  }
+
+  export type ConversationTopicOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "conversationId" | "topicId" | "relevanceScore" | "createdAt", ExtArgs["result"]["conversationTopic"]>
+  export type ConversationTopicInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }
+  export type ConversationTopicIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }
+  export type ConversationTopicIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    topic?: boolean | TopicDefaultArgs<ExtArgs>
+  }
+
+  export type $ConversationTopicPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ConversationTopic"
+    objects: {
+      conversation: Prisma.$ConversationPayload<ExtArgs>
+      topic: Prisma.$TopicPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      conversationId: string
+      topicId: string
+      relevanceScore: number
+      createdAt: Date
+    }, ExtArgs["result"]["conversationTopic"]>
+    composites: {}
+  }
+
+  type ConversationTopicGetPayload<S extends boolean | null | undefined | ConversationTopicDefaultArgs> = $Result.GetResult<Prisma.$ConversationTopicPayload, S>
+
+  type ConversationTopicCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ConversationTopicFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ConversationTopicCountAggregateInputType | true
+    }
+
+  export interface ConversationTopicDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ConversationTopic'], meta: { name: 'ConversationTopic' } }
+    /**
+     * Find zero or one ConversationTopic that matches the filter.
+     * @param {ConversationTopicFindUniqueArgs} args - Arguments to find a ConversationTopic
+     * @example
+     * // Get one ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ConversationTopicFindUniqueArgs>(args: SelectSubset<T, ConversationTopicFindUniqueArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ConversationTopic that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ConversationTopicFindUniqueOrThrowArgs} args - Arguments to find a ConversationTopic
+     * @example
+     * // Get one ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ConversationTopicFindUniqueOrThrowArgs>(args: SelectSubset<T, ConversationTopicFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ConversationTopic that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicFindFirstArgs} args - Arguments to find a ConversationTopic
+     * @example
+     * // Get one ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ConversationTopicFindFirstArgs>(args?: SelectSubset<T, ConversationTopicFindFirstArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ConversationTopic that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicFindFirstOrThrowArgs} args - Arguments to find a ConversationTopic
+     * @example
+     * // Get one ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ConversationTopicFindFirstOrThrowArgs>(args?: SelectSubset<T, ConversationTopicFindFirstOrThrowArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ConversationTopics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ConversationTopics
+     * const conversationTopics = await prisma.conversationTopic.findMany()
+     * 
+     * // Get first 10 ConversationTopics
+     * const conversationTopics = await prisma.conversationTopic.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const conversationTopicWithIdOnly = await prisma.conversationTopic.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ConversationTopicFindManyArgs>(args?: SelectSubset<T, ConversationTopicFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ConversationTopic.
+     * @param {ConversationTopicCreateArgs} args - Arguments to create a ConversationTopic.
+     * @example
+     * // Create one ConversationTopic
+     * const ConversationTopic = await prisma.conversationTopic.create({
+     *   data: {
+     *     // ... data to create a ConversationTopic
+     *   }
+     * })
+     * 
+     */
+    create<T extends ConversationTopicCreateArgs>(args: SelectSubset<T, ConversationTopicCreateArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ConversationTopics.
+     * @param {ConversationTopicCreateManyArgs} args - Arguments to create many ConversationTopics.
+     * @example
+     * // Create many ConversationTopics
+     * const conversationTopic = await prisma.conversationTopic.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ConversationTopicCreateManyArgs>(args?: SelectSubset<T, ConversationTopicCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ConversationTopics and returns the data saved in the database.
+     * @param {ConversationTopicCreateManyAndReturnArgs} args - Arguments to create many ConversationTopics.
+     * @example
+     * // Create many ConversationTopics
+     * const conversationTopic = await prisma.conversationTopic.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ConversationTopics and only return the `id`
+     * const conversationTopicWithIdOnly = await prisma.conversationTopic.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ConversationTopicCreateManyAndReturnArgs>(args?: SelectSubset<T, ConversationTopicCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ConversationTopic.
+     * @param {ConversationTopicDeleteArgs} args - Arguments to delete one ConversationTopic.
+     * @example
+     * // Delete one ConversationTopic
+     * const ConversationTopic = await prisma.conversationTopic.delete({
+     *   where: {
+     *     // ... filter to delete one ConversationTopic
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ConversationTopicDeleteArgs>(args: SelectSubset<T, ConversationTopicDeleteArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ConversationTopic.
+     * @param {ConversationTopicUpdateArgs} args - Arguments to update one ConversationTopic.
+     * @example
+     * // Update one ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ConversationTopicUpdateArgs>(args: SelectSubset<T, ConversationTopicUpdateArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ConversationTopics.
+     * @param {ConversationTopicDeleteManyArgs} args - Arguments to filter ConversationTopics to delete.
+     * @example
+     * // Delete a few ConversationTopics
+     * const { count } = await prisma.conversationTopic.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ConversationTopicDeleteManyArgs>(args?: SelectSubset<T, ConversationTopicDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ConversationTopics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ConversationTopics
+     * const conversationTopic = await prisma.conversationTopic.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ConversationTopicUpdateManyArgs>(args: SelectSubset<T, ConversationTopicUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ConversationTopics and returns the data updated in the database.
+     * @param {ConversationTopicUpdateManyAndReturnArgs} args - Arguments to update many ConversationTopics.
+     * @example
+     * // Update many ConversationTopics
+     * const conversationTopic = await prisma.conversationTopic.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ConversationTopics and only return the `id`
+     * const conversationTopicWithIdOnly = await prisma.conversationTopic.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ConversationTopicUpdateManyAndReturnArgs>(args: SelectSubset<T, ConversationTopicUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ConversationTopic.
+     * @param {ConversationTopicUpsertArgs} args - Arguments to update or create a ConversationTopic.
+     * @example
+     * // Update or create a ConversationTopic
+     * const conversationTopic = await prisma.conversationTopic.upsert({
+     *   create: {
+     *     // ... data to create a ConversationTopic
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ConversationTopic we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ConversationTopicUpsertArgs>(args: SelectSubset<T, ConversationTopicUpsertArgs<ExtArgs>>): Prisma__ConversationTopicClient<$Result.GetResult<Prisma.$ConversationTopicPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ConversationTopics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicCountArgs} args - Arguments to filter ConversationTopics to count.
+     * @example
+     * // Count the number of ConversationTopics
+     * const count = await prisma.conversationTopic.count({
+     *   where: {
+     *     // ... the filter for the ConversationTopics we want to count
+     *   }
+     * })
+    **/
+    count<T extends ConversationTopicCountArgs>(
+      args?: Subset<T, ConversationTopicCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ConversationTopicCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ConversationTopic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ConversationTopicAggregateArgs>(args: Subset<T, ConversationTopicAggregateArgs>): Prisma.PrismaPromise<GetConversationTopicAggregateType<T>>
+
+    /**
+     * Group by ConversationTopic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationTopicGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ConversationTopicGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ConversationTopicGroupByArgs['orderBy'] }
+        : { orderBy?: ConversationTopicGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ConversationTopicGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConversationTopicGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ConversationTopic model
+   */
+  readonly fields: ConversationTopicFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ConversationTopic.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ConversationTopicClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    conversation<T extends ConversationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConversationDefaultArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    topic<T extends TopicDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TopicDefaultArgs<ExtArgs>>): Prisma__TopicClient<$Result.GetResult<Prisma.$TopicPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ConversationTopic model
+   */
+  interface ConversationTopicFieldRefs {
+    readonly id: FieldRef<"ConversationTopic", 'String'>
+    readonly conversationId: FieldRef<"ConversationTopic", 'String'>
+    readonly topicId: FieldRef<"ConversationTopic", 'String'>
+    readonly relevanceScore: FieldRef<"ConversationTopic", 'Float'>
+    readonly createdAt: FieldRef<"ConversationTopic", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ConversationTopic findUnique
+   */
+  export type ConversationTopicFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter, which ConversationTopic to fetch.
+     */
+    where: ConversationTopicWhereUniqueInput
+  }
+
+  /**
+   * ConversationTopic findUniqueOrThrow
+   */
+  export type ConversationTopicFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter, which ConversationTopic to fetch.
+     */
+    where: ConversationTopicWhereUniqueInput
+  }
+
+  /**
+   * ConversationTopic findFirst
+   */
+  export type ConversationTopicFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter, which ConversationTopic to fetch.
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ConversationTopics to fetch.
+     */
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ConversationTopics.
+     */
+    cursor?: ConversationTopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ConversationTopics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ConversationTopics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ConversationTopics.
+     */
+    distinct?: ConversationTopicScalarFieldEnum | ConversationTopicScalarFieldEnum[]
+  }
+
+  /**
+   * ConversationTopic findFirstOrThrow
+   */
+  export type ConversationTopicFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter, which ConversationTopic to fetch.
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ConversationTopics to fetch.
+     */
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ConversationTopics.
+     */
+    cursor?: ConversationTopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ConversationTopics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ConversationTopics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ConversationTopics.
+     */
+    distinct?: ConversationTopicScalarFieldEnum | ConversationTopicScalarFieldEnum[]
+  }
+
+  /**
+   * ConversationTopic findMany
+   */
+  export type ConversationTopicFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter, which ConversationTopics to fetch.
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ConversationTopics to fetch.
+     */
+    orderBy?: ConversationTopicOrderByWithRelationInput | ConversationTopicOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ConversationTopics.
+     */
+    cursor?: ConversationTopicWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ConversationTopics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ConversationTopics.
+     */
+    skip?: number
+    distinct?: ConversationTopicScalarFieldEnum | ConversationTopicScalarFieldEnum[]
+  }
+
+  /**
+   * ConversationTopic create
+   */
+  export type ConversationTopicCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ConversationTopic.
+     */
+    data: XOR<ConversationTopicCreateInput, ConversationTopicUncheckedCreateInput>
+  }
+
+  /**
+   * ConversationTopic createMany
+   */
+  export type ConversationTopicCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ConversationTopics.
+     */
+    data: ConversationTopicCreateManyInput | ConversationTopicCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ConversationTopic createManyAndReturn
+   */
+  export type ConversationTopicCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * The data used to create many ConversationTopics.
+     */
+    data: ConversationTopicCreateManyInput | ConversationTopicCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ConversationTopic update
+   */
+  export type ConversationTopicUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ConversationTopic.
+     */
+    data: XOR<ConversationTopicUpdateInput, ConversationTopicUncheckedUpdateInput>
+    /**
+     * Choose, which ConversationTopic to update.
+     */
+    where: ConversationTopicWhereUniqueInput
+  }
+
+  /**
+   * ConversationTopic updateMany
+   */
+  export type ConversationTopicUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ConversationTopics.
+     */
+    data: XOR<ConversationTopicUpdateManyMutationInput, ConversationTopicUncheckedUpdateManyInput>
+    /**
+     * Filter which ConversationTopics to update
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * Limit how many ConversationTopics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ConversationTopic updateManyAndReturn
+   */
+  export type ConversationTopicUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * The data used to update ConversationTopics.
+     */
+    data: XOR<ConversationTopicUpdateManyMutationInput, ConversationTopicUncheckedUpdateManyInput>
+    /**
+     * Filter which ConversationTopics to update
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * Limit how many ConversationTopics to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ConversationTopic upsert
+   */
+  export type ConversationTopicUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ConversationTopic to update in case it exists.
+     */
+    where: ConversationTopicWhereUniqueInput
+    /**
+     * In case the ConversationTopic found by the `where` argument doesn't exist, create a new ConversationTopic with this data.
+     */
+    create: XOR<ConversationTopicCreateInput, ConversationTopicUncheckedCreateInput>
+    /**
+     * In case the ConversationTopic was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ConversationTopicUpdateInput, ConversationTopicUncheckedUpdateInput>
+  }
+
+  /**
+   * ConversationTopic delete
+   */
+  export type ConversationTopicDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+    /**
+     * Filter which ConversationTopic to delete.
+     */
+    where: ConversationTopicWhereUniqueInput
+  }
+
+  /**
+   * ConversationTopic deleteMany
+   */
+  export type ConversationTopicDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ConversationTopics to delete
+     */
+    where?: ConversationTopicWhereInput
+    /**
+     * Limit how many ConversationTopics to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ConversationTopic without action
+   */
+  export type ConversationTopicDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationTopic
+     */
+    select?: ConversationTopicSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ConversationTopic
+     */
+    omit?: ConversationTopicOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationTopicInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model UserInsight
+   */
+
+  export type AggregateUserInsight = {
+    _count: UserInsightCountAggregateOutputType | null
+    _min: UserInsightMinAggregateOutputType | null
+    _max: UserInsightMaxAggregateOutputType | null
+  }
+
+  export type UserInsightMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    conversationId: string | null
+    content: string | null
+    type: $Enums.InsightType | null
+    significance: $Enums.SignificanceLevel | null
+    createdAt: Date | null
+  }
+
+  export type UserInsightMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    conversationId: string | null
+    content: string | null
+    type: $Enums.InsightType | null
+    significance: $Enums.SignificanceLevel | null
+    createdAt: Date | null
+  }
+
+  export type UserInsightCountAggregateOutputType = {
+    id: number
+    userId: number
+    conversationId: number
+    content: number
+    type: number
+    significance: number
+    metadata: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type UserInsightMinAggregateInputType = {
+    id?: true
+    userId?: true
+    conversationId?: true
+    content?: true
+    type?: true
+    significance?: true
+    createdAt?: true
+  }
+
+  export type UserInsightMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    conversationId?: true
+    content?: true
+    type?: true
+    significance?: true
+    createdAt?: true
+  }
+
+  export type UserInsightCountAggregateInputType = {
+    id?: true
+    userId?: true
+    conversationId?: true
+    content?: true
+    type?: true
+    significance?: true
+    metadata?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type UserInsightAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UserInsight to aggregate.
+     */
+    where?: UserInsightWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserInsights to fetch.
+     */
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: UserInsightWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserInsights from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserInsights.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned UserInsights
+    **/
+    _count?: true | UserInsightCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: UserInsightMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: UserInsightMaxAggregateInputType
+  }
+
+  export type GetUserInsightAggregateType<T extends UserInsightAggregateArgs> = {
+        [P in keyof T & keyof AggregateUserInsight]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUserInsight[P]>
+      : GetScalarType<T[P], AggregateUserInsight[P]>
+  }
+
+
+
+
+  export type UserInsightGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserInsightWhereInput
+    orderBy?: UserInsightOrderByWithAggregationInput | UserInsightOrderByWithAggregationInput[]
+    by: UserInsightScalarFieldEnum[] | UserInsightScalarFieldEnum
+    having?: UserInsightScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: UserInsightCountAggregateInputType | true
+    _min?: UserInsightMinAggregateInputType
+    _max?: UserInsightMaxAggregateInputType
+  }
+
+  export type UserInsightGroupByOutputType = {
+    id: string
+    userId: string
+    conversationId: string | null
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata: JsonValue | null
+    createdAt: Date
+    _count: UserInsightCountAggregateOutputType | null
+    _min: UserInsightMinAggregateOutputType | null
+    _max: UserInsightMaxAggregateOutputType | null
+  }
+
+  type GetUserInsightGroupByPayload<T extends UserInsightGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<UserInsightGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof UserInsightGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UserInsightGroupByOutputType[P]>
+            : GetScalarType<T[P], UserInsightGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type UserInsightSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    conversationId?: boolean
+    content?: boolean
+    type?: boolean
+    significance?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }, ExtArgs["result"]["userInsight"]>
+
+  export type UserInsightSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    conversationId?: boolean
+    content?: boolean
+    type?: boolean
+    significance?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }, ExtArgs["result"]["userInsight"]>
+
+  export type UserInsightSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    conversationId?: boolean
+    content?: boolean
+    type?: boolean
+    significance?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }, ExtArgs["result"]["userInsight"]>
+
+  export type UserInsightSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    conversationId?: boolean
+    content?: boolean
+    type?: boolean
+    significance?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+  }
+
+  export type UserInsightOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "conversationId" | "content" | "type" | "significance" | "metadata" | "createdAt", ExtArgs["result"]["userInsight"]>
+  export type UserInsightInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }
+  export type UserInsightIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }
+  export type UserInsightIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    conversation?: boolean | UserInsight$conversationArgs<ExtArgs>
+  }
+
+  export type $UserInsightPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "UserInsight"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      conversation: Prisma.$ConversationPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      conversationId: string | null
+      content: string
+      type: $Enums.InsightType
+      significance: $Enums.SignificanceLevel
+      metadata: Prisma.JsonValue | null
+      createdAt: Date
+    }, ExtArgs["result"]["userInsight"]>
+    composites: {}
+  }
+
+  type UserInsightGetPayload<S extends boolean | null | undefined | UserInsightDefaultArgs> = $Result.GetResult<Prisma.$UserInsightPayload, S>
+
+  type UserInsightCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<UserInsightFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: UserInsightCountAggregateInputType | true
+    }
+
+  export interface UserInsightDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UserInsight'], meta: { name: 'UserInsight' } }
+    /**
+     * Find zero or one UserInsight that matches the filter.
+     * @param {UserInsightFindUniqueArgs} args - Arguments to find a UserInsight
+     * @example
+     * // Get one UserInsight
+     * const userInsight = await prisma.userInsight.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UserInsightFindUniqueArgs>(args: SelectSubset<T, UserInsightFindUniqueArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one UserInsight that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UserInsightFindUniqueOrThrowArgs} args - Arguments to find a UserInsight
+     * @example
+     * // Get one UserInsight
+     * const userInsight = await prisma.userInsight.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UserInsightFindUniqueOrThrowArgs>(args: SelectSubset<T, UserInsightFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UserInsight that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightFindFirstArgs} args - Arguments to find a UserInsight
+     * @example
+     * // Get one UserInsight
+     * const userInsight = await prisma.userInsight.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UserInsightFindFirstArgs>(args?: SelectSubset<T, UserInsightFindFirstArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UserInsight that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightFindFirstOrThrowArgs} args - Arguments to find a UserInsight
+     * @example
+     * // Get one UserInsight
+     * const userInsight = await prisma.userInsight.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UserInsightFindFirstOrThrowArgs>(args?: SelectSubset<T, UserInsightFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more UserInsights that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all UserInsights
+     * const userInsights = await prisma.userInsight.findMany()
+     * 
+     * // Get first 10 UserInsights
+     * const userInsights = await prisma.userInsight.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const userInsightWithIdOnly = await prisma.userInsight.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends UserInsightFindManyArgs>(args?: SelectSubset<T, UserInsightFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a UserInsight.
+     * @param {UserInsightCreateArgs} args - Arguments to create a UserInsight.
+     * @example
+     * // Create one UserInsight
+     * const UserInsight = await prisma.userInsight.create({
+     *   data: {
+     *     // ... data to create a UserInsight
+     *   }
+     * })
+     * 
+     */
+    create<T extends UserInsightCreateArgs>(args: SelectSubset<T, UserInsightCreateArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many UserInsights.
+     * @param {UserInsightCreateManyArgs} args - Arguments to create many UserInsights.
+     * @example
+     * // Create many UserInsights
+     * const userInsight = await prisma.userInsight.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends UserInsightCreateManyArgs>(args?: SelectSubset<T, UserInsightCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many UserInsights and returns the data saved in the database.
+     * @param {UserInsightCreateManyAndReturnArgs} args - Arguments to create many UserInsights.
+     * @example
+     * // Create many UserInsights
+     * const userInsight = await prisma.userInsight.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many UserInsights and only return the `id`
+     * const userInsightWithIdOnly = await prisma.userInsight.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends UserInsightCreateManyAndReturnArgs>(args?: SelectSubset<T, UserInsightCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a UserInsight.
+     * @param {UserInsightDeleteArgs} args - Arguments to delete one UserInsight.
+     * @example
+     * // Delete one UserInsight
+     * const UserInsight = await prisma.userInsight.delete({
+     *   where: {
+     *     // ... filter to delete one UserInsight
+     *   }
+     * })
+     * 
+     */
+    delete<T extends UserInsightDeleteArgs>(args: SelectSubset<T, UserInsightDeleteArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one UserInsight.
+     * @param {UserInsightUpdateArgs} args - Arguments to update one UserInsight.
+     * @example
+     * // Update one UserInsight
+     * const userInsight = await prisma.userInsight.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends UserInsightUpdateArgs>(args: SelectSubset<T, UserInsightUpdateArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more UserInsights.
+     * @param {UserInsightDeleteManyArgs} args - Arguments to filter UserInsights to delete.
+     * @example
+     * // Delete a few UserInsights
+     * const { count } = await prisma.userInsight.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends UserInsightDeleteManyArgs>(args?: SelectSubset<T, UserInsightDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UserInsights.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many UserInsights
+     * const userInsight = await prisma.userInsight.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends UserInsightUpdateManyArgs>(args: SelectSubset<T, UserInsightUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UserInsights and returns the data updated in the database.
+     * @param {UserInsightUpdateManyAndReturnArgs} args - Arguments to update many UserInsights.
+     * @example
+     * // Update many UserInsights
+     * const userInsight = await prisma.userInsight.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more UserInsights and only return the `id`
+     * const userInsightWithIdOnly = await prisma.userInsight.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends UserInsightUpdateManyAndReturnArgs>(args: SelectSubset<T, UserInsightUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one UserInsight.
+     * @param {UserInsightUpsertArgs} args - Arguments to update or create a UserInsight.
+     * @example
+     * // Update or create a UserInsight
+     * const userInsight = await prisma.userInsight.upsert({
+     *   create: {
+     *     // ... data to create a UserInsight
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the UserInsight we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UserInsightUpsertArgs>(args: SelectSubset<T, UserInsightUpsertArgs<ExtArgs>>): Prisma__UserInsightClient<$Result.GetResult<Prisma.$UserInsightPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of UserInsights.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightCountArgs} args - Arguments to filter UserInsights to count.
+     * @example
+     * // Count the number of UserInsights
+     * const count = await prisma.userInsight.count({
+     *   where: {
+     *     // ... the filter for the UserInsights we want to count
+     *   }
+     * })
+    **/
+    count<T extends UserInsightCountArgs>(
+      args?: Subset<T, UserInsightCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UserInsightCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a UserInsight.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends UserInsightAggregateArgs>(args: Subset<T, UserInsightAggregateArgs>): Prisma.PrismaPromise<GetUserInsightAggregateType<T>>
+
+    /**
+     * Group by UserInsight.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserInsightGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends UserInsightGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UserInsightGroupByArgs['orderBy'] }
+        : { orderBy?: UserInsightGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, UserInsightGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserInsightGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the UserInsight model
+   */
+  readonly fields: UserInsightFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for UserInsight.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UserInsightClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    conversation<T extends UserInsight$conversationArgs<ExtArgs> = {}>(args?: Subset<T, UserInsight$conversationArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the UserInsight model
+   */
+  interface UserInsightFieldRefs {
+    readonly id: FieldRef<"UserInsight", 'String'>
+    readonly userId: FieldRef<"UserInsight", 'String'>
+    readonly conversationId: FieldRef<"UserInsight", 'String'>
+    readonly content: FieldRef<"UserInsight", 'String'>
+    readonly type: FieldRef<"UserInsight", 'InsightType'>
+    readonly significance: FieldRef<"UserInsight", 'SignificanceLevel'>
+    readonly metadata: FieldRef<"UserInsight", 'Json'>
+    readonly createdAt: FieldRef<"UserInsight", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * UserInsight findUnique
+   */
+  export type UserInsightFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter, which UserInsight to fetch.
+     */
+    where: UserInsightWhereUniqueInput
+  }
+
+  /**
+   * UserInsight findUniqueOrThrow
+   */
+  export type UserInsightFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter, which UserInsight to fetch.
+     */
+    where: UserInsightWhereUniqueInput
+  }
+
+  /**
+   * UserInsight findFirst
+   */
+  export type UserInsightFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter, which UserInsight to fetch.
+     */
+    where?: UserInsightWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserInsights to fetch.
+     */
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UserInsights.
+     */
+    cursor?: UserInsightWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserInsights from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserInsights.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UserInsights.
+     */
+    distinct?: UserInsightScalarFieldEnum | UserInsightScalarFieldEnum[]
+  }
+
+  /**
+   * UserInsight findFirstOrThrow
+   */
+  export type UserInsightFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter, which UserInsight to fetch.
+     */
+    where?: UserInsightWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserInsights to fetch.
+     */
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UserInsights.
+     */
+    cursor?: UserInsightWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserInsights from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserInsights.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UserInsights.
+     */
+    distinct?: UserInsightScalarFieldEnum | UserInsightScalarFieldEnum[]
+  }
+
+  /**
+   * UserInsight findMany
+   */
+  export type UserInsightFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter, which UserInsights to fetch.
+     */
+    where?: UserInsightWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserInsights to fetch.
+     */
+    orderBy?: UserInsightOrderByWithRelationInput | UserInsightOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing UserInsights.
+     */
+    cursor?: UserInsightWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserInsights from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserInsights.
+     */
+    skip?: number
+    distinct?: UserInsightScalarFieldEnum | UserInsightScalarFieldEnum[]
+  }
+
+  /**
+   * UserInsight create
+   */
+  export type UserInsightCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * The data needed to create a UserInsight.
+     */
+    data: XOR<UserInsightCreateInput, UserInsightUncheckedCreateInput>
+  }
+
+  /**
+   * UserInsight createMany
+   */
+  export type UserInsightCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many UserInsights.
+     */
+    data: UserInsightCreateManyInput | UserInsightCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * UserInsight createManyAndReturn
+   */
+  export type UserInsightCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * The data used to create many UserInsights.
+     */
+    data: UserInsightCreateManyInput | UserInsightCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UserInsight update
+   */
+  export type UserInsightUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * The data needed to update a UserInsight.
+     */
+    data: XOR<UserInsightUpdateInput, UserInsightUncheckedUpdateInput>
+    /**
+     * Choose, which UserInsight to update.
+     */
+    where: UserInsightWhereUniqueInput
+  }
+
+  /**
+   * UserInsight updateMany
+   */
+  export type UserInsightUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update UserInsights.
+     */
+    data: XOR<UserInsightUpdateManyMutationInput, UserInsightUncheckedUpdateManyInput>
+    /**
+     * Filter which UserInsights to update
+     */
+    where?: UserInsightWhereInput
+    /**
+     * Limit how many UserInsights to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * UserInsight updateManyAndReturn
+   */
+  export type UserInsightUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * The data used to update UserInsights.
+     */
+    data: XOR<UserInsightUpdateManyMutationInput, UserInsightUncheckedUpdateManyInput>
+    /**
+     * Filter which UserInsights to update
+     */
+    where?: UserInsightWhereInput
+    /**
+     * Limit how many UserInsights to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UserInsight upsert
+   */
+  export type UserInsightUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * The filter to search for the UserInsight to update in case it exists.
+     */
+    where: UserInsightWhereUniqueInput
+    /**
+     * In case the UserInsight found by the `where` argument doesn't exist, create a new UserInsight with this data.
+     */
+    create: XOR<UserInsightCreateInput, UserInsightUncheckedCreateInput>
+    /**
+     * In case the UserInsight was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UserInsightUpdateInput, UserInsightUncheckedUpdateInput>
+  }
+
+  /**
+   * UserInsight delete
+   */
+  export type UserInsightDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+    /**
+     * Filter which UserInsight to delete.
+     */
+    where: UserInsightWhereUniqueInput
+  }
+
+  /**
+   * UserInsight deleteMany
+   */
+  export type UserInsightDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UserInsights to delete
+     */
+    where?: UserInsightWhereInput
+    /**
+     * Limit how many UserInsights to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * UserInsight.conversation
+   */
+  export type UserInsight$conversationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    where?: ConversationWhereInput
+  }
+
+  /**
+   * UserInsight without action
+   */
+  export type UserInsightDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserInsight
+     */
+    select?: UserInsightSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserInsight
+     */
+    omit?: UserInsightOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInsightInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model SpiritualProfile
+   */
+
+  export type AggregateSpiritualProfile = {
+    _count: SpiritualProfileCountAggregateOutputType | null
+    _avg: SpiritualProfileAvgAggregateOutputType | null
+    _sum: SpiritualProfileSumAggregateOutputType | null
+    _min: SpiritualProfileMinAggregateOutputType | null
+    _max: SpiritualProfileMaxAggregateOutputType | null
+  }
+
+  export type SpiritualProfileAvgAggregateOutputType = {
+    practicesCompleted: number | null
+    transformationScore: number | null
+  }
+
+  export type SpiritualProfileSumAggregateOutputType = {
+    practicesCompleted: number | null
+    transformationScore: number | null
+  }
+
+  export type SpiritualProfileMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    journeyStartDate: Date | null
+    currentLevel: $Enums.SpiritualLevel | null
+    practicesCompleted: number | null
+    transformationScore: number | null
+    updatedAt: Date | null
+  }
+
+  export type SpiritualProfileMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    journeyStartDate: Date | null
+    currentLevel: $Enums.SpiritualLevel | null
+    practicesCompleted: number | null
+    transformationScore: number | null
+    updatedAt: Date | null
+  }
+
+  export type SpiritualProfileCountAggregateOutputType = {
+    id: number
+    userId: number
+    journeyStartDate: number
+    currentLevel: number
+    principlesStudied: number
+    practicesCompleted: number
+    transformationScore: number
+    metadata: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SpiritualProfileAvgAggregateInputType = {
+    practicesCompleted?: true
+    transformationScore?: true
+  }
+
+  export type SpiritualProfileSumAggregateInputType = {
+    practicesCompleted?: true
+    transformationScore?: true
+  }
+
+  export type SpiritualProfileMinAggregateInputType = {
+    id?: true
+    userId?: true
+    journeyStartDate?: true
+    currentLevel?: true
+    practicesCompleted?: true
+    transformationScore?: true
+    updatedAt?: true
+  }
+
+  export type SpiritualProfileMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    journeyStartDate?: true
+    currentLevel?: true
+    practicesCompleted?: true
+    transformationScore?: true
+    updatedAt?: true
+  }
+
+  export type SpiritualProfileCountAggregateInputType = {
+    id?: true
+    userId?: true
+    journeyStartDate?: true
+    currentLevel?: true
+    principlesStudied?: true
+    practicesCompleted?: true
+    transformationScore?: true
+    metadata?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SpiritualProfileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SpiritualProfile to aggregate.
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SpiritualProfiles to fetch.
+     */
+    orderBy?: SpiritualProfileOrderByWithRelationInput | SpiritualProfileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SpiritualProfileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SpiritualProfiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SpiritualProfiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned SpiritualProfiles
+    **/
+    _count?: true | SpiritualProfileCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: SpiritualProfileAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: SpiritualProfileSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SpiritualProfileMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SpiritualProfileMaxAggregateInputType
+  }
+
+  export type GetSpiritualProfileAggregateType<T extends SpiritualProfileAggregateArgs> = {
+        [P in keyof T & keyof AggregateSpiritualProfile]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSpiritualProfile[P]>
+      : GetScalarType<T[P], AggregateSpiritualProfile[P]>
+  }
+
+
+
+
+  export type SpiritualProfileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SpiritualProfileWhereInput
+    orderBy?: SpiritualProfileOrderByWithAggregationInput | SpiritualProfileOrderByWithAggregationInput[]
+    by: SpiritualProfileScalarFieldEnum[] | SpiritualProfileScalarFieldEnum
+    having?: SpiritualProfileScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SpiritualProfileCountAggregateInputType | true
+    _avg?: SpiritualProfileAvgAggregateInputType
+    _sum?: SpiritualProfileSumAggregateInputType
+    _min?: SpiritualProfileMinAggregateInputType
+    _max?: SpiritualProfileMaxAggregateInputType
+  }
+
+  export type SpiritualProfileGroupByOutputType = {
+    id: string
+    userId: string
+    journeyStartDate: Date
+    currentLevel: $Enums.SpiritualLevel
+    principlesStudied: string[]
+    practicesCompleted: number
+    transformationScore: number
+    metadata: JsonValue | null
+    updatedAt: Date
+    _count: SpiritualProfileCountAggregateOutputType | null
+    _avg: SpiritualProfileAvgAggregateOutputType | null
+    _sum: SpiritualProfileSumAggregateOutputType | null
+    _min: SpiritualProfileMinAggregateOutputType | null
+    _max: SpiritualProfileMaxAggregateOutputType | null
+  }
+
+  type GetSpiritualProfileGroupByPayload<T extends SpiritualProfileGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SpiritualProfileGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SpiritualProfileGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SpiritualProfileGroupByOutputType[P]>
+            : GetScalarType<T[P], SpiritualProfileGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SpiritualProfileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    journeyStartDate?: boolean
+    currentLevel?: boolean
+    principlesStudied?: boolean
+    practicesCompleted?: boolean
+    transformationScore?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["spiritualProfile"]>
+
+  export type SpiritualProfileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    journeyStartDate?: boolean
+    currentLevel?: boolean
+    principlesStudied?: boolean
+    practicesCompleted?: boolean
+    transformationScore?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["spiritualProfile"]>
+
+  export type SpiritualProfileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    journeyStartDate?: boolean
+    currentLevel?: boolean
+    principlesStudied?: boolean
+    practicesCompleted?: boolean
+    transformationScore?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["spiritualProfile"]>
+
+  export type SpiritualProfileSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    journeyStartDate?: boolean
+    currentLevel?: boolean
+    principlesStudied?: boolean
+    practicesCompleted?: boolean
+    transformationScore?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SpiritualProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "journeyStartDate" | "currentLevel" | "principlesStudied" | "practicesCompleted" | "transformationScore" | "metadata" | "updatedAt", ExtArgs["result"]["spiritualProfile"]>
+  export type SpiritualProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type SpiritualProfileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type SpiritualProfileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $SpiritualProfilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SpiritualProfile"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      journeyStartDate: Date
+      currentLevel: $Enums.SpiritualLevel
+      principlesStudied: string[]
+      practicesCompleted: number
+      transformationScore: number
+      metadata: Prisma.JsonValue | null
+      updatedAt: Date
+    }, ExtArgs["result"]["spiritualProfile"]>
+    composites: {}
+  }
+
+  type SpiritualProfileGetPayload<S extends boolean | null | undefined | SpiritualProfileDefaultArgs> = $Result.GetResult<Prisma.$SpiritualProfilePayload, S>
+
+  type SpiritualProfileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SpiritualProfileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SpiritualProfileCountAggregateInputType | true
+    }
+
+  export interface SpiritualProfileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SpiritualProfile'], meta: { name: 'SpiritualProfile' } }
+    /**
+     * Find zero or one SpiritualProfile that matches the filter.
+     * @param {SpiritualProfileFindUniqueArgs} args - Arguments to find a SpiritualProfile
+     * @example
+     * // Get one SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SpiritualProfileFindUniqueArgs>(args: SelectSubset<T, SpiritualProfileFindUniqueArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one SpiritualProfile that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SpiritualProfileFindUniqueOrThrowArgs} args - Arguments to find a SpiritualProfile
+     * @example
+     * // Get one SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SpiritualProfileFindUniqueOrThrowArgs>(args: SelectSubset<T, SpiritualProfileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SpiritualProfile that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileFindFirstArgs} args - Arguments to find a SpiritualProfile
+     * @example
+     * // Get one SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SpiritualProfileFindFirstArgs>(args?: SelectSubset<T, SpiritualProfileFindFirstArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SpiritualProfile that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileFindFirstOrThrowArgs} args - Arguments to find a SpiritualProfile
+     * @example
+     * // Get one SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SpiritualProfileFindFirstOrThrowArgs>(args?: SelectSubset<T, SpiritualProfileFindFirstOrThrowArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more SpiritualProfiles that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SpiritualProfiles
+     * const spiritualProfiles = await prisma.spiritualProfile.findMany()
+     * 
+     * // Get first 10 SpiritualProfiles
+     * const spiritualProfiles = await prisma.spiritualProfile.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const spiritualProfileWithIdOnly = await prisma.spiritualProfile.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SpiritualProfileFindManyArgs>(args?: SelectSubset<T, SpiritualProfileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a SpiritualProfile.
+     * @param {SpiritualProfileCreateArgs} args - Arguments to create a SpiritualProfile.
+     * @example
+     * // Create one SpiritualProfile
+     * const SpiritualProfile = await prisma.spiritualProfile.create({
+     *   data: {
+     *     // ... data to create a SpiritualProfile
+     *   }
+     * })
+     * 
+     */
+    create<T extends SpiritualProfileCreateArgs>(args: SelectSubset<T, SpiritualProfileCreateArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many SpiritualProfiles.
+     * @param {SpiritualProfileCreateManyArgs} args - Arguments to create many SpiritualProfiles.
+     * @example
+     * // Create many SpiritualProfiles
+     * const spiritualProfile = await prisma.spiritualProfile.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SpiritualProfileCreateManyArgs>(args?: SelectSubset<T, SpiritualProfileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many SpiritualProfiles and returns the data saved in the database.
+     * @param {SpiritualProfileCreateManyAndReturnArgs} args - Arguments to create many SpiritualProfiles.
+     * @example
+     * // Create many SpiritualProfiles
+     * const spiritualProfile = await prisma.spiritualProfile.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SpiritualProfiles and only return the `id`
+     * const spiritualProfileWithIdOnly = await prisma.spiritualProfile.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SpiritualProfileCreateManyAndReturnArgs>(args?: SelectSubset<T, SpiritualProfileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a SpiritualProfile.
+     * @param {SpiritualProfileDeleteArgs} args - Arguments to delete one SpiritualProfile.
+     * @example
+     * // Delete one SpiritualProfile
+     * const SpiritualProfile = await prisma.spiritualProfile.delete({
+     *   where: {
+     *     // ... filter to delete one SpiritualProfile
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SpiritualProfileDeleteArgs>(args: SelectSubset<T, SpiritualProfileDeleteArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one SpiritualProfile.
+     * @param {SpiritualProfileUpdateArgs} args - Arguments to update one SpiritualProfile.
+     * @example
+     * // Update one SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SpiritualProfileUpdateArgs>(args: SelectSubset<T, SpiritualProfileUpdateArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more SpiritualProfiles.
+     * @param {SpiritualProfileDeleteManyArgs} args - Arguments to filter SpiritualProfiles to delete.
+     * @example
+     * // Delete a few SpiritualProfiles
+     * const { count } = await prisma.spiritualProfile.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SpiritualProfileDeleteManyArgs>(args?: SelectSubset<T, SpiritualProfileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SpiritualProfiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SpiritualProfiles
+     * const spiritualProfile = await prisma.spiritualProfile.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SpiritualProfileUpdateManyArgs>(args: SelectSubset<T, SpiritualProfileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SpiritualProfiles and returns the data updated in the database.
+     * @param {SpiritualProfileUpdateManyAndReturnArgs} args - Arguments to update many SpiritualProfiles.
+     * @example
+     * // Update many SpiritualProfiles
+     * const spiritualProfile = await prisma.spiritualProfile.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SpiritualProfiles and only return the `id`
+     * const spiritualProfileWithIdOnly = await prisma.spiritualProfile.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SpiritualProfileUpdateManyAndReturnArgs>(args: SelectSubset<T, SpiritualProfileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one SpiritualProfile.
+     * @param {SpiritualProfileUpsertArgs} args - Arguments to update or create a SpiritualProfile.
+     * @example
+     * // Update or create a SpiritualProfile
+     * const spiritualProfile = await prisma.spiritualProfile.upsert({
+     *   create: {
+     *     // ... data to create a SpiritualProfile
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SpiritualProfile we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SpiritualProfileUpsertArgs>(args: SelectSubset<T, SpiritualProfileUpsertArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of SpiritualProfiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileCountArgs} args - Arguments to filter SpiritualProfiles to count.
+     * @example
+     * // Count the number of SpiritualProfiles
+     * const count = await prisma.spiritualProfile.count({
+     *   where: {
+     *     // ... the filter for the SpiritualProfiles we want to count
+     *   }
+     * })
+    **/
+    count<T extends SpiritualProfileCountArgs>(
+      args?: Subset<T, SpiritualProfileCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SpiritualProfileCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a SpiritualProfile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SpiritualProfileAggregateArgs>(args: Subset<T, SpiritualProfileAggregateArgs>): Prisma.PrismaPromise<GetSpiritualProfileAggregateType<T>>
+
+    /**
+     * Group by SpiritualProfile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SpiritualProfileGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SpiritualProfileGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SpiritualProfileGroupByArgs['orderBy'] }
+        : { orderBy?: SpiritualProfileGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SpiritualProfileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSpiritualProfileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the SpiritualProfile model
+   */
+  readonly fields: SpiritualProfileFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SpiritualProfile.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SpiritualProfileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the SpiritualProfile model
+   */
+  interface SpiritualProfileFieldRefs {
+    readonly id: FieldRef<"SpiritualProfile", 'String'>
+    readonly userId: FieldRef<"SpiritualProfile", 'String'>
+    readonly journeyStartDate: FieldRef<"SpiritualProfile", 'DateTime'>
+    readonly currentLevel: FieldRef<"SpiritualProfile", 'SpiritualLevel'>
+    readonly principlesStudied: FieldRef<"SpiritualProfile", 'String[]'>
+    readonly practicesCompleted: FieldRef<"SpiritualProfile", 'Int'>
+    readonly transformationScore: FieldRef<"SpiritualProfile", 'Float'>
+    readonly metadata: FieldRef<"SpiritualProfile", 'Json'>
+    readonly updatedAt: FieldRef<"SpiritualProfile", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * SpiritualProfile findUnique
+   */
+  export type SpiritualProfileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter, which SpiritualProfile to fetch.
+     */
+    where: SpiritualProfileWhereUniqueInput
+  }
+
+  /**
+   * SpiritualProfile findUniqueOrThrow
+   */
+  export type SpiritualProfileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter, which SpiritualProfile to fetch.
+     */
+    where: SpiritualProfileWhereUniqueInput
+  }
+
+  /**
+   * SpiritualProfile findFirst
+   */
+  export type SpiritualProfileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter, which SpiritualProfile to fetch.
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SpiritualProfiles to fetch.
+     */
+    orderBy?: SpiritualProfileOrderByWithRelationInput | SpiritualProfileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SpiritualProfiles.
+     */
+    cursor?: SpiritualProfileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SpiritualProfiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SpiritualProfiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SpiritualProfiles.
+     */
+    distinct?: SpiritualProfileScalarFieldEnum | SpiritualProfileScalarFieldEnum[]
+  }
+
+  /**
+   * SpiritualProfile findFirstOrThrow
+   */
+  export type SpiritualProfileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter, which SpiritualProfile to fetch.
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SpiritualProfiles to fetch.
+     */
+    orderBy?: SpiritualProfileOrderByWithRelationInput | SpiritualProfileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SpiritualProfiles.
+     */
+    cursor?: SpiritualProfileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SpiritualProfiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SpiritualProfiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SpiritualProfiles.
+     */
+    distinct?: SpiritualProfileScalarFieldEnum | SpiritualProfileScalarFieldEnum[]
+  }
+
+  /**
+   * SpiritualProfile findMany
+   */
+  export type SpiritualProfileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter, which SpiritualProfiles to fetch.
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SpiritualProfiles to fetch.
+     */
+    orderBy?: SpiritualProfileOrderByWithRelationInput | SpiritualProfileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing SpiritualProfiles.
+     */
+    cursor?: SpiritualProfileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SpiritualProfiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SpiritualProfiles.
+     */
+    skip?: number
+    distinct?: SpiritualProfileScalarFieldEnum | SpiritualProfileScalarFieldEnum[]
+  }
+
+  /**
+   * SpiritualProfile create
+   */
+  export type SpiritualProfileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * The data needed to create a SpiritualProfile.
+     */
+    data: XOR<SpiritualProfileCreateInput, SpiritualProfileUncheckedCreateInput>
+  }
+
+  /**
+   * SpiritualProfile createMany
+   */
+  export type SpiritualProfileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many SpiritualProfiles.
+     */
+    data: SpiritualProfileCreateManyInput | SpiritualProfileCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * SpiritualProfile createManyAndReturn
+   */
+  export type SpiritualProfileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * The data used to create many SpiritualProfiles.
+     */
+    data: SpiritualProfileCreateManyInput | SpiritualProfileCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SpiritualProfile update
+   */
+  export type SpiritualProfileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * The data needed to update a SpiritualProfile.
+     */
+    data: XOR<SpiritualProfileUpdateInput, SpiritualProfileUncheckedUpdateInput>
+    /**
+     * Choose, which SpiritualProfile to update.
+     */
+    where: SpiritualProfileWhereUniqueInput
+  }
+
+  /**
+   * SpiritualProfile updateMany
+   */
+  export type SpiritualProfileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SpiritualProfiles.
+     */
+    data: XOR<SpiritualProfileUpdateManyMutationInput, SpiritualProfileUncheckedUpdateManyInput>
+    /**
+     * Filter which SpiritualProfiles to update
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * Limit how many SpiritualProfiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * SpiritualProfile updateManyAndReturn
+   */
+  export type SpiritualProfileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * The data used to update SpiritualProfiles.
+     */
+    data: XOR<SpiritualProfileUpdateManyMutationInput, SpiritualProfileUncheckedUpdateManyInput>
+    /**
+     * Filter which SpiritualProfiles to update
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * Limit how many SpiritualProfiles to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SpiritualProfile upsert
+   */
+  export type SpiritualProfileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * The filter to search for the SpiritualProfile to update in case it exists.
+     */
+    where: SpiritualProfileWhereUniqueInput
+    /**
+     * In case the SpiritualProfile found by the `where` argument doesn't exist, create a new SpiritualProfile with this data.
+     */
+    create: XOR<SpiritualProfileCreateInput, SpiritualProfileUncheckedCreateInput>
+    /**
+     * In case the SpiritualProfile was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SpiritualProfileUpdateInput, SpiritualProfileUncheckedUpdateInput>
+  }
+
+  /**
+   * SpiritualProfile delete
+   */
+  export type SpiritualProfileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+    /**
+     * Filter which SpiritualProfile to delete.
+     */
+    where: SpiritualProfileWhereUniqueInput
+  }
+
+  /**
+   * SpiritualProfile deleteMany
+   */
+  export type SpiritualProfileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SpiritualProfiles to delete
+     */
+    where?: SpiritualProfileWhereInput
+    /**
+     * Limit how many SpiritualProfiles to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * SpiritualProfile without action
+   */
+  export type SpiritualProfileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SpiritualProfile
+     */
+    select?: SpiritualProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SpiritualProfile
+     */
+    omit?: SpiritualProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SpiritualProfileInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Subscription
+   */
+
+  export type AggregateSubscription = {
+    _count: SubscriptionCountAggregateOutputType | null
+    _min: SubscriptionMinAggregateOutputType | null
+    _max: SubscriptionMaxAggregateOutputType | null
+  }
+
+  export type SubscriptionMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    stripeCustomerId: string | null
+    stripeSubscriptionId: string | null
+    plan: $Enums.SubscriptionPlan | null
+    status: $Enums.SubscriptionStatus | null
+    currentPeriodStart: Date | null
+    currentPeriodEnd: Date | null
+    cancelAtPeriodEnd: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SubscriptionMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    stripeCustomerId: string | null
+    stripeSubscriptionId: string | null
+    plan: $Enums.SubscriptionPlan | null
+    status: $Enums.SubscriptionStatus | null
+    currentPeriodStart: Date | null
+    currentPeriodEnd: Date | null
+    cancelAtPeriodEnd: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SubscriptionCountAggregateOutputType = {
+    id: number
+    userId: number
+    stripeCustomerId: number
+    stripeSubscriptionId: number
+    plan: number
+    status: number
+    currentPeriodStart: number
+    currentPeriodEnd: number
+    cancelAtPeriodEnd: number
+    metadata: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SubscriptionMinAggregateInputType = {
+    id?: true
+    userId?: true
+    stripeCustomerId?: true
+    stripeSubscriptionId?: true
+    plan?: true
+    status?: true
+    currentPeriodStart?: true
+    currentPeriodEnd?: true
+    cancelAtPeriodEnd?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SubscriptionMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    stripeCustomerId?: true
+    stripeSubscriptionId?: true
+    plan?: true
+    status?: true
+    currentPeriodStart?: true
+    currentPeriodEnd?: true
+    cancelAtPeriodEnd?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SubscriptionCountAggregateInputType = {
+    id?: true
+    userId?: true
+    stripeCustomerId?: true
+    stripeSubscriptionId?: true
+    plan?: true
+    status?: true
+    currentPeriodStart?: true
+    currentPeriodEnd?: true
+    cancelAtPeriodEnd?: true
+    metadata?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SubscriptionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Subscription to aggregate.
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Subscriptions to fetch.
+     */
+    orderBy?: SubscriptionOrderByWithRelationInput | SubscriptionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SubscriptionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Subscriptions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Subscriptions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Subscriptions
+    **/
+    _count?: true | SubscriptionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SubscriptionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SubscriptionMaxAggregateInputType
+  }
+
+  export type GetSubscriptionAggregateType<T extends SubscriptionAggregateArgs> = {
+        [P in keyof T & keyof AggregateSubscription]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSubscription[P]>
+      : GetScalarType<T[P], AggregateSubscription[P]>
+  }
+
+
+
+
+  export type SubscriptionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SubscriptionWhereInput
+    orderBy?: SubscriptionOrderByWithAggregationInput | SubscriptionOrderByWithAggregationInput[]
+    by: SubscriptionScalarFieldEnum[] | SubscriptionScalarFieldEnum
+    having?: SubscriptionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SubscriptionCountAggregateInputType | true
+    _min?: SubscriptionMinAggregateInputType
+    _max?: SubscriptionMaxAggregateInputType
+  }
+
+  export type SubscriptionGroupByOutputType = {
+    id: string
+    userId: string
+    stripeCustomerId: string | null
+    stripeSubscriptionId: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date
+    currentPeriodEnd: Date
+    cancelAtPeriodEnd: boolean
+    metadata: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    _count: SubscriptionCountAggregateOutputType | null
+    _min: SubscriptionMinAggregateOutputType | null
+    _max: SubscriptionMaxAggregateOutputType | null
+  }
+
+  type GetSubscriptionGroupByPayload<T extends SubscriptionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SubscriptionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SubscriptionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SubscriptionGroupByOutputType[P]>
+            : GetScalarType<T[P], SubscriptionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SubscriptionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    stripeCustomerId?: boolean
+    stripeSubscriptionId?: boolean
+    plan?: boolean
+    status?: boolean
+    currentPeriodStart?: boolean
+    currentPeriodEnd?: boolean
+    cancelAtPeriodEnd?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    usageRecords?: boolean | Subscription$usageRecordsArgs<ExtArgs>
+    _count?: boolean | SubscriptionCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["subscription"]>
+
+  export type SubscriptionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    stripeCustomerId?: boolean
+    stripeSubscriptionId?: boolean
+    plan?: boolean
+    status?: boolean
+    currentPeriodStart?: boolean
+    currentPeriodEnd?: boolean
+    cancelAtPeriodEnd?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["subscription"]>
+
+  export type SubscriptionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    stripeCustomerId?: boolean
+    stripeSubscriptionId?: boolean
+    plan?: boolean
+    status?: boolean
+    currentPeriodStart?: boolean
+    currentPeriodEnd?: boolean
+    cancelAtPeriodEnd?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["subscription"]>
+
+  export type SubscriptionSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    stripeCustomerId?: boolean
+    stripeSubscriptionId?: boolean
+    plan?: boolean
+    status?: boolean
+    currentPeriodStart?: boolean
+    currentPeriodEnd?: boolean
+    cancelAtPeriodEnd?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SubscriptionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "stripeCustomerId" | "stripeSubscriptionId" | "plan" | "status" | "currentPeriodStart" | "currentPeriodEnd" | "cancelAtPeriodEnd" | "metadata" | "createdAt" | "updatedAt", ExtArgs["result"]["subscription"]>
+  export type SubscriptionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    usageRecords?: boolean | Subscription$usageRecordsArgs<ExtArgs>
+    _count?: boolean | SubscriptionCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SubscriptionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type SubscriptionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $SubscriptionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Subscription"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      usageRecords: Prisma.$UsageRecordPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      stripeCustomerId: string | null
+      stripeSubscriptionId: string | null
+      plan: $Enums.SubscriptionPlan
+      status: $Enums.SubscriptionStatus
+      currentPeriodStart: Date
+      currentPeriodEnd: Date
+      cancelAtPeriodEnd: boolean
+      metadata: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["subscription"]>
+    composites: {}
+  }
+
+  type SubscriptionGetPayload<S extends boolean | null | undefined | SubscriptionDefaultArgs> = $Result.GetResult<Prisma.$SubscriptionPayload, S>
+
+  type SubscriptionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SubscriptionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SubscriptionCountAggregateInputType | true
+    }
+
+  export interface SubscriptionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Subscription'], meta: { name: 'Subscription' } }
+    /**
+     * Find zero or one Subscription that matches the filter.
+     * @param {SubscriptionFindUniqueArgs} args - Arguments to find a Subscription
+     * @example
+     * // Get one Subscription
+     * const subscription = await prisma.subscription.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SubscriptionFindUniqueArgs>(args: SelectSubset<T, SubscriptionFindUniqueArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Subscription that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SubscriptionFindUniqueOrThrowArgs} args - Arguments to find a Subscription
+     * @example
+     * // Get one Subscription
+     * const subscription = await prisma.subscription.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SubscriptionFindUniqueOrThrowArgs>(args: SelectSubset<T, SubscriptionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Subscription that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionFindFirstArgs} args - Arguments to find a Subscription
+     * @example
+     * // Get one Subscription
+     * const subscription = await prisma.subscription.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SubscriptionFindFirstArgs>(args?: SelectSubset<T, SubscriptionFindFirstArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Subscription that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionFindFirstOrThrowArgs} args - Arguments to find a Subscription
+     * @example
+     * // Get one Subscription
+     * const subscription = await prisma.subscription.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SubscriptionFindFirstOrThrowArgs>(args?: SelectSubset<T, SubscriptionFindFirstOrThrowArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Subscriptions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Subscriptions
+     * const subscriptions = await prisma.subscription.findMany()
+     * 
+     * // Get first 10 Subscriptions
+     * const subscriptions = await prisma.subscription.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const subscriptionWithIdOnly = await prisma.subscription.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SubscriptionFindManyArgs>(args?: SelectSubset<T, SubscriptionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Subscription.
+     * @param {SubscriptionCreateArgs} args - Arguments to create a Subscription.
+     * @example
+     * // Create one Subscription
+     * const Subscription = await prisma.subscription.create({
+     *   data: {
+     *     // ... data to create a Subscription
+     *   }
+     * })
+     * 
+     */
+    create<T extends SubscriptionCreateArgs>(args: SelectSubset<T, SubscriptionCreateArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Subscriptions.
+     * @param {SubscriptionCreateManyArgs} args - Arguments to create many Subscriptions.
+     * @example
+     * // Create many Subscriptions
+     * const subscription = await prisma.subscription.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SubscriptionCreateManyArgs>(args?: SelectSubset<T, SubscriptionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Subscriptions and returns the data saved in the database.
+     * @param {SubscriptionCreateManyAndReturnArgs} args - Arguments to create many Subscriptions.
+     * @example
+     * // Create many Subscriptions
+     * const subscription = await prisma.subscription.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Subscriptions and only return the `id`
+     * const subscriptionWithIdOnly = await prisma.subscription.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SubscriptionCreateManyAndReturnArgs>(args?: SelectSubset<T, SubscriptionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Subscription.
+     * @param {SubscriptionDeleteArgs} args - Arguments to delete one Subscription.
+     * @example
+     * // Delete one Subscription
+     * const Subscription = await prisma.subscription.delete({
+     *   where: {
+     *     // ... filter to delete one Subscription
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SubscriptionDeleteArgs>(args: SelectSubset<T, SubscriptionDeleteArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Subscription.
+     * @param {SubscriptionUpdateArgs} args - Arguments to update one Subscription.
+     * @example
+     * // Update one Subscription
+     * const subscription = await prisma.subscription.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SubscriptionUpdateArgs>(args: SelectSubset<T, SubscriptionUpdateArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Subscriptions.
+     * @param {SubscriptionDeleteManyArgs} args - Arguments to filter Subscriptions to delete.
+     * @example
+     * // Delete a few Subscriptions
+     * const { count } = await prisma.subscription.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SubscriptionDeleteManyArgs>(args?: SelectSubset<T, SubscriptionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Subscriptions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Subscriptions
+     * const subscription = await prisma.subscription.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SubscriptionUpdateManyArgs>(args: SelectSubset<T, SubscriptionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Subscriptions and returns the data updated in the database.
+     * @param {SubscriptionUpdateManyAndReturnArgs} args - Arguments to update many Subscriptions.
+     * @example
+     * // Update many Subscriptions
+     * const subscription = await prisma.subscription.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Subscriptions and only return the `id`
+     * const subscriptionWithIdOnly = await prisma.subscription.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SubscriptionUpdateManyAndReturnArgs>(args: SelectSubset<T, SubscriptionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Subscription.
+     * @param {SubscriptionUpsertArgs} args - Arguments to update or create a Subscription.
+     * @example
+     * // Update or create a Subscription
+     * const subscription = await prisma.subscription.upsert({
+     *   create: {
+     *     // ... data to create a Subscription
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Subscription we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SubscriptionUpsertArgs>(args: SelectSubset<T, SubscriptionUpsertArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Subscriptions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionCountArgs} args - Arguments to filter Subscriptions to count.
+     * @example
+     * // Count the number of Subscriptions
+     * const count = await prisma.subscription.count({
+     *   where: {
+     *     // ... the filter for the Subscriptions we want to count
+     *   }
+     * })
+    **/
+    count<T extends SubscriptionCountArgs>(
+      args?: Subset<T, SubscriptionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SubscriptionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Subscription.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SubscriptionAggregateArgs>(args: Subset<T, SubscriptionAggregateArgs>): Prisma.PrismaPromise<GetSubscriptionAggregateType<T>>
+
+    /**
+     * Group by Subscription.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SubscriptionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SubscriptionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SubscriptionGroupByArgs['orderBy'] }
+        : { orderBy?: SubscriptionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SubscriptionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSubscriptionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Subscription model
+   */
+  readonly fields: SubscriptionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Subscription.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SubscriptionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    usageRecords<T extends Subscription$usageRecordsArgs<ExtArgs> = {}>(args?: Subset<T, Subscription$usageRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Subscription model
+   */
+  interface SubscriptionFieldRefs {
+    readonly id: FieldRef<"Subscription", 'String'>
+    readonly userId: FieldRef<"Subscription", 'String'>
+    readonly stripeCustomerId: FieldRef<"Subscription", 'String'>
+    readonly stripeSubscriptionId: FieldRef<"Subscription", 'String'>
+    readonly plan: FieldRef<"Subscription", 'SubscriptionPlan'>
+    readonly status: FieldRef<"Subscription", 'SubscriptionStatus'>
+    readonly currentPeriodStart: FieldRef<"Subscription", 'DateTime'>
+    readonly currentPeriodEnd: FieldRef<"Subscription", 'DateTime'>
+    readonly cancelAtPeriodEnd: FieldRef<"Subscription", 'Boolean'>
+    readonly metadata: FieldRef<"Subscription", 'Json'>
+    readonly createdAt: FieldRef<"Subscription", 'DateTime'>
+    readonly updatedAt: FieldRef<"Subscription", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Subscription findUnique
+   */
+  export type SubscriptionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter, which Subscription to fetch.
+     */
+    where: SubscriptionWhereUniqueInput
+  }
+
+  /**
+   * Subscription findUniqueOrThrow
+   */
+  export type SubscriptionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter, which Subscription to fetch.
+     */
+    where: SubscriptionWhereUniqueInput
+  }
+
+  /**
+   * Subscription findFirst
+   */
+  export type SubscriptionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter, which Subscription to fetch.
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Subscriptions to fetch.
+     */
+    orderBy?: SubscriptionOrderByWithRelationInput | SubscriptionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Subscriptions.
+     */
+    cursor?: SubscriptionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Subscriptions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Subscriptions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Subscriptions.
+     */
+    distinct?: SubscriptionScalarFieldEnum | SubscriptionScalarFieldEnum[]
+  }
+
+  /**
+   * Subscription findFirstOrThrow
+   */
+  export type SubscriptionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter, which Subscription to fetch.
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Subscriptions to fetch.
+     */
+    orderBy?: SubscriptionOrderByWithRelationInput | SubscriptionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Subscriptions.
+     */
+    cursor?: SubscriptionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Subscriptions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Subscriptions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Subscriptions.
+     */
+    distinct?: SubscriptionScalarFieldEnum | SubscriptionScalarFieldEnum[]
+  }
+
+  /**
+   * Subscription findMany
+   */
+  export type SubscriptionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter, which Subscriptions to fetch.
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Subscriptions to fetch.
+     */
+    orderBy?: SubscriptionOrderByWithRelationInput | SubscriptionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Subscriptions.
+     */
+    cursor?: SubscriptionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Subscriptions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Subscriptions.
+     */
+    skip?: number
+    distinct?: SubscriptionScalarFieldEnum | SubscriptionScalarFieldEnum[]
+  }
+
+  /**
+   * Subscription create
+   */
+  export type SubscriptionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Subscription.
+     */
+    data: XOR<SubscriptionCreateInput, SubscriptionUncheckedCreateInput>
+  }
+
+  /**
+   * Subscription createMany
+   */
+  export type SubscriptionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Subscriptions.
+     */
+    data: SubscriptionCreateManyInput | SubscriptionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Subscription createManyAndReturn
+   */
+  export type SubscriptionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * The data used to create many Subscriptions.
+     */
+    data: SubscriptionCreateManyInput | SubscriptionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Subscription update
+   */
+  export type SubscriptionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Subscription.
+     */
+    data: XOR<SubscriptionUpdateInput, SubscriptionUncheckedUpdateInput>
+    /**
+     * Choose, which Subscription to update.
+     */
+    where: SubscriptionWhereUniqueInput
+  }
+
+  /**
+   * Subscription updateMany
+   */
+  export type SubscriptionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Subscriptions.
+     */
+    data: XOR<SubscriptionUpdateManyMutationInput, SubscriptionUncheckedUpdateManyInput>
+    /**
+     * Filter which Subscriptions to update
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * Limit how many Subscriptions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Subscription updateManyAndReturn
+   */
+  export type SubscriptionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * The data used to update Subscriptions.
+     */
+    data: XOR<SubscriptionUpdateManyMutationInput, SubscriptionUncheckedUpdateManyInput>
+    /**
+     * Filter which Subscriptions to update
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * Limit how many Subscriptions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Subscription upsert
+   */
+  export type SubscriptionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Subscription to update in case it exists.
+     */
+    where: SubscriptionWhereUniqueInput
+    /**
+     * In case the Subscription found by the `where` argument doesn't exist, create a new Subscription with this data.
+     */
+    create: XOR<SubscriptionCreateInput, SubscriptionUncheckedCreateInput>
+    /**
+     * In case the Subscription was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SubscriptionUpdateInput, SubscriptionUncheckedUpdateInput>
+  }
+
+  /**
+   * Subscription delete
+   */
+  export type SubscriptionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+    /**
+     * Filter which Subscription to delete.
+     */
+    where: SubscriptionWhereUniqueInput
+  }
+
+  /**
+   * Subscription deleteMany
+   */
+  export type SubscriptionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Subscriptions to delete
+     */
+    where?: SubscriptionWhereInput
+    /**
+     * Limit how many Subscriptions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Subscription.usageRecords
+   */
+  export type Subscription$usageRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    where?: UsageRecordWhereInput
+    orderBy?: UsageRecordOrderByWithRelationInput | UsageRecordOrderByWithRelationInput[]
+    cursor?: UsageRecordWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UsageRecordScalarFieldEnum | UsageRecordScalarFieldEnum[]
+  }
+
+  /**
+   * Subscription without action
+   */
+  export type SubscriptionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subscription
+     */
+    select?: SubscriptionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subscription
+     */
+    omit?: SubscriptionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubscriptionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model UsageRecord
+   */
+
+  export type AggregateUsageRecord = {
+    _count: UsageRecordCountAggregateOutputType | null
+    _avg: UsageRecordAvgAggregateOutputType | null
+    _sum: UsageRecordSumAggregateOutputType | null
+    _min: UsageRecordMinAggregateOutputType | null
+    _max: UsageRecordMaxAggregateOutputType | null
+  }
+
+  export type UsageRecordAvgAggregateOutputType = {
+    count: number | null
+  }
+
+  export type UsageRecordSumAggregateOutputType = {
+    count: number | null
+  }
+
+  export type UsageRecordMinAggregateOutputType = {
+    id: string | null
+    subscriptionId: string | null
+    metric: $Enums.UsageMetric | null
+    count: number | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type UsageRecordMaxAggregateOutputType = {
+    id: string | null
+    subscriptionId: string | null
+    metric: $Enums.UsageMetric | null
+    count: number | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type UsageRecordCountAggregateOutputType = {
+    id: number
+    subscriptionId: number
+    metric: number
+    count: number
+    date: number
+    metadata: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type UsageRecordAvgAggregateInputType = {
+    count?: true
+  }
+
+  export type UsageRecordSumAggregateInputType = {
+    count?: true
+  }
+
+  export type UsageRecordMinAggregateInputType = {
+    id?: true
+    subscriptionId?: true
+    metric?: true
+    count?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type UsageRecordMaxAggregateInputType = {
+    id?: true
+    subscriptionId?: true
+    metric?: true
+    count?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type UsageRecordCountAggregateInputType = {
+    id?: true
+    subscriptionId?: true
+    metric?: true
+    count?: true
+    date?: true
+    metadata?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type UsageRecordAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UsageRecord to aggregate.
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UsageRecords to fetch.
+     */
+    orderBy?: UsageRecordOrderByWithRelationInput | UsageRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: UsageRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UsageRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UsageRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned UsageRecords
+    **/
+    _count?: true | UsageRecordCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: UsageRecordAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: UsageRecordSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: UsageRecordMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: UsageRecordMaxAggregateInputType
+  }
+
+  export type GetUsageRecordAggregateType<T extends UsageRecordAggregateArgs> = {
+        [P in keyof T & keyof AggregateUsageRecord]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUsageRecord[P]>
+      : GetScalarType<T[P], AggregateUsageRecord[P]>
+  }
+
+
+
+
+  export type UsageRecordGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UsageRecordWhereInput
+    orderBy?: UsageRecordOrderByWithAggregationInput | UsageRecordOrderByWithAggregationInput[]
+    by: UsageRecordScalarFieldEnum[] | UsageRecordScalarFieldEnum
+    having?: UsageRecordScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: UsageRecordCountAggregateInputType | true
+    _avg?: UsageRecordAvgAggregateInputType
+    _sum?: UsageRecordSumAggregateInputType
+    _min?: UsageRecordMinAggregateInputType
+    _max?: UsageRecordMaxAggregateInputType
+  }
+
+  export type UsageRecordGroupByOutputType = {
+    id: string
+    subscriptionId: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date
+    metadata: JsonValue | null
+    createdAt: Date
+    _count: UsageRecordCountAggregateOutputType | null
+    _avg: UsageRecordAvgAggregateOutputType | null
+    _sum: UsageRecordSumAggregateOutputType | null
+    _min: UsageRecordMinAggregateOutputType | null
+    _max: UsageRecordMaxAggregateOutputType | null
+  }
+
+  type GetUsageRecordGroupByPayload<T extends UsageRecordGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<UsageRecordGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof UsageRecordGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UsageRecordGroupByOutputType[P]>
+            : GetScalarType<T[P], UsageRecordGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type UsageRecordSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    subscriptionId?: boolean
+    metric?: boolean
+    count?: boolean
+    date?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["usageRecord"]>
+
+  export type UsageRecordSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    subscriptionId?: boolean
+    metric?: boolean
+    count?: boolean
+    date?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["usageRecord"]>
+
+  export type UsageRecordSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    subscriptionId?: boolean
+    metric?: boolean
+    count?: boolean
+    date?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["usageRecord"]>
+
+  export type UsageRecordSelectScalar = {
+    id?: boolean
+    subscriptionId?: boolean
+    metric?: boolean
+    count?: boolean
+    date?: boolean
+    metadata?: boolean
+    createdAt?: boolean
+  }
+
+  export type UsageRecordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "subscriptionId" | "metric" | "count" | "date" | "metadata" | "createdAt", ExtArgs["result"]["usageRecord"]>
+  export type UsageRecordInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }
+  export type UsageRecordIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }
+  export type UsageRecordIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    subscription?: boolean | SubscriptionDefaultArgs<ExtArgs>
+  }
+
+  export type $UsageRecordPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "UsageRecord"
+    objects: {
+      subscription: Prisma.$SubscriptionPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      subscriptionId: string
+      metric: $Enums.UsageMetric
+      count: number
+      date: Date
+      metadata: Prisma.JsonValue | null
+      createdAt: Date
+    }, ExtArgs["result"]["usageRecord"]>
+    composites: {}
+  }
+
+  type UsageRecordGetPayload<S extends boolean | null | undefined | UsageRecordDefaultArgs> = $Result.GetResult<Prisma.$UsageRecordPayload, S>
+
+  type UsageRecordCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<UsageRecordFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: UsageRecordCountAggregateInputType | true
+    }
+
+  export interface UsageRecordDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UsageRecord'], meta: { name: 'UsageRecord' } }
+    /**
+     * Find zero or one UsageRecord that matches the filter.
+     * @param {UsageRecordFindUniqueArgs} args - Arguments to find a UsageRecord
+     * @example
+     * // Get one UsageRecord
+     * const usageRecord = await prisma.usageRecord.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UsageRecordFindUniqueArgs>(args: SelectSubset<T, UsageRecordFindUniqueArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one UsageRecord that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UsageRecordFindUniqueOrThrowArgs} args - Arguments to find a UsageRecord
+     * @example
+     * // Get one UsageRecord
+     * const usageRecord = await prisma.usageRecord.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UsageRecordFindUniqueOrThrowArgs>(args: SelectSubset<T, UsageRecordFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UsageRecord that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordFindFirstArgs} args - Arguments to find a UsageRecord
+     * @example
+     * // Get one UsageRecord
+     * const usageRecord = await prisma.usageRecord.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UsageRecordFindFirstArgs>(args?: SelectSubset<T, UsageRecordFindFirstArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UsageRecord that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordFindFirstOrThrowArgs} args - Arguments to find a UsageRecord
+     * @example
+     * // Get one UsageRecord
+     * const usageRecord = await prisma.usageRecord.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UsageRecordFindFirstOrThrowArgs>(args?: SelectSubset<T, UsageRecordFindFirstOrThrowArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more UsageRecords that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all UsageRecords
+     * const usageRecords = await prisma.usageRecord.findMany()
+     * 
+     * // Get first 10 UsageRecords
+     * const usageRecords = await prisma.usageRecord.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const usageRecordWithIdOnly = await prisma.usageRecord.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends UsageRecordFindManyArgs>(args?: SelectSubset<T, UsageRecordFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a UsageRecord.
+     * @param {UsageRecordCreateArgs} args - Arguments to create a UsageRecord.
+     * @example
+     * // Create one UsageRecord
+     * const UsageRecord = await prisma.usageRecord.create({
+     *   data: {
+     *     // ... data to create a UsageRecord
+     *   }
+     * })
+     * 
+     */
+    create<T extends UsageRecordCreateArgs>(args: SelectSubset<T, UsageRecordCreateArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many UsageRecords.
+     * @param {UsageRecordCreateManyArgs} args - Arguments to create many UsageRecords.
+     * @example
+     * // Create many UsageRecords
+     * const usageRecord = await prisma.usageRecord.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends UsageRecordCreateManyArgs>(args?: SelectSubset<T, UsageRecordCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many UsageRecords and returns the data saved in the database.
+     * @param {UsageRecordCreateManyAndReturnArgs} args - Arguments to create many UsageRecords.
+     * @example
+     * // Create many UsageRecords
+     * const usageRecord = await prisma.usageRecord.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many UsageRecords and only return the `id`
+     * const usageRecordWithIdOnly = await prisma.usageRecord.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends UsageRecordCreateManyAndReturnArgs>(args?: SelectSubset<T, UsageRecordCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a UsageRecord.
+     * @param {UsageRecordDeleteArgs} args - Arguments to delete one UsageRecord.
+     * @example
+     * // Delete one UsageRecord
+     * const UsageRecord = await prisma.usageRecord.delete({
+     *   where: {
+     *     // ... filter to delete one UsageRecord
+     *   }
+     * })
+     * 
+     */
+    delete<T extends UsageRecordDeleteArgs>(args: SelectSubset<T, UsageRecordDeleteArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one UsageRecord.
+     * @param {UsageRecordUpdateArgs} args - Arguments to update one UsageRecord.
+     * @example
+     * // Update one UsageRecord
+     * const usageRecord = await prisma.usageRecord.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends UsageRecordUpdateArgs>(args: SelectSubset<T, UsageRecordUpdateArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more UsageRecords.
+     * @param {UsageRecordDeleteManyArgs} args - Arguments to filter UsageRecords to delete.
+     * @example
+     * // Delete a few UsageRecords
+     * const { count } = await prisma.usageRecord.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends UsageRecordDeleteManyArgs>(args?: SelectSubset<T, UsageRecordDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UsageRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many UsageRecords
+     * const usageRecord = await prisma.usageRecord.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends UsageRecordUpdateManyArgs>(args: SelectSubset<T, UsageRecordUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UsageRecords and returns the data updated in the database.
+     * @param {UsageRecordUpdateManyAndReturnArgs} args - Arguments to update many UsageRecords.
+     * @example
+     * // Update many UsageRecords
+     * const usageRecord = await prisma.usageRecord.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more UsageRecords and only return the `id`
+     * const usageRecordWithIdOnly = await prisma.usageRecord.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends UsageRecordUpdateManyAndReturnArgs>(args: SelectSubset<T, UsageRecordUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one UsageRecord.
+     * @param {UsageRecordUpsertArgs} args - Arguments to update or create a UsageRecord.
+     * @example
+     * // Update or create a UsageRecord
+     * const usageRecord = await prisma.usageRecord.upsert({
+     *   create: {
+     *     // ... data to create a UsageRecord
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the UsageRecord we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UsageRecordUpsertArgs>(args: SelectSubset<T, UsageRecordUpsertArgs<ExtArgs>>): Prisma__UsageRecordClient<$Result.GetResult<Prisma.$UsageRecordPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of UsageRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordCountArgs} args - Arguments to filter UsageRecords to count.
+     * @example
+     * // Count the number of UsageRecords
+     * const count = await prisma.usageRecord.count({
+     *   where: {
+     *     // ... the filter for the UsageRecords we want to count
+     *   }
+     * })
+    **/
+    count<T extends UsageRecordCountArgs>(
+      args?: Subset<T, UsageRecordCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UsageRecordCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a UsageRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends UsageRecordAggregateArgs>(args: Subset<T, UsageRecordAggregateArgs>): Prisma.PrismaPromise<GetUsageRecordAggregateType<T>>
+
+    /**
+     * Group by UsageRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsageRecordGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends UsageRecordGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UsageRecordGroupByArgs['orderBy'] }
+        : { orderBy?: UsageRecordGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, UsageRecordGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsageRecordGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the UsageRecord model
+   */
+  readonly fields: UsageRecordFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for UsageRecord.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UsageRecordClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    subscription<T extends SubscriptionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SubscriptionDefaultArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the UsageRecord model
+   */
+  interface UsageRecordFieldRefs {
+    readonly id: FieldRef<"UsageRecord", 'String'>
+    readonly subscriptionId: FieldRef<"UsageRecord", 'String'>
+    readonly metric: FieldRef<"UsageRecord", 'UsageMetric'>
+    readonly count: FieldRef<"UsageRecord", 'Int'>
+    readonly date: FieldRef<"UsageRecord", 'DateTime'>
+    readonly metadata: FieldRef<"UsageRecord", 'Json'>
+    readonly createdAt: FieldRef<"UsageRecord", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * UsageRecord findUnique
+   */
+  export type UsageRecordFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which UsageRecord to fetch.
+     */
+    where: UsageRecordWhereUniqueInput
+  }
+
+  /**
+   * UsageRecord findUniqueOrThrow
+   */
+  export type UsageRecordFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which UsageRecord to fetch.
+     */
+    where: UsageRecordWhereUniqueInput
+  }
+
+  /**
+   * UsageRecord findFirst
+   */
+  export type UsageRecordFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which UsageRecord to fetch.
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UsageRecords to fetch.
+     */
+    orderBy?: UsageRecordOrderByWithRelationInput | UsageRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UsageRecords.
+     */
+    cursor?: UsageRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UsageRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UsageRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UsageRecords.
+     */
+    distinct?: UsageRecordScalarFieldEnum | UsageRecordScalarFieldEnum[]
+  }
+
+  /**
+   * UsageRecord findFirstOrThrow
+   */
+  export type UsageRecordFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which UsageRecord to fetch.
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UsageRecords to fetch.
+     */
+    orderBy?: UsageRecordOrderByWithRelationInput | UsageRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UsageRecords.
+     */
+    cursor?: UsageRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UsageRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UsageRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UsageRecords.
+     */
+    distinct?: UsageRecordScalarFieldEnum | UsageRecordScalarFieldEnum[]
+  }
+
+  /**
+   * UsageRecord findMany
+   */
+  export type UsageRecordFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which UsageRecords to fetch.
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UsageRecords to fetch.
+     */
+    orderBy?: UsageRecordOrderByWithRelationInput | UsageRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing UsageRecords.
+     */
+    cursor?: UsageRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UsageRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UsageRecords.
+     */
+    skip?: number
+    distinct?: UsageRecordScalarFieldEnum | UsageRecordScalarFieldEnum[]
+  }
+
+  /**
+   * UsageRecord create
+   */
+  export type UsageRecordCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to create a UsageRecord.
+     */
+    data: XOR<UsageRecordCreateInput, UsageRecordUncheckedCreateInput>
+  }
+
+  /**
+   * UsageRecord createMany
+   */
+  export type UsageRecordCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many UsageRecords.
+     */
+    data: UsageRecordCreateManyInput | UsageRecordCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * UsageRecord createManyAndReturn
+   */
+  export type UsageRecordCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * The data used to create many UsageRecords.
+     */
+    data: UsageRecordCreateManyInput | UsageRecordCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UsageRecord update
+   */
+  export type UsageRecordUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to update a UsageRecord.
+     */
+    data: XOR<UsageRecordUpdateInput, UsageRecordUncheckedUpdateInput>
+    /**
+     * Choose, which UsageRecord to update.
+     */
+    where: UsageRecordWhereUniqueInput
+  }
+
+  /**
+   * UsageRecord updateMany
+   */
+  export type UsageRecordUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update UsageRecords.
+     */
+    data: XOR<UsageRecordUpdateManyMutationInput, UsageRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which UsageRecords to update
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * Limit how many UsageRecords to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * UsageRecord updateManyAndReturn
+   */
+  export type UsageRecordUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * The data used to update UsageRecords.
+     */
+    data: XOR<UsageRecordUpdateManyMutationInput, UsageRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which UsageRecords to update
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * Limit how many UsageRecords to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UsageRecord upsert
+   */
+  export type UsageRecordUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * The filter to search for the UsageRecord to update in case it exists.
+     */
+    where: UsageRecordWhereUniqueInput
+    /**
+     * In case the UsageRecord found by the `where` argument doesn't exist, create a new UsageRecord with this data.
+     */
+    create: XOR<UsageRecordCreateInput, UsageRecordUncheckedCreateInput>
+    /**
+     * In case the UsageRecord was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UsageRecordUpdateInput, UsageRecordUncheckedUpdateInput>
+  }
+
+  /**
+   * UsageRecord delete
+   */
+  export type UsageRecordDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+    /**
+     * Filter which UsageRecord to delete.
+     */
+    where: UsageRecordWhereUniqueInput
+  }
+
+  /**
+   * UsageRecord deleteMany
+   */
+  export type UsageRecordDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UsageRecords to delete
+     */
+    where?: UsageRecordWhereInput
+    /**
+     * Limit how many UsageRecords to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * UsageRecord without action
+   */
+  export type UsageRecordDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsageRecord
+     */
+    select?: UsageRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UsageRecord
+     */
+    omit?: UsageRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsageRecordInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model UserPreference
+   */
+
+  export type AggregateUserPreference = {
+    _count: UserPreferenceCountAggregateOutputType | null
+    _avg: UserPreferenceAvgAggregateOutputType | null
+    _sum: UserPreferenceSumAggregateOutputType | null
+    _min: UserPreferenceMinAggregateOutputType | null
+    _max: UserPreferenceMaxAggregateOutputType | null
+  }
+
+  export type UserPreferenceAvgAggregateOutputType = {
+    dataRetention: number | null
+  }
+
+  export type UserPreferenceSumAggregateOutputType = {
+    dataRetention: number | null
+  }
+
+  export type UserPreferenceMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    theme: string | null
+    fontSize: string | null
+    aiVerbosity: $Enums.VerbosityLevel | null
+    notificationsEnabled: boolean | null
+    emailDigest: $Enums.EmailDigestFrequency | null
+    dataRetention: number | null
+    exportFormat: string | null
+    updatedAt: Date | null
+  }
+
+  export type UserPreferenceMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    theme: string | null
+    fontSize: string | null
+    aiVerbosity: $Enums.VerbosityLevel | null
+    notificationsEnabled: boolean | null
+    emailDigest: $Enums.EmailDigestFrequency | null
+    dataRetention: number | null
+    exportFormat: string | null
+    updatedAt: Date | null
+  }
+
+  export type UserPreferenceCountAggregateOutputType = {
+    id: number
+    userId: number
+    theme: number
+    fontSize: number
+    aiVerbosity: number
+    notificationsEnabled: number
+    emailDigest: number
+    dataRetention: number
+    exportFormat: number
+    metadata: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type UserPreferenceAvgAggregateInputType = {
+    dataRetention?: true
+  }
+
+  export type UserPreferenceSumAggregateInputType = {
+    dataRetention?: true
+  }
+
+  export type UserPreferenceMinAggregateInputType = {
+    id?: true
+    userId?: true
+    theme?: true
+    fontSize?: true
+    aiVerbosity?: true
+    notificationsEnabled?: true
+    emailDigest?: true
+    dataRetention?: true
+    exportFormat?: true
+    updatedAt?: true
+  }
+
+  export type UserPreferenceMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    theme?: true
+    fontSize?: true
+    aiVerbosity?: true
+    notificationsEnabled?: true
+    emailDigest?: true
+    dataRetention?: true
+    exportFormat?: true
+    updatedAt?: true
+  }
+
+  export type UserPreferenceCountAggregateInputType = {
+    id?: true
+    userId?: true
+    theme?: true
+    fontSize?: true
+    aiVerbosity?: true
+    notificationsEnabled?: true
+    emailDigest?: true
+    dataRetention?: true
+    exportFormat?: true
+    metadata?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type UserPreferenceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UserPreference to aggregate.
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserPreferences to fetch.
+     */
+    orderBy?: UserPreferenceOrderByWithRelationInput | UserPreferenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: UserPreferenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserPreferences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserPreferences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned UserPreferences
+    **/
+    _count?: true | UserPreferenceCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: UserPreferenceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: UserPreferenceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: UserPreferenceMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: UserPreferenceMaxAggregateInputType
+  }
+
+  export type GetUserPreferenceAggregateType<T extends UserPreferenceAggregateArgs> = {
+        [P in keyof T & keyof AggregateUserPreference]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUserPreference[P]>
+      : GetScalarType<T[P], AggregateUserPreference[P]>
+  }
+
+
+
+
+  export type UserPreferenceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserPreferenceWhereInput
+    orderBy?: UserPreferenceOrderByWithAggregationInput | UserPreferenceOrderByWithAggregationInput[]
+    by: UserPreferenceScalarFieldEnum[] | UserPreferenceScalarFieldEnum
+    having?: UserPreferenceScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: UserPreferenceCountAggregateInputType | true
+    _avg?: UserPreferenceAvgAggregateInputType
+    _sum?: UserPreferenceSumAggregateInputType
+    _min?: UserPreferenceMinAggregateInputType
+    _max?: UserPreferenceMaxAggregateInputType
+  }
+
+  export type UserPreferenceGroupByOutputType = {
+    id: string
+    userId: string
+    theme: string
+    fontSize: string
+    aiVerbosity: $Enums.VerbosityLevel
+    notificationsEnabled: boolean
+    emailDigest: $Enums.EmailDigestFrequency
+    dataRetention: number
+    exportFormat: string
+    metadata: JsonValue | null
+    updatedAt: Date
+    _count: UserPreferenceCountAggregateOutputType | null
+    _avg: UserPreferenceAvgAggregateOutputType | null
+    _sum: UserPreferenceSumAggregateOutputType | null
+    _min: UserPreferenceMinAggregateOutputType | null
+    _max: UserPreferenceMaxAggregateOutputType | null
+  }
+
+  type GetUserPreferenceGroupByPayload<T extends UserPreferenceGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<UserPreferenceGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof UserPreferenceGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UserPreferenceGroupByOutputType[P]>
+            : GetScalarType<T[P], UserPreferenceGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type UserPreferenceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    theme?: boolean
+    fontSize?: boolean
+    aiVerbosity?: boolean
+    notificationsEnabled?: boolean
+    emailDigest?: boolean
+    dataRetention?: boolean
+    exportFormat?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["userPreference"]>
+
+  export type UserPreferenceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    theme?: boolean
+    fontSize?: boolean
+    aiVerbosity?: boolean
+    notificationsEnabled?: boolean
+    emailDigest?: boolean
+    dataRetention?: boolean
+    exportFormat?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["userPreference"]>
+
+  export type UserPreferenceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    theme?: boolean
+    fontSize?: boolean
+    aiVerbosity?: boolean
+    notificationsEnabled?: boolean
+    emailDigest?: boolean
+    dataRetention?: boolean
+    exportFormat?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["userPreference"]>
+
+  export type UserPreferenceSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    theme?: boolean
+    fontSize?: boolean
+    aiVerbosity?: boolean
+    notificationsEnabled?: boolean
+    emailDigest?: boolean
+    dataRetention?: boolean
+    exportFormat?: boolean
+    metadata?: boolean
+    updatedAt?: boolean
+  }
+
+  export type UserPreferenceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "theme" | "fontSize" | "aiVerbosity" | "notificationsEnabled" | "emailDigest" | "dataRetention" | "exportFormat" | "metadata" | "updatedAt", ExtArgs["result"]["userPreference"]>
+  export type UserPreferenceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type UserPreferenceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type UserPreferenceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $UserPreferencePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "UserPreference"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      theme: string
+      fontSize: string
+      aiVerbosity: $Enums.VerbosityLevel
+      notificationsEnabled: boolean
+      emailDigest: $Enums.EmailDigestFrequency
+      dataRetention: number
+      exportFormat: string
+      metadata: Prisma.JsonValue | null
+      updatedAt: Date
+    }, ExtArgs["result"]["userPreference"]>
+    composites: {}
+  }
+
+  type UserPreferenceGetPayload<S extends boolean | null | undefined | UserPreferenceDefaultArgs> = $Result.GetResult<Prisma.$UserPreferencePayload, S>
+
+  type UserPreferenceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<UserPreferenceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: UserPreferenceCountAggregateInputType | true
+    }
+
+  export interface UserPreferenceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UserPreference'], meta: { name: 'UserPreference' } }
+    /**
+     * Find zero or one UserPreference that matches the filter.
+     * @param {UserPreferenceFindUniqueArgs} args - Arguments to find a UserPreference
+     * @example
+     * // Get one UserPreference
+     * const userPreference = await prisma.userPreference.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UserPreferenceFindUniqueArgs>(args: SelectSubset<T, UserPreferenceFindUniqueArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one UserPreference that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UserPreferenceFindUniqueOrThrowArgs} args - Arguments to find a UserPreference
+     * @example
+     * // Get one UserPreference
+     * const userPreference = await prisma.userPreference.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UserPreferenceFindUniqueOrThrowArgs>(args: SelectSubset<T, UserPreferenceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UserPreference that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceFindFirstArgs} args - Arguments to find a UserPreference
+     * @example
+     * // Get one UserPreference
+     * const userPreference = await prisma.userPreference.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UserPreferenceFindFirstArgs>(args?: SelectSubset<T, UserPreferenceFindFirstArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first UserPreference that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceFindFirstOrThrowArgs} args - Arguments to find a UserPreference
+     * @example
+     * // Get one UserPreference
+     * const userPreference = await prisma.userPreference.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UserPreferenceFindFirstOrThrowArgs>(args?: SelectSubset<T, UserPreferenceFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more UserPreferences that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all UserPreferences
+     * const userPreferences = await prisma.userPreference.findMany()
+     * 
+     * // Get first 10 UserPreferences
+     * const userPreferences = await prisma.userPreference.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const userPreferenceWithIdOnly = await prisma.userPreference.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends UserPreferenceFindManyArgs>(args?: SelectSubset<T, UserPreferenceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a UserPreference.
+     * @param {UserPreferenceCreateArgs} args - Arguments to create a UserPreference.
+     * @example
+     * // Create one UserPreference
+     * const UserPreference = await prisma.userPreference.create({
+     *   data: {
+     *     // ... data to create a UserPreference
+     *   }
+     * })
+     * 
+     */
+    create<T extends UserPreferenceCreateArgs>(args: SelectSubset<T, UserPreferenceCreateArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many UserPreferences.
+     * @param {UserPreferenceCreateManyArgs} args - Arguments to create many UserPreferences.
+     * @example
+     * // Create many UserPreferences
+     * const userPreference = await prisma.userPreference.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends UserPreferenceCreateManyArgs>(args?: SelectSubset<T, UserPreferenceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many UserPreferences and returns the data saved in the database.
+     * @param {UserPreferenceCreateManyAndReturnArgs} args - Arguments to create many UserPreferences.
+     * @example
+     * // Create many UserPreferences
+     * const userPreference = await prisma.userPreference.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many UserPreferences and only return the `id`
+     * const userPreferenceWithIdOnly = await prisma.userPreference.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends UserPreferenceCreateManyAndReturnArgs>(args?: SelectSubset<T, UserPreferenceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a UserPreference.
+     * @param {UserPreferenceDeleteArgs} args - Arguments to delete one UserPreference.
+     * @example
+     * // Delete one UserPreference
+     * const UserPreference = await prisma.userPreference.delete({
+     *   where: {
+     *     // ... filter to delete one UserPreference
+     *   }
+     * })
+     * 
+     */
+    delete<T extends UserPreferenceDeleteArgs>(args: SelectSubset<T, UserPreferenceDeleteArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one UserPreference.
+     * @param {UserPreferenceUpdateArgs} args - Arguments to update one UserPreference.
+     * @example
+     * // Update one UserPreference
+     * const userPreference = await prisma.userPreference.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends UserPreferenceUpdateArgs>(args: SelectSubset<T, UserPreferenceUpdateArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more UserPreferences.
+     * @param {UserPreferenceDeleteManyArgs} args - Arguments to filter UserPreferences to delete.
+     * @example
+     * // Delete a few UserPreferences
+     * const { count } = await prisma.userPreference.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends UserPreferenceDeleteManyArgs>(args?: SelectSubset<T, UserPreferenceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UserPreferences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many UserPreferences
+     * const userPreference = await prisma.userPreference.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends UserPreferenceUpdateManyArgs>(args: SelectSubset<T, UserPreferenceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more UserPreferences and returns the data updated in the database.
+     * @param {UserPreferenceUpdateManyAndReturnArgs} args - Arguments to update many UserPreferences.
+     * @example
+     * // Update many UserPreferences
+     * const userPreference = await prisma.userPreference.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more UserPreferences and only return the `id`
+     * const userPreferenceWithIdOnly = await prisma.userPreference.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends UserPreferenceUpdateManyAndReturnArgs>(args: SelectSubset<T, UserPreferenceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one UserPreference.
+     * @param {UserPreferenceUpsertArgs} args - Arguments to update or create a UserPreference.
+     * @example
+     * // Update or create a UserPreference
+     * const userPreference = await prisma.userPreference.upsert({
+     *   create: {
+     *     // ... data to create a UserPreference
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the UserPreference we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UserPreferenceUpsertArgs>(args: SelectSubset<T, UserPreferenceUpsertArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of UserPreferences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceCountArgs} args - Arguments to filter UserPreferences to count.
+     * @example
+     * // Count the number of UserPreferences
+     * const count = await prisma.userPreference.count({
+     *   where: {
+     *     // ... the filter for the UserPreferences we want to count
+     *   }
+     * })
+    **/
+    count<T extends UserPreferenceCountArgs>(
+      args?: Subset<T, UserPreferenceCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UserPreferenceCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a UserPreference.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends UserPreferenceAggregateArgs>(args: Subset<T, UserPreferenceAggregateArgs>): Prisma.PrismaPromise<GetUserPreferenceAggregateType<T>>
+
+    /**
+     * Group by UserPreference.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserPreferenceGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends UserPreferenceGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UserPreferenceGroupByArgs['orderBy'] }
+        : { orderBy?: UserPreferenceGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, UserPreferenceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserPreferenceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the UserPreference model
+   */
+  readonly fields: UserPreferenceFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for UserPreference.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UserPreferenceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the UserPreference model
+   */
+  interface UserPreferenceFieldRefs {
+    readonly id: FieldRef<"UserPreference", 'String'>
+    readonly userId: FieldRef<"UserPreference", 'String'>
+    readonly theme: FieldRef<"UserPreference", 'String'>
+    readonly fontSize: FieldRef<"UserPreference", 'String'>
+    readonly aiVerbosity: FieldRef<"UserPreference", 'VerbosityLevel'>
+    readonly notificationsEnabled: FieldRef<"UserPreference", 'Boolean'>
+    readonly emailDigest: FieldRef<"UserPreference", 'EmailDigestFrequency'>
+    readonly dataRetention: FieldRef<"UserPreference", 'Int'>
+    readonly exportFormat: FieldRef<"UserPreference", 'String'>
+    readonly metadata: FieldRef<"UserPreference", 'Json'>
+    readonly updatedAt: FieldRef<"UserPreference", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * UserPreference findUnique
+   */
+  export type UserPreferenceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter, which UserPreference to fetch.
+     */
+    where: UserPreferenceWhereUniqueInput
+  }
+
+  /**
+   * UserPreference findUniqueOrThrow
+   */
+  export type UserPreferenceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter, which UserPreference to fetch.
+     */
+    where: UserPreferenceWhereUniqueInput
+  }
+
+  /**
+   * UserPreference findFirst
+   */
+  export type UserPreferenceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter, which UserPreference to fetch.
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserPreferences to fetch.
+     */
+    orderBy?: UserPreferenceOrderByWithRelationInput | UserPreferenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UserPreferences.
+     */
+    cursor?: UserPreferenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserPreferences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserPreferences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UserPreferences.
+     */
+    distinct?: UserPreferenceScalarFieldEnum | UserPreferenceScalarFieldEnum[]
+  }
+
+  /**
+   * UserPreference findFirstOrThrow
+   */
+  export type UserPreferenceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter, which UserPreference to fetch.
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserPreferences to fetch.
+     */
+    orderBy?: UserPreferenceOrderByWithRelationInput | UserPreferenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for UserPreferences.
+     */
+    cursor?: UserPreferenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserPreferences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserPreferences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of UserPreferences.
+     */
+    distinct?: UserPreferenceScalarFieldEnum | UserPreferenceScalarFieldEnum[]
+  }
+
+  /**
+   * UserPreference findMany
+   */
+  export type UserPreferenceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter, which UserPreferences to fetch.
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of UserPreferences to fetch.
+     */
+    orderBy?: UserPreferenceOrderByWithRelationInput | UserPreferenceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing UserPreferences.
+     */
+    cursor?: UserPreferenceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` UserPreferences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` UserPreferences.
+     */
+    skip?: number
+    distinct?: UserPreferenceScalarFieldEnum | UserPreferenceScalarFieldEnum[]
+  }
+
+  /**
+   * UserPreference create
+   */
+  export type UserPreferenceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * The data needed to create a UserPreference.
+     */
+    data: XOR<UserPreferenceCreateInput, UserPreferenceUncheckedCreateInput>
+  }
+
+  /**
+   * UserPreference createMany
+   */
+  export type UserPreferenceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many UserPreferences.
+     */
+    data: UserPreferenceCreateManyInput | UserPreferenceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * UserPreference createManyAndReturn
+   */
+  export type UserPreferenceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * The data used to create many UserPreferences.
+     */
+    data: UserPreferenceCreateManyInput | UserPreferenceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UserPreference update
+   */
+  export type UserPreferenceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * The data needed to update a UserPreference.
+     */
+    data: XOR<UserPreferenceUpdateInput, UserPreferenceUncheckedUpdateInput>
+    /**
+     * Choose, which UserPreference to update.
+     */
+    where: UserPreferenceWhereUniqueInput
+  }
+
+  /**
+   * UserPreference updateMany
+   */
+  export type UserPreferenceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update UserPreferences.
+     */
+    data: XOR<UserPreferenceUpdateManyMutationInput, UserPreferenceUncheckedUpdateManyInput>
+    /**
+     * Filter which UserPreferences to update
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * Limit how many UserPreferences to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * UserPreference updateManyAndReturn
+   */
+  export type UserPreferenceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * The data used to update UserPreferences.
+     */
+    data: XOR<UserPreferenceUpdateManyMutationInput, UserPreferenceUncheckedUpdateManyInput>
+    /**
+     * Filter which UserPreferences to update
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * Limit how many UserPreferences to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * UserPreference upsert
+   */
+  export type UserPreferenceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * The filter to search for the UserPreference to update in case it exists.
+     */
+    where: UserPreferenceWhereUniqueInput
+    /**
+     * In case the UserPreference found by the `where` argument doesn't exist, create a new UserPreference with this data.
+     */
+    create: XOR<UserPreferenceCreateInput, UserPreferenceUncheckedCreateInput>
+    /**
+     * In case the UserPreference was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UserPreferenceUpdateInput, UserPreferenceUncheckedUpdateInput>
+  }
+
+  /**
+   * UserPreference delete
+   */
+  export type UserPreferenceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+    /**
+     * Filter which UserPreference to delete.
+     */
+    where: UserPreferenceWhereUniqueInput
+  }
+
+  /**
+   * UserPreference deleteMany
+   */
+  export type UserPreferenceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which UserPreferences to delete
+     */
+    where?: UserPreferenceWhereInput
+    /**
+     * Limit how many UserPreferences to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * UserPreference without action
+   */
+  export type UserPreferenceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserPreference
+     */
+    select?: UserPreferenceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the UserPreference
+     */
+    omit?: UserPreferenceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserPreferenceInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -5652,10 +17085,11 @@ export namespace Prisma {
     emailTokenExpires: 'emailTokenExpires',
     image: 'image',
     password: 'password',
-    cid: 'cid',
-    locale: 'locale',
+    preferredLanguage: 'preferredLanguage',
+    timezone: 'timezone',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
+    lastActiveAt: 'lastActiveAt',
     role: 'role'
   };
 
@@ -5671,12 +17105,157 @@ export namespace Prisma {
   export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
 
 
+  export const ConversationScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    title: 'title',
+    summary: 'summary',
+    language: 'language',
+    status: 'status',
+    metadata: 'metadata',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    lastMessageAt: 'lastMessageAt'
+  };
+
+  export type ConversationScalarFieldEnum = (typeof ConversationScalarFieldEnum)[keyof typeof ConversationScalarFieldEnum]
+
+
+  export const MessageScalarFieldEnum: {
+    id: 'id',
+    conversationId: 'conversationId',
+    role: 'role',
+    content: 'content',
+    metadata: 'metadata',
+    hermeticPrinciples: 'hermeticPrinciples',
+    emotionalState: 'emotionalState',
+    createdAt: 'createdAt'
+  };
+
+  export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
+
+
+  export const TopicScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    nameTranslations: 'nameTranslations',
+    description: 'description',
+    hermeticPrinciple: 'hermeticPrinciple',
+    category: 'category'
+  };
+
+  export type TopicScalarFieldEnum = (typeof TopicScalarFieldEnum)[keyof typeof TopicScalarFieldEnum]
+
+
+  export const ConversationTopicScalarFieldEnum: {
+    id: 'id',
+    conversationId: 'conversationId',
+    topicId: 'topicId',
+    relevanceScore: 'relevanceScore',
+    createdAt: 'createdAt'
+  };
+
+  export type ConversationTopicScalarFieldEnum = (typeof ConversationTopicScalarFieldEnum)[keyof typeof ConversationTopicScalarFieldEnum]
+
+
+  export const UserInsightScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    conversationId: 'conversationId',
+    content: 'content',
+    type: 'type',
+    significance: 'significance',
+    metadata: 'metadata',
+    createdAt: 'createdAt'
+  };
+
+  export type UserInsightScalarFieldEnum = (typeof UserInsightScalarFieldEnum)[keyof typeof UserInsightScalarFieldEnum]
+
+
+  export const SpiritualProfileScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    journeyStartDate: 'journeyStartDate',
+    currentLevel: 'currentLevel',
+    principlesStudied: 'principlesStudied',
+    practicesCompleted: 'practicesCompleted',
+    transformationScore: 'transformationScore',
+    metadata: 'metadata',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SpiritualProfileScalarFieldEnum = (typeof SpiritualProfileScalarFieldEnum)[keyof typeof SpiritualProfileScalarFieldEnum]
+
+
+  export const SubscriptionScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    stripeCustomerId: 'stripeCustomerId',
+    stripeSubscriptionId: 'stripeSubscriptionId',
+    plan: 'plan',
+    status: 'status',
+    currentPeriodStart: 'currentPeriodStart',
+    currentPeriodEnd: 'currentPeriodEnd',
+    cancelAtPeriodEnd: 'cancelAtPeriodEnd',
+    metadata: 'metadata',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SubscriptionScalarFieldEnum = (typeof SubscriptionScalarFieldEnum)[keyof typeof SubscriptionScalarFieldEnum]
+
+
+  export const UsageRecordScalarFieldEnum: {
+    id: 'id',
+    subscriptionId: 'subscriptionId',
+    metric: 'metric',
+    count: 'count',
+    date: 'date',
+    metadata: 'metadata',
+    createdAt: 'createdAt'
+  };
+
+  export type UsageRecordScalarFieldEnum = (typeof UsageRecordScalarFieldEnum)[keyof typeof UsageRecordScalarFieldEnum]
+
+
+  export const UserPreferenceScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    theme: 'theme',
+    fontSize: 'fontSize',
+    aiVerbosity: 'aiVerbosity',
+    notificationsEnabled: 'notificationsEnabled',
+    emailDigest: 'emailDigest',
+    dataRetention: 'dataRetention',
+    exportFormat: 'exportFormat',
+    metadata: 'metadata',
+    updatedAt: 'updatedAt'
+  };
+
+  export type UserPreferenceScalarFieldEnum = (typeof UserPreferenceScalarFieldEnum)[keyof typeof UserPreferenceScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const NullableJsonNullValueInput: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull
+  };
+
+  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+  export const JsonNullValueInput: {
+    JsonNull: typeof JsonNull
+  };
+
+  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
   export const QueryMode: {
@@ -5693,6 +17272,152 @@ export namespace Prisma {
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+  export const AccountOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    type: 'type',
+    provider: 'provider',
+    providerAccountId: 'providerAccountId',
+    refresh_token: 'refresh_token',
+    access_token: 'access_token',
+    token_type: 'token_type',
+    scope: 'scope',
+    id_token: 'id_token',
+    session_state: 'session_state'
+  };
+
+  export type AccountOrderByRelevanceFieldEnum = (typeof AccountOrderByRelevanceFieldEnum)[keyof typeof AccountOrderByRelevanceFieldEnum]
+
+
+  export const SessionOrderByRelevanceFieldEnum: {
+    id: 'id',
+    sessionToken: 'sessionToken',
+    userId: 'userId'
+  };
+
+  export type SessionOrderByRelevanceFieldEnum = (typeof SessionOrderByRelevanceFieldEnum)[keyof typeof SessionOrderByRelevanceFieldEnum]
+
+
+  export const UserOrderByRelevanceFieldEnum: {
+    id: 'id',
+    name: 'name',
+    email: 'email',
+    emailVerificationToken: 'emailVerificationToken',
+    image: 'image',
+    password: 'password',
+    preferredLanguage: 'preferredLanguage',
+    timezone: 'timezone'
+  };
+
+  export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+
+
+  export const VerificationTokenOrderByRelevanceFieldEnum: {
+    identifier: 'identifier',
+    token: 'token'
+  };
+
+  export type VerificationTokenOrderByRelevanceFieldEnum = (typeof VerificationTokenOrderByRelevanceFieldEnum)[keyof typeof VerificationTokenOrderByRelevanceFieldEnum]
+
+
+  export const JsonNullValueFilter: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull,
+    AnyNull: typeof AnyNull
+  };
+
+  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+
+
+  export const ConversationOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    title: 'title',
+    summary: 'summary',
+    language: 'language'
+  };
+
+  export type ConversationOrderByRelevanceFieldEnum = (typeof ConversationOrderByRelevanceFieldEnum)[keyof typeof ConversationOrderByRelevanceFieldEnum]
+
+
+  export const MessageOrderByRelevanceFieldEnum: {
+    id: 'id',
+    conversationId: 'conversationId',
+    content: 'content',
+    hermeticPrinciples: 'hermeticPrinciples',
+    emotionalState: 'emotionalState'
+  };
+
+  export type MessageOrderByRelevanceFieldEnum = (typeof MessageOrderByRelevanceFieldEnum)[keyof typeof MessageOrderByRelevanceFieldEnum]
+
+
+  export const TopicOrderByRelevanceFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    hermeticPrinciple: 'hermeticPrinciple'
+  };
+
+  export type TopicOrderByRelevanceFieldEnum = (typeof TopicOrderByRelevanceFieldEnum)[keyof typeof TopicOrderByRelevanceFieldEnum]
+
+
+  export const ConversationTopicOrderByRelevanceFieldEnum: {
+    id: 'id',
+    conversationId: 'conversationId',
+    topicId: 'topicId'
+  };
+
+  export type ConversationTopicOrderByRelevanceFieldEnum = (typeof ConversationTopicOrderByRelevanceFieldEnum)[keyof typeof ConversationTopicOrderByRelevanceFieldEnum]
+
+
+  export const UserInsightOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    conversationId: 'conversationId',
+    content: 'content'
+  };
+
+  export type UserInsightOrderByRelevanceFieldEnum = (typeof UserInsightOrderByRelevanceFieldEnum)[keyof typeof UserInsightOrderByRelevanceFieldEnum]
+
+
+  export const SpiritualProfileOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    principlesStudied: 'principlesStudied'
+  };
+
+  export type SpiritualProfileOrderByRelevanceFieldEnum = (typeof SpiritualProfileOrderByRelevanceFieldEnum)[keyof typeof SpiritualProfileOrderByRelevanceFieldEnum]
+
+
+  export const SubscriptionOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    stripeCustomerId: 'stripeCustomerId',
+    stripeSubscriptionId: 'stripeSubscriptionId'
+  };
+
+  export type SubscriptionOrderByRelevanceFieldEnum = (typeof SubscriptionOrderByRelevanceFieldEnum)[keyof typeof SubscriptionOrderByRelevanceFieldEnum]
+
+
+  export const UsageRecordOrderByRelevanceFieldEnum: {
+    id: 'id',
+    subscriptionId: 'subscriptionId'
+  };
+
+  export type UsageRecordOrderByRelevanceFieldEnum = (typeof UsageRecordOrderByRelevanceFieldEnum)[keyof typeof UsageRecordOrderByRelevanceFieldEnum]
+
+
+  export const UserPreferenceOrderByRelevanceFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    theme: 'theme',
+    fontSize: 'fontSize',
+    exportFormat: 'exportFormat'
+  };
+
+  export type UserPreferenceOrderByRelevanceFieldEnum = (typeof UserPreferenceOrderByRelevanceFieldEnum)[keyof typeof UserPreferenceOrderByRelevanceFieldEnum]
 
 
   /**
@@ -5757,6 +17482,62 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'ConversationStatus'
+   */
+  export type EnumConversationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ConversationStatus'>
+    
+
+
+  /**
+   * Reference to a field of type 'ConversationStatus[]'
+   */
+  export type ListEnumConversationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ConversationStatus[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Json'
+   */
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'QueryMode'
+   */
+  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'MessageRole'
+   */
+  export type EnumMessageRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MessageRole'>
+    
+
+
+  /**
+   * Reference to a field of type 'MessageRole[]'
+   */
+  export type ListEnumMessageRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MessageRole[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'TopicCategory'
+   */
+  export type EnumTopicCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TopicCategory'>
+    
+
+
+  /**
+   * Reference to a field of type 'TopicCategory[]'
+   */
+  export type ListEnumTopicCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TopicCategory[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -5767,6 +17548,125 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'InsightType'
+   */
+  export type EnumInsightTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'InsightType'>
+    
+
+
+  /**
+   * Reference to a field of type 'InsightType[]'
+   */
+  export type ListEnumInsightTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'InsightType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'SignificanceLevel'
+   */
+  export type EnumSignificanceLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SignificanceLevel'>
+    
+
+
+  /**
+   * Reference to a field of type 'SignificanceLevel[]'
+   */
+  export type ListEnumSignificanceLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SignificanceLevel[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'SpiritualLevel'
+   */
+  export type EnumSpiritualLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpiritualLevel'>
+    
+
+
+  /**
+   * Reference to a field of type 'SpiritualLevel[]'
+   */
+  export type ListEnumSpiritualLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpiritualLevel[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'SubscriptionPlan'
+   */
+  export type EnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionPlan'>
+    
+
+
+  /**
+   * Reference to a field of type 'SubscriptionPlan[]'
+   */
+  export type ListEnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionPlan[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'SubscriptionStatus'
+   */
+  export type EnumSubscriptionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionStatus'>
+    
+
+
+  /**
+   * Reference to a field of type 'SubscriptionStatus[]'
+   */
+  export type ListEnumSubscriptionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionStatus[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
+   * Reference to a field of type 'UsageMetric'
+   */
+  export type EnumUsageMetricFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UsageMetric'>
+    
+
+
+  /**
+   * Reference to a field of type 'UsageMetric[]'
+   */
+  export type ListEnumUsageMetricFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UsageMetric[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'VerbosityLevel'
+   */
+  export type EnumVerbosityLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VerbosityLevel'>
+    
+
+
+  /**
+   * Reference to a field of type 'VerbosityLevel[]'
+   */
+  export type ListEnumVerbosityLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'VerbosityLevel[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'EmailDigestFrequency'
+   */
+  export type EnumEmailDigestFrequencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailDigestFrequency'>
+    
+
+
+  /**
+   * Reference to a field of type 'EmailDigestFrequency[]'
+   */
+  export type ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailDigestFrequency[]'>
     
   /**
    * Deep Input Types
@@ -5806,6 +17706,7 @@ export namespace Prisma {
     id_token?: SortOrderInput | SortOrder
     session_state?: SortOrderInput | SortOrder
     user?: UserOrderByWithRelationInput
+    _relevance?: AccountOrderByRelevanceInput
   }
 
   export type AccountWhereUniqueInput = Prisma.AtLeast<{
@@ -5883,6 +17784,7 @@ export namespace Prisma {
     userId?: SortOrder
     expires?: SortOrder
     user?: UserOrderByWithRelationInput
+    _relevance?: SessionOrderByRelevanceInput
   }
 
   export type SessionWhereUniqueInput = Prisma.AtLeast<{
@@ -5928,13 +17830,19 @@ export namespace Prisma {
     emailTokenExpires?: DateTimeNullableFilter<"User"> | Date | string | null
     image?: StringNullableFilter<"User"> | string | null
     password?: StringNullableFilter<"User"> | string | null
-    cid?: StringNullableFilter<"User"> | string | null
-    locale?: StringFilter<"User"> | string
+    preferredLanguage?: StringFilter<"User"> | string
+    timezone?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
+    lastActiveAt?: DateTimeNullableFilter<"User"> | Date | string | null
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
     accounts?: AccountListRelationFilter
     sessions?: SessionListRelationFilter
+    conversations?: ConversationListRelationFilter
+    insights?: UserInsightListRelationFilter
+    subscriptions?: SubscriptionListRelationFilter
+    spiritualProfile?: XOR<SpiritualProfileNullableScalarRelationFilter, SpiritualProfileWhereInput> | null
+    preferences?: XOR<UserPreferenceNullableScalarRelationFilter, UserPreferenceWhereInput> | null
   }
 
   export type UserOrderByWithRelationInput = {
@@ -5946,13 +17854,20 @@ export namespace Prisma {
     emailTokenExpires?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     password?: SortOrderInput | SortOrder
-    cid?: SortOrderInput | SortOrder
-    locale?: SortOrder
+    preferredLanguage?: SortOrder
+    timezone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    lastActiveAt?: SortOrderInput | SortOrder
     role?: SortOrder
     accounts?: AccountOrderByRelationAggregateInput
     sessions?: SessionOrderByRelationAggregateInput
+    conversations?: ConversationOrderByRelationAggregateInput
+    insights?: UserInsightOrderByRelationAggregateInput
+    subscriptions?: SubscriptionOrderByRelationAggregateInput
+    spiritualProfile?: SpiritualProfileOrderByWithRelationInput
+    preferences?: UserPreferenceOrderByWithRelationInput
+    _relevance?: UserOrderByRelevanceInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -5967,13 +17882,19 @@ export namespace Prisma {
     emailTokenExpires?: DateTimeNullableFilter<"User"> | Date | string | null
     image?: StringNullableFilter<"User"> | string | null
     password?: StringNullableFilter<"User"> | string | null
-    cid?: StringNullableFilter<"User"> | string | null
-    locale?: StringFilter<"User"> | string
+    preferredLanguage?: StringFilter<"User"> | string
+    timezone?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
+    lastActiveAt?: DateTimeNullableFilter<"User"> | Date | string | null
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
     accounts?: AccountListRelationFilter
     sessions?: SessionListRelationFilter
+    conversations?: ConversationListRelationFilter
+    insights?: UserInsightListRelationFilter
+    subscriptions?: SubscriptionListRelationFilter
+    spiritualProfile?: XOR<SpiritualProfileNullableScalarRelationFilter, SpiritualProfileWhereInput> | null
+    preferences?: XOR<UserPreferenceNullableScalarRelationFilter, UserPreferenceWhereInput> | null
   }, "id" | "email" | "emailVerificationToken">
 
   export type UserOrderByWithAggregationInput = {
@@ -5985,10 +17906,11 @@ export namespace Prisma {
     emailTokenExpires?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     password?: SortOrderInput | SortOrder
-    cid?: SortOrderInput | SortOrder
-    locale?: SortOrder
+    preferredLanguage?: SortOrder
+    timezone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    lastActiveAt?: SortOrderInput | SortOrder
     role?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -6007,10 +17929,11 @@ export namespace Prisma {
     emailTokenExpires?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     image?: StringNullableWithAggregatesFilter<"User"> | string | null
     password?: StringNullableWithAggregatesFilter<"User"> | string | null
-    cid?: StringNullableWithAggregatesFilter<"User"> | string | null
-    locale?: StringWithAggregatesFilter<"User"> | string
+    preferredLanguage?: StringWithAggregatesFilter<"User"> | string
+    timezone?: StringWithAggregatesFilter<"User"> | string
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    lastActiveAt?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     role?: EnumUserRoleWithAggregatesFilter<"User"> | $Enums.UserRole
   }
 
@@ -6027,6 +17950,7 @@ export namespace Prisma {
     identifier?: SortOrder
     token?: SortOrder
     expires?: SortOrder
+    _relevance?: VerificationTokenOrderByRelevanceInput
   }
 
   export type VerificationTokenWhereUniqueInput = Prisma.AtLeast<{
@@ -6055,6 +17979,693 @@ export namespace Prisma {
     identifier?: StringWithAggregatesFilter<"VerificationToken"> | string
     token?: StringWithAggregatesFilter<"VerificationToken"> | string
     expires?: DateTimeWithAggregatesFilter<"VerificationToken"> | Date | string
+  }
+
+  export type ConversationWhereInput = {
+    AND?: ConversationWhereInput | ConversationWhereInput[]
+    OR?: ConversationWhereInput[]
+    NOT?: ConversationWhereInput | ConversationWhereInput[]
+    id?: StringFilter<"Conversation"> | string
+    userId?: StringFilter<"Conversation"> | string
+    title?: StringNullableFilter<"Conversation"> | string | null
+    summary?: StringNullableFilter<"Conversation"> | string | null
+    language?: StringFilter<"Conversation"> | string
+    status?: EnumConversationStatusFilter<"Conversation"> | $Enums.ConversationStatus
+    metadata?: JsonNullableFilter<"Conversation">
+    createdAt?: DateTimeFilter<"Conversation"> | Date | string
+    updatedAt?: DateTimeFilter<"Conversation"> | Date | string
+    lastMessageAt?: DateTimeNullableFilter<"Conversation"> | Date | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    messages?: MessageListRelationFilter
+    topics?: ConversationTopicListRelationFilter
+    insights?: UserInsightListRelationFilter
+  }
+
+  export type ConversationOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    title?: SortOrderInput | SortOrder
+    summary?: SortOrderInput | SortOrder
+    language?: SortOrder
+    status?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    lastMessageAt?: SortOrderInput | SortOrder
+    user?: UserOrderByWithRelationInput
+    messages?: MessageOrderByRelationAggregateInput
+    topics?: ConversationTopicOrderByRelationAggregateInput
+    insights?: UserInsightOrderByRelationAggregateInput
+    _relevance?: ConversationOrderByRelevanceInput
+  }
+
+  export type ConversationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ConversationWhereInput | ConversationWhereInput[]
+    OR?: ConversationWhereInput[]
+    NOT?: ConversationWhereInput | ConversationWhereInput[]
+    userId?: StringFilter<"Conversation"> | string
+    title?: StringNullableFilter<"Conversation"> | string | null
+    summary?: StringNullableFilter<"Conversation"> | string | null
+    language?: StringFilter<"Conversation"> | string
+    status?: EnumConversationStatusFilter<"Conversation"> | $Enums.ConversationStatus
+    metadata?: JsonNullableFilter<"Conversation">
+    createdAt?: DateTimeFilter<"Conversation"> | Date | string
+    updatedAt?: DateTimeFilter<"Conversation"> | Date | string
+    lastMessageAt?: DateTimeNullableFilter<"Conversation"> | Date | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    messages?: MessageListRelationFilter
+    topics?: ConversationTopicListRelationFilter
+    insights?: UserInsightListRelationFilter
+  }, "id">
+
+  export type ConversationOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    title?: SortOrderInput | SortOrder
+    summary?: SortOrderInput | SortOrder
+    language?: SortOrder
+    status?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    lastMessageAt?: SortOrderInput | SortOrder
+    _count?: ConversationCountOrderByAggregateInput
+    _max?: ConversationMaxOrderByAggregateInput
+    _min?: ConversationMinOrderByAggregateInput
+  }
+
+  export type ConversationScalarWhereWithAggregatesInput = {
+    AND?: ConversationScalarWhereWithAggregatesInput | ConversationScalarWhereWithAggregatesInput[]
+    OR?: ConversationScalarWhereWithAggregatesInput[]
+    NOT?: ConversationScalarWhereWithAggregatesInput | ConversationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Conversation"> | string
+    userId?: StringWithAggregatesFilter<"Conversation"> | string
+    title?: StringNullableWithAggregatesFilter<"Conversation"> | string | null
+    summary?: StringNullableWithAggregatesFilter<"Conversation"> | string | null
+    language?: StringWithAggregatesFilter<"Conversation"> | string
+    status?: EnumConversationStatusWithAggregatesFilter<"Conversation"> | $Enums.ConversationStatus
+    metadata?: JsonNullableWithAggregatesFilter<"Conversation">
+    createdAt?: DateTimeWithAggregatesFilter<"Conversation"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Conversation"> | Date | string
+    lastMessageAt?: DateTimeNullableWithAggregatesFilter<"Conversation"> | Date | string | null
+  }
+
+  export type MessageWhereInput = {
+    AND?: MessageWhereInput | MessageWhereInput[]
+    OR?: MessageWhereInput[]
+    NOT?: MessageWhereInput | MessageWhereInput[]
+    id?: StringFilter<"Message"> | string
+    conversationId?: StringFilter<"Message"> | string
+    role?: EnumMessageRoleFilter<"Message"> | $Enums.MessageRole
+    content?: StringFilter<"Message"> | string
+    metadata?: JsonNullableFilter<"Message">
+    hermeticPrinciples?: StringNullableListFilter<"Message">
+    emotionalState?: StringNullableFilter<"Message"> | string | null
+    createdAt?: DateTimeFilter<"Message"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+  }
+
+  export type MessageOrderByWithRelationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    role?: SortOrder
+    content?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    hermeticPrinciples?: SortOrder
+    emotionalState?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    conversation?: ConversationOrderByWithRelationInput
+    _relevance?: MessageOrderByRelevanceInput
+  }
+
+  export type MessageWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: MessageWhereInput | MessageWhereInput[]
+    OR?: MessageWhereInput[]
+    NOT?: MessageWhereInput | MessageWhereInput[]
+    conversationId?: StringFilter<"Message"> | string
+    role?: EnumMessageRoleFilter<"Message"> | $Enums.MessageRole
+    content?: StringFilter<"Message"> | string
+    metadata?: JsonNullableFilter<"Message">
+    hermeticPrinciples?: StringNullableListFilter<"Message">
+    emotionalState?: StringNullableFilter<"Message"> | string | null
+    createdAt?: DateTimeFilter<"Message"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+  }, "id">
+
+  export type MessageOrderByWithAggregationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    role?: SortOrder
+    content?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    hermeticPrinciples?: SortOrder
+    emotionalState?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    _count?: MessageCountOrderByAggregateInput
+    _max?: MessageMaxOrderByAggregateInput
+    _min?: MessageMinOrderByAggregateInput
+  }
+
+  export type MessageScalarWhereWithAggregatesInput = {
+    AND?: MessageScalarWhereWithAggregatesInput | MessageScalarWhereWithAggregatesInput[]
+    OR?: MessageScalarWhereWithAggregatesInput[]
+    NOT?: MessageScalarWhereWithAggregatesInput | MessageScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Message"> | string
+    conversationId?: StringWithAggregatesFilter<"Message"> | string
+    role?: EnumMessageRoleWithAggregatesFilter<"Message"> | $Enums.MessageRole
+    content?: StringWithAggregatesFilter<"Message"> | string
+    metadata?: JsonNullableWithAggregatesFilter<"Message">
+    hermeticPrinciples?: StringNullableListFilter<"Message">
+    emotionalState?: StringNullableWithAggregatesFilter<"Message"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Message"> | Date | string
+  }
+
+  export type TopicWhereInput = {
+    AND?: TopicWhereInput | TopicWhereInput[]
+    OR?: TopicWhereInput[]
+    NOT?: TopicWhereInput | TopicWhereInput[]
+    id?: StringFilter<"Topic"> | string
+    name?: StringFilter<"Topic"> | string
+    nameTranslations?: JsonFilter<"Topic">
+    description?: StringNullableFilter<"Topic"> | string | null
+    hermeticPrinciple?: StringNullableFilter<"Topic"> | string | null
+    category?: EnumTopicCategoryFilter<"Topic"> | $Enums.TopicCategory
+    conversations?: ConversationTopicListRelationFilter
+  }
+
+  export type TopicOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    nameTranslations?: SortOrder
+    description?: SortOrderInput | SortOrder
+    hermeticPrinciple?: SortOrderInput | SortOrder
+    category?: SortOrder
+    conversations?: ConversationTopicOrderByRelationAggregateInput
+    _relevance?: TopicOrderByRelevanceInput
+  }
+
+  export type TopicWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    name?: string
+    AND?: TopicWhereInput | TopicWhereInput[]
+    OR?: TopicWhereInput[]
+    NOT?: TopicWhereInput | TopicWhereInput[]
+    nameTranslations?: JsonFilter<"Topic">
+    description?: StringNullableFilter<"Topic"> | string | null
+    hermeticPrinciple?: StringNullableFilter<"Topic"> | string | null
+    category?: EnumTopicCategoryFilter<"Topic"> | $Enums.TopicCategory
+    conversations?: ConversationTopicListRelationFilter
+  }, "id" | "name">
+
+  export type TopicOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    nameTranslations?: SortOrder
+    description?: SortOrderInput | SortOrder
+    hermeticPrinciple?: SortOrderInput | SortOrder
+    category?: SortOrder
+    _count?: TopicCountOrderByAggregateInput
+    _max?: TopicMaxOrderByAggregateInput
+    _min?: TopicMinOrderByAggregateInput
+  }
+
+  export type TopicScalarWhereWithAggregatesInput = {
+    AND?: TopicScalarWhereWithAggregatesInput | TopicScalarWhereWithAggregatesInput[]
+    OR?: TopicScalarWhereWithAggregatesInput[]
+    NOT?: TopicScalarWhereWithAggregatesInput | TopicScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Topic"> | string
+    name?: StringWithAggregatesFilter<"Topic"> | string
+    nameTranslations?: JsonWithAggregatesFilter<"Topic">
+    description?: StringNullableWithAggregatesFilter<"Topic"> | string | null
+    hermeticPrinciple?: StringNullableWithAggregatesFilter<"Topic"> | string | null
+    category?: EnumTopicCategoryWithAggregatesFilter<"Topic"> | $Enums.TopicCategory
+  }
+
+  export type ConversationTopicWhereInput = {
+    AND?: ConversationTopicWhereInput | ConversationTopicWhereInput[]
+    OR?: ConversationTopicWhereInput[]
+    NOT?: ConversationTopicWhereInput | ConversationTopicWhereInput[]
+    id?: StringFilter<"ConversationTopic"> | string
+    conversationId?: StringFilter<"ConversationTopic"> | string
+    topicId?: StringFilter<"ConversationTopic"> | string
+    relevanceScore?: FloatFilter<"ConversationTopic"> | number
+    createdAt?: DateTimeFilter<"ConversationTopic"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+    topic?: XOR<TopicScalarRelationFilter, TopicWhereInput>
+  }
+
+  export type ConversationTopicOrderByWithRelationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    topicId?: SortOrder
+    relevanceScore?: SortOrder
+    createdAt?: SortOrder
+    conversation?: ConversationOrderByWithRelationInput
+    topic?: TopicOrderByWithRelationInput
+    _relevance?: ConversationTopicOrderByRelevanceInput
+  }
+
+  export type ConversationTopicWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    conversationId_topicId?: ConversationTopicConversationIdTopicIdCompoundUniqueInput
+    AND?: ConversationTopicWhereInput | ConversationTopicWhereInput[]
+    OR?: ConversationTopicWhereInput[]
+    NOT?: ConversationTopicWhereInput | ConversationTopicWhereInput[]
+    conversationId?: StringFilter<"ConversationTopic"> | string
+    topicId?: StringFilter<"ConversationTopic"> | string
+    relevanceScore?: FloatFilter<"ConversationTopic"> | number
+    createdAt?: DateTimeFilter<"ConversationTopic"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+    topic?: XOR<TopicScalarRelationFilter, TopicWhereInput>
+  }, "id" | "conversationId_topicId">
+
+  export type ConversationTopicOrderByWithAggregationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    topicId?: SortOrder
+    relevanceScore?: SortOrder
+    createdAt?: SortOrder
+    _count?: ConversationTopicCountOrderByAggregateInput
+    _avg?: ConversationTopicAvgOrderByAggregateInput
+    _max?: ConversationTopicMaxOrderByAggregateInput
+    _min?: ConversationTopicMinOrderByAggregateInput
+    _sum?: ConversationTopicSumOrderByAggregateInput
+  }
+
+  export type ConversationTopicScalarWhereWithAggregatesInput = {
+    AND?: ConversationTopicScalarWhereWithAggregatesInput | ConversationTopicScalarWhereWithAggregatesInput[]
+    OR?: ConversationTopicScalarWhereWithAggregatesInput[]
+    NOT?: ConversationTopicScalarWhereWithAggregatesInput | ConversationTopicScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ConversationTopic"> | string
+    conversationId?: StringWithAggregatesFilter<"ConversationTopic"> | string
+    topicId?: StringWithAggregatesFilter<"ConversationTopic"> | string
+    relevanceScore?: FloatWithAggregatesFilter<"ConversationTopic"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"ConversationTopic"> | Date | string
+  }
+
+  export type UserInsightWhereInput = {
+    AND?: UserInsightWhereInput | UserInsightWhereInput[]
+    OR?: UserInsightWhereInput[]
+    NOT?: UserInsightWhereInput | UserInsightWhereInput[]
+    id?: StringFilter<"UserInsight"> | string
+    userId?: StringFilter<"UserInsight"> | string
+    conversationId?: StringNullableFilter<"UserInsight"> | string | null
+    content?: StringFilter<"UserInsight"> | string
+    type?: EnumInsightTypeFilter<"UserInsight"> | $Enums.InsightType
+    significance?: EnumSignificanceLevelFilter<"UserInsight"> | $Enums.SignificanceLevel
+    metadata?: JsonNullableFilter<"UserInsight">
+    createdAt?: DateTimeFilter<"UserInsight"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    conversation?: XOR<ConversationNullableScalarRelationFilter, ConversationWhereInput> | null
+  }
+
+  export type UserInsightOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    conversationId?: SortOrderInput | SortOrder
+    content?: SortOrder
+    type?: SortOrder
+    significance?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    conversation?: ConversationOrderByWithRelationInput
+    _relevance?: UserInsightOrderByRelevanceInput
+  }
+
+  export type UserInsightWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: UserInsightWhereInput | UserInsightWhereInput[]
+    OR?: UserInsightWhereInput[]
+    NOT?: UserInsightWhereInput | UserInsightWhereInput[]
+    userId?: StringFilter<"UserInsight"> | string
+    conversationId?: StringNullableFilter<"UserInsight"> | string | null
+    content?: StringFilter<"UserInsight"> | string
+    type?: EnumInsightTypeFilter<"UserInsight"> | $Enums.InsightType
+    significance?: EnumSignificanceLevelFilter<"UserInsight"> | $Enums.SignificanceLevel
+    metadata?: JsonNullableFilter<"UserInsight">
+    createdAt?: DateTimeFilter<"UserInsight"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    conversation?: XOR<ConversationNullableScalarRelationFilter, ConversationWhereInput> | null
+  }, "id">
+
+  export type UserInsightOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    conversationId?: SortOrderInput | SortOrder
+    content?: SortOrder
+    type?: SortOrder
+    significance?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    _count?: UserInsightCountOrderByAggregateInput
+    _max?: UserInsightMaxOrderByAggregateInput
+    _min?: UserInsightMinOrderByAggregateInput
+  }
+
+  export type UserInsightScalarWhereWithAggregatesInput = {
+    AND?: UserInsightScalarWhereWithAggregatesInput | UserInsightScalarWhereWithAggregatesInput[]
+    OR?: UserInsightScalarWhereWithAggregatesInput[]
+    NOT?: UserInsightScalarWhereWithAggregatesInput | UserInsightScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"UserInsight"> | string
+    userId?: StringWithAggregatesFilter<"UserInsight"> | string
+    conversationId?: StringNullableWithAggregatesFilter<"UserInsight"> | string | null
+    content?: StringWithAggregatesFilter<"UserInsight"> | string
+    type?: EnumInsightTypeWithAggregatesFilter<"UserInsight"> | $Enums.InsightType
+    significance?: EnumSignificanceLevelWithAggregatesFilter<"UserInsight"> | $Enums.SignificanceLevel
+    metadata?: JsonNullableWithAggregatesFilter<"UserInsight">
+    createdAt?: DateTimeWithAggregatesFilter<"UserInsight"> | Date | string
+  }
+
+  export type SpiritualProfileWhereInput = {
+    AND?: SpiritualProfileWhereInput | SpiritualProfileWhereInput[]
+    OR?: SpiritualProfileWhereInput[]
+    NOT?: SpiritualProfileWhereInput | SpiritualProfileWhereInput[]
+    id?: StringFilter<"SpiritualProfile"> | string
+    userId?: StringFilter<"SpiritualProfile"> | string
+    journeyStartDate?: DateTimeFilter<"SpiritualProfile"> | Date | string
+    currentLevel?: EnumSpiritualLevelFilter<"SpiritualProfile"> | $Enums.SpiritualLevel
+    principlesStudied?: StringNullableListFilter<"SpiritualProfile">
+    practicesCompleted?: IntFilter<"SpiritualProfile"> | number
+    transformationScore?: FloatFilter<"SpiritualProfile"> | number
+    metadata?: JsonNullableFilter<"SpiritualProfile">
+    updatedAt?: DateTimeFilter<"SpiritualProfile"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type SpiritualProfileOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    journeyStartDate?: SortOrder
+    currentLevel?: SortOrder
+    principlesStudied?: SortOrder
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    _relevance?: SpiritualProfileOrderByRelevanceInput
+  }
+
+  export type SpiritualProfileWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    userId?: string
+    AND?: SpiritualProfileWhereInput | SpiritualProfileWhereInput[]
+    OR?: SpiritualProfileWhereInput[]
+    NOT?: SpiritualProfileWhereInput | SpiritualProfileWhereInput[]
+    journeyStartDate?: DateTimeFilter<"SpiritualProfile"> | Date | string
+    currentLevel?: EnumSpiritualLevelFilter<"SpiritualProfile"> | $Enums.SpiritualLevel
+    principlesStudied?: StringNullableListFilter<"SpiritualProfile">
+    practicesCompleted?: IntFilter<"SpiritualProfile"> | number
+    transformationScore?: FloatFilter<"SpiritualProfile"> | number
+    metadata?: JsonNullableFilter<"SpiritualProfile">
+    updatedAt?: DateTimeFilter<"SpiritualProfile"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id" | "userId">
+
+  export type SpiritualProfileOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    journeyStartDate?: SortOrder
+    currentLevel?: SortOrder
+    principlesStudied?: SortOrder
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    _count?: SpiritualProfileCountOrderByAggregateInput
+    _avg?: SpiritualProfileAvgOrderByAggregateInput
+    _max?: SpiritualProfileMaxOrderByAggregateInput
+    _min?: SpiritualProfileMinOrderByAggregateInput
+    _sum?: SpiritualProfileSumOrderByAggregateInput
+  }
+
+  export type SpiritualProfileScalarWhereWithAggregatesInput = {
+    AND?: SpiritualProfileScalarWhereWithAggregatesInput | SpiritualProfileScalarWhereWithAggregatesInput[]
+    OR?: SpiritualProfileScalarWhereWithAggregatesInput[]
+    NOT?: SpiritualProfileScalarWhereWithAggregatesInput | SpiritualProfileScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SpiritualProfile"> | string
+    userId?: StringWithAggregatesFilter<"SpiritualProfile"> | string
+    journeyStartDate?: DateTimeWithAggregatesFilter<"SpiritualProfile"> | Date | string
+    currentLevel?: EnumSpiritualLevelWithAggregatesFilter<"SpiritualProfile"> | $Enums.SpiritualLevel
+    principlesStudied?: StringNullableListFilter<"SpiritualProfile">
+    practicesCompleted?: IntWithAggregatesFilter<"SpiritualProfile"> | number
+    transformationScore?: FloatWithAggregatesFilter<"SpiritualProfile"> | number
+    metadata?: JsonNullableWithAggregatesFilter<"SpiritualProfile">
+    updatedAt?: DateTimeWithAggregatesFilter<"SpiritualProfile"> | Date | string
+  }
+
+  export type SubscriptionWhereInput = {
+    AND?: SubscriptionWhereInput | SubscriptionWhereInput[]
+    OR?: SubscriptionWhereInput[]
+    NOT?: SubscriptionWhereInput | SubscriptionWhereInput[]
+    id?: StringFilter<"Subscription"> | string
+    userId?: StringFilter<"Subscription"> | string
+    stripeCustomerId?: StringNullableFilter<"Subscription"> | string | null
+    stripeSubscriptionId?: StringNullableFilter<"Subscription"> | string | null
+    plan?: EnumSubscriptionPlanFilter<"Subscription"> | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFilter<"Subscription"> | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFilter<"Subscription"> | Date | string
+    currentPeriodEnd?: DateTimeFilter<"Subscription"> | Date | string
+    cancelAtPeriodEnd?: BoolFilter<"Subscription"> | boolean
+    metadata?: JsonNullableFilter<"Subscription">
+    createdAt?: DateTimeFilter<"Subscription"> | Date | string
+    updatedAt?: DateTimeFilter<"Subscription"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    usageRecords?: UsageRecordListRelationFilter
+  }
+
+  export type SubscriptionOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    stripeCustomerId?: SortOrderInput | SortOrder
+    stripeSubscriptionId?: SortOrderInput | SortOrder
+    plan?: SortOrder
+    status?: SortOrder
+    currentPeriodStart?: SortOrder
+    currentPeriodEnd?: SortOrder
+    cancelAtPeriodEnd?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    usageRecords?: UsageRecordOrderByRelationAggregateInput
+    _relevance?: SubscriptionOrderByRelevanceInput
+  }
+
+  export type SubscriptionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    stripeCustomerId?: string
+    stripeSubscriptionId?: string
+    AND?: SubscriptionWhereInput | SubscriptionWhereInput[]
+    OR?: SubscriptionWhereInput[]
+    NOT?: SubscriptionWhereInput | SubscriptionWhereInput[]
+    userId?: StringFilter<"Subscription"> | string
+    plan?: EnumSubscriptionPlanFilter<"Subscription"> | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFilter<"Subscription"> | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFilter<"Subscription"> | Date | string
+    currentPeriodEnd?: DateTimeFilter<"Subscription"> | Date | string
+    cancelAtPeriodEnd?: BoolFilter<"Subscription"> | boolean
+    metadata?: JsonNullableFilter<"Subscription">
+    createdAt?: DateTimeFilter<"Subscription"> | Date | string
+    updatedAt?: DateTimeFilter<"Subscription"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    usageRecords?: UsageRecordListRelationFilter
+  }, "id" | "stripeCustomerId" | "stripeSubscriptionId">
+
+  export type SubscriptionOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    stripeCustomerId?: SortOrderInput | SortOrder
+    stripeSubscriptionId?: SortOrderInput | SortOrder
+    plan?: SortOrder
+    status?: SortOrder
+    currentPeriodStart?: SortOrder
+    currentPeriodEnd?: SortOrder
+    cancelAtPeriodEnd?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: SubscriptionCountOrderByAggregateInput
+    _max?: SubscriptionMaxOrderByAggregateInput
+    _min?: SubscriptionMinOrderByAggregateInput
+  }
+
+  export type SubscriptionScalarWhereWithAggregatesInput = {
+    AND?: SubscriptionScalarWhereWithAggregatesInput | SubscriptionScalarWhereWithAggregatesInput[]
+    OR?: SubscriptionScalarWhereWithAggregatesInput[]
+    NOT?: SubscriptionScalarWhereWithAggregatesInput | SubscriptionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Subscription"> | string
+    userId?: StringWithAggregatesFilter<"Subscription"> | string
+    stripeCustomerId?: StringNullableWithAggregatesFilter<"Subscription"> | string | null
+    stripeSubscriptionId?: StringNullableWithAggregatesFilter<"Subscription"> | string | null
+    plan?: EnumSubscriptionPlanWithAggregatesFilter<"Subscription"> | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusWithAggregatesFilter<"Subscription"> | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
+    currentPeriodEnd?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
+    cancelAtPeriodEnd?: BoolWithAggregatesFilter<"Subscription"> | boolean
+    metadata?: JsonNullableWithAggregatesFilter<"Subscription">
+    createdAt?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
+  }
+
+  export type UsageRecordWhereInput = {
+    AND?: UsageRecordWhereInput | UsageRecordWhereInput[]
+    OR?: UsageRecordWhereInput[]
+    NOT?: UsageRecordWhereInput | UsageRecordWhereInput[]
+    id?: StringFilter<"UsageRecord"> | string
+    subscriptionId?: StringFilter<"UsageRecord"> | string
+    metric?: EnumUsageMetricFilter<"UsageRecord"> | $Enums.UsageMetric
+    count?: IntFilter<"UsageRecord"> | number
+    date?: DateTimeFilter<"UsageRecord"> | Date | string
+    metadata?: JsonNullableFilter<"UsageRecord">
+    createdAt?: DateTimeFilter<"UsageRecord"> | Date | string
+    subscription?: XOR<SubscriptionScalarRelationFilter, SubscriptionWhereInput>
+  }
+
+  export type UsageRecordOrderByWithRelationInput = {
+    id?: SortOrder
+    subscriptionId?: SortOrder
+    metric?: SortOrder
+    count?: SortOrder
+    date?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    subscription?: SubscriptionOrderByWithRelationInput
+    _relevance?: UsageRecordOrderByRelevanceInput
+  }
+
+  export type UsageRecordWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    subscriptionId_metric_date?: UsageRecordSubscriptionIdMetricDateCompoundUniqueInput
+    AND?: UsageRecordWhereInput | UsageRecordWhereInput[]
+    OR?: UsageRecordWhereInput[]
+    NOT?: UsageRecordWhereInput | UsageRecordWhereInput[]
+    subscriptionId?: StringFilter<"UsageRecord"> | string
+    metric?: EnumUsageMetricFilter<"UsageRecord"> | $Enums.UsageMetric
+    count?: IntFilter<"UsageRecord"> | number
+    date?: DateTimeFilter<"UsageRecord"> | Date | string
+    metadata?: JsonNullableFilter<"UsageRecord">
+    createdAt?: DateTimeFilter<"UsageRecord"> | Date | string
+    subscription?: XOR<SubscriptionScalarRelationFilter, SubscriptionWhereInput>
+  }, "id" | "subscriptionId_metric_date">
+
+  export type UsageRecordOrderByWithAggregationInput = {
+    id?: SortOrder
+    subscriptionId?: SortOrder
+    metric?: SortOrder
+    count?: SortOrder
+    date?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    _count?: UsageRecordCountOrderByAggregateInput
+    _avg?: UsageRecordAvgOrderByAggregateInput
+    _max?: UsageRecordMaxOrderByAggregateInput
+    _min?: UsageRecordMinOrderByAggregateInput
+    _sum?: UsageRecordSumOrderByAggregateInput
+  }
+
+  export type UsageRecordScalarWhereWithAggregatesInput = {
+    AND?: UsageRecordScalarWhereWithAggregatesInput | UsageRecordScalarWhereWithAggregatesInput[]
+    OR?: UsageRecordScalarWhereWithAggregatesInput[]
+    NOT?: UsageRecordScalarWhereWithAggregatesInput | UsageRecordScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"UsageRecord"> | string
+    subscriptionId?: StringWithAggregatesFilter<"UsageRecord"> | string
+    metric?: EnumUsageMetricWithAggregatesFilter<"UsageRecord"> | $Enums.UsageMetric
+    count?: IntWithAggregatesFilter<"UsageRecord"> | number
+    date?: DateTimeWithAggregatesFilter<"UsageRecord"> | Date | string
+    metadata?: JsonNullableWithAggregatesFilter<"UsageRecord">
+    createdAt?: DateTimeWithAggregatesFilter<"UsageRecord"> | Date | string
+  }
+
+  export type UserPreferenceWhereInput = {
+    AND?: UserPreferenceWhereInput | UserPreferenceWhereInput[]
+    OR?: UserPreferenceWhereInput[]
+    NOT?: UserPreferenceWhereInput | UserPreferenceWhereInput[]
+    id?: StringFilter<"UserPreference"> | string
+    userId?: StringFilter<"UserPreference"> | string
+    theme?: StringFilter<"UserPreference"> | string
+    fontSize?: StringFilter<"UserPreference"> | string
+    aiVerbosity?: EnumVerbosityLevelFilter<"UserPreference"> | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFilter<"UserPreference"> | boolean
+    emailDigest?: EnumEmailDigestFrequencyFilter<"UserPreference"> | $Enums.EmailDigestFrequency
+    dataRetention?: IntFilter<"UserPreference"> | number
+    exportFormat?: StringFilter<"UserPreference"> | string
+    metadata?: JsonNullableFilter<"UserPreference">
+    updatedAt?: DateTimeFilter<"UserPreference"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type UserPreferenceOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    theme?: SortOrder
+    fontSize?: SortOrder
+    aiVerbosity?: SortOrder
+    notificationsEnabled?: SortOrder
+    emailDigest?: SortOrder
+    dataRetention?: SortOrder
+    exportFormat?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    _relevance?: UserPreferenceOrderByRelevanceInput
+  }
+
+  export type UserPreferenceWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    userId?: string
+    AND?: UserPreferenceWhereInput | UserPreferenceWhereInput[]
+    OR?: UserPreferenceWhereInput[]
+    NOT?: UserPreferenceWhereInput | UserPreferenceWhereInput[]
+    theme?: StringFilter<"UserPreference"> | string
+    fontSize?: StringFilter<"UserPreference"> | string
+    aiVerbosity?: EnumVerbosityLevelFilter<"UserPreference"> | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFilter<"UserPreference"> | boolean
+    emailDigest?: EnumEmailDigestFrequencyFilter<"UserPreference"> | $Enums.EmailDigestFrequency
+    dataRetention?: IntFilter<"UserPreference"> | number
+    exportFormat?: StringFilter<"UserPreference"> | string
+    metadata?: JsonNullableFilter<"UserPreference">
+    updatedAt?: DateTimeFilter<"UserPreference"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id" | "userId">
+
+  export type UserPreferenceOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    theme?: SortOrder
+    fontSize?: SortOrder
+    aiVerbosity?: SortOrder
+    notificationsEnabled?: SortOrder
+    emailDigest?: SortOrder
+    dataRetention?: SortOrder
+    exportFormat?: SortOrder
+    metadata?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    _count?: UserPreferenceCountOrderByAggregateInput
+    _avg?: UserPreferenceAvgOrderByAggregateInput
+    _max?: UserPreferenceMaxOrderByAggregateInput
+    _min?: UserPreferenceMinOrderByAggregateInput
+    _sum?: UserPreferenceSumOrderByAggregateInput
+  }
+
+  export type UserPreferenceScalarWhereWithAggregatesInput = {
+    AND?: UserPreferenceScalarWhereWithAggregatesInput | UserPreferenceScalarWhereWithAggregatesInput[]
+    OR?: UserPreferenceScalarWhereWithAggregatesInput[]
+    NOT?: UserPreferenceScalarWhereWithAggregatesInput | UserPreferenceScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"UserPreference"> | string
+    userId?: StringWithAggregatesFilter<"UserPreference"> | string
+    theme?: StringWithAggregatesFilter<"UserPreference"> | string
+    fontSize?: StringWithAggregatesFilter<"UserPreference"> | string
+    aiVerbosity?: EnumVerbosityLevelWithAggregatesFilter<"UserPreference"> | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolWithAggregatesFilter<"UserPreference"> | boolean
+    emailDigest?: EnumEmailDigestFrequencyWithAggregatesFilter<"UserPreference"> | $Enums.EmailDigestFrequency
+    dataRetention?: IntWithAggregatesFilter<"UserPreference"> | number
+    exportFormat?: StringWithAggregatesFilter<"UserPreference"> | string
+    metadata?: JsonNullableWithAggregatesFilter<"UserPreference">
+    updatedAt?: DateTimeWithAggregatesFilter<"UserPreference"> | Date | string
   }
 
   export type AccountCreateInput = {
@@ -6218,13 +18829,19 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     accounts?: AccountCreateNestedManyWithoutUserInput
     sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -6236,13 +18853,19 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -6254,13 +18877,19 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     accounts?: AccountUpdateManyWithoutUserNestedInput
     sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -6272,13 +18901,19 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -6290,10 +18925,11 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
   }
 
@@ -6306,10 +18942,11 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
   }
 
@@ -6322,10 +18959,11 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
   }
 
@@ -6371,6 +19009,737 @@ export namespace Prisma {
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type ConversationCreateInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    user: UserCreateNestedOneWithoutConversationsInput
+    messages?: MessageCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicCreateNestedManyWithoutConversationInput
+    insights?: UserInsightCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateInput = {
+    id?: string
+    userId: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    messages?: MessageUncheckedCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicUncheckedCreateNestedManyWithoutConversationInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutConversationsNestedInput
+    messages?: MessageUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    messages?: MessageUncheckedUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUncheckedUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationCreateManyInput = {
+    id?: string
+    userId: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+  }
+
+  export type ConversationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ConversationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type MessageCreateInput = {
+    id?: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+    conversation: ConversationCreateNestedOneWithoutMessagesInput
+  }
+
+  export type MessageUncheckedCreateInput = {
+    id?: string
+    conversationId: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+  }
+
+  export type MessageUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutMessagesNestedInput
+  }
+
+  export type MessageUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageCreateManyInput = {
+    id?: string
+    conversationId: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+  }
+
+  export type MessageUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TopicCreateInput = {
+    id?: string
+    name: string
+    nameTranslations: JsonNullValueInput | InputJsonValue
+    description?: string | null
+    hermeticPrinciple?: string | null
+    category: $Enums.TopicCategory
+    conversations?: ConversationTopicCreateNestedManyWithoutTopicInput
+  }
+
+  export type TopicUncheckedCreateInput = {
+    id?: string
+    name: string
+    nameTranslations: JsonNullValueInput | InputJsonValue
+    description?: string | null
+    hermeticPrinciple?: string | null
+    category: $Enums.TopicCategory
+    conversations?: ConversationTopicUncheckedCreateNestedManyWithoutTopicInput
+  }
+
+  export type TopicUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+    conversations?: ConversationTopicUpdateManyWithoutTopicNestedInput
+  }
+
+  export type TopicUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+    conversations?: ConversationTopicUncheckedUpdateManyWithoutTopicNestedInput
+  }
+
+  export type TopicCreateManyInput = {
+    id?: string
+    name: string
+    nameTranslations: JsonNullValueInput | InputJsonValue
+    description?: string | null
+    hermeticPrinciple?: string | null
+    category: $Enums.TopicCategory
+  }
+
+  export type TopicUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+  }
+
+  export type TopicUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+  }
+
+  export type ConversationTopicCreateInput = {
+    id?: string
+    relevanceScore?: number
+    createdAt?: Date | string
+    conversation: ConversationCreateNestedOneWithoutTopicsInput
+    topic: TopicCreateNestedOneWithoutConversationsInput
+  }
+
+  export type ConversationTopicUncheckedCreateInput = {
+    id?: string
+    conversationId: string
+    topicId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutTopicsNestedInput
+    topic?: TopicUpdateOneRequiredWithoutConversationsNestedInput
+  }
+
+  export type ConversationTopicUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    topicId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicCreateManyInput = {
+    id?: string
+    conversationId: string
+    topicId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    topicId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightCreateInput = {
+    id?: string
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutInsightsInput
+    conversation?: ConversationCreateNestedOneWithoutInsightsInput
+  }
+
+  export type UserInsightUncheckedCreateInput = {
+    id?: string
+    userId: string
+    conversationId?: string | null
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UserInsightUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutInsightsNestedInput
+    conversation?: ConversationUpdateOneWithoutInsightsNestedInput
+  }
+
+  export type UserInsightUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    conversationId?: NullableStringFieldUpdateOperationsInput | string | null
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightCreateManyInput = {
+    id?: string
+    userId: string
+    conversationId?: string | null
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UserInsightUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    conversationId?: NullableStringFieldUpdateOperationsInput | string | null
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SpiritualProfileCreateInput = {
+    id?: string
+    journeyStartDate?: Date | string
+    currentLevel?: $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileCreateprinciplesStudiedInput | string[]
+    practicesCompleted?: number
+    transformationScore?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutSpiritualProfileInput
+  }
+
+  export type SpiritualProfileUncheckedCreateInput = {
+    id?: string
+    userId: string
+    journeyStartDate?: Date | string
+    currentLevel?: $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileCreateprinciplesStudiedInput | string[]
+    practicesCompleted?: number
+    transformationScore?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type SpiritualProfileUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSpiritualProfileNestedInput
+  }
+
+  export type SpiritualProfileUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SpiritualProfileCreateManyInput = {
+    id?: string
+    userId: string
+    journeyStartDate?: Date | string
+    currentLevel?: $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileCreateprinciplesStudiedInput | string[]
+    practicesCompleted?: number
+    transformationScore?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type SpiritualProfileUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SpiritualProfileUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SubscriptionCreateInput = {
+    id?: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutSubscriptionsInput
+    usageRecords?: UsageRecordCreateNestedManyWithoutSubscriptionInput
+  }
+
+  export type SubscriptionUncheckedCreateInput = {
+    id?: string
+    userId: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    usageRecords?: UsageRecordUncheckedCreateNestedManyWithoutSubscriptionInput
+  }
+
+  export type SubscriptionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSubscriptionsNestedInput
+    usageRecords?: UsageRecordUpdateManyWithoutSubscriptionNestedInput
+  }
+
+  export type SubscriptionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    usageRecords?: UsageRecordUncheckedUpdateManyWithoutSubscriptionNestedInput
+  }
+
+  export type SubscriptionCreateManyInput = {
+    id?: string
+    userId: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SubscriptionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SubscriptionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordCreateInput = {
+    id?: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    subscription: SubscriptionCreateNestedOneWithoutUsageRecordsInput
+  }
+
+  export type UsageRecordUncheckedCreateInput = {
+    id?: string
+    subscriptionId: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UsageRecordUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    subscription?: SubscriptionUpdateOneRequiredWithoutUsageRecordsNestedInput
+  }
+
+  export type UsageRecordUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    subscriptionId?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordCreateManyInput = {
+    id?: string
+    subscriptionId: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UsageRecordUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    subscriptionId?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserPreferenceCreateInput = {
+    id?: string
+    theme?: string
+    fontSize?: string
+    aiVerbosity?: $Enums.VerbosityLevel
+    notificationsEnabled?: boolean
+    emailDigest?: $Enums.EmailDigestFrequency
+    dataRetention?: number
+    exportFormat?: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutPreferencesInput
+  }
+
+  export type UserPreferenceUncheckedCreateInput = {
+    id?: string
+    userId: string
+    theme?: string
+    fontSize?: string
+    aiVerbosity?: $Enums.VerbosityLevel
+    notificationsEnabled?: boolean
+    emailDigest?: $Enums.EmailDigestFrequency
+    dataRetention?: number
+    exportFormat?: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type UserPreferenceUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutPreferencesNestedInput
+  }
+
+  export type UserPreferenceUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserPreferenceCreateManyInput = {
+    id?: string
+    userId: string
+    theme?: string
+    fontSize?: string
+    aiVerbosity?: $Enums.VerbosityLevel
+    notificationsEnabled?: boolean
+    emailDigest?: $Enums.EmailDigestFrequency
+    dataRetention?: number
+    exportFormat?: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type UserPreferenceUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserPreferenceUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6382,6 +19751,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
@@ -6397,6 +19767,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
@@ -6420,6 +19791,12 @@ export namespace Prisma {
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
+  }
+
+  export type AccountOrderByRelevanceInput = {
+    fields: AccountOrderByRelevanceFieldEnum | AccountOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
   }
 
   export type AccountProviderProviderAccountIdCompoundUniqueInput = {
@@ -6491,6 +19868,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     mode?: QueryMode
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
@@ -6509,6 +19887,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     mode?: QueryMode
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
@@ -6541,6 +19920,12 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type SessionOrderByRelevanceInput = {
+    fields: SessionOrderByRelevanceFieldEnum | SessionOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
   }
 
   export type SessionCountOrderByAggregateInput = {
@@ -6608,12 +19993,58 @@ export namespace Prisma {
     none?: SessionWhereInput
   }
 
+  export type ConversationListRelationFilter = {
+    every?: ConversationWhereInput
+    some?: ConversationWhereInput
+    none?: ConversationWhereInput
+  }
+
+  export type UserInsightListRelationFilter = {
+    every?: UserInsightWhereInput
+    some?: UserInsightWhereInput
+    none?: UserInsightWhereInput
+  }
+
+  export type SubscriptionListRelationFilter = {
+    every?: SubscriptionWhereInput
+    some?: SubscriptionWhereInput
+    none?: SubscriptionWhereInput
+  }
+
+  export type SpiritualProfileNullableScalarRelationFilter = {
+    is?: SpiritualProfileWhereInput | null
+    isNot?: SpiritualProfileWhereInput | null
+  }
+
+  export type UserPreferenceNullableScalarRelationFilter = {
+    is?: UserPreferenceWhereInput | null
+    isNot?: UserPreferenceWhereInput | null
+  }
+
   export type AccountOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type SessionOrderByRelationAggregateInput = {
     _count?: SortOrder
+  }
+
+  export type ConversationOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type UserInsightOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SubscriptionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type UserOrderByRelevanceInput = {
+    fields: UserOrderByRelevanceFieldEnum | UserOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
   }
 
   export type UserCountOrderByAggregateInput = {
@@ -6625,10 +20056,11 @@ export namespace Prisma {
     emailTokenExpires?: SortOrder
     image?: SortOrder
     password?: SortOrder
-    cid?: SortOrder
-    locale?: SortOrder
+    preferredLanguage?: SortOrder
+    timezone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    lastActiveAt?: SortOrder
     role?: SortOrder
   }
 
@@ -6641,10 +20073,11 @@ export namespace Prisma {
     emailTokenExpires?: SortOrder
     image?: SortOrder
     password?: SortOrder
-    cid?: SortOrder
-    locale?: SortOrder
+    preferredLanguage?: SortOrder
+    timezone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    lastActiveAt?: SortOrder
     role?: SortOrder
   }
 
@@ -6657,10 +20090,11 @@ export namespace Prisma {
     emailTokenExpires?: SortOrder
     image?: SortOrder
     password?: SortOrder
-    cid?: SortOrder
-    locale?: SortOrder
+    preferredLanguage?: SortOrder
+    timezone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    lastActiveAt?: SortOrder
     role?: SortOrder
   }
 
@@ -6688,6 +20122,12 @@ export namespace Prisma {
     _max?: NestedEnumUserRoleFilter<$PrismaModel>
   }
 
+  export type VerificationTokenOrderByRelevanceInput = {
+    fields: VerificationTokenOrderByRelevanceFieldEnum | VerificationTokenOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
   export type VerificationTokenIdentifierTokenCompoundUniqueInput = {
     identifier: string
     token: string
@@ -6709,6 +20149,804 @@ export namespace Prisma {
     identifier?: SortOrder
     token?: SortOrder
     expires?: SortOrder
+  }
+
+  export type EnumConversationStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConversationStatus | EnumConversationStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumConversationStatusFilter<$PrismaModel> | $Enums.ConversationStatus
+  }
+  export type JsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type MessageListRelationFilter = {
+    every?: MessageWhereInput
+    some?: MessageWhereInput
+    none?: MessageWhereInput
+  }
+
+  export type ConversationTopicListRelationFilter = {
+    every?: ConversationTopicWhereInput
+    some?: ConversationTopicWhereInput
+    none?: ConversationTopicWhereInput
+  }
+
+  export type MessageOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ConversationTopicOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ConversationOrderByRelevanceInput = {
+    fields: ConversationOrderByRelevanceFieldEnum | ConversationOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type ConversationCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    title?: SortOrder
+    summary?: SortOrder
+    language?: SortOrder
+    status?: SortOrder
+    metadata?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    lastMessageAt?: SortOrder
+  }
+
+  export type ConversationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    title?: SortOrder
+    summary?: SortOrder
+    language?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    lastMessageAt?: SortOrder
+  }
+
+  export type ConversationMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    title?: SortOrder
+    summary?: SortOrder
+    language?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    lastMessageAt?: SortOrder
+  }
+
+  export type EnumConversationStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConversationStatus | EnumConversationStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumConversationStatusWithAggregatesFilter<$PrismaModel> | $Enums.ConversationStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumConversationStatusFilter<$PrismaModel>
+    _max?: NestedEnumConversationStatusFilter<$PrismaModel>
+  }
+  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedJsonNullableFilter<$PrismaModel>
+    _max?: NestedJsonNullableFilter<$PrismaModel>
+  }
+
+  export type EnumMessageRoleFilter<$PrismaModel = never> = {
+    equals?: $Enums.MessageRole | EnumMessageRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumMessageRoleFilter<$PrismaModel> | $Enums.MessageRole
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type ConversationScalarRelationFilter = {
+    is?: ConversationWhereInput
+    isNot?: ConversationWhereInput
+  }
+
+  export type MessageOrderByRelevanceInput = {
+    fields: MessageOrderByRelevanceFieldEnum | MessageOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type MessageCountOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    role?: SortOrder
+    content?: SortOrder
+    metadata?: SortOrder
+    hermeticPrinciples?: SortOrder
+    emotionalState?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type MessageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    role?: SortOrder
+    content?: SortOrder
+    emotionalState?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type MessageMinOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    role?: SortOrder
+    content?: SortOrder
+    emotionalState?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumMessageRoleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.MessageRole | EnumMessageRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumMessageRoleWithAggregatesFilter<$PrismaModel> | $Enums.MessageRole
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumMessageRoleFilter<$PrismaModel>
+    _max?: NestedEnumMessageRoleFilter<$PrismaModel>
+  }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type EnumTopicCategoryFilter<$PrismaModel = never> = {
+    equals?: $Enums.TopicCategory | EnumTopicCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumTopicCategoryFilter<$PrismaModel> | $Enums.TopicCategory
+  }
+
+  export type TopicOrderByRelevanceInput = {
+    fields: TopicOrderByRelevanceFieldEnum | TopicOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type TopicCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    nameTranslations?: SortOrder
+    description?: SortOrder
+    hermeticPrinciple?: SortOrder
+    category?: SortOrder
+  }
+
+  export type TopicMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    hermeticPrinciple?: SortOrder
+    category?: SortOrder
+  }
+
+  export type TopicMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    hermeticPrinciple?: SortOrder
+    category?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type EnumTopicCategoryWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TopicCategory | EnumTopicCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumTopicCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TopicCategory
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTopicCategoryFilter<$PrismaModel>
+    _max?: NestedEnumTopicCategoryFilter<$PrismaModel>
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type TopicScalarRelationFilter = {
+    is?: TopicWhereInput
+    isNot?: TopicWhereInput
+  }
+
+  export type ConversationTopicOrderByRelevanceInput = {
+    fields: ConversationTopicOrderByRelevanceFieldEnum | ConversationTopicOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type ConversationTopicConversationIdTopicIdCompoundUniqueInput = {
+    conversationId: string
+    topicId: string
+  }
+
+  export type ConversationTopicCountOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    topicId?: SortOrder
+    relevanceScore?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationTopicAvgOrderByAggregateInput = {
+    relevanceScore?: SortOrder
+  }
+
+  export type ConversationTopicMaxOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    topicId?: SortOrder
+    relevanceScore?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationTopicMinOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    topicId?: SortOrder
+    relevanceScore?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationTopicSumOrderByAggregateInput = {
+    relevanceScore?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type EnumInsightTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.InsightType | EnumInsightTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumInsightTypeFilter<$PrismaModel> | $Enums.InsightType
+  }
+
+  export type EnumSignificanceLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.SignificanceLevel | EnumSignificanceLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSignificanceLevelFilter<$PrismaModel> | $Enums.SignificanceLevel
+  }
+
+  export type ConversationNullableScalarRelationFilter = {
+    is?: ConversationWhereInput | null
+    isNot?: ConversationWhereInput | null
+  }
+
+  export type UserInsightOrderByRelevanceInput = {
+    fields: UserInsightOrderByRelevanceFieldEnum | UserInsightOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type UserInsightCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    conversationId?: SortOrder
+    content?: SortOrder
+    type?: SortOrder
+    significance?: SortOrder
+    metadata?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UserInsightMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    conversationId?: SortOrder
+    content?: SortOrder
+    type?: SortOrder
+    significance?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UserInsightMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    conversationId?: SortOrder
+    content?: SortOrder
+    type?: SortOrder
+    significance?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumInsightTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.InsightType | EnumInsightTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumInsightTypeWithAggregatesFilter<$PrismaModel> | $Enums.InsightType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumInsightTypeFilter<$PrismaModel>
+    _max?: NestedEnumInsightTypeFilter<$PrismaModel>
+  }
+
+  export type EnumSignificanceLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SignificanceLevel | EnumSignificanceLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSignificanceLevelWithAggregatesFilter<$PrismaModel> | $Enums.SignificanceLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSignificanceLevelFilter<$PrismaModel>
+    _max?: NestedEnumSignificanceLevelFilter<$PrismaModel>
+  }
+
+  export type EnumSpiritualLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.SpiritualLevel | EnumSpiritualLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSpiritualLevelFilter<$PrismaModel> | $Enums.SpiritualLevel
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type SpiritualProfileOrderByRelevanceInput = {
+    fields: SpiritualProfileOrderByRelevanceFieldEnum | SpiritualProfileOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type SpiritualProfileCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    journeyStartDate?: SortOrder
+    currentLevel?: SortOrder
+    principlesStudied?: SortOrder
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+    metadata?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SpiritualProfileAvgOrderByAggregateInput = {
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+  }
+
+  export type SpiritualProfileMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    journeyStartDate?: SortOrder
+    currentLevel?: SortOrder
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SpiritualProfileMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    journeyStartDate?: SortOrder
+    currentLevel?: SortOrder
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SpiritualProfileSumOrderByAggregateInput = {
+    practicesCompleted?: SortOrder
+    transformationScore?: SortOrder
+  }
+
+  export type EnumSpiritualLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SpiritualLevel | EnumSpiritualLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSpiritualLevelWithAggregatesFilter<$PrismaModel> | $Enums.SpiritualLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSpiritualLevelFilter<$PrismaModel>
+    _max?: NestedEnumSpiritualLevelFilter<$PrismaModel>
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type EnumSubscriptionPlanFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionPlan | EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionPlanFilter<$PrismaModel> | $Enums.SubscriptionPlan
+  }
+
+  export type EnumSubscriptionStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionStatus | EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionStatusFilter<$PrismaModel> | $Enums.SubscriptionStatus
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type UsageRecordListRelationFilter = {
+    every?: UsageRecordWhereInput
+    some?: UsageRecordWhereInput
+    none?: UsageRecordWhereInput
+  }
+
+  export type UsageRecordOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SubscriptionOrderByRelevanceInput = {
+    fields: SubscriptionOrderByRelevanceFieldEnum | SubscriptionOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type SubscriptionCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    stripeCustomerId?: SortOrder
+    stripeSubscriptionId?: SortOrder
+    plan?: SortOrder
+    status?: SortOrder
+    currentPeriodStart?: SortOrder
+    currentPeriodEnd?: SortOrder
+    cancelAtPeriodEnd?: SortOrder
+    metadata?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SubscriptionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    stripeCustomerId?: SortOrder
+    stripeSubscriptionId?: SortOrder
+    plan?: SortOrder
+    status?: SortOrder
+    currentPeriodStart?: SortOrder
+    currentPeriodEnd?: SortOrder
+    cancelAtPeriodEnd?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SubscriptionMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    stripeCustomerId?: SortOrder
+    stripeSubscriptionId?: SortOrder
+    plan?: SortOrder
+    status?: SortOrder
+    currentPeriodStart?: SortOrder
+    currentPeriodEnd?: SortOrder
+    cancelAtPeriodEnd?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type EnumSubscriptionPlanWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionPlan | EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionPlan
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSubscriptionPlanFilter<$PrismaModel>
+    _max?: NestedEnumSubscriptionPlanFilter<$PrismaModel>
+  }
+
+  export type EnumSubscriptionStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionStatus | EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
+    _max?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type EnumUsageMetricFilter<$PrismaModel = never> = {
+    equals?: $Enums.UsageMetric | EnumUsageMetricFieldRefInput<$PrismaModel>
+    in?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    notIn?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    not?: NestedEnumUsageMetricFilter<$PrismaModel> | $Enums.UsageMetric
+  }
+
+  export type SubscriptionScalarRelationFilter = {
+    is?: SubscriptionWhereInput
+    isNot?: SubscriptionWhereInput
+  }
+
+  export type UsageRecordOrderByRelevanceInput = {
+    fields: UsageRecordOrderByRelevanceFieldEnum | UsageRecordOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type UsageRecordSubscriptionIdMetricDateCompoundUniqueInput = {
+    subscriptionId: string
+    metric: $Enums.UsageMetric
+    date: Date | string
+  }
+
+  export type UsageRecordCountOrderByAggregateInput = {
+    id?: SortOrder
+    subscriptionId?: SortOrder
+    metric?: SortOrder
+    count?: SortOrder
+    date?: SortOrder
+    metadata?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UsageRecordAvgOrderByAggregateInput = {
+    count?: SortOrder
+  }
+
+  export type UsageRecordMaxOrderByAggregateInput = {
+    id?: SortOrder
+    subscriptionId?: SortOrder
+    metric?: SortOrder
+    count?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UsageRecordMinOrderByAggregateInput = {
+    id?: SortOrder
+    subscriptionId?: SortOrder
+    metric?: SortOrder
+    count?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UsageRecordSumOrderByAggregateInput = {
+    count?: SortOrder
+  }
+
+  export type EnumUsageMetricWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.UsageMetric | EnumUsageMetricFieldRefInput<$PrismaModel>
+    in?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    notIn?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    not?: NestedEnumUsageMetricWithAggregatesFilter<$PrismaModel> | $Enums.UsageMetric
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumUsageMetricFilter<$PrismaModel>
+    _max?: NestedEnumUsageMetricFilter<$PrismaModel>
+  }
+
+  export type EnumVerbosityLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.VerbosityLevel | EnumVerbosityLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumVerbosityLevelFilter<$PrismaModel> | $Enums.VerbosityLevel
+  }
+
+  export type EnumEmailDigestFrequencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.EmailDigestFrequency | EnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    in?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel> | $Enums.EmailDigestFrequency
+  }
+
+  export type UserPreferenceOrderByRelevanceInput = {
+    fields: UserPreferenceOrderByRelevanceFieldEnum | UserPreferenceOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type UserPreferenceCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    theme?: SortOrder
+    fontSize?: SortOrder
+    aiVerbosity?: SortOrder
+    notificationsEnabled?: SortOrder
+    emailDigest?: SortOrder
+    dataRetention?: SortOrder
+    exportFormat?: SortOrder
+    metadata?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type UserPreferenceAvgOrderByAggregateInput = {
+    dataRetention?: SortOrder
+  }
+
+  export type UserPreferenceMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    theme?: SortOrder
+    fontSize?: SortOrder
+    aiVerbosity?: SortOrder
+    notificationsEnabled?: SortOrder
+    emailDigest?: SortOrder
+    dataRetention?: SortOrder
+    exportFormat?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type UserPreferenceMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    theme?: SortOrder
+    fontSize?: SortOrder
+    aiVerbosity?: SortOrder
+    notificationsEnabled?: SortOrder
+    emailDigest?: SortOrder
+    dataRetention?: SortOrder
+    exportFormat?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type UserPreferenceSumOrderByAggregateInput = {
+    dataRetention?: SortOrder
+  }
+
+  export type EnumVerbosityLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.VerbosityLevel | EnumVerbosityLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumVerbosityLevelWithAggregatesFilter<$PrismaModel> | $Enums.VerbosityLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumVerbosityLevelFilter<$PrismaModel>
+    _max?: NestedEnumVerbosityLevelFilter<$PrismaModel>
+  }
+
+  export type EnumEmailDigestFrequencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.EmailDigestFrequency | EnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    in?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumEmailDigestFrequencyWithAggregatesFilter<$PrismaModel> | $Enums.EmailDigestFrequency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel>
+    _max?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel>
   }
 
   export type UserCreateNestedOneWithoutAccountsInput = {
@@ -6773,6 +21011,39 @@ export namespace Prisma {
     connect?: SessionWhereUniqueInput | SessionWhereUniqueInput[]
   }
 
+  export type ConversationCreateNestedManyWithoutUserInput = {
+    create?: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput> | ConversationCreateWithoutUserInput[] | ConversationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ConversationCreateOrConnectWithoutUserInput | ConversationCreateOrConnectWithoutUserInput[]
+    createMany?: ConversationCreateManyUserInputEnvelope
+    connect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+  }
+
+  export type UserInsightCreateNestedManyWithoutUserInput = {
+    create?: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput> | UserInsightCreateWithoutUserInput[] | UserInsightUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutUserInput | UserInsightCreateOrConnectWithoutUserInput[]
+    createMany?: UserInsightCreateManyUserInputEnvelope
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+  }
+
+  export type SubscriptionCreateNestedManyWithoutUserInput = {
+    create?: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput> | SubscriptionCreateWithoutUserInput[] | SubscriptionUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUserInput | SubscriptionCreateOrConnectWithoutUserInput[]
+    createMany?: SubscriptionCreateManyUserInputEnvelope
+    connect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+  }
+
+  export type SpiritualProfileCreateNestedOneWithoutUserInput = {
+    create?: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+    connectOrCreate?: SpiritualProfileCreateOrConnectWithoutUserInput
+    connect?: SpiritualProfileWhereUniqueInput
+  }
+
+  export type UserPreferenceCreateNestedOneWithoutUserInput = {
+    create?: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+    connectOrCreate?: UserPreferenceCreateOrConnectWithoutUserInput
+    connect?: UserPreferenceWhereUniqueInput
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -6785,6 +21056,39 @@ export namespace Prisma {
     connectOrCreate?: SessionCreateOrConnectWithoutUserInput | SessionCreateOrConnectWithoutUserInput[]
     createMany?: SessionCreateManyUserInputEnvelope
     connect?: SessionWhereUniqueInput | SessionWhereUniqueInput[]
+  }
+
+  export type ConversationUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput> | ConversationCreateWithoutUserInput[] | ConversationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ConversationCreateOrConnectWithoutUserInput | ConversationCreateOrConnectWithoutUserInput[]
+    createMany?: ConversationCreateManyUserInputEnvelope
+    connect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+  }
+
+  export type UserInsightUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput> | UserInsightCreateWithoutUserInput[] | UserInsightUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutUserInput | UserInsightCreateOrConnectWithoutUserInput[]
+    createMany?: UserInsightCreateManyUserInputEnvelope
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+  }
+
+  export type SubscriptionUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput> | SubscriptionCreateWithoutUserInput[] | SubscriptionUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUserInput | SubscriptionCreateOrConnectWithoutUserInput[]
+    createMany?: SubscriptionCreateManyUserInputEnvelope
+    connect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+  }
+
+  export type SpiritualProfileUncheckedCreateNestedOneWithoutUserInput = {
+    create?: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+    connectOrCreate?: SpiritualProfileCreateOrConnectWithoutUserInput
+    connect?: SpiritualProfileWhereUniqueInput
+  }
+
+  export type UserPreferenceUncheckedCreateNestedOneWithoutUserInput = {
+    create?: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+    connectOrCreate?: UserPreferenceCreateOrConnectWithoutUserInput
+    connect?: UserPreferenceWhereUniqueInput
   }
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
@@ -6823,6 +21127,68 @@ export namespace Prisma {
     deleteMany?: SessionScalarWhereInput | SessionScalarWhereInput[]
   }
 
+  export type ConversationUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput> | ConversationCreateWithoutUserInput[] | ConversationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ConversationCreateOrConnectWithoutUserInput | ConversationCreateOrConnectWithoutUserInput[]
+    upsert?: ConversationUpsertWithWhereUniqueWithoutUserInput | ConversationUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ConversationCreateManyUserInputEnvelope
+    set?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    disconnect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    delete?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    connect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    update?: ConversationUpdateWithWhereUniqueWithoutUserInput | ConversationUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ConversationUpdateManyWithWhereWithoutUserInput | ConversationUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ConversationScalarWhereInput | ConversationScalarWhereInput[]
+  }
+
+  export type UserInsightUpdateManyWithoutUserNestedInput = {
+    create?: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput> | UserInsightCreateWithoutUserInput[] | UserInsightUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutUserInput | UserInsightCreateOrConnectWithoutUserInput[]
+    upsert?: UserInsightUpsertWithWhereUniqueWithoutUserInput | UserInsightUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: UserInsightCreateManyUserInputEnvelope
+    set?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    disconnect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    delete?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    update?: UserInsightUpdateWithWhereUniqueWithoutUserInput | UserInsightUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: UserInsightUpdateManyWithWhereWithoutUserInput | UserInsightUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+  }
+
+  export type SubscriptionUpdateManyWithoutUserNestedInput = {
+    create?: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput> | SubscriptionCreateWithoutUserInput[] | SubscriptionUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUserInput | SubscriptionCreateOrConnectWithoutUserInput[]
+    upsert?: SubscriptionUpsertWithWhereUniqueWithoutUserInput | SubscriptionUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: SubscriptionCreateManyUserInputEnvelope
+    set?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    disconnect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    delete?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    connect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    update?: SubscriptionUpdateWithWhereUniqueWithoutUserInput | SubscriptionUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: SubscriptionUpdateManyWithWhereWithoutUserInput | SubscriptionUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: SubscriptionScalarWhereInput | SubscriptionScalarWhereInput[]
+  }
+
+  export type SpiritualProfileUpdateOneWithoutUserNestedInput = {
+    create?: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+    connectOrCreate?: SpiritualProfileCreateOrConnectWithoutUserInput
+    upsert?: SpiritualProfileUpsertWithoutUserInput
+    disconnect?: SpiritualProfileWhereInput | boolean
+    delete?: SpiritualProfileWhereInput | boolean
+    connect?: SpiritualProfileWhereUniqueInput
+    update?: XOR<XOR<SpiritualProfileUpdateToOneWithWhereWithoutUserInput, SpiritualProfileUpdateWithoutUserInput>, SpiritualProfileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type UserPreferenceUpdateOneWithoutUserNestedInput = {
+    create?: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+    connectOrCreate?: UserPreferenceCreateOrConnectWithoutUserInput
+    upsert?: UserPreferenceUpsertWithoutUserInput
+    disconnect?: UserPreferenceWhereInput | boolean
+    delete?: UserPreferenceWhereInput | boolean
+    connect?: UserPreferenceWhereUniqueInput
+    update?: XOR<XOR<UserPreferenceUpdateToOneWithWhereWithoutUserInput, UserPreferenceUpdateWithoutUserInput>, UserPreferenceUncheckedUpdateWithoutUserInput>
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -6851,6 +21217,502 @@ export namespace Prisma {
     deleteMany?: SessionScalarWhereInput | SessionScalarWhereInput[]
   }
 
+  export type ConversationUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput> | ConversationCreateWithoutUserInput[] | ConversationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ConversationCreateOrConnectWithoutUserInput | ConversationCreateOrConnectWithoutUserInput[]
+    upsert?: ConversationUpsertWithWhereUniqueWithoutUserInput | ConversationUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ConversationCreateManyUserInputEnvelope
+    set?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    disconnect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    delete?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    connect?: ConversationWhereUniqueInput | ConversationWhereUniqueInput[]
+    update?: ConversationUpdateWithWhereUniqueWithoutUserInput | ConversationUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ConversationUpdateManyWithWhereWithoutUserInput | ConversationUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ConversationScalarWhereInput | ConversationScalarWhereInput[]
+  }
+
+  export type UserInsightUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput> | UserInsightCreateWithoutUserInput[] | UserInsightUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutUserInput | UserInsightCreateOrConnectWithoutUserInput[]
+    upsert?: UserInsightUpsertWithWhereUniqueWithoutUserInput | UserInsightUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: UserInsightCreateManyUserInputEnvelope
+    set?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    disconnect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    delete?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    update?: UserInsightUpdateWithWhereUniqueWithoutUserInput | UserInsightUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: UserInsightUpdateManyWithWhereWithoutUserInput | UserInsightUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+  }
+
+  export type SubscriptionUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput> | SubscriptionCreateWithoutUserInput[] | SubscriptionUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUserInput | SubscriptionCreateOrConnectWithoutUserInput[]
+    upsert?: SubscriptionUpsertWithWhereUniqueWithoutUserInput | SubscriptionUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: SubscriptionCreateManyUserInputEnvelope
+    set?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    disconnect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    delete?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    connect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
+    update?: SubscriptionUpdateWithWhereUniqueWithoutUserInput | SubscriptionUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: SubscriptionUpdateManyWithWhereWithoutUserInput | SubscriptionUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: SubscriptionScalarWhereInput | SubscriptionScalarWhereInput[]
+  }
+
+  export type SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput = {
+    create?: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+    connectOrCreate?: SpiritualProfileCreateOrConnectWithoutUserInput
+    upsert?: SpiritualProfileUpsertWithoutUserInput
+    disconnect?: SpiritualProfileWhereInput | boolean
+    delete?: SpiritualProfileWhereInput | boolean
+    connect?: SpiritualProfileWhereUniqueInput
+    update?: XOR<XOR<SpiritualProfileUpdateToOneWithWhereWithoutUserInput, SpiritualProfileUpdateWithoutUserInput>, SpiritualProfileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type UserPreferenceUncheckedUpdateOneWithoutUserNestedInput = {
+    create?: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+    connectOrCreate?: UserPreferenceCreateOrConnectWithoutUserInput
+    upsert?: UserPreferenceUpsertWithoutUserInput
+    disconnect?: UserPreferenceWhereInput | boolean
+    delete?: UserPreferenceWhereInput | boolean
+    connect?: UserPreferenceWhereUniqueInput
+    update?: XOR<XOR<UserPreferenceUpdateToOneWithWhereWithoutUserInput, UserPreferenceUpdateWithoutUserInput>, UserPreferenceUncheckedUpdateWithoutUserInput>
+  }
+
+  export type UserCreateNestedOneWithoutConversationsInput = {
+    create?: XOR<UserCreateWithoutConversationsInput, UserUncheckedCreateWithoutConversationsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutConversationsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type MessageCreateNestedManyWithoutConversationInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type ConversationTopicCreateNestedManyWithoutConversationInput = {
+    create?: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput> | ConversationTopicCreateWithoutConversationInput[] | ConversationTopicUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutConversationInput | ConversationTopicCreateOrConnectWithoutConversationInput[]
+    createMany?: ConversationTopicCreateManyConversationInputEnvelope
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+  }
+
+  export type UserInsightCreateNestedManyWithoutConversationInput = {
+    create?: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput> | UserInsightCreateWithoutConversationInput[] | UserInsightUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutConversationInput | UserInsightCreateOrConnectWithoutConversationInput[]
+    createMany?: UserInsightCreateManyConversationInputEnvelope
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+  }
+
+  export type MessageUncheckedCreateNestedManyWithoutConversationInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type ConversationTopicUncheckedCreateNestedManyWithoutConversationInput = {
+    create?: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput> | ConversationTopicCreateWithoutConversationInput[] | ConversationTopicUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutConversationInput | ConversationTopicCreateOrConnectWithoutConversationInput[]
+    createMany?: ConversationTopicCreateManyConversationInputEnvelope
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+  }
+
+  export type UserInsightUncheckedCreateNestedManyWithoutConversationInput = {
+    create?: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput> | UserInsightCreateWithoutConversationInput[] | UserInsightUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutConversationInput | UserInsightCreateOrConnectWithoutConversationInput[]
+    createMany?: UserInsightCreateManyConversationInputEnvelope
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+  }
+
+  export type EnumConversationStatusFieldUpdateOperationsInput = {
+    set?: $Enums.ConversationStatus
+  }
+
+  export type UserUpdateOneRequiredWithoutConversationsNestedInput = {
+    create?: XOR<UserCreateWithoutConversationsInput, UserUncheckedCreateWithoutConversationsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutConversationsInput
+    upsert?: UserUpsertWithoutConversationsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutConversationsInput, UserUpdateWithoutConversationsInput>, UserUncheckedUpdateWithoutConversationsInput>
+  }
+
+  export type MessageUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutConversationInput | MessageUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutConversationInput | MessageUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutConversationInput | MessageUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type ConversationTopicUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput> | ConversationTopicCreateWithoutConversationInput[] | ConversationTopicUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutConversationInput | ConversationTopicCreateOrConnectWithoutConversationInput[]
+    upsert?: ConversationTopicUpsertWithWhereUniqueWithoutConversationInput | ConversationTopicUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: ConversationTopicCreateManyConversationInputEnvelope
+    set?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    disconnect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    delete?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    update?: ConversationTopicUpdateWithWhereUniqueWithoutConversationInput | ConversationTopicUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: ConversationTopicUpdateManyWithWhereWithoutConversationInput | ConversationTopicUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+  }
+
+  export type UserInsightUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput> | UserInsightCreateWithoutConversationInput[] | UserInsightUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutConversationInput | UserInsightCreateOrConnectWithoutConversationInput[]
+    upsert?: UserInsightUpsertWithWhereUniqueWithoutConversationInput | UserInsightUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: UserInsightCreateManyConversationInputEnvelope
+    set?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    disconnect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    delete?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    update?: UserInsightUpdateWithWhereUniqueWithoutConversationInput | UserInsightUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: UserInsightUpdateManyWithWhereWithoutConversationInput | UserInsightUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+  }
+
+  export type MessageUncheckedUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutConversationInput | MessageUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutConversationInput | MessageUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutConversationInput | MessageUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type ConversationTopicUncheckedUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput> | ConversationTopicCreateWithoutConversationInput[] | ConversationTopicUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutConversationInput | ConversationTopicCreateOrConnectWithoutConversationInput[]
+    upsert?: ConversationTopicUpsertWithWhereUniqueWithoutConversationInput | ConversationTopicUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: ConversationTopicCreateManyConversationInputEnvelope
+    set?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    disconnect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    delete?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    update?: ConversationTopicUpdateWithWhereUniqueWithoutConversationInput | ConversationTopicUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: ConversationTopicUpdateManyWithWhereWithoutConversationInput | ConversationTopicUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+  }
+
+  export type UserInsightUncheckedUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput> | UserInsightCreateWithoutConversationInput[] | UserInsightUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: UserInsightCreateOrConnectWithoutConversationInput | UserInsightCreateOrConnectWithoutConversationInput[]
+    upsert?: UserInsightUpsertWithWhereUniqueWithoutConversationInput | UserInsightUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: UserInsightCreateManyConversationInputEnvelope
+    set?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    disconnect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    delete?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    connect?: UserInsightWhereUniqueInput | UserInsightWhereUniqueInput[]
+    update?: UserInsightUpdateWithWhereUniqueWithoutConversationInput | UserInsightUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: UserInsightUpdateManyWithWhereWithoutConversationInput | UserInsightUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+  }
+
+  export type MessageCreatehermeticPrinciplesInput = {
+    set: string[]
+  }
+
+  export type ConversationCreateNestedOneWithoutMessagesInput = {
+    create?: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutMessagesInput
+    connect?: ConversationWhereUniqueInput
+  }
+
+  export type EnumMessageRoleFieldUpdateOperationsInput = {
+    set?: $Enums.MessageRole
+  }
+
+  export type MessageUpdatehermeticPrinciplesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type ConversationUpdateOneRequiredWithoutMessagesNestedInput = {
+    create?: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutMessagesInput
+    upsert?: ConversationUpsertWithoutMessagesInput
+    connect?: ConversationWhereUniqueInput
+    update?: XOR<XOR<ConversationUpdateToOneWithWhereWithoutMessagesInput, ConversationUpdateWithoutMessagesInput>, ConversationUncheckedUpdateWithoutMessagesInput>
+  }
+
+  export type ConversationTopicCreateNestedManyWithoutTopicInput = {
+    create?: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput> | ConversationTopicCreateWithoutTopicInput[] | ConversationTopicUncheckedCreateWithoutTopicInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutTopicInput | ConversationTopicCreateOrConnectWithoutTopicInput[]
+    createMany?: ConversationTopicCreateManyTopicInputEnvelope
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+  }
+
+  export type ConversationTopicUncheckedCreateNestedManyWithoutTopicInput = {
+    create?: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput> | ConversationTopicCreateWithoutTopicInput[] | ConversationTopicUncheckedCreateWithoutTopicInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutTopicInput | ConversationTopicCreateOrConnectWithoutTopicInput[]
+    createMany?: ConversationTopicCreateManyTopicInputEnvelope
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+  }
+
+  export type EnumTopicCategoryFieldUpdateOperationsInput = {
+    set?: $Enums.TopicCategory
+  }
+
+  export type ConversationTopicUpdateManyWithoutTopicNestedInput = {
+    create?: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput> | ConversationTopicCreateWithoutTopicInput[] | ConversationTopicUncheckedCreateWithoutTopicInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutTopicInput | ConversationTopicCreateOrConnectWithoutTopicInput[]
+    upsert?: ConversationTopicUpsertWithWhereUniqueWithoutTopicInput | ConversationTopicUpsertWithWhereUniqueWithoutTopicInput[]
+    createMany?: ConversationTopicCreateManyTopicInputEnvelope
+    set?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    disconnect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    delete?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    update?: ConversationTopicUpdateWithWhereUniqueWithoutTopicInput | ConversationTopicUpdateWithWhereUniqueWithoutTopicInput[]
+    updateMany?: ConversationTopicUpdateManyWithWhereWithoutTopicInput | ConversationTopicUpdateManyWithWhereWithoutTopicInput[]
+    deleteMany?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+  }
+
+  export type ConversationTopicUncheckedUpdateManyWithoutTopicNestedInput = {
+    create?: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput> | ConversationTopicCreateWithoutTopicInput[] | ConversationTopicUncheckedCreateWithoutTopicInput[]
+    connectOrCreate?: ConversationTopicCreateOrConnectWithoutTopicInput | ConversationTopicCreateOrConnectWithoutTopicInput[]
+    upsert?: ConversationTopicUpsertWithWhereUniqueWithoutTopicInput | ConversationTopicUpsertWithWhereUniqueWithoutTopicInput[]
+    createMany?: ConversationTopicCreateManyTopicInputEnvelope
+    set?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    disconnect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    delete?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    connect?: ConversationTopicWhereUniqueInput | ConversationTopicWhereUniqueInput[]
+    update?: ConversationTopicUpdateWithWhereUniqueWithoutTopicInput | ConversationTopicUpdateWithWhereUniqueWithoutTopicInput[]
+    updateMany?: ConversationTopicUpdateManyWithWhereWithoutTopicInput | ConversationTopicUpdateManyWithWhereWithoutTopicInput[]
+    deleteMany?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+  }
+
+  export type ConversationCreateNestedOneWithoutTopicsInput = {
+    create?: XOR<ConversationCreateWithoutTopicsInput, ConversationUncheckedCreateWithoutTopicsInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutTopicsInput
+    connect?: ConversationWhereUniqueInput
+  }
+
+  export type TopicCreateNestedOneWithoutConversationsInput = {
+    create?: XOR<TopicCreateWithoutConversationsInput, TopicUncheckedCreateWithoutConversationsInput>
+    connectOrCreate?: TopicCreateOrConnectWithoutConversationsInput
+    connect?: TopicWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type ConversationUpdateOneRequiredWithoutTopicsNestedInput = {
+    create?: XOR<ConversationCreateWithoutTopicsInput, ConversationUncheckedCreateWithoutTopicsInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutTopicsInput
+    upsert?: ConversationUpsertWithoutTopicsInput
+    connect?: ConversationWhereUniqueInput
+    update?: XOR<XOR<ConversationUpdateToOneWithWhereWithoutTopicsInput, ConversationUpdateWithoutTopicsInput>, ConversationUncheckedUpdateWithoutTopicsInput>
+  }
+
+  export type TopicUpdateOneRequiredWithoutConversationsNestedInput = {
+    create?: XOR<TopicCreateWithoutConversationsInput, TopicUncheckedCreateWithoutConversationsInput>
+    connectOrCreate?: TopicCreateOrConnectWithoutConversationsInput
+    upsert?: TopicUpsertWithoutConversationsInput
+    connect?: TopicWhereUniqueInput
+    update?: XOR<XOR<TopicUpdateToOneWithWhereWithoutConversationsInput, TopicUpdateWithoutConversationsInput>, TopicUncheckedUpdateWithoutConversationsInput>
+  }
+
+  export type UserCreateNestedOneWithoutInsightsInput = {
+    create?: XOR<UserCreateWithoutInsightsInput, UserUncheckedCreateWithoutInsightsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutInsightsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ConversationCreateNestedOneWithoutInsightsInput = {
+    create?: XOR<ConversationCreateWithoutInsightsInput, ConversationUncheckedCreateWithoutInsightsInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutInsightsInput
+    connect?: ConversationWhereUniqueInput
+  }
+
+  export type EnumInsightTypeFieldUpdateOperationsInput = {
+    set?: $Enums.InsightType
+  }
+
+  export type EnumSignificanceLevelFieldUpdateOperationsInput = {
+    set?: $Enums.SignificanceLevel
+  }
+
+  export type UserUpdateOneRequiredWithoutInsightsNestedInput = {
+    create?: XOR<UserCreateWithoutInsightsInput, UserUncheckedCreateWithoutInsightsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutInsightsInput
+    upsert?: UserUpsertWithoutInsightsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutInsightsInput, UserUpdateWithoutInsightsInput>, UserUncheckedUpdateWithoutInsightsInput>
+  }
+
+  export type ConversationUpdateOneWithoutInsightsNestedInput = {
+    create?: XOR<ConversationCreateWithoutInsightsInput, ConversationUncheckedCreateWithoutInsightsInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutInsightsInput
+    upsert?: ConversationUpsertWithoutInsightsInput
+    disconnect?: ConversationWhereInput | boolean
+    delete?: ConversationWhereInput | boolean
+    connect?: ConversationWhereUniqueInput
+    update?: XOR<XOR<ConversationUpdateToOneWithWhereWithoutInsightsInput, ConversationUpdateWithoutInsightsInput>, ConversationUncheckedUpdateWithoutInsightsInput>
+  }
+
+  export type SpiritualProfileCreateprinciplesStudiedInput = {
+    set: string[]
+  }
+
+  export type UserCreateNestedOneWithoutSpiritualProfileInput = {
+    create?: XOR<UserCreateWithoutSpiritualProfileInput, UserUncheckedCreateWithoutSpiritualProfileInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSpiritualProfileInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type EnumSpiritualLevelFieldUpdateOperationsInput = {
+    set?: $Enums.SpiritualLevel
+  }
+
+  export type SpiritualProfileUpdateprinciplesStudiedInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type UserUpdateOneRequiredWithoutSpiritualProfileNestedInput = {
+    create?: XOR<UserCreateWithoutSpiritualProfileInput, UserUncheckedCreateWithoutSpiritualProfileInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSpiritualProfileInput
+    upsert?: UserUpsertWithoutSpiritualProfileInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSpiritualProfileInput, UserUpdateWithoutSpiritualProfileInput>, UserUncheckedUpdateWithoutSpiritualProfileInput>
+  }
+
+  export type UserCreateNestedOneWithoutSubscriptionsInput = {
+    create?: XOR<UserCreateWithoutSubscriptionsInput, UserUncheckedCreateWithoutSubscriptionsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSubscriptionsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type UsageRecordCreateNestedManyWithoutSubscriptionInput = {
+    create?: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput> | UsageRecordCreateWithoutSubscriptionInput[] | UsageRecordUncheckedCreateWithoutSubscriptionInput[]
+    connectOrCreate?: UsageRecordCreateOrConnectWithoutSubscriptionInput | UsageRecordCreateOrConnectWithoutSubscriptionInput[]
+    createMany?: UsageRecordCreateManySubscriptionInputEnvelope
+    connect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+  }
+
+  export type UsageRecordUncheckedCreateNestedManyWithoutSubscriptionInput = {
+    create?: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput> | UsageRecordCreateWithoutSubscriptionInput[] | UsageRecordUncheckedCreateWithoutSubscriptionInput[]
+    connectOrCreate?: UsageRecordCreateOrConnectWithoutSubscriptionInput | UsageRecordCreateOrConnectWithoutSubscriptionInput[]
+    createMany?: UsageRecordCreateManySubscriptionInputEnvelope
+    connect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+  }
+
+  export type EnumSubscriptionPlanFieldUpdateOperationsInput = {
+    set?: $Enums.SubscriptionPlan
+  }
+
+  export type EnumSubscriptionStatusFieldUpdateOperationsInput = {
+    set?: $Enums.SubscriptionStatus
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type UserUpdateOneRequiredWithoutSubscriptionsNestedInput = {
+    create?: XOR<UserCreateWithoutSubscriptionsInput, UserUncheckedCreateWithoutSubscriptionsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSubscriptionsInput
+    upsert?: UserUpsertWithoutSubscriptionsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSubscriptionsInput, UserUpdateWithoutSubscriptionsInput>, UserUncheckedUpdateWithoutSubscriptionsInput>
+  }
+
+  export type UsageRecordUpdateManyWithoutSubscriptionNestedInput = {
+    create?: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput> | UsageRecordCreateWithoutSubscriptionInput[] | UsageRecordUncheckedCreateWithoutSubscriptionInput[]
+    connectOrCreate?: UsageRecordCreateOrConnectWithoutSubscriptionInput | UsageRecordCreateOrConnectWithoutSubscriptionInput[]
+    upsert?: UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput | UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput[]
+    createMany?: UsageRecordCreateManySubscriptionInputEnvelope
+    set?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    disconnect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    delete?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    connect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    update?: UsageRecordUpdateWithWhereUniqueWithoutSubscriptionInput | UsageRecordUpdateWithWhereUniqueWithoutSubscriptionInput[]
+    updateMany?: UsageRecordUpdateManyWithWhereWithoutSubscriptionInput | UsageRecordUpdateManyWithWhereWithoutSubscriptionInput[]
+    deleteMany?: UsageRecordScalarWhereInput | UsageRecordScalarWhereInput[]
+  }
+
+  export type UsageRecordUncheckedUpdateManyWithoutSubscriptionNestedInput = {
+    create?: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput> | UsageRecordCreateWithoutSubscriptionInput[] | UsageRecordUncheckedCreateWithoutSubscriptionInput[]
+    connectOrCreate?: UsageRecordCreateOrConnectWithoutSubscriptionInput | UsageRecordCreateOrConnectWithoutSubscriptionInput[]
+    upsert?: UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput | UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput[]
+    createMany?: UsageRecordCreateManySubscriptionInputEnvelope
+    set?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    disconnect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    delete?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    connect?: UsageRecordWhereUniqueInput | UsageRecordWhereUniqueInput[]
+    update?: UsageRecordUpdateWithWhereUniqueWithoutSubscriptionInput | UsageRecordUpdateWithWhereUniqueWithoutSubscriptionInput[]
+    updateMany?: UsageRecordUpdateManyWithWhereWithoutSubscriptionInput | UsageRecordUpdateManyWithWhereWithoutSubscriptionInput[]
+    deleteMany?: UsageRecordScalarWhereInput | UsageRecordScalarWhereInput[]
+  }
+
+  export type SubscriptionCreateNestedOneWithoutUsageRecordsInput = {
+    create?: XOR<SubscriptionCreateWithoutUsageRecordsInput, SubscriptionUncheckedCreateWithoutUsageRecordsInput>
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUsageRecordsInput
+    connect?: SubscriptionWhereUniqueInput
+  }
+
+  export type EnumUsageMetricFieldUpdateOperationsInput = {
+    set?: $Enums.UsageMetric
+  }
+
+  export type SubscriptionUpdateOneRequiredWithoutUsageRecordsNestedInput = {
+    create?: XOR<SubscriptionCreateWithoutUsageRecordsInput, SubscriptionUncheckedCreateWithoutUsageRecordsInput>
+    connectOrCreate?: SubscriptionCreateOrConnectWithoutUsageRecordsInput
+    upsert?: SubscriptionUpsertWithoutUsageRecordsInput
+    connect?: SubscriptionWhereUniqueInput
+    update?: XOR<XOR<SubscriptionUpdateToOneWithWhereWithoutUsageRecordsInput, SubscriptionUpdateWithoutUsageRecordsInput>, SubscriptionUncheckedUpdateWithoutUsageRecordsInput>
+  }
+
+  export type UserCreateNestedOneWithoutPreferencesInput = {
+    create?: XOR<UserCreateWithoutPreferencesInput, UserUncheckedCreateWithoutPreferencesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPreferencesInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type EnumVerbosityLevelFieldUpdateOperationsInput = {
+    set?: $Enums.VerbosityLevel
+  }
+
+  export type EnumEmailDigestFrequencyFieldUpdateOperationsInput = {
+    set?: $Enums.EmailDigestFrequency
+  }
+
+  export type UserUpdateOneRequiredWithoutPreferencesNestedInput = {
+    create?: XOR<UserCreateWithoutPreferencesInput, UserUncheckedCreateWithoutPreferencesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPreferencesInput
+    upsert?: UserUpsertWithoutPreferencesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPreferencesInput, UserUpdateWithoutPreferencesInput>, UserUncheckedUpdateWithoutPreferencesInput>
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6862,6 +21724,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
@@ -6876,6 +21739,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
@@ -6901,6 +21765,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
@@ -6929,6 +21794,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
@@ -7029,6 +21895,295 @@ export namespace Prisma {
     _max?: NestedEnumUserRoleFilter<$PrismaModel>
   }
 
+  export type NestedEnumConversationStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConversationStatus | EnumConversationStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumConversationStatusFilter<$PrismaModel> | $Enums.ConversationStatus
+  }
+
+  export type NestedEnumConversationStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ConversationStatus | EnumConversationStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumConversationStatusWithAggregatesFilter<$PrismaModel> | $Enums.ConversationStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumConversationStatusFilter<$PrismaModel>
+    _max?: NestedEnumConversationStatusFilter<$PrismaModel>
+  }
+  export type NestedJsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedEnumMessageRoleFilter<$PrismaModel = never> = {
+    equals?: $Enums.MessageRole | EnumMessageRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumMessageRoleFilter<$PrismaModel> | $Enums.MessageRole
+  }
+
+  export type NestedEnumMessageRoleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.MessageRole | EnumMessageRoleFieldRefInput<$PrismaModel>
+    in?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.MessageRole[] | ListEnumMessageRoleFieldRefInput<$PrismaModel>
+    not?: NestedEnumMessageRoleWithAggregatesFilter<$PrismaModel> | $Enums.MessageRole
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumMessageRoleFilter<$PrismaModel>
+    _max?: NestedEnumMessageRoleFilter<$PrismaModel>
+  }
+
+  export type NestedEnumTopicCategoryFilter<$PrismaModel = never> = {
+    equals?: $Enums.TopicCategory | EnumTopicCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumTopicCategoryFilter<$PrismaModel> | $Enums.TopicCategory
+  }
+  export type NestedJsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedEnumTopicCategoryWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TopicCategory | EnumTopicCategoryFieldRefInput<$PrismaModel>
+    in?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TopicCategory[] | ListEnumTopicCategoryFieldRefInput<$PrismaModel>
+    not?: NestedEnumTopicCategoryWithAggregatesFilter<$PrismaModel> | $Enums.TopicCategory
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTopicCategoryFilter<$PrismaModel>
+    _max?: NestedEnumTopicCategoryFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type NestedEnumInsightTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.InsightType | EnumInsightTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumInsightTypeFilter<$PrismaModel> | $Enums.InsightType
+  }
+
+  export type NestedEnumSignificanceLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.SignificanceLevel | EnumSignificanceLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSignificanceLevelFilter<$PrismaModel> | $Enums.SignificanceLevel
+  }
+
+  export type NestedEnumInsightTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.InsightType | EnumInsightTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.InsightType[] | ListEnumInsightTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumInsightTypeWithAggregatesFilter<$PrismaModel> | $Enums.InsightType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumInsightTypeFilter<$PrismaModel>
+    _max?: NestedEnumInsightTypeFilter<$PrismaModel>
+  }
+
+  export type NestedEnumSignificanceLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SignificanceLevel | EnumSignificanceLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SignificanceLevel[] | ListEnumSignificanceLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSignificanceLevelWithAggregatesFilter<$PrismaModel> | $Enums.SignificanceLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSignificanceLevelFilter<$PrismaModel>
+    _max?: NestedEnumSignificanceLevelFilter<$PrismaModel>
+  }
+
+  export type NestedEnumSpiritualLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.SpiritualLevel | EnumSpiritualLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSpiritualLevelFilter<$PrismaModel> | $Enums.SpiritualLevel
+  }
+
+  export type NestedEnumSpiritualLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SpiritualLevel | EnumSpiritualLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SpiritualLevel[] | ListEnumSpiritualLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumSpiritualLevelWithAggregatesFilter<$PrismaModel> | $Enums.SpiritualLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSpiritualLevelFilter<$PrismaModel>
+    _max?: NestedEnumSpiritualLevelFilter<$PrismaModel>
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedEnumSubscriptionPlanFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionPlan | EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionPlanFilter<$PrismaModel> | $Enums.SubscriptionPlan
+  }
+
+  export type NestedEnumSubscriptionStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionStatus | EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionStatusFilter<$PrismaModel> | $Enums.SubscriptionStatus
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionPlan | EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionPlan[] | ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionPlan
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSubscriptionPlanFilter<$PrismaModel>
+    _max?: NestedEnumSubscriptionPlanFilter<$PrismaModel>
+  }
+
+  export type NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SubscriptionStatus | EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SubscriptionStatus[] | ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
+    _max?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedEnumUsageMetricFilter<$PrismaModel = never> = {
+    equals?: $Enums.UsageMetric | EnumUsageMetricFieldRefInput<$PrismaModel>
+    in?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    notIn?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    not?: NestedEnumUsageMetricFilter<$PrismaModel> | $Enums.UsageMetric
+  }
+
+  export type NestedEnumUsageMetricWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.UsageMetric | EnumUsageMetricFieldRefInput<$PrismaModel>
+    in?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    notIn?: $Enums.UsageMetric[] | ListEnumUsageMetricFieldRefInput<$PrismaModel>
+    not?: NestedEnumUsageMetricWithAggregatesFilter<$PrismaModel> | $Enums.UsageMetric
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumUsageMetricFilter<$PrismaModel>
+    _max?: NestedEnumUsageMetricFilter<$PrismaModel>
+  }
+
+  export type NestedEnumVerbosityLevelFilter<$PrismaModel = never> = {
+    equals?: $Enums.VerbosityLevel | EnumVerbosityLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumVerbosityLevelFilter<$PrismaModel> | $Enums.VerbosityLevel
+  }
+
+  export type NestedEnumEmailDigestFrequencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.EmailDigestFrequency | EnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    in?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel> | $Enums.EmailDigestFrequency
+  }
+
+  export type NestedEnumVerbosityLevelWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.VerbosityLevel | EnumVerbosityLevelFieldRefInput<$PrismaModel>
+    in?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    notIn?: $Enums.VerbosityLevel[] | ListEnumVerbosityLevelFieldRefInput<$PrismaModel>
+    not?: NestedEnumVerbosityLevelWithAggregatesFilter<$PrismaModel> | $Enums.VerbosityLevel
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumVerbosityLevelFilter<$PrismaModel>
+    _max?: NestedEnumVerbosityLevelFilter<$PrismaModel>
+  }
+
+  export type NestedEnumEmailDigestFrequencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.EmailDigestFrequency | EnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    in?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.EmailDigestFrequency[] | ListEnumEmailDigestFrequencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumEmailDigestFrequencyWithAggregatesFilter<$PrismaModel> | $Enums.EmailDigestFrequency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel>
+    _max?: NestedEnumEmailDigestFrequencyFilter<$PrismaModel>
+  }
+
   export type UserCreateWithoutAccountsInput = {
     id?: string
     name?: string | null
@@ -7038,12 +22193,18 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -7055,12 +22216,18 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -7088,12 +22255,18 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -7105,12 +22278,18 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -7122,12 +22301,18 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     accounts?: AccountCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -7139,12 +22324,18 @@ export namespace Prisma {
     emailTokenExpires?: Date | string | null
     image?: string | null
     password?: string | null
-    cid?: string | null
-    locale?: string
+    preferredLanguage?: string
+    timezone?: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
     role?: $Enums.UserRole
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -7172,12 +22363,18 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     accounts?: AccountUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -7189,12 +22386,18 @@ export namespace Prisma {
     emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    cid?: NullableStringFieldUpdateOperationsInput | string | null
-    locale?: StringFieldUpdateOperationsInput | string
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
   }
 
   export type AccountCreateWithoutUserInput = {
@@ -7257,6 +22460,174 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ConversationCreateWithoutUserInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    messages?: MessageCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicCreateNestedManyWithoutConversationInput
+    insights?: UserInsightCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateWithoutUserInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    messages?: MessageUncheckedCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicUncheckedCreateNestedManyWithoutConversationInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationCreateOrConnectWithoutUserInput = {
+    where: ConversationWhereUniqueInput
+    create: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput>
+  }
+
+  export type ConversationCreateManyUserInputEnvelope = {
+    data: ConversationCreateManyUserInput | ConversationCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserInsightCreateWithoutUserInput = {
+    id?: string
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    conversation?: ConversationCreateNestedOneWithoutInsightsInput
+  }
+
+  export type UserInsightUncheckedCreateWithoutUserInput = {
+    id?: string
+    conversationId?: string | null
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UserInsightCreateOrConnectWithoutUserInput = {
+    where: UserInsightWhereUniqueInput
+    create: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput>
+  }
+
+  export type UserInsightCreateManyUserInputEnvelope = {
+    data: UserInsightCreateManyUserInput | UserInsightCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SubscriptionCreateWithoutUserInput = {
+    id?: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    usageRecords?: UsageRecordCreateNestedManyWithoutSubscriptionInput
+  }
+
+  export type SubscriptionUncheckedCreateWithoutUserInput = {
+    id?: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    usageRecords?: UsageRecordUncheckedCreateNestedManyWithoutSubscriptionInput
+  }
+
+  export type SubscriptionCreateOrConnectWithoutUserInput = {
+    where: SubscriptionWhereUniqueInput
+    create: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput>
+  }
+
+  export type SubscriptionCreateManyUserInputEnvelope = {
+    data: SubscriptionCreateManyUserInput | SubscriptionCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SpiritualProfileCreateWithoutUserInput = {
+    id?: string
+    journeyStartDate?: Date | string
+    currentLevel?: $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileCreateprinciplesStudiedInput | string[]
+    practicesCompleted?: number
+    transformationScore?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type SpiritualProfileUncheckedCreateWithoutUserInput = {
+    id?: string
+    journeyStartDate?: Date | string
+    currentLevel?: $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileCreateprinciplesStudiedInput | string[]
+    practicesCompleted?: number
+    transformationScore?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type SpiritualProfileCreateOrConnectWithoutUserInput = {
+    where: SpiritualProfileWhereUniqueInput
+    create: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+  }
+
+  export type UserPreferenceCreateWithoutUserInput = {
+    id?: string
+    theme?: string
+    fontSize?: string
+    aiVerbosity?: $Enums.VerbosityLevel
+    notificationsEnabled?: boolean
+    emailDigest?: $Enums.EmailDigestFrequency
+    dataRetention?: number
+    exportFormat?: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type UserPreferenceUncheckedCreateWithoutUserInput = {
+    id?: string
+    theme?: string
+    fontSize?: string
+    aiVerbosity?: $Enums.VerbosityLevel
+    notificationsEnabled?: boolean
+    emailDigest?: $Enums.EmailDigestFrequency
+    dataRetention?: number
+    exportFormat?: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: Date | string
+  }
+
+  export type UserPreferenceCreateOrConnectWithoutUserInput = {
+    where: UserPreferenceWhereUniqueInput
+    create: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -7317,6 +22688,1322 @@ export namespace Prisma {
     expires?: DateTimeFilter<"Session"> | Date | string
   }
 
+  export type ConversationUpsertWithWhereUniqueWithoutUserInput = {
+    where: ConversationWhereUniqueInput
+    update: XOR<ConversationUpdateWithoutUserInput, ConversationUncheckedUpdateWithoutUserInput>
+    create: XOR<ConversationCreateWithoutUserInput, ConversationUncheckedCreateWithoutUserInput>
+  }
+
+  export type ConversationUpdateWithWhereUniqueWithoutUserInput = {
+    where: ConversationWhereUniqueInput
+    data: XOR<ConversationUpdateWithoutUserInput, ConversationUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ConversationUpdateManyWithWhereWithoutUserInput = {
+    where: ConversationScalarWhereInput
+    data: XOR<ConversationUpdateManyMutationInput, ConversationUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ConversationScalarWhereInput = {
+    AND?: ConversationScalarWhereInput | ConversationScalarWhereInput[]
+    OR?: ConversationScalarWhereInput[]
+    NOT?: ConversationScalarWhereInput | ConversationScalarWhereInput[]
+    id?: StringFilter<"Conversation"> | string
+    userId?: StringFilter<"Conversation"> | string
+    title?: StringNullableFilter<"Conversation"> | string | null
+    summary?: StringNullableFilter<"Conversation"> | string | null
+    language?: StringFilter<"Conversation"> | string
+    status?: EnumConversationStatusFilter<"Conversation"> | $Enums.ConversationStatus
+    metadata?: JsonNullableFilter<"Conversation">
+    createdAt?: DateTimeFilter<"Conversation"> | Date | string
+    updatedAt?: DateTimeFilter<"Conversation"> | Date | string
+    lastMessageAt?: DateTimeNullableFilter<"Conversation"> | Date | string | null
+  }
+
+  export type UserInsightUpsertWithWhereUniqueWithoutUserInput = {
+    where: UserInsightWhereUniqueInput
+    update: XOR<UserInsightUpdateWithoutUserInput, UserInsightUncheckedUpdateWithoutUserInput>
+    create: XOR<UserInsightCreateWithoutUserInput, UserInsightUncheckedCreateWithoutUserInput>
+  }
+
+  export type UserInsightUpdateWithWhereUniqueWithoutUserInput = {
+    where: UserInsightWhereUniqueInput
+    data: XOR<UserInsightUpdateWithoutUserInput, UserInsightUncheckedUpdateWithoutUserInput>
+  }
+
+  export type UserInsightUpdateManyWithWhereWithoutUserInput = {
+    where: UserInsightScalarWhereInput
+    data: XOR<UserInsightUpdateManyMutationInput, UserInsightUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type UserInsightScalarWhereInput = {
+    AND?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+    OR?: UserInsightScalarWhereInput[]
+    NOT?: UserInsightScalarWhereInput | UserInsightScalarWhereInput[]
+    id?: StringFilter<"UserInsight"> | string
+    userId?: StringFilter<"UserInsight"> | string
+    conversationId?: StringNullableFilter<"UserInsight"> | string | null
+    content?: StringFilter<"UserInsight"> | string
+    type?: EnumInsightTypeFilter<"UserInsight"> | $Enums.InsightType
+    significance?: EnumSignificanceLevelFilter<"UserInsight"> | $Enums.SignificanceLevel
+    metadata?: JsonNullableFilter<"UserInsight">
+    createdAt?: DateTimeFilter<"UserInsight"> | Date | string
+  }
+
+  export type SubscriptionUpsertWithWhereUniqueWithoutUserInput = {
+    where: SubscriptionWhereUniqueInput
+    update: XOR<SubscriptionUpdateWithoutUserInput, SubscriptionUncheckedUpdateWithoutUserInput>
+    create: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput>
+  }
+
+  export type SubscriptionUpdateWithWhereUniqueWithoutUserInput = {
+    where: SubscriptionWhereUniqueInput
+    data: XOR<SubscriptionUpdateWithoutUserInput, SubscriptionUncheckedUpdateWithoutUserInput>
+  }
+
+  export type SubscriptionUpdateManyWithWhereWithoutUserInput = {
+    where: SubscriptionScalarWhereInput
+    data: XOR<SubscriptionUpdateManyMutationInput, SubscriptionUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type SubscriptionScalarWhereInput = {
+    AND?: SubscriptionScalarWhereInput | SubscriptionScalarWhereInput[]
+    OR?: SubscriptionScalarWhereInput[]
+    NOT?: SubscriptionScalarWhereInput | SubscriptionScalarWhereInput[]
+    id?: StringFilter<"Subscription"> | string
+    userId?: StringFilter<"Subscription"> | string
+    stripeCustomerId?: StringNullableFilter<"Subscription"> | string | null
+    stripeSubscriptionId?: StringNullableFilter<"Subscription"> | string | null
+    plan?: EnumSubscriptionPlanFilter<"Subscription"> | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFilter<"Subscription"> | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFilter<"Subscription"> | Date | string
+    currentPeriodEnd?: DateTimeFilter<"Subscription"> | Date | string
+    cancelAtPeriodEnd?: BoolFilter<"Subscription"> | boolean
+    metadata?: JsonNullableFilter<"Subscription">
+    createdAt?: DateTimeFilter<"Subscription"> | Date | string
+    updatedAt?: DateTimeFilter<"Subscription"> | Date | string
+  }
+
+  export type SpiritualProfileUpsertWithoutUserInput = {
+    update: XOR<SpiritualProfileUpdateWithoutUserInput, SpiritualProfileUncheckedUpdateWithoutUserInput>
+    create: XOR<SpiritualProfileCreateWithoutUserInput, SpiritualProfileUncheckedCreateWithoutUserInput>
+    where?: SpiritualProfileWhereInput
+  }
+
+  export type SpiritualProfileUpdateToOneWithWhereWithoutUserInput = {
+    where?: SpiritualProfileWhereInput
+    data: XOR<SpiritualProfileUpdateWithoutUserInput, SpiritualProfileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type SpiritualProfileUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SpiritualProfileUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    journeyStartDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentLevel?: EnumSpiritualLevelFieldUpdateOperationsInput | $Enums.SpiritualLevel
+    principlesStudied?: SpiritualProfileUpdateprinciplesStudiedInput | string[]
+    practicesCompleted?: IntFieldUpdateOperationsInput | number
+    transformationScore?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserPreferenceUpsertWithoutUserInput = {
+    update: XOR<UserPreferenceUpdateWithoutUserInput, UserPreferenceUncheckedUpdateWithoutUserInput>
+    create: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
+    where?: UserPreferenceWhereInput
+  }
+
+  export type UserPreferenceUpdateToOneWithWhereWithoutUserInput = {
+    where?: UserPreferenceWhereInput
+    data: XOR<UserPreferenceUpdateWithoutUserInput, UserPreferenceUncheckedUpdateWithoutUserInput>
+  }
+
+  export type UserPreferenceUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserPreferenceUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    theme?: StringFieldUpdateOperationsInput | string
+    fontSize?: StringFieldUpdateOperationsInput | string
+    aiVerbosity?: EnumVerbosityLevelFieldUpdateOperationsInput | $Enums.VerbosityLevel
+    notificationsEnabled?: BoolFieldUpdateOperationsInput | boolean
+    emailDigest?: EnumEmailDigestFrequencyFieldUpdateOperationsInput | $Enums.EmailDigestFrequency
+    dataRetention?: IntFieldUpdateOperationsInput | number
+    exportFormat?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserCreateWithoutConversationsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutConversationsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutConversationsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutConversationsInput, UserUncheckedCreateWithoutConversationsInput>
+  }
+
+  export type MessageCreateWithoutConversationInput = {
+    id?: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+  }
+
+  export type MessageUncheckedCreateWithoutConversationInput = {
+    id?: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+  }
+
+  export type MessageCreateOrConnectWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput>
+  }
+
+  export type MessageCreateManyConversationInputEnvelope = {
+    data: MessageCreateManyConversationInput | MessageCreateManyConversationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ConversationTopicCreateWithoutConversationInput = {
+    id?: string
+    relevanceScore?: number
+    createdAt?: Date | string
+    topic: TopicCreateNestedOneWithoutConversationsInput
+  }
+
+  export type ConversationTopicUncheckedCreateWithoutConversationInput = {
+    id?: string
+    topicId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicCreateOrConnectWithoutConversationInput = {
+    where: ConversationTopicWhereUniqueInput
+    create: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput>
+  }
+
+  export type ConversationTopicCreateManyConversationInputEnvelope = {
+    data: ConversationTopicCreateManyConversationInput | ConversationTopicCreateManyConversationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserInsightCreateWithoutConversationInput = {
+    id?: string
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutInsightsInput
+  }
+
+  export type UserInsightUncheckedCreateWithoutConversationInput = {
+    id?: string
+    userId: string
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UserInsightCreateOrConnectWithoutConversationInput = {
+    where: UserInsightWhereUniqueInput
+    create: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput>
+  }
+
+  export type UserInsightCreateManyConversationInputEnvelope = {
+    data: UserInsightCreateManyConversationInput | UserInsightCreateManyConversationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutConversationsInput = {
+    update: XOR<UserUpdateWithoutConversationsInput, UserUncheckedUpdateWithoutConversationsInput>
+    create: XOR<UserCreateWithoutConversationsInput, UserUncheckedCreateWithoutConversationsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutConversationsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutConversationsInput, UserUncheckedUpdateWithoutConversationsInput>
+  }
+
+  export type UserUpdateWithoutConversationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutConversationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutConversationInput, MessageUncheckedUpdateWithoutConversationInput>
+    create: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutConversationInput, MessageUncheckedUpdateWithoutConversationInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutConversationInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutConversationInput>
+  }
+
+  export type MessageScalarWhereInput = {
+    AND?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    OR?: MessageScalarWhereInput[]
+    NOT?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    id?: StringFilter<"Message"> | string
+    conversationId?: StringFilter<"Message"> | string
+    role?: EnumMessageRoleFilter<"Message"> | $Enums.MessageRole
+    content?: StringFilter<"Message"> | string
+    metadata?: JsonNullableFilter<"Message">
+    hermeticPrinciples?: StringNullableListFilter<"Message">
+    emotionalState?: StringNullableFilter<"Message"> | string | null
+    createdAt?: DateTimeFilter<"Message"> | Date | string
+  }
+
+  export type ConversationTopicUpsertWithWhereUniqueWithoutConversationInput = {
+    where: ConversationTopicWhereUniqueInput
+    update: XOR<ConversationTopicUpdateWithoutConversationInput, ConversationTopicUncheckedUpdateWithoutConversationInput>
+    create: XOR<ConversationTopicCreateWithoutConversationInput, ConversationTopicUncheckedCreateWithoutConversationInput>
+  }
+
+  export type ConversationTopicUpdateWithWhereUniqueWithoutConversationInput = {
+    where: ConversationTopicWhereUniqueInput
+    data: XOR<ConversationTopicUpdateWithoutConversationInput, ConversationTopicUncheckedUpdateWithoutConversationInput>
+  }
+
+  export type ConversationTopicUpdateManyWithWhereWithoutConversationInput = {
+    where: ConversationTopicScalarWhereInput
+    data: XOR<ConversationTopicUpdateManyMutationInput, ConversationTopicUncheckedUpdateManyWithoutConversationInput>
+  }
+
+  export type ConversationTopicScalarWhereInput = {
+    AND?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+    OR?: ConversationTopicScalarWhereInput[]
+    NOT?: ConversationTopicScalarWhereInput | ConversationTopicScalarWhereInput[]
+    id?: StringFilter<"ConversationTopic"> | string
+    conversationId?: StringFilter<"ConversationTopic"> | string
+    topicId?: StringFilter<"ConversationTopic"> | string
+    relevanceScore?: FloatFilter<"ConversationTopic"> | number
+    createdAt?: DateTimeFilter<"ConversationTopic"> | Date | string
+  }
+
+  export type UserInsightUpsertWithWhereUniqueWithoutConversationInput = {
+    where: UserInsightWhereUniqueInput
+    update: XOR<UserInsightUpdateWithoutConversationInput, UserInsightUncheckedUpdateWithoutConversationInput>
+    create: XOR<UserInsightCreateWithoutConversationInput, UserInsightUncheckedCreateWithoutConversationInput>
+  }
+
+  export type UserInsightUpdateWithWhereUniqueWithoutConversationInput = {
+    where: UserInsightWhereUniqueInput
+    data: XOR<UserInsightUpdateWithoutConversationInput, UserInsightUncheckedUpdateWithoutConversationInput>
+  }
+
+  export type UserInsightUpdateManyWithWhereWithoutConversationInput = {
+    where: UserInsightScalarWhereInput
+    data: XOR<UserInsightUpdateManyMutationInput, UserInsightUncheckedUpdateManyWithoutConversationInput>
+  }
+
+  export type ConversationCreateWithoutMessagesInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    user: UserCreateNestedOneWithoutConversationsInput
+    topics?: ConversationTopicCreateNestedManyWithoutConversationInput
+    insights?: UserInsightCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateWithoutMessagesInput = {
+    id?: string
+    userId: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    topics?: ConversationTopicUncheckedCreateNestedManyWithoutConversationInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationCreateOrConnectWithoutMessagesInput = {
+    where: ConversationWhereUniqueInput
+    create: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+  }
+
+  export type ConversationUpsertWithoutMessagesInput = {
+    update: XOR<ConversationUpdateWithoutMessagesInput, ConversationUncheckedUpdateWithoutMessagesInput>
+    create: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    where?: ConversationWhereInput
+  }
+
+  export type ConversationUpdateToOneWithWhereWithoutMessagesInput = {
+    where?: ConversationWhereInput
+    data: XOR<ConversationUpdateWithoutMessagesInput, ConversationUncheckedUpdateWithoutMessagesInput>
+  }
+
+  export type ConversationUpdateWithoutMessagesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutConversationsNestedInput
+    topics?: ConversationTopicUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateWithoutMessagesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    topics?: ConversationTopicUncheckedUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationTopicCreateWithoutTopicInput = {
+    id?: string
+    relevanceScore?: number
+    createdAt?: Date | string
+    conversation: ConversationCreateNestedOneWithoutTopicsInput
+  }
+
+  export type ConversationTopicUncheckedCreateWithoutTopicInput = {
+    id?: string
+    conversationId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicCreateOrConnectWithoutTopicInput = {
+    where: ConversationTopicWhereUniqueInput
+    create: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput>
+  }
+
+  export type ConversationTopicCreateManyTopicInputEnvelope = {
+    data: ConversationTopicCreateManyTopicInput | ConversationTopicCreateManyTopicInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ConversationTopicUpsertWithWhereUniqueWithoutTopicInput = {
+    where: ConversationTopicWhereUniqueInput
+    update: XOR<ConversationTopicUpdateWithoutTopicInput, ConversationTopicUncheckedUpdateWithoutTopicInput>
+    create: XOR<ConversationTopicCreateWithoutTopicInput, ConversationTopicUncheckedCreateWithoutTopicInput>
+  }
+
+  export type ConversationTopicUpdateWithWhereUniqueWithoutTopicInput = {
+    where: ConversationTopicWhereUniqueInput
+    data: XOR<ConversationTopicUpdateWithoutTopicInput, ConversationTopicUncheckedUpdateWithoutTopicInput>
+  }
+
+  export type ConversationTopicUpdateManyWithWhereWithoutTopicInput = {
+    where: ConversationTopicScalarWhereInput
+    data: XOR<ConversationTopicUpdateManyMutationInput, ConversationTopicUncheckedUpdateManyWithoutTopicInput>
+  }
+
+  export type ConversationCreateWithoutTopicsInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    user: UserCreateNestedOneWithoutConversationsInput
+    messages?: MessageCreateNestedManyWithoutConversationInput
+    insights?: UserInsightCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateWithoutTopicsInput = {
+    id?: string
+    userId: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    messages?: MessageUncheckedCreateNestedManyWithoutConversationInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationCreateOrConnectWithoutTopicsInput = {
+    where: ConversationWhereUniqueInput
+    create: XOR<ConversationCreateWithoutTopicsInput, ConversationUncheckedCreateWithoutTopicsInput>
+  }
+
+  export type TopicCreateWithoutConversationsInput = {
+    id?: string
+    name: string
+    nameTranslations: JsonNullValueInput | InputJsonValue
+    description?: string | null
+    hermeticPrinciple?: string | null
+    category: $Enums.TopicCategory
+  }
+
+  export type TopicUncheckedCreateWithoutConversationsInput = {
+    id?: string
+    name: string
+    nameTranslations: JsonNullValueInput | InputJsonValue
+    description?: string | null
+    hermeticPrinciple?: string | null
+    category: $Enums.TopicCategory
+  }
+
+  export type TopicCreateOrConnectWithoutConversationsInput = {
+    where: TopicWhereUniqueInput
+    create: XOR<TopicCreateWithoutConversationsInput, TopicUncheckedCreateWithoutConversationsInput>
+  }
+
+  export type ConversationUpsertWithoutTopicsInput = {
+    update: XOR<ConversationUpdateWithoutTopicsInput, ConversationUncheckedUpdateWithoutTopicsInput>
+    create: XOR<ConversationCreateWithoutTopicsInput, ConversationUncheckedCreateWithoutTopicsInput>
+    where?: ConversationWhereInput
+  }
+
+  export type ConversationUpdateToOneWithWhereWithoutTopicsInput = {
+    where?: ConversationWhereInput
+    data: XOR<ConversationUpdateWithoutTopicsInput, ConversationUncheckedUpdateWithoutTopicsInput>
+  }
+
+  export type ConversationUpdateWithoutTopicsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutConversationsNestedInput
+    messages?: MessageUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateWithoutTopicsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    messages?: MessageUncheckedUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type TopicUpsertWithoutConversationsInput = {
+    update: XOR<TopicUpdateWithoutConversationsInput, TopicUncheckedUpdateWithoutConversationsInput>
+    create: XOR<TopicCreateWithoutConversationsInput, TopicUncheckedCreateWithoutConversationsInput>
+    where?: TopicWhereInput
+  }
+
+  export type TopicUpdateToOneWithWhereWithoutConversationsInput = {
+    where?: TopicWhereInput
+    data: XOR<TopicUpdateWithoutConversationsInput, TopicUncheckedUpdateWithoutConversationsInput>
+  }
+
+  export type TopicUpdateWithoutConversationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+  }
+
+  export type TopicUncheckedUpdateWithoutConversationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    nameTranslations?: JsonNullValueInput | InputJsonValue
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    hermeticPrinciple?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumTopicCategoryFieldUpdateOperationsInput | $Enums.TopicCategory
+  }
+
+  export type UserCreateWithoutInsightsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutInsightsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutInsightsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutInsightsInput, UserUncheckedCreateWithoutInsightsInput>
+  }
+
+  export type ConversationCreateWithoutInsightsInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    user: UserCreateNestedOneWithoutConversationsInput
+    messages?: MessageCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateWithoutInsightsInput = {
+    id?: string
+    userId: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+    messages?: MessageUncheckedCreateNestedManyWithoutConversationInput
+    topics?: ConversationTopicUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationCreateOrConnectWithoutInsightsInput = {
+    where: ConversationWhereUniqueInput
+    create: XOR<ConversationCreateWithoutInsightsInput, ConversationUncheckedCreateWithoutInsightsInput>
+  }
+
+  export type UserUpsertWithoutInsightsInput = {
+    update: XOR<UserUpdateWithoutInsightsInput, UserUncheckedUpdateWithoutInsightsInput>
+    create: XOR<UserCreateWithoutInsightsInput, UserUncheckedCreateWithoutInsightsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutInsightsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutInsightsInput, UserUncheckedUpdateWithoutInsightsInput>
+  }
+
+  export type UserUpdateWithoutInsightsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutInsightsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  }
+
+  export type ConversationUpsertWithoutInsightsInput = {
+    update: XOR<ConversationUpdateWithoutInsightsInput, ConversationUncheckedUpdateWithoutInsightsInput>
+    create: XOR<ConversationCreateWithoutInsightsInput, ConversationUncheckedCreateWithoutInsightsInput>
+    where?: ConversationWhereInput
+  }
+
+  export type ConversationUpdateToOneWithWhereWithoutInsightsInput = {
+    where?: ConversationWhereInput
+    data: XOR<ConversationUpdateWithoutInsightsInput, ConversationUncheckedUpdateWithoutInsightsInput>
+  }
+
+  export type ConversationUpdateWithoutInsightsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutConversationsNestedInput
+    messages?: MessageUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateWithoutInsightsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    messages?: MessageUncheckedUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type UserCreateWithoutSpiritualProfileInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutSpiritualProfileInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutSpiritualProfileInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutSpiritualProfileInput, UserUncheckedCreateWithoutSpiritualProfileInput>
+  }
+
+  export type UserUpsertWithoutSpiritualProfileInput = {
+    update: XOR<UserUpdateWithoutSpiritualProfileInput, UserUncheckedUpdateWithoutSpiritualProfileInput>
+    create: XOR<UserCreateWithoutSpiritualProfileInput, UserUncheckedCreateWithoutSpiritualProfileInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutSpiritualProfileInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutSpiritualProfileInput, UserUncheckedUpdateWithoutSpiritualProfileInput>
+  }
+
+  export type UserUpdateWithoutSpiritualProfileInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutSpiritualProfileInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserCreateWithoutSubscriptionsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutSubscriptionsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutSubscriptionsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutSubscriptionsInput, UserUncheckedCreateWithoutSubscriptionsInput>
+  }
+
+  export type UsageRecordCreateWithoutSubscriptionInput = {
+    id?: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UsageRecordUncheckedCreateWithoutSubscriptionInput = {
+    id?: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UsageRecordCreateOrConnectWithoutSubscriptionInput = {
+    where: UsageRecordWhereUniqueInput
+    create: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput>
+  }
+
+  export type UsageRecordCreateManySubscriptionInputEnvelope = {
+    data: UsageRecordCreateManySubscriptionInput | UsageRecordCreateManySubscriptionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutSubscriptionsInput = {
+    update: XOR<UserUpdateWithoutSubscriptionsInput, UserUncheckedUpdateWithoutSubscriptionsInput>
+    create: XOR<UserCreateWithoutSubscriptionsInput, UserUncheckedCreateWithoutSubscriptionsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutSubscriptionsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutSubscriptionsInput, UserUncheckedUpdateWithoutSubscriptionsInput>
+  }
+
+  export type UserUpdateWithoutSubscriptionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutSubscriptionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  }
+
+  export type UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput = {
+    where: UsageRecordWhereUniqueInput
+    update: XOR<UsageRecordUpdateWithoutSubscriptionInput, UsageRecordUncheckedUpdateWithoutSubscriptionInput>
+    create: XOR<UsageRecordCreateWithoutSubscriptionInput, UsageRecordUncheckedCreateWithoutSubscriptionInput>
+  }
+
+  export type UsageRecordUpdateWithWhereUniqueWithoutSubscriptionInput = {
+    where: UsageRecordWhereUniqueInput
+    data: XOR<UsageRecordUpdateWithoutSubscriptionInput, UsageRecordUncheckedUpdateWithoutSubscriptionInput>
+  }
+
+  export type UsageRecordUpdateManyWithWhereWithoutSubscriptionInput = {
+    where: UsageRecordScalarWhereInput
+    data: XOR<UsageRecordUpdateManyMutationInput, UsageRecordUncheckedUpdateManyWithoutSubscriptionInput>
+  }
+
+  export type UsageRecordScalarWhereInput = {
+    AND?: UsageRecordScalarWhereInput | UsageRecordScalarWhereInput[]
+    OR?: UsageRecordScalarWhereInput[]
+    NOT?: UsageRecordScalarWhereInput | UsageRecordScalarWhereInput[]
+    id?: StringFilter<"UsageRecord"> | string
+    subscriptionId?: StringFilter<"UsageRecord"> | string
+    metric?: EnumUsageMetricFilter<"UsageRecord"> | $Enums.UsageMetric
+    count?: IntFilter<"UsageRecord"> | number
+    date?: DateTimeFilter<"UsageRecord"> | Date | string
+    metadata?: JsonNullableFilter<"UsageRecord">
+    createdAt?: DateTimeFilter<"UsageRecord"> | Date | string
+  }
+
+  export type SubscriptionCreateWithoutUsageRecordsInput = {
+    id?: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutSubscriptionsInput
+  }
+
+  export type SubscriptionUncheckedCreateWithoutUsageRecordsInput = {
+    id?: string
+    userId: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SubscriptionCreateOrConnectWithoutUsageRecordsInput = {
+    where: SubscriptionWhereUniqueInput
+    create: XOR<SubscriptionCreateWithoutUsageRecordsInput, SubscriptionUncheckedCreateWithoutUsageRecordsInput>
+  }
+
+  export type SubscriptionUpsertWithoutUsageRecordsInput = {
+    update: XOR<SubscriptionUpdateWithoutUsageRecordsInput, SubscriptionUncheckedUpdateWithoutUsageRecordsInput>
+    create: XOR<SubscriptionCreateWithoutUsageRecordsInput, SubscriptionUncheckedCreateWithoutUsageRecordsInput>
+    where?: SubscriptionWhereInput
+  }
+
+  export type SubscriptionUpdateToOneWithWhereWithoutUsageRecordsInput = {
+    where?: SubscriptionWhereInput
+    data: XOR<SubscriptionUpdateWithoutUsageRecordsInput, SubscriptionUncheckedUpdateWithoutUsageRecordsInput>
+  }
+
+  export type SubscriptionUpdateWithoutUsageRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSubscriptionsNestedInput
+  }
+
+  export type SubscriptionUncheckedUpdateWithoutUsageRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserCreateWithoutPreferencesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutPreferencesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutPreferencesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutPreferencesInput, UserUncheckedCreateWithoutPreferencesInput>
+  }
+
+  export type UserUpsertWithoutPreferencesInput = {
+    update: XOR<UserUpdateWithoutPreferencesInput, UserUncheckedUpdateWithoutPreferencesInput>
+    create: XOR<UserCreateWithoutPreferencesInput, UserUncheckedCreateWithoutPreferencesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutPreferencesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutPreferencesInput, UserUncheckedUpdateWithoutPreferencesInput>
+  }
+
+  export type UserUpdateWithoutPreferencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutPreferencesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+  }
+
   export type AccountCreateManyUserInput = {
     id?: string
     type: string
@@ -7335,6 +24022,42 @@ export namespace Prisma {
     id?: string
     sessionToken: string
     expires: Date | string
+  }
+
+  export type ConversationCreateManyUserInput = {
+    id?: string
+    title?: string | null
+    summary?: string | null
+    language?: string
+    status?: $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastMessageAt?: Date | string | null
+  }
+
+  export type UserInsightCreateManyUserInput = {
+    id?: string
+    conversationId?: string | null
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type SubscriptionCreateManyUserInput = {
+    id?: string
+    stripeCustomerId?: string | null
+    stripeSubscriptionId?: string | null
+    plan: $Enums.SubscriptionPlan
+    status: $Enums.SubscriptionStatus
+    currentPeriodStart: Date | string
+    currentPeriodEnd: Date | string
+    cancelAtPeriodEnd?: boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AccountUpdateWithoutUserInput = {
@@ -7395,6 +24118,294 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    messages?: MessageUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    messages?: MessageUncheckedUpdateManyWithoutConversationNestedInput
+    topics?: ConversationTopicUncheckedUpdateManyWithoutConversationNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: StringFieldUpdateOperationsInput | string
+    status?: EnumConversationStatusFieldUpdateOperationsInput | $Enums.ConversationStatus
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastMessageAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type UserInsightUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneWithoutInsightsNestedInput
+  }
+
+  export type UserInsightUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: NullableStringFieldUpdateOperationsInput | string | null
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: NullableStringFieldUpdateOperationsInput | string | null
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SubscriptionUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    usageRecords?: UsageRecordUpdateManyWithoutSubscriptionNestedInput
+  }
+
+  export type SubscriptionUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    usageRecords?: UsageRecordUncheckedUpdateManyWithoutSubscriptionNestedInput
+  }
+
+  export type SubscriptionUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stripeCustomerId?: NullableStringFieldUpdateOperationsInput | string | null
+    stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
+    plan?: EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+    status?: EnumSubscriptionStatusFieldUpdateOperationsInput | $Enums.SubscriptionStatus
+    currentPeriodStart?: DateTimeFieldUpdateOperationsInput | Date | string
+    currentPeriodEnd?: DateTimeFieldUpdateOperationsInput | Date | string
+    cancelAtPeriodEnd?: BoolFieldUpdateOperationsInput | boolean
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageCreateManyConversationInput = {
+    id?: string
+    role: $Enums.MessageRole
+    content: string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageCreatehermeticPrinciplesInput | string[]
+    emotionalState?: string | null
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicCreateManyConversationInput = {
+    id?: string
+    topicId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type UserInsightCreateManyConversationInput = {
+    id?: string
+    userId: string
+    content: string
+    type: $Enums.InsightType
+    significance: $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type MessageUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    role?: EnumMessageRoleFieldUpdateOperationsInput | $Enums.MessageRole
+    content?: StringFieldUpdateOperationsInput | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    hermeticPrinciples?: MessageUpdatehermeticPrinciplesInput | string[]
+    emotionalState?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    topic?: TopicUpdateOneRequiredWithoutConversationsNestedInput
+  }
+
+  export type ConversationTopicUncheckedUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    topicId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicUncheckedUpdateManyWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    topicId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutInsightsNestedInput
+  }
+
+  export type UserInsightUncheckedUpdateWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserInsightUncheckedUpdateManyWithoutConversationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    type?: EnumInsightTypeFieldUpdateOperationsInput | $Enums.InsightType
+    significance?: EnumSignificanceLevelFieldUpdateOperationsInput | $Enums.SignificanceLevel
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicCreateManyTopicInput = {
+    id?: string
+    conversationId: string
+    relevanceScore?: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationTopicUpdateWithoutTopicInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutTopicsNestedInput
+  }
+
+  export type ConversationTopicUncheckedUpdateWithoutTopicInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationTopicUncheckedUpdateManyWithoutTopicInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    conversationId?: StringFieldUpdateOperationsInput | string
+    relevanceScore?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordCreateManySubscriptionInput = {
+    id?: string
+    metric: $Enums.UsageMetric
+    count: number
+    date: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type UsageRecordUpdateWithoutSubscriptionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordUncheckedUpdateWithoutSubscriptionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UsageRecordUncheckedUpdateManyWithoutSubscriptionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    metric?: EnumUsageMetricFieldUpdateOperationsInput | $Enums.UsageMetric
+    count?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

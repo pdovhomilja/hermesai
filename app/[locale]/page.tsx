@@ -30,7 +30,7 @@ export default async function HomePage() {
             {session && userCid ? (
               <Link
                 href={{
-                  pathname: `/${userCid}/` as any
+                  pathname: `/${userCid}/`
                 }}
                 className="px-8 py-4 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-semibold rounded-lg transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-amber-500/25"
               >

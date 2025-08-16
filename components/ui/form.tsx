@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { FieldPath, FieldValues, ControllerProps, Control } from "react-hook-form"
+import type { FieldPath, FieldValues, ControllerProps } from "react-hook-form"
 import { Controller, FormProvider, useFormContext } from "react-hook-form"
 import { Slot } from "@radix-ui/react-slot"
 

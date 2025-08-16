@@ -15,7 +15,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
           {/* For company-specific routes, use href with pathname object */}
           <Link 
             href={{
-              pathname: `/${cid}/chat` as any
+              pathname: `/${cid}/chat`
             }} 
             className="text-blue-600 hover:text-blue-800 underline"
           >
@@ -25,7 +25,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
         <div>
           <Link 
             href={{
-              pathname: `/${cid}/settings` as any
+              pathname: `/${cid}/settings`
             }} 
             className="text-blue-600 hover:text-blue-800 underline"
           >
@@ -35,7 +35,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
         <div>
           <Link 
             href={{
-              pathname: `/${cid}/users` as any
+              pathname: `/${cid}/users`
             }} 
             className="text-blue-600 hover:text-blue-800 underline"
           >

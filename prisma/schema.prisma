@@ -7,7 +7,7 @@ generator client {
   provider        = "prisma-client-js"
   output          = "../lib/generated/prisma"
   binaryTargets   = ["native", "debian-openssl-3.0.x"]
-  previewFeatures = ["postgresqlExtensions", "typedSql"]
+  previewFeatures = ["postgresqlExtensions", "fullTextSearchPostgres"]
 }
 
 datasource db {
@@ -55,17 +55,25 @@ model User {
   emailTokenExpires       DateTime? @map("email_token_expires")
   image                   String?
   password                String?
-  cid                     String?   @default(cuid()) @map("company_id")
-  locale                  String    @default("en")
+  preferredLanguage       String    @default("en") @map("preferred_language")
+  timezone                String    @default("UTC")
   createdAt               DateTime  @default(now()) @map("created_at")
   updatedAt               DateTime  @updatedAt @map("updated_at")
+  lastActiveAt            DateTime? @map("last_active_at")
   role                    UserRole  @default(USER)
   
-  accounts Account[]
-  sessions Session[]
+  // Relations
+  accounts                Account[]
+  sessions                Session[]
+  conversations           Conversation[]
+  insights                UserInsight[]
+  subscriptions           Subscription[]
+  spiritualProfile        SpiritualProfile?
+  preferences             UserPreference?
 
   @@map("users")
-  @@index([cid])
+  @@index([email])
+  @@index([lastActiveAt])
   @@index([emailVerificationToken])
 }
 
@@ -84,4 +92,269 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+}
+
+// Conversation System
+model Conversation {
+  id            String   @id @default(cuid())
+  userId        String   @map("user_id")
+  title         String?
+  summary       String?  @db.Text
+  language      String   @default("en")
+  status        ConversationStatus @default(ACTIVE)
+  metadata      Json?
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  lastMessageAt DateTime? @map("last_message_at")
+
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages      Message[]
+  topics        ConversationTopic[]
+  insights      UserInsight[]
+
+  @@map("conversations")
+  @@index([userId, createdAt])
+  @@index([userId, status])
+  @@index([lastMessageAt])
+}
+
+model Message {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  role           MessageRole
+  content        String   @db.Text
+  metadata       Json?
+
+  // Vector embedding for semantic search
+  embedding      Unsupported("vector(1536)")?
+
+  // Hermetic context
+  hermeticPrinciples String[] @map("hermetic_principles")
+  emotionalState     String?  @map("emotional_state")
+
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+  @@index([conversationId, createdAt])
+  @@index([role])
+}
+
+// Knowledge & Topics
+model Topic {
+  id               String   @id @default(cuid())
+  name             String   @unique
+  nameTranslations Json     @map("name_translations") // {"en": "Transformation", "cs": "Transformace", ...}
+  description      String?  @db.Text
+  hermeticPrinciple String? @map("hermetic_principle")
+  category         TopicCategory
+
+  // Relations
+  conversations    ConversationTopic[]
+
+  @@map("topics")
+  @@index([category])
+  @@index([hermeticPrinciple])
+}
+
+model ConversationTopic {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  topicId        String   @map("topic_id")
+  relevanceScore Float    @default(1.0) @map("relevance_score")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  topic          Topic @relation(fields: [topicId], references: [id])
+
+  @@unique([conversationId, topicId])
+  @@map("conversation_topics")
+  @@index([topicId])
+}
+
+// Spiritual Journey & Insights
+model UserInsight {
+  id             String   @id @default(cuid())
+  userId         String   @map("user_id")
+  conversationId String?  @map("conversation_id")
+  content        String   @db.Text
+  type           InsightType
+  significance   SignificanceLevel
+  metadata       Json?
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user           User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conversation   Conversation? @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+
+  @@map("user_insights")
+  @@index([userId, type])
+  @@index([userId, createdAt])
+  @@index([significance])
+}
+
+model SpiritualProfile {
+  id                String   @id @default(cuid())
+  userId            String   @unique @map("user_id")
+  journeyStartDate  DateTime @default(now()) @map("journey_start_date")
+  currentLevel      SpiritualLevel @default(SEEKER) @map("current_level")
+  principlesStudied String[] @map("principles_studied")
+  practicesCompleted Int     @default(0) @map("practices_completed")
+  transformationScore Float  @default(0) @map("transformation_score")
+  metadata          Json?
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("spiritual_profiles")
+}
+
+// Subscription & Billing
+model Subscription {
+  id                String   @id @default(cuid())
+  userId            String   @map("user_id")
+  stripeCustomerId  String?  @unique @map("stripe_customer_id")
+  stripeSubscriptionId String? @unique @map("stripe_subscription_id")
+  plan              SubscriptionPlan
+  status            SubscriptionStatus
+  currentPeriodStart DateTime @map("current_period_start")
+  currentPeriodEnd  DateTime @map("current_period_end")
+  cancelAtPeriodEnd Boolean @default(false) @map("cancel_at_period_end")
+  metadata          Json?
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  usageRecords      UsageRecord[]
+
+  @@map("subscriptions")
+  @@index([userId])
+  @@index([status])
+  @@index([stripeCustomerId])
+}
+
+model UsageRecord {
+  id             String   @id @default(cuid())
+  subscriptionId String   @map("subscription_id")
+  metric         UsageMetric
+  count          Int
+  date           DateTime @db.Date
+  metadata       Json?
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@unique([subscriptionId, metric, date])
+  @@map("usage_records")
+  @@index([date])
+}
+
+// User Preferences
+model UserPreference {
+  id                String   @id @default(cuid())
+  userId            String   @unique @map("user_id")
+  theme             String   @default("ancient")
+  fontSize          String   @default("medium") @map("font_size")
+  aiVerbosity       VerbosityLevel @default(BALANCED) @map("ai_verbosity")
+  notificationsEnabled Boolean @default(true) @map("notifications_enabled")
+  emailDigest       EmailDigestFrequency @default(WEEKLY) @map("email_digest")
+  dataRetention     Int      @default(0) @map("data_retention") // 0 = unlimited, otherwise days
+  exportFormat      String   @default("pdf") @map("export_format")
+  metadata          Json?
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user              User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_preferences")
+}
+
+// Enums
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+enum ConversationStatus {
+  ACTIVE
+  ARCHIVED
+  DELETED
+}
+
+enum TopicCategory {
+  HERMETIC_PRINCIPLE
+  LIFE_CHALLENGE
+  DAILY_PRACTICE
+  TRANSFORMATION
+  PHILOSOPHY
+  RITUAL
+  OTHER
+}
+
+enum InsightType {
+  BREAKTHROUGH
+  REALIZATION
+  CHALLENGE
+  PRACTICE
+  TRANSFORMATION
+  MILESTONE
+}
+
+enum SignificanceLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum SpiritualLevel {
+  SEEKER
+  STUDENT
+  ADEPT
+  MASTER
+}
+
+enum SubscriptionPlan {
+  FREE_TRIAL
+  SEEKER
+  ADEPT
+  MASTER
+}
+
+enum SubscriptionStatus {
+  TRIAL
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  PAUSED
+}
+
+enum UsageMetric {
+  CONVERSATIONS
+  MESSAGES
+  TOKENS
+  EXPORTS
+  API_CALLS
+}
+
+enum VerbosityLevel {
+  CONCISE
+  BALANCED
+  DETAILED
+  EXTENSIVE
+}
+
+enum EmailDigestFrequency {
+  NEVER
+  DAILY
+  WEEKLY
+  MONTHLY
 }
