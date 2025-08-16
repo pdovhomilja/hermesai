@@ -1,4 +1,180 @@
 {
+  "common": {
+    "appName": "IALchemist",
+    "tagline": "Saggezza Antica per Cercatori Moderni",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "export": "Esporta",
+    "settings": "Impostazioni"
+  },
+
+  "auth": {
+    "signIn": "Accedi",
+    "signUp": "Registrati",
+    "signOut": "Esci",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Conferma Password",
+    "forgotPassword": "Password dimenticata?",
+    "resetPassword": "Reimposta Password",
+    "verifyEmail": "Verifica Email",
+    "createAccount": "Crea Account",
+    "alreadyHaveAccount": "Hai già un account?",
+    "dontHaveAccount": "Non hai un account?",
+    "orContinueWith": "O continua con",
+    "signInWithGoogle": "Continua con Google",
+    "signInWithGitHub": "Continua con GitHub",
+    "termsAgreement": "Registrandoti, accetti i nostri Termini e la Politica sulla Privacy",
+    "welcomeBack": "Bentornato",
+    "signInToAccess": "Accedi per accedere alla saggezza di Ermete",
+    "authError": "Errore di Autenticazione",
+    "tryAgain": "Riprova",
+    "returnHome": "Torna alla Home"
+  },
+
+  "hermes": {
+    "greeting": "Saluti, caro cercatore",
+    "title": "Ermete Trismegisto",
+    "subtitle": "Il Tre Volte Grande",
+    "askQuestion": "Fai la tua domanda...",
+    "welcome": "Saluti, cercatore di saggezza. Sono Ermete Trismegisto, il Tre Volte Grande. Come posso guidarti nel tuo cammino verso la comprensione?",
+    "placeholder": "Chiedi dei principi ermetici, alchimia o saggezza antica...",
+    "principles": {
+      "mentalism": {
+        "name": "Il Principio del Mentalismo",
+        "description": "Il Tutto è Mente; l'Universo è Mentale",
+        "practice": "Allineamento Mentale Mattutino"
+      },
+      "correspondence": {
+        "name": "Il Principio di Corrispondenza",
+        "description": "Come sopra, così sotto; come sotto, così sopra",
+        "practice": "Meditazione di Riconoscimento dei Pattern"
+      },
+      "vibration": {
+        "name": "Il Principio di Vibrazione",
+        "description": "Nulla riposa; tutto si muove; tutto vibra",
+        "practice": "Sintonizzazione Vibrazionale"
+      },
+      "polarity": {
+        "name": "Il Principio di Polarità",
+        "description": "Tutto è duale; gli opposti sono identici in natura",
+        "practice": "Trasmutazione di Polarità"
+      },
+      "rhythm": {
+        "name": "Il Principio del Ritmo",
+        "description": "Tutto fluisce, verso l'esterno e verso l'interno",
+        "practice": "Consapevolezza del Ritmo"
+      },
+      "causeEffect": {
+        "name": "Il Principio di Causa ed Effetto",
+        "description": "Ogni causa ha il suo effetto; ogni effetto ha la sua causa",
+        "practice": "Creazione Consapevole"
+      },
+      "gender": {
+        "name": "Il Principio del Genere",
+        "description": "Il genere è in tutto",
+        "practice": "Meditazione di Equilibrio dei Generi"
+      }
+    }
+  },
+
+  "chat": {
+    "newConversation": "Nuova Conversazione",
+    "conversations": "Conversazioni",
+    "messages": "Messaggi",
+    "noConversations": "Nessuna conversazione ancora",
+    "startConversation": "Inizia il tuo viaggio spirituale",
+    "deleteConversation": "Elimina conversazione",
+    "exportConversation": "Esporta conversazione",
+    "searchConversations": "Cerca nelle conversazioni",
+    "send": "Invia",
+    "thinking": "Ermete sta contemplando...",
+    "todayAt": "Oggi alle {time}",
+    "yesterdayAt": "Ieri alle {time}",
+    "typing": "Ermete sta contemplando..."
+  },
+
+  "subscription": {
+    "plans": {
+      "seeker": {
+        "name": "Cercatore",
+        "description": "Per principianti spirituali curiosi"
+      },
+      "adept": {
+        "name": "Adepto",
+        "description": "Per praticanti impegnati"
+      },
+      "master": {
+        "name": "Maestro",
+        "description": "Per studenti seri dell'ermetismo"
+      }
+    },
+    "features": {
+      "conversations": "{count} conversazioni al mese",
+      "unlimitedConversations": "Conversazioni illimitate",
+      "historyDays": "Cronologia conversazioni di {days} giorni",
+      "unlimitedHistory": "Cronologia conversazioni illimitata",
+      "exportEnabled": "Esporta conversazioni",
+      "advancedFeatures": "Funzionalità avanzate",
+      "prioritySupport": "Supporto prioritario"
+    },
+    "billing": {
+      "monthly": "Mensile",
+      "annual": "Annuale",
+      "savePercent": "Risparmia {percent}%",
+      "startTrial": "Inizia Prova Gratuita",
+      "currentPlan": "Piano Attuale",
+      "upgradePlan": "Aggiorna Piano",
+      "manageBilling": "Gestisci Fatturazione",
+      "cancelSubscription": "Annulla Abbonamento"
+    }
+  },
+
+  "journey": {
+    "title": "Il Tuo Viaggio Spirituale",
+    "timeline": "Timeline",
+    "insights": "Intuizioni",
+    "statistics": "Statistiche",
+    "milestones": "Traguardi",
+    "totalConversations": "Conversazioni Totali",
+    "totalMessages": "Messaggi Totali",
+    "principlesStudied": "Principi Studiati",
+    "currentLevel": "Livello Attuale",
+    "transformationScore": "Punteggio di Trasformazione",
+    "streakDays": "Serie di {days} giorni"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "chat": "Chat",
+    "about": "Informazioni",
+    "wisdom": "Saggezza",
+    "journey": "Viaggio",
+    "settings": "Impostazioni"
+  },
+
+  "errors": {
+    "generic": "Qualcosa è andato storto",
+    "networkError": "Errore di connessione di rete",
+    "unauthorized": "Accedi per continuare",
+    "forbidden": "Non hai i permessi",
+    "notFound": "Pagina non trovata",
+    "rateLimit": "Troppe richieste, rallenta",
+    "usageLimit": "Limite di utilizzo raggiunto",
+    "paymentRequired": "Abbonamento richiesto",
+    "invalidInput": "Input non valido fornito"
+  },
+
   "HomePage": {
     "title": "Benvenuto in IALchemist",
     "subtitle": "Comunica con Ermete Trismegisto",
@@ -6,18 +182,14 @@
     "startChat": "Inizia il Tuo Viaggio",
     "learnMore": "Scopri l'Ermetismo"
   },
-  "Navigation": {
-    "home": "Home",
-    "chat": "Chat",
-    "about": "Informazioni",
-    "wisdom": "Saggezza"
-  },
+
   "Chat": {
     "welcome": "Saluti, cercatore di saggezza. Sono Ermete Trismegisto, il Tre Volte Grande. Come posso guidarti nel tuo cammino verso la comprensione?",
     "placeholder": "Chiedi dei principi ermetici, alchimia o saggezza antica...",
     "send": "Invia",
     "thinking": "Ermete sta contemplando la tua domanda..."
   },
+
   "Common": {
     "loading": "Caricamento...",
     "error": "Si è verificato un errore",

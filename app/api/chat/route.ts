@@ -5,11 +5,14 @@ import { prisma } from "@/lib/db/client";
 import logger from "@/lib/logger";
 import { z } from "zod";
 import { NextRequest } from "next/server";
-import { HermesResponseBuilder } from "@/lib/ai/context/response-builder";
+import { LocalizedHermesResponseBuilder } from "@/lib/ai/i18n/localized-response";
 import { EmotionDetectionService } from "@/lib/ai/analysis/detection";
 import { StorytellingElementsService } from "@/lib/ai/narrative/storytelling";
 import { UserContext, EmotionalState, SpiritualLevel, LifeChallenge } from "@/lib/ai/types";
 import { validateUsageAndFeature, trackUsageAfterSuccess } from "@/lib/middleware/usage-check";
+import LanguageDetector from "@/lib/i18n/detection";
+import LanguageSwitcher from "@/lib/i18n/switcher";
+import { HermeticContentLocalizer } from "@/lib/i18n/hermetic-content";
 
 const requestSchema = z.object({
   messages: z.array(
@@ -21,6 +24,8 @@ const requestSchema = z.object({
   conversationId: z.string().optional(),
   model: z.enum(["primary", "fallback", "thinking"]).default("primary"),
   stream: z.boolean().default(true),
+  forceLocale: z.string().optional(),
+  detectLanguage: z.boolean().default(true),
 });
 
 export async function POST(req: NextRequest) {
@@ -32,7 +37,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { messages, conversationId, model, stream } =
+    const { messages, conversationId, model, stream, forceLocale, detectLanguage } =
       requestSchema.parse(body);
 
     // Check usage limits and feature access
@@ -44,6 +49,47 @@ export async function POST(req: NextRequest) {
     if (usageCheck) {
       return usageCheck;
     }
+
+    // Language detection and switching
+    const currentLocale = await LanguageSwitcher.getLocale(session.user.id, prisma);
+    let detectedLocale = currentLocale;
+
+    if (detectLanguage && !forceLocale) {
+      const lastUserMessage = messages[messages.length - 1];
+      if (lastUserMessage?.role === 'user') {
+        try {
+          const detection = await LanguageDetector.detectWithHermeticContext(
+            lastUserMessage.content,
+            { model: 'fast', contextualBoost: true }
+          );
+
+          // Only switch if detection is confident and different from current
+          if (detection.confidence > 0.7 && detection.detectedLanguage !== currentLocale) {
+            const switchResult = await LanguageSwitcher.setLocale(
+              detection.detectedLanguage,
+              session.user.id,
+              prisma,
+              { updateUserPreference: true }
+            );
+
+            if (switchResult.success) {
+              detectedLocale = detection.detectedLanguage;
+              logger.info({
+                userId: session.user.id,
+                fromLocale: currentLocale,
+                toLocale: detectedLocale,
+                confidence: detection.confidence,
+                reasoning: detection.reasoning
+              }, "Language switched based on AI detection");
+            }
+          }
+        } catch (error) {
+          logger.warn({ error }, "Language detection failed, continuing with current locale");
+        }
+      }
+    }
+
+    const finalLocale = forceLocale || detectedLocale;
 
     // Get or create conversation
     let conversation = conversationId
@@ -60,15 +106,34 @@ export async function POST(req: NextRequest) {
         data: {
           userId: session.user.id,
           title: messages[0]?.content.substring(0, 100) || "New Conversation",
-          language: session.user.preferredLanguage || "en",
+          language: finalLocale,
         },
       });
     }
 
 
-    // Build Hermes persona context
+    // Build localized Hermes persona context
     const userContext = await buildUserContext(session.user.id, conversation.id, messages);
-    const hermesResponse = HermesResponseBuilder.getInstance().buildResponse(userContext);
+    
+    // Use localized response builder for multilingual support
+    const localizedBuilder = new LocalizedHermesResponseBuilder({
+      locale: finalLocale,
+      culturalContext: `${finalLocale.toUpperCase()} cultural context`,
+      emotionalState: userContext.emotionalState?.primary,
+      spiritualLevel: userContext.spiritualLevel?.level.toLowerCase() || 'seeker',
+      currentChallenges: userContext.currentChallenges?.map(c => c.description) || [],
+      conversationDepth: messages.length,
+      isFirstTime: !userContext.conversationHistory || userContext.conversationHistory.length === 0,
+      userPreferences: {
+        formality: userContext.preferences?.formality === 'casual' ? 'informal' : 'formal',
+        depth: userContext.preferences?.practiceLevel === 'beginner' ? 'simple' :
+              userContext.preferences?.practiceLevel === 'advanced' ? 'advanced' : 'intermediate',
+        includeLocalWisdom: true,
+        includeCulturalReferences: true
+      }
+    });
+
+    const localizedSystemPrompt = localizedBuilder.buildSystemPrompt();
     
     // Note: systemMessage created but enhanced version used instead
 
@@ -78,23 +143,35 @@ export async function POST(req: NextRequest) {
       emotionalState: userContext.emotionalState,
       spiritualLevel: userContext.spiritualLevel,
       challenges: userContext.currentChallenges,
-      conversationTone: hermesResponse.context.emotionalState?.intensity && hermesResponse.context.emotionalState.intensity > 0.6 ? 'supportive' : 'direct'
+      conversationTone: userContext.emotionalState?.intensity && userContext.emotionalState.intensity > 0.6 ? 'supportive' : 'direct'
     });
 
-    // Enhance the system message with storytelling context
+    // Get localized hermetic content for cultural enrichment
+    const hermeticContent = HermeticContentLocalizer.getContent(finalLocale);
+    const randomWisdom = HermeticContentLocalizer.getRandomWisdomQuote(finalLocale);
+
+    // Enhance the system message with localized storytelling context
     const enhancedSystemMessage: CoreMessage = {
       role: "system",
-      content: `${hermesResponse.systemPrompt}
+      content: `${localizedSystemPrompt}
 
-## Current Sacred Space:
+## Current Sacred Space (${finalLocale.toUpperCase()} Context):
 ${storyElements.narrative}
 
-## Available Elements:
+## Available Cultural Elements:
 - Props: ${storyElements.props.slice(0, 3).join(', ')}
 - Atmosphere: ${storyElements.atmosphere}
 - Symbolism: ${storyElements.symbolism.slice(0, 2).join(' and ')}
+${randomWisdom ? `- Cultural Wisdom: "${randomWisdom}"` : ''}
 
-Use these elements naturally in your response to create an immersive, mystical experience while maintaining the focus on practical wisdom and guidance.`,
+## Localized Greeting Context:
+Use culturally appropriate greetings and expressions in ${LanguageSwitcher.getLanguageName(finalLocale)}. 
+${userContext.conversationHistory?.length === 0 ? 
+  `Start with: "${hermeticContent.culturalGreetings.first}"` :
+  `Continue with: "${hermeticContent.culturalGreetings.returning}"`
+}
+
+Use these elements naturally in your response to create an immersive, culturally adapted mystical experience while maintaining the focus on practical wisdom and philosophical accuracy.`,
     };
 
     const allMessages = [enhancedSystemMessage, ...messages];
@@ -113,7 +190,7 @@ Use these elements naturally in your response to create an immersive, mystical e
           // Save messages to database with hermetic context
           await saveMessages(conversation!.id, messages, text, session.user.id, {
             emotionalState: userContext.emotionalState,
-            relevantPrinciples: hermesResponse.context.relevantPrinciples,
+            relevantPrinciples: [], // TODO: Extract from localized builder
             spiritualLevel: userContext.spiritualLevel,
             challenges: userContext.currentChallenges,
             storyElements
@@ -158,7 +235,7 @@ Use these elements naturally in your response to create an immersive, mystical e
         session.user.id,
         {
           emotionalState: userContext.emotionalState,
-          relevantPrinciples: hermesResponse.context.relevantPrinciples,
+          relevantPrinciples: [], // TODO: Extract from localized builder
           spiritualLevel: userContext.spiritualLevel,
           challenges: userContext.currentChallenges,
           storyElements

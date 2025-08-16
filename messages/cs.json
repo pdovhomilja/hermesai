@@ -1,0 +1,199 @@
+{
+  "common": {
+    "appName": "IALchemist",
+    "tagline": "Starověká moudrost pro moderní hledače",
+    "loading": "Načítání...",
+    "error": "Došlo k chybě",
+    "retry": "Zkusit znovu",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "close": "Zavřít",
+    "back": "Zpět",
+    "next": "Další",
+    "search": "Hledat",
+    "filter": "Filtrovat",
+    "export": "Exportovat",
+    "settings": "Nastavení"
+  },
+
+  "auth": {
+    "signIn": "Přihlásit se",
+    "signUp": "Registrovat se",
+    "signOut": "Odhlásit se",
+    "email": "E-mail",
+    "password": "Heslo",
+    "confirmPassword": "Potvrdit heslo",
+    "forgotPassword": "Zapomněli jste heslo?",
+    "resetPassword": "Obnovit heslo",
+    "verifyEmail": "Ověřit e-mail",
+    "createAccount": "Vytvořit účet",
+    "alreadyHaveAccount": "Už máte účet?",
+    "dontHaveAccount": "Nemáte účet?",
+    "orContinueWith": "Nebo pokračovat s",
+    "signInWithGoogle": "Pokračovat s Google",
+    "signInWithGitHub": "Pokračovat s GitHub",
+    "termsAgreement": "Registrací souhlasíte s našimi Podmínkami a Zásadami ochrany osobních údajů",
+    "welcomeBack": "Vítejte zpět",
+    "signInToAccess": "Přihlaste se pro přístup k moudrosti Herma",
+    "authError": "Chyba autentizace",
+    "tryAgain": "Zkusit znovu",
+    "returnHome": "Návrat domů"
+  },
+
+  "hermes": {
+    "greeting": "Zdravím tě, drahý hledači",
+    "title": "Hermes Trismegistos",
+    "subtitle": "Třikrát Veliký",
+    "askQuestion": "Polož svou otázku...",
+    "welcome": "Zdravím tě, hledači moudrosti. Jsem Hermes Trismegistos, Třikrát Veliký. Jak ti mohu pomoci na tvé cestě k porozumění?",
+    "placeholder": "Ptej se na hermetické principy, alchymii nebo starověkou moudrost...",
+    "principles": {
+      "mentalism": {
+        "name": "Princip Mentalismu",
+        "description": "Vše je Mysl; Vesmír je Mentální",
+        "practice": "Ranní sladění mysli"
+      },
+      "correspondence": {
+        "name": "Princip Korespondence",
+        "description": "Jak nahoře, tak dole; jak dole, tak nahoře",
+        "practice": "Meditace rozpoznávání vzorů"
+      },
+      "vibration": {
+        "name": "Princip Vibrace",
+        "description": "Nic nespočívá; vše se pohybuje; vše vibruje",
+        "practice": "Vibrační ladění"
+      },
+      "polarity": {
+        "name": "Princip Polarity",
+        "description": "Vše je duální; opozita jsou identická v podstatě",
+        "practice": "Transmutace polarity"
+      },
+      "rhythm": {
+        "name": "Princip Rytmu",
+        "description": "Vše proudí, ven a dovnitř",
+        "practice": "Vědomí rytmu"
+      },
+      "causeEffect": {
+        "name": "Princip Příčiny a Účinku",
+        "description": "Každá příčina má svůj účinek; každý účinek má svou příčinu",
+        "practice": "Vědomé tvoření"
+      },
+      "gender": {
+        "name": "Princip Rodu",
+        "description": "Rod je ve všem",
+        "practice": "Meditace rovnováhy rodů"
+      }
+    }
+  },
+
+  "chat": {
+    "newConversation": "Nová konverzace",
+    "conversations": "Konverzace",
+    "messages": "Zprávy",
+    "noConversations": "Zatím žádné konverzace",
+    "startConversation": "Začni svou duchovní cestu",
+    "deleteConversation": "Smazat konverzaci",
+    "exportConversation": "Exportovat konverzaci",
+    "searchConversations": "Hledat v konverzacích",
+    "send": "Odeslat",
+    "thinking": "Hermes přemýšlí...",
+    "todayAt": "Dnes v {time}",
+    "yesterdayAt": "Včera v {time}",
+    "typing": "Hermes přemýšlí..."
+  },
+
+  "subscription": {
+    "plans": {
+      "seeker": {
+        "name": "Hledač",
+        "description": "Pro zvědavé duchovní začátečníky"
+      },
+      "adept": {
+        "name": "Adept",
+        "description": "Pro oddané praktikující"
+      },
+      "master": {
+        "name": "Mistr",
+        "description": "Pro vážné studenty hermetismu"
+      }
+    },
+    "features": {
+      "conversations": "{count} konverzací měsíčně",
+      "unlimitedConversations": "Neomezené konverzace",
+      "historyDays": "{days}-denní historie konverzací",
+      "unlimitedHistory": "Neomezená historie konverzací",
+      "exportEnabled": "Export konverzací",
+      "advancedFeatures": "Pokročilé funkce",
+      "prioritySupport": "Prioritní podpora"
+    },
+    "billing": {
+      "monthly": "Měsíčně",
+      "annual": "Ročně",
+      "savePercent": "Ušetřete {percent}%",
+      "startTrial": "Začít bezplatnou zkušební verzi",
+      "currentPlan": "Současný plán",
+      "upgradePlan": "Upgradovat plán",
+      "manageBilling": "Spravovat fakturaci",
+      "cancelSubscription": "Zrušit předplatné"
+    }
+  },
+
+  "journey": {
+    "title": "Vaše duchovní cesta",
+    "timeline": "Časová osa",
+    "insights": "Poznatky",
+    "statistics": "Statistiky",
+    "milestones": "Milníky",
+    "totalConversations": "Celkový počet konverzací",
+    "totalMessages": "Celkový počet zpráv",
+    "principlesStudied": "Studované principy",
+    "currentLevel": "Současná úroveň",
+    "transformationScore": "Skóre transformace",
+    "streakDays": "{days} denní série"
+  },
+
+  "navigation": {
+    "home": "Domů",
+    "chat": "Chat",
+    "about": "O aplikaci",
+    "wisdom": "Moudrost",
+    "journey": "Cesta",
+    "settings": "Nastavení"
+  },
+
+  "errors": {
+    "generic": "Něco se pokazilo",
+    "networkError": "Chyba síťového připojení",
+    "unauthorized": "Prosím přihlaste se pro pokračování",
+    "forbidden": "Nemáte oprávnění",
+    "notFound": "Stránka nenalezena",
+    "rateLimit": "Příliš mnoho požadavků, prosím zpomalte",
+    "usageLimit": "Dosažen limit používání",
+    "paymentRequired": "Vyžadováno předplatné",
+    "invalidInput": "Neplatný vstup"
+  },
+
+  "HomePage": {
+    "title": "Vítejte v IALchemist",
+    "subtitle": "Komunikujte s Hermem Trismegistem",
+    "description": "Objevte starověkou moudrost prostřednictvím AI-poháněných konverzací s legendární postavou hermetismu a alchymie.",
+    "startChat": "Začněte svou cestu",
+    "learnMore": "Dozvědět se více o hermetismu"
+  },
+
+  "Chat": {
+    "welcome": "Zdravím tě, hledači moudrosti. Jsem Hermes Trismegistos, Třikrát Veliký. Jak ti mohu pomoci na tvé cestě k porozumění?",
+    "placeholder": "Ptej se na hermetické principy, alchymii nebo starověkou moudrost...",
+    "send": "Odeslat",
+    "thinking": "Hermes přemýšlí o vaší otázce..."
+  },
+
+  "Common": {
+    "loading": "Načítání...",
+    "error": "Došlo k chybě",
+    "retry": "Zkusit znovu",
+    "close": "Zavřít"
+  }
+}

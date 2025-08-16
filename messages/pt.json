@@ -1,4 +1,180 @@
 {
+  "common": {
+    "appName": "IALchemist",
+    "tagline": "Sabedoria Antiga para Buscadores Modernos",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "settings": "Configurações"
+  },
+
+  "auth": {
+    "signIn": "Entrar",
+    "signUp": "Cadastrar",
+    "signOut": "Sair",
+    "email": "Email",
+    "password": "Senha",
+    "confirmPassword": "Confirmar Senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "resetPassword": "Redefinir Senha",
+    "verifyEmail": "Verificar Email",
+    "createAccount": "Criar Conta",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "dontHaveAccount": "Não tem uma conta?",
+    "orContinueWith": "Ou continue com",
+    "signInWithGoogle": "Continuar com Google",
+    "signInWithGitHub": "Continuar com GitHub",
+    "termsAgreement": "Ao se cadastrar, você concorda com nossos Termos e Política de Privacidade",
+    "welcomeBack": "Bem-vindo de volta",
+    "signInToAccess": "Entre para acessar a sabedoria de Hermes",
+    "authError": "Erro de Autenticação",
+    "tryAgain": "Tentar Novamente",
+    "returnHome": "Voltar ao Início"
+  },
+
+  "hermes": {
+    "greeting": "Saudações, caro buscador",
+    "title": "Hermes Trismegisto",
+    "subtitle": "O Três Vezes Grande",
+    "askQuestion": "Faça sua pergunta...",
+    "welcome": "Saudações, buscador de sabedoria. Eu sou Hermes Trismegisto, o Três Vezes Grande. Como posso guiá-lo em seu caminho para o entendimento?",
+    "placeholder": "Pergunte sobre princípios herméticos, alquimia ou sabedoria antiga...",
+    "principles": {
+      "mentalism": {
+        "name": "O Princípio do Mentalismo",
+        "description": "O Todo é Mente; o Universo é Mental",
+        "practice": "Alinhamento Mental Matinal"
+      },
+      "correspondence": {
+        "name": "O Princípio da Correspondência",
+        "description": "Como em cima, assim embaixo; como embaixo, assim em cima",
+        "practice": "Meditação de Reconhecimento de Padrões"
+      },
+      "vibration": {
+        "name": "O Princípio da Vibração",
+        "description": "Nada repousa; tudo se move; tudo vibra",
+        "practice": "Sintonização Vibratória"
+      },
+      "polarity": {
+        "name": "O Princípio da Polaridade",
+        "description": "Tudo é duplo; os opostos são idênticos em natureza",
+        "practice": "Transmutação de Polaridade"
+      },
+      "rhythm": {
+        "name": "O Princípio do Ritmo",
+        "description": "Tudo flui, para fora e para dentro",
+        "practice": "Consciência do Ritmo"
+      },
+      "causeEffect": {
+        "name": "O Princípio de Causa e Efeito",
+        "description": "Toda causa tem seu efeito; todo efeito tem sua causa",
+        "practice": "Criação Consciente"
+      },
+      "gender": {
+        "name": "O Princípio do Gênero",
+        "description": "O gênero está em tudo",
+        "practice": "Meditação de Equilíbrio de Gêneros"
+      }
+    }
+  },
+
+  "chat": {
+    "newConversation": "Nova Conversa",
+    "conversations": "Conversas",
+    "messages": "Mensagens",
+    "noConversations": "Ainda não há conversas",
+    "startConversation": "Comece sua jornada espiritual",
+    "deleteConversation": "Excluir conversa",
+    "exportConversation": "Exportar conversa",
+    "searchConversations": "Pesquisar nas conversas",
+    "send": "Enviar",
+    "thinking": "Hermes está contemplando...",
+    "todayAt": "Hoje às {time}",
+    "yesterdayAt": "Ontem às {time}",
+    "typing": "Hermes está contemplando..."
+  },
+
+  "subscription": {
+    "plans": {
+      "seeker": {
+        "name": "Buscador",
+        "description": "Para iniciantes espirituais curiosos"
+      },
+      "adept": {
+        "name": "Adepto",
+        "description": "Para praticantes comprometidos"
+      },
+      "master": {
+        "name": "Mestre",
+        "description": "Para estudantes sérios do hermetismo"
+      }
+    },
+    "features": {
+      "conversations": "{count} conversas por mês",
+      "unlimitedConversations": "Conversas ilimitadas",
+      "historyDays": "Histórico de conversas de {days} dias",
+      "unlimitedHistory": "Histórico de conversas ilimitado",
+      "exportEnabled": "Exportar conversas",
+      "advancedFeatures": "Recursos avançados",
+      "prioritySupport": "Suporte prioritário"
+    },
+    "billing": {
+      "monthly": "Mensal",
+      "annual": "Anual",
+      "savePercent": "Economize {percent}%",
+      "startTrial": "Iniciar Teste Gratuito",
+      "currentPlan": "Plano Atual",
+      "upgradePlan": "Atualizar Plano",
+      "manageBilling": "Gerenciar Cobrança",
+      "cancelSubscription": "Cancelar Assinatura"
+    }
+  },
+
+  "journey": {
+    "title": "Sua Jornada Espiritual",
+    "timeline": "Linha do Tempo",
+    "insights": "Insights",
+    "statistics": "Estatísticas",
+    "milestones": "Marcos",
+    "totalConversations": "Total de Conversas",
+    "totalMessages": "Total de Mensagens",
+    "principlesStudied": "Princípios Estudados",
+    "currentLevel": "Nível Atual",
+    "transformationScore": "Pontuação de Transformação",
+    "streakDays": "Sequência de {days} dias"
+  },
+
+  "navigation": {
+    "home": "Início",
+    "chat": "Chat",
+    "about": "Sobre",
+    "wisdom": "Sabedoria",
+    "journey": "Jornada",
+    "settings": "Configurações"
+  },
+
+  "errors": {
+    "generic": "Algo deu errado",
+    "networkError": "Erro de conexão de rede",
+    "unauthorized": "Por favor, faça login para continuar",
+    "forbidden": "Você não tem permissão",
+    "notFound": "Página não encontrada",
+    "rateLimit": "Muitas solicitações, por favor, diminua o ritmo",
+    "usageLimit": "Limite de uso atingido",
+    "paymentRequired": "Assinatura necessária",
+    "invalidInput": "Entrada inválida fornecida"
+  },
+
   "HomePage": {
     "title": "Bem-vindo ao IALchemist",
     "subtitle": "Comunique-se com Hermes Trismegisto",
@@ -6,18 +182,14 @@
     "startChat": "Comece Sua Jornada",
     "learnMore": "Aprenda sobre Hermetismo"
   },
-  "Navigation": {
-    "home": "Início",
-    "chat": "Chat",
-    "about": "Sobre",
-    "wisdom": "Sabedoria"
-  },
+
   "Chat": {
     "welcome": "Saudações, buscador de sabedoria. Eu sou Hermes Trismegisto, o Três Vezes Grande. Como posso guiá-lo em seu caminho para o entendimento?",
     "placeholder": "Pergunte sobre princípios herméticos, alquimia ou sabedoria antiga...",
     "send": "Enviar",
     "thinking": "Hermes está contemplando sua pergunta..."
   },
+
   "Common": {
     "loading": "Carregando...",
     "error": "Ocorreu um erro",

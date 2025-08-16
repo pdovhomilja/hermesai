@@ -1,4 +1,180 @@
 {
+  "common": {
+    "appName": "IALchemist",
+    "tagline": "Ancient Wisdom for Modern Seekers",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "settings": "Settings"
+  },
+
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "verifyEmail": "Verify Email",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "orContinueWith": "Or continue with",
+    "signInWithGoogle": "Continue with Google",
+    "signInWithGitHub": "Continue with GitHub",
+    "termsAgreement": "By signing up, you agree to our Terms and Privacy Policy",
+    "welcomeBack": "Welcome back",
+    "signInToAccess": "Sign in to access the wisdom of Hermes",
+    "authError": "Authentication Error",
+    "tryAgain": "Try Again",
+    "returnHome": "Return Home"
+  },
+
+  "hermes": {
+    "greeting": "Greetings, dear seeker",
+    "title": "Hermes Trismegistus",
+    "subtitle": "The Thrice-Great",
+    "askQuestion": "Ask your question...",
+    "welcome": "Greetings, seeker of wisdom. I am Hermes Trismegistus, the Thrice-Great. How may I guide you on your path to understanding?",
+    "placeholder": "Ask about hermetic principles, alchemy, or ancient wisdom...",
+    "principles": {
+      "mentalism": {
+        "name": "The Principle of Mentalism",
+        "description": "The All is Mind; the Universe is Mental",
+        "practice": "Morning Mind Alignment"
+      },
+      "correspondence": {
+        "name": "The Principle of Correspondence",
+        "description": "As above, so below; as below, so above",
+        "practice": "Pattern Recognition Meditation"
+      },
+      "vibration": {
+        "name": "The Principle of Vibration",
+        "description": "Nothing rests; everything moves; everything vibrates",
+        "practice": "Vibrational Attunement"
+      },
+      "polarity": {
+        "name": "The Principle of Polarity",
+        "description": "Everything is dual; opposites are identical in nature",
+        "practice": "Polarity Transmutation"
+      },
+      "rhythm": {
+        "name": "The Principle of Rhythm",
+        "description": "Everything flows, out and in",
+        "practice": "Rhythm Awareness"
+      },
+      "causeEffect": {
+        "name": "The Principle of Cause and Effect",
+        "description": "Every cause has its effect; every effect has its cause",
+        "practice": "Conscious Creation"
+      },
+      "gender": {
+        "name": "The Principle of Gender",
+        "description": "Gender is in everything",
+        "practice": "Gender Balance Meditation"
+      }
+    }
+  },
+
+  "chat": {
+    "newConversation": "New Conversation",
+    "conversations": "Conversations",
+    "messages": "Messages",
+    "noConversations": "No conversations yet",
+    "startConversation": "Start your spiritual journey",
+    "deleteConversation": "Delete conversation",
+    "exportConversation": "Export conversation",
+    "searchConversations": "Search conversations",
+    "send": "Send",
+    "thinking": "Hermes is contemplating...",
+    "todayAt": "Today at {time}",
+    "yesterdayAt": "Yesterday at {time}",
+    "typing": "Hermes is contemplating..."
+  },
+
+  "subscription": {
+    "plans": {
+      "seeker": {
+        "name": "Seeker",
+        "description": "For curious spiritual beginners"
+      },
+      "adept": {
+        "name": "Adept", 
+        "description": "For committed practitioners"
+      },
+      "master": {
+        "name": "Master",
+        "description": "For serious hermetic students"
+      }
+    },
+    "features": {
+      "conversations": "{count} conversations per month",
+      "unlimitedConversations": "Unlimited conversations",
+      "historyDays": "{days}-day conversation history",
+      "unlimitedHistory": "Unlimited conversation history",
+      "exportEnabled": "Export conversations",
+      "advancedFeatures": "Advanced features",
+      "prioritySupport": "Priority support"
+    },
+    "billing": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "savePercent": "Save {percent}%",
+      "startTrial": "Start Free Trial",
+      "currentPlan": "Current Plan",
+      "upgradePlan": "Upgrade Plan",
+      "manageBilling": "Manage Billing",
+      "cancelSubscription": "Cancel Subscription"
+    }
+  },
+
+  "journey": {
+    "title": "Your Spiritual Journey",
+    "timeline": "Timeline",
+    "insights": "Insights",
+    "statistics": "Statistics",
+    "milestones": "Milestones",
+    "totalConversations": "Total Conversations",
+    "totalMessages": "Total Messages",
+    "principlesStudied": "Principles Studied",
+    "currentLevel": "Current Level",
+    "transformationScore": "Transformation Score",
+    "streakDays": "{days} day streak"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "chat": "Chat",
+    "about": "About",
+    "wisdom": "Wisdom",
+    "journey": "Journey",
+    "settings": "Settings"
+  },
+
+  "errors": {
+    "generic": "Something went wrong",
+    "networkError": "Network connection error",
+    "unauthorized": "Please sign in to continue",
+    "forbidden": "You don't have permission",
+    "notFound": "Page not found",
+    "rateLimit": "Too many requests, please slow down",
+    "usageLimit": "Usage limit reached",
+    "paymentRequired": "Subscription required",
+    "invalidInput": "Invalid input provided"
+  },
+
   "HomePage": {
     "title": "Welcome to IALchemist",
     "subtitle": "Commune with Hermes Trismegistus",
@@ -6,29 +182,14 @@
     "startChat": "Begin Your Journey",
     "learnMore": "Learn About Hermeticism"
   },
-  "Navigation": {
-    "home": "Home",
-    "chat": "Chat",
-    "about": "About",
-    "wisdom": "Wisdom"
-  },
+
   "Chat": {
     "welcome": "Greetings, seeker of wisdom. I am Hermes Trismegistus, the Thrice-Great. How may I guide you on your path to understanding?",
     "placeholder": "Ask about hermetic principles, alchemy, or ancient wisdom...",
     "send": "Send",
     "thinking": "Hermes is contemplating your question..."
   },
-  "Auth": {
-    "signIn": "Sign In",
-    "signOut": "Sign Out",
-    "signInWithGoogle": "Continue with Google",
-    "signInWithGitHub": "Continue with GitHub",
-    "welcomeBack": "Welcome back",
-    "signInToAccess": "Sign in to access the wisdom of Hermes",
-    "authError": "Authentication Error",
-    "tryAgain": "Try Again",
-    "returnHome": "Return Home"
-  },
+
   "Common": {
     "loading": "Loading...",
     "error": "An error occurred",

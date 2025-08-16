@@ -1,4 +1,180 @@
 {
+  "common": {
+    "appName": "IALchemist",
+    "tagline": "Sagesse Ancienne pour Chercheurs Modernes",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter",
+    "settings": "Paramètres"
+  },
+
+  "auth": {
+    "signIn": "Se Connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se Déconnecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "verifyEmail": "Vérifier l'email",
+    "createAccount": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "orContinueWith": "Ou continuer avec",
+    "signInWithGoogle": "Continuer avec Google",
+    "signInWithGitHub": "Continuer avec GitHub",
+    "termsAgreement": "En vous inscrivant, vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité",
+    "welcomeBack": "Bon retour",
+    "signInToAccess": "Connectez-vous pour accéder à la sagesse d'Hermès",
+    "authError": "Erreur d'Authentification",
+    "tryAgain": "Réessayer",
+    "returnHome": "Retourner à l'accueil"
+  },
+
+  "hermes": {
+    "greeting": "Salutations, cher chercheur",
+    "title": "Hermès Trismégiste",
+    "subtitle": "Le Trois fois Grand",
+    "askQuestion": "Posez votre question...",
+    "welcome": "Salutations, chercheur de sagesse. Je suis Hermès Trismégiste, le Trois fois Grand. Comment puis-je vous guider sur votre chemin vers la compréhension ?",
+    "placeholder": "Posez des questions sur les principes hermétiques, l'alchimie ou la sagesse ancienne...",
+    "principles": {
+      "mentalism": {
+        "name": "Le Principe du Mentalisme",
+        "description": "Le Tout est Esprit ; l'Univers est Mental",
+        "practice": "Alignement Mental Matinal"
+      },
+      "correspondence": {
+        "name": "Le Principe de Correspondance",
+        "description": "Ce qui est en haut est comme ce qui est en bas ; ce qui est en bas est comme ce qui est en haut",
+        "practice": "Méditation de Reconnaissance des Patterns"
+      },
+      "vibration": {
+        "name": "Le Principe de Vibration",
+        "description": "Rien ne repose ; tout bouge ; tout vibre",
+        "practice": "Harmonisation Vibratoire"
+      },
+      "polarity": {
+        "name": "Le Principe de Polarité",
+        "description": "Tout est double ; les opposés sont identiques en nature",
+        "practice": "Transmutation de Polarité"
+      },
+      "rhythm": {
+        "name": "Le Principe du Rythme",
+        "description": "Tout s'écoule, vers l'extérieur et vers l'intérieur",
+        "practice": "Conscience du Rythme"
+      },
+      "causeEffect": {
+        "name": "Le Principe de Cause et d'Effet",
+        "description": "Toute cause a son effet ; tout effet a sa cause",
+        "practice": "Création Consciente"
+      },
+      "gender": {
+        "name": "Le Principe du Genre",
+        "description": "Le genre est en tout",
+        "practice": "Méditation d'Équilibre des Genres"
+      }
+    }
+  },
+
+  "chat": {
+    "newConversation": "Nouvelle Conversation",
+    "conversations": "Conversations",
+    "messages": "Messages",
+    "noConversations": "Pas encore de conversations",
+    "startConversation": "Commencez votre voyage spirituel",
+    "deleteConversation": "Supprimer la conversation",
+    "exportConversation": "Exporter la conversation",
+    "searchConversations": "Rechercher dans les conversations",
+    "send": "Envoyer",
+    "thinking": "Hermès contemple...",
+    "todayAt": "Aujourd'hui à {time}",
+    "yesterdayAt": "Hier à {time}",
+    "typing": "Hermès contemple..."
+  },
+
+  "subscription": {
+    "plans": {
+      "seeker": {
+        "name": "Chercheur",
+        "description": "Pour les débutants spirituels curieux"
+      },
+      "adept": {
+        "name": "Adepte",
+        "description": "Pour les praticiens engagés"
+      },
+      "master": {
+        "name": "Maître",
+        "description": "Pour les étudiants sérieux de l'hermétisme"
+      }
+    },
+    "features": {
+      "conversations": "{count} conversations par mois",
+      "unlimitedConversations": "Conversations illimitées",
+      "historyDays": "Historique de conversations de {days} jours",
+      "unlimitedHistory": "Historique de conversations illimité",
+      "exportEnabled": "Exporter les conversations",
+      "advancedFeatures": "Fonctionnalités avancées",
+      "prioritySupport": "Support prioritaire"
+    },
+    "billing": {
+      "monthly": "Mensuel",
+      "annual": "Annuel",
+      "savePercent": "Économisez {percent}%",
+      "startTrial": "Commencer l'Essai Gratuit",
+      "currentPlan": "Plan Actuel",
+      "upgradePlan": "Améliorer le Plan",
+      "manageBilling": "Gérer la Facturation",
+      "cancelSubscription": "Annuler l'Abonnement"
+    }
+  },
+
+  "journey": {
+    "title": "Votre Voyage Spirituel",
+    "timeline": "Chronologie",
+    "insights": "Aperçus",
+    "statistics": "Statistiques",
+    "milestones": "Jalons",
+    "totalConversations": "Total des Conversations",
+    "totalMessages": "Total des Messages",
+    "principlesStudied": "Principes Étudiés",
+    "currentLevel": "Niveau Actuel",
+    "transformationScore": "Score de Transformation",
+    "streakDays": "Série de {days} jours"
+  },
+
+  "navigation": {
+    "home": "Accueil",
+    "chat": "Chat",
+    "about": "À propos",
+    "wisdom": "Sagesse",
+    "journey": "Voyage",
+    "settings": "Paramètres"
+  },
+
+  "errors": {
+    "generic": "Quelque chose s'est mal passé",
+    "networkError": "Erreur de connexion réseau",
+    "unauthorized": "Veuillez vous connecter pour continuer",
+    "forbidden": "Vous n'avez pas la permission",
+    "notFound": "Page non trouvée",
+    "rateLimit": "Trop de requêtes, veuillez ralentir",
+    "usageLimit": "Limite d'utilisation atteinte",
+    "paymentRequired": "Abonnement requis",
+    "invalidInput": "Entrée invalide fournie"
+  },
+
   "HomePage": {
     "title": "Bienvenue sur IALchemist",
     "subtitle": "Communiquez avec Hermès Trismégiste",
@@ -6,18 +182,14 @@
     "startChat": "Commencez Votre Voyage",
     "learnMore": "En savoir plus sur l'Hermétisme"
   },
-  "Navigation": {
-    "home": "Accueil",
-    "chat": "Chat",
-    "about": "À propos",
-    "wisdom": "Sagesse"
-  },
+
   "Chat": {
     "welcome": "Salutations, chercheur de sagesse. Je suis Hermès Trismégiste, le Trois fois Grand. Comment puis-je vous guider sur votre chemin vers la compréhension?",
     "placeholder": "Posez des questions sur les principes hermétiques, l'alchimie ou la sagesse ancienne...",
     "send": "Envoyer",
     "thinking": "Hermès contemple votre question..."
   },
+
   "Common": {
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
