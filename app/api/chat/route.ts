@@ -9,6 +9,7 @@ import { HermesResponseBuilder } from "@/lib/ai/context/response-builder";
 import { EmotionDetectionService } from "@/lib/ai/analysis/detection";
 import { StorytellingElementsService } from "@/lib/ai/narrative/storytelling";
 import { UserContext, EmotionalState, SpiritualLevel, LifeChallenge } from "@/lib/ai/types";
+import { validateUsageAndFeature, trackUsageAfterSuccess } from "@/lib/middleware/usage-check";
 
 const requestSchema = z.object({
   messages: z.array(
@@ -34,6 +35,16 @@ export async function POST(req: NextRequest) {
     const { messages, conversationId, model, stream } =
       requestSchema.parse(body);
 
+    // Check usage limits and feature access
+    const usageCheck = await validateUsageAndFeature(
+      session.user.id,
+      "MESSAGES",
+      model === "thinking" ? "thinkingMode" : undefined
+    );
+    if (usageCheck) {
+      return usageCheck;
+    }
+
     // Get or create conversation
     let conversation = conversationId
       ? await prisma.conversation.findFirst({
@@ -54,21 +65,6 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Check user's subscription limits (TODO: Implement subscription limit checking)
-    // const subscription = await prisma.subscription.findFirst({
-    //   where: {
-    //     userId: session.user.id,
-    //     status: "ACTIVE",
-    //   },
-    //   include: {
-    //     usageRecords: {
-    //       where: {
-    //         date: new Date().toISOString().split("T")[0],
-    //         metric: "CONVERSATIONS",
-    //       },
-    //     },
-    //   },
-    // });
 
     // Build Hermes persona context
     const userContext = await buildUserContext(session.user.id, conversation.id, messages);
@@ -123,6 +119,9 @@ Use these elements naturally in your response to create an immersive, mystical e
             storyElements
           });
 
+          // Track usage after successful message creation
+          await trackUsageAfterSuccess(session.user.id, "MESSAGES", 2); // User message + assistant response
+
           // Log usage
           logger.info({
             conversationId: conversation!.id,
@@ -165,6 +164,9 @@ Use these elements naturally in your response to create an immersive, mystical e
           storyElements
         }
       );
+
+      // Track usage after successful message creation
+      await trackUsageAfterSuccess(session.user.id, "MESSAGES", 2); // User message + assistant response
 
       logger.info({
         conversationId: conversation!.id,
@@ -353,35 +355,7 @@ async function saveMessages(
       },
     });
 
-    // Get user's active subscription for usage tracking
-    const activeSubscription = await prisma.subscription.findFirst({
-      where: {
-        userId: userId,
-        status: "ACTIVE",
-      },
-    });
-
-    if (activeSubscription) {
-      // Update usage records
-      await prisma.usageRecord.upsert({
-        where: {
-          subscriptionId_metric_date: {
-            subscriptionId: activeSubscription.id,
-            metric: "MESSAGES",
-            date: new Date().toISOString().split("T")[0],
-          },
-        },
-        update: {
-          count: { increment: 2 }, // User message + assistant response
-        },
-        create: {
-          subscriptionId: activeSubscription.id,
-          metric: "MESSAGES",
-          count: 2,
-          date: new Date().toISOString().split("T")[0],
-        },
-      });
-    }
+    // Usage tracking is now handled by the middleware after successful message creation
   } catch (error) {
     logger.error(error, "Failed to save messages:");
     throw error;
