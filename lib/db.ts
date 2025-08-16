@@ -23,7 +23,7 @@ export async function createUser(email: string, password: string, locale: string
       password: hashedPassword,
       emailVerificationToken: verificationToken,
       emailTokenExpires: tokenExpires,
-      locale,
+      preferredLanguage: locale,
     },
   });
 
@@ -31,7 +31,7 @@ export async function createUser(email: string, password: string, locale: string
     user: {
       id: user.id,
       email: user.email,
-      locale: user.locale,
+      locale: user.preferredLanguage,
     },
     verificationToken,
   };
@@ -84,7 +84,7 @@ export async function verifyUserEmail(token: string) {
       id: updatedUser.id,
       email: updatedUser.email,
       emailVerified: updatedUser.emailVerified,
-      locale: updatedUser.locale,
+      locale: updatedUser.preferredLanguage,
     }
   };
 }
@@ -106,7 +106,7 @@ export async function generateNewVerificationToken(email: string) {
     user: {
       id: user.id,
       email: user.email,
-      locale: user.locale,
+      locale: user.preferredLanguage,
     },
     verificationToken,
   };

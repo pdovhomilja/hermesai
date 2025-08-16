@@ -45,12 +45,12 @@ export async function storeMessageEmbedding(
   messageId: string,
   embedding: number[]
 ) {
-  return await prisma.message.update({
-    where: { id: messageId },
-    data: {
-      embedding: JSON.stringify(embedding),
-    },
-  });
+  // Use raw query for updating vector embeddings
+  return await prisma.$executeRaw`
+    UPDATE messages 
+    SET embedding = ${JSON.stringify(embedding)}::vector 
+    WHERE id = ${messageId}
+  `;
 }
 
 export async function searchSimilarInsights(

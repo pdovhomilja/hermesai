@@ -1,11 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "../../i18n/navigation";
+import Link from "next/link";
 import { auth } from "@/auth";
 
 export default async function HomePage() {
   const t = await getTranslations("HomePage");
   const session = await auth();
-  const userCid = session?.user?.cid;
+  const userId = session?.user?.id;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950 via-blue-950 to-indigo-950 text-white">
@@ -27,11 +27,9 @@ export default async function HomePage() {
           </div>
 
           <div className="flex gap-6 justify-center items-center flex-col sm:flex-row">
-            {session && userCid ? (
+            {session && userId ? (
               <Link
-                href={{
-                  pathname: `/${userCid}/`
-                }}
+                href="/dashboard"
                 className="px-8 py-4 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-semibold rounded-lg transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-amber-500/25"
               >
                 {t("startChat")}

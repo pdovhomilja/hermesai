@@ -98,7 +98,7 @@ export function LoginForm({
           }
         }
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: 'An error occurred. Please try again.' })
     } finally {
       setIsLoading(false)
@@ -125,7 +125,7 @@ export function LoginForm({
         type: 'success', 
         text: result.message || 'Verification email sent!' 
       })
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: 'Failed to send verification email.' })
     } finally {
       setIsLoading(false)

@@ -34,6 +34,11 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  */
 export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTokenPayload>
 /**
+ * Model NextAuthVerificationToken
+ * 
+ */
+export type NextAuthVerificationToken = $Result.DefaultSelection<Prisma.$NextAuthVerificationTokenPayload>
+/**
  * Model Conversation
  * 
  */
@@ -208,6 +213,15 @@ export const EmailDigestFrequency: {
 
 export type EmailDigestFrequency = (typeof EmailDigestFrequency)[keyof typeof EmailDigestFrequency]
 
+
+export const TokenType: {
+  EMAIL_VERIFICATION: 'EMAIL_VERIFICATION',
+  PASSWORD_RESET: 'PASSWORD_RESET',
+  MAGIC_LINK: 'MAGIC_LINK'
+};
+
+export type TokenType = (typeof TokenType)[keyof typeof TokenType]
+
 }
 
 export type UserRole = $Enums.UserRole
@@ -257,6 +271,10 @@ export const VerbosityLevel: typeof $Enums.VerbosityLevel
 export type EmailDigestFrequency = $Enums.EmailDigestFrequency
 
 export const EmailDigestFrequency: typeof $Enums.EmailDigestFrequency
+
+export type TokenType = $Enums.TokenType
+
+export const TokenType: typeof $Enums.TokenType
 
 /**
  * ##  Prisma Client ʲˢ
@@ -415,6 +433,16 @@ export class PrismaClient<
     * ```
     */
   get verificationToken(): Prisma.VerificationTokenDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.nextAuthVerificationToken`: Exposes CRUD operations for the **NextAuthVerificationToken** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more NextAuthVerificationTokens
+    * const nextAuthVerificationTokens = await prisma.nextAuthVerificationToken.findMany()
+    * ```
+    */
+  get nextAuthVerificationToken(): Prisma.NextAuthVerificationTokenDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.conversation`: Exposes CRUD operations for the **Conversation** model.
@@ -949,6 +977,7 @@ export namespace Prisma {
     Session: 'Session',
     User: 'User',
     VerificationToken: 'VerificationToken',
+    NextAuthVerificationToken: 'NextAuthVerificationToken',
     Conversation: 'Conversation',
     Message: 'Message',
     Topic: 'Topic',
@@ -976,7 +1005,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "account" | "session" | "user" | "verificationToken" | "conversation" | "message" | "topic" | "conversationTopic" | "userInsight" | "spiritualProfile" | "subscription" | "usageRecord" | "userPreference"
+      modelProps: "account" | "session" | "user" | "verificationToken" | "nextAuthVerificationToken" | "conversation" | "message" | "topic" | "conversationTopic" | "userInsight" | "spiritualProfile" | "subscription" | "usageRecord" | "userPreference"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1273,6 +1302,80 @@ export namespace Prisma {
           count: {
             args: Prisma.VerificationTokenCountArgs<ExtArgs>
             result: $Utils.Optional<VerificationTokenCountAggregateOutputType> | number
+          }
+        }
+      }
+      NextAuthVerificationToken: {
+        payload: Prisma.$NextAuthVerificationTokenPayload<ExtArgs>
+        fields: Prisma.NextAuthVerificationTokenFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.NextAuthVerificationTokenFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.NextAuthVerificationTokenFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          findFirst: {
+            args: Prisma.NextAuthVerificationTokenFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.NextAuthVerificationTokenFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          findMany: {
+            args: Prisma.NextAuthVerificationTokenFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>[]
+          }
+          create: {
+            args: Prisma.NextAuthVerificationTokenCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          createMany: {
+            args: Prisma.NextAuthVerificationTokenCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.NextAuthVerificationTokenCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>[]
+          }
+          delete: {
+            args: Prisma.NextAuthVerificationTokenDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          update: {
+            args: Prisma.NextAuthVerificationTokenUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          deleteMany: {
+            args: Prisma.NextAuthVerificationTokenDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.NextAuthVerificationTokenUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.NextAuthVerificationTokenUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>[]
+          }
+          upsert: {
+            args: Prisma.NextAuthVerificationTokenUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NextAuthVerificationTokenPayload>
+          }
+          aggregate: {
+            args: Prisma.NextAuthVerificationTokenAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateNextAuthVerificationToken>
+          }
+          groupBy: {
+            args: Prisma.NextAuthVerificationTokenGroupByArgs<ExtArgs>
+            result: $Utils.Optional<NextAuthVerificationTokenGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.NextAuthVerificationTokenCountArgs<ExtArgs>
+            result: $Utils.Optional<NextAuthVerificationTokenCountAggregateOutputType> | number
           }
         }
       }
@@ -2038,6 +2141,7 @@ export namespace Prisma {
     session?: SessionOmit
     user?: UserOmit
     verificationToken?: VerificationTokenOmit
+    nextAuthVerificationToken?: NextAuthVerificationTokenOmit
     conversation?: ConversationOmit
     message?: MessageOmit
     topic?: TopicOmit
@@ -2132,6 +2236,7 @@ export namespace Prisma {
     conversations: number
     insights: number
     subscriptions: number
+    verificationTokens: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2140,6 +2245,7 @@ export namespace Prisma {
     conversations?: boolean | UserCountOutputTypeCountConversationsArgs
     insights?: boolean | UserCountOutputTypeCountInsightsArgs
     subscriptions?: boolean | UserCountOutputTypeCountSubscriptionsArgs
+    verificationTokens?: boolean | UserCountOutputTypeCountVerificationTokensArgs
   }
 
   // Custom InputTypes
@@ -2186,6 +2292,13 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountSubscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: SubscriptionWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountVerificationTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: VerificationTokenWhereInput
   }
 
 
@@ -4775,6 +4888,7 @@ export namespace Prisma {
     subscriptions?: boolean | User$subscriptionsArgs<ExtArgs>
     spiritualProfile?: boolean | User$spiritualProfileArgs<ExtArgs>
     preferences?: boolean | User$preferencesArgs<ExtArgs>
+    verificationTokens?: boolean | User$verificationTokensArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -4838,6 +4952,7 @@ export namespace Prisma {
     subscriptions?: boolean | User$subscriptionsArgs<ExtArgs>
     spiritualProfile?: boolean | User$spiritualProfileArgs<ExtArgs>
     preferences?: boolean | User$preferencesArgs<ExtArgs>
+    verificationTokens?: boolean | User$verificationTokensArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -4853,6 +4968,7 @@ export namespace Prisma {
       subscriptions: Prisma.$SubscriptionPayload<ExtArgs>[]
       spiritualProfile: Prisma.$SpiritualProfilePayload<ExtArgs> | null
       preferences: Prisma.$UserPreferencePayload<ExtArgs> | null
+      verificationTokens: Prisma.$VerificationTokenPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -5270,6 +5386,7 @@ export namespace Prisma {
     subscriptions<T extends User$subscriptionsArgs<ExtArgs> = {}>(args?: Subset<T, User$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     spiritualProfile<T extends User$spiritualProfileArgs<ExtArgs> = {}>(args?: Subset<T, User$spiritualProfileArgs<ExtArgs>>): Prisma__SpiritualProfileClient<$Result.GetResult<Prisma.$SpiritualProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     preferences<T extends User$preferencesArgs<ExtArgs> = {}>(args?: Subset<T, User$preferencesArgs<ExtArgs>>): Prisma__UserPreferenceClient<$Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    verificationTokens<T extends User$verificationTokensArgs<ExtArgs> = {}>(args?: Subset<T, User$verificationTokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5859,6 +5976,30 @@ export namespace Prisma {
   }
 
   /**
+   * User.verificationTokens
+   */
+  export type User$verificationTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the VerificationToken
+     */
+    select?: VerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the VerificationToken
+     */
+    omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+    where?: VerificationTokenWhereInput
+    orderBy?: VerificationTokenOrderByWithRelationInput | VerificationTokenOrderByWithRelationInput[]
+    cursor?: VerificationTokenWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: VerificationTokenScalarFieldEnum | VerificationTokenScalarFieldEnum[]
+  }
+
+  /**
    * User without action
    */
   export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5888,41 +6029,59 @@ export namespace Prisma {
   }
 
   export type VerificationTokenMinAggregateOutputType = {
-    identifier: string | null
+    id: string | null
+    userId: string | null
     token: string | null
+    type: $Enums.TokenType | null
     expires: Date | null
+    createdAt: Date | null
   }
 
   export type VerificationTokenMaxAggregateOutputType = {
-    identifier: string | null
+    id: string | null
+    userId: string | null
     token: string | null
+    type: $Enums.TokenType | null
     expires: Date | null
+    createdAt: Date | null
   }
 
   export type VerificationTokenCountAggregateOutputType = {
-    identifier: number
+    id: number
+    userId: number
     token: number
+    type: number
     expires: number
+    createdAt: number
     _all: number
   }
 
 
   export type VerificationTokenMinAggregateInputType = {
-    identifier?: true
+    id?: true
+    userId?: true
     token?: true
+    type?: true
     expires?: true
+    createdAt?: true
   }
 
   export type VerificationTokenMaxAggregateInputType = {
-    identifier?: true
+    id?: true
+    userId?: true
     token?: true
+    type?: true
     expires?: true
+    createdAt?: true
   }
 
   export type VerificationTokenCountAggregateInputType = {
-    identifier?: true
+    id?: true
+    userId?: true
     token?: true
+    type?: true
     expires?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -5999,9 +6158,12 @@ export namespace Prisma {
   }
 
   export type VerificationTokenGroupByOutputType = {
-    identifier: string
+    id: string
+    userId: string
     token: string
+    type: $Enums.TokenType
     expires: Date
+    createdAt: Date
     _count: VerificationTokenCountAggregateOutputType | null
     _min: VerificationTokenMinAggregateOutputType | null
     _max: VerificationTokenMaxAggregateOutputType | null
@@ -6022,38 +6184,67 @@ export namespace Prisma {
 
 
   export type VerificationTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    identifier?: boolean
+    id?: boolean
+    userId?: boolean
     token?: boolean
+    type?: boolean
     expires?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["verificationToken"]>
 
   export type VerificationTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    identifier?: boolean
+    id?: boolean
+    userId?: boolean
     token?: boolean
+    type?: boolean
     expires?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["verificationToken"]>
 
   export type VerificationTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    identifier?: boolean
+    id?: boolean
+    userId?: boolean
     token?: boolean
+    type?: boolean
     expires?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["verificationToken"]>
 
   export type VerificationTokenSelectScalar = {
-    identifier?: boolean
+    id?: boolean
+    userId?: boolean
     token?: boolean
+    type?: boolean
     expires?: boolean
+    createdAt?: boolean
   }
 
-  export type VerificationTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"identifier" | "token" | "expires", ExtArgs["result"]["verificationToken"]>
+  export type VerificationTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "token" | "type" | "expires" | "createdAt", ExtArgs["result"]["verificationToken"]>
+  export type VerificationTokenInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type VerificationTokenIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type VerificationTokenIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
 
   export type $VerificationTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "VerificationToken"
-    objects: {}
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
     scalars: $Extensions.GetPayloadResult<{
-      identifier: string
+      id: string
+      userId: string
       token: string
+      type: $Enums.TokenType
       expires: Date
+      createdAt: Date
     }, ExtArgs["result"]["verificationToken"]>
     composites: {}
   }
@@ -6137,8 +6328,8 @@ export namespace Prisma {
      * // Get first 10 VerificationTokens
      * const verificationTokens = await prisma.verificationToken.findMany({ take: 10 })
      * 
-     * // Only select the `identifier`
-     * const verificationTokenWithIdentifierOnly = await prisma.verificationToken.findMany({ select: { identifier: true } })
+     * // Only select the `id`
+     * const verificationTokenWithIdOnly = await prisma.verificationToken.findMany({ select: { id: true } })
      * 
      */
     findMany<T extends VerificationTokenFindManyArgs>(args?: SelectSubset<T, VerificationTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
@@ -6182,9 +6373,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Create many VerificationTokens and only return the `identifier`
-     * const verificationTokenWithIdentifierOnly = await prisma.verificationToken.createManyAndReturn({
-     *   select: { identifier: true },
+     * // Create many VerificationTokens and only return the `id`
+     * const verificationTokenWithIdOnly = await prisma.verificationToken.createManyAndReturn({
+     *   select: { id: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -6273,9 +6464,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more VerificationTokens and only return the `identifier`
-     * const verificationTokenWithIdentifierOnly = await prisma.verificationToken.updateManyAndReturn({
-     *   select: { identifier: true },
+     * // Update zero or more VerificationTokens and only return the `id`
+     * const verificationTokenWithIdOnly = await prisma.verificationToken.updateManyAndReturn({
+     *   select: { id: true },
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6448,6 +6639,7 @@ export namespace Prisma {
    */
   export interface Prisma__VerificationTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6477,9 +6669,12 @@ export namespace Prisma {
    * Fields of the VerificationToken model
    */
   interface VerificationTokenFieldRefs {
-    readonly identifier: FieldRef<"VerificationToken", 'String'>
+    readonly id: FieldRef<"VerificationToken", 'String'>
+    readonly userId: FieldRef<"VerificationToken", 'String'>
     readonly token: FieldRef<"VerificationToken", 'String'>
+    readonly type: FieldRef<"VerificationToken", 'TokenType'>
     readonly expires: FieldRef<"VerificationToken", 'DateTime'>
+    readonly createdAt: FieldRef<"VerificationToken", 'DateTime'>
   }
     
 
@@ -6496,6 +6691,10 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
     /**
      * Filter, which VerificationToken to fetch.
      */
@@ -6515,6 +6714,10 @@ export namespace Prisma {
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+    /**
      * Filter, which VerificationToken to fetch.
      */
     where: VerificationTokenWhereUniqueInput
@@ -6532,6 +6735,10 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
     /**
      * Filter, which VerificationToken to fetch.
      */
@@ -6581,6 +6788,10 @@ export namespace Prisma {
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+    /**
      * Filter, which VerificationToken to fetch.
      */
     where?: VerificationTokenWhereInput
@@ -6629,6 +6840,10 @@ export namespace Prisma {
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+    /**
      * Filter, which VerificationTokens to fetch.
      */
     where?: VerificationTokenWhereInput
@@ -6672,6 +6887,10 @@ export namespace Prisma {
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+    /**
      * The data needed to create a VerificationToken.
      */
     data: XOR<VerificationTokenCreateInput, VerificationTokenUncheckedCreateInput>
@@ -6705,6 +6924,10 @@ export namespace Prisma {
      */
     data: VerificationTokenCreateManyInput | VerificationTokenCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -6719,6 +6942,10 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
     /**
      * The data needed to update a VerificationToken.
      */
@@ -6771,6 +6998,10 @@ export namespace Prisma {
      * Limit how many VerificationTokens to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -6785,6 +7016,10 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
     /**
      * The filter to search for the VerificationToken to update in case it exists.
      */
@@ -6811,6 +7046,10 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
     /**
      * Filter which VerificationToken to delete.
      */
@@ -6843,6 +7082,979 @@ export namespace Prisma {
      * Omit specific fields from the VerificationToken
      */
     omit?: VerificationTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: VerificationTokenInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model NextAuthVerificationToken
+   */
+
+  export type AggregateNextAuthVerificationToken = {
+    _count: NextAuthVerificationTokenCountAggregateOutputType | null
+    _min: NextAuthVerificationTokenMinAggregateOutputType | null
+    _max: NextAuthVerificationTokenMaxAggregateOutputType | null
+  }
+
+  export type NextAuthVerificationTokenMinAggregateOutputType = {
+    identifier: string | null
+    token: string | null
+    expires: Date | null
+  }
+
+  export type NextAuthVerificationTokenMaxAggregateOutputType = {
+    identifier: string | null
+    token: string | null
+    expires: Date | null
+  }
+
+  export type NextAuthVerificationTokenCountAggregateOutputType = {
+    identifier: number
+    token: number
+    expires: number
+    _all: number
+  }
+
+
+  export type NextAuthVerificationTokenMinAggregateInputType = {
+    identifier?: true
+    token?: true
+    expires?: true
+  }
+
+  export type NextAuthVerificationTokenMaxAggregateInputType = {
+    identifier?: true
+    token?: true
+    expires?: true
+  }
+
+  export type NextAuthVerificationTokenCountAggregateInputType = {
+    identifier?: true
+    token?: true
+    expires?: true
+    _all?: true
+  }
+
+  export type NextAuthVerificationTokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NextAuthVerificationToken to aggregate.
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NextAuthVerificationTokens to fetch.
+     */
+    orderBy?: NextAuthVerificationTokenOrderByWithRelationInput | NextAuthVerificationTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: NextAuthVerificationTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NextAuthVerificationTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NextAuthVerificationTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned NextAuthVerificationTokens
+    **/
+    _count?: true | NextAuthVerificationTokenCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: NextAuthVerificationTokenMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: NextAuthVerificationTokenMaxAggregateInputType
+  }
+
+  export type GetNextAuthVerificationTokenAggregateType<T extends NextAuthVerificationTokenAggregateArgs> = {
+        [P in keyof T & keyof AggregateNextAuthVerificationToken]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateNextAuthVerificationToken[P]>
+      : GetScalarType<T[P], AggregateNextAuthVerificationToken[P]>
+  }
+
+
+
+
+  export type NextAuthVerificationTokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NextAuthVerificationTokenWhereInput
+    orderBy?: NextAuthVerificationTokenOrderByWithAggregationInput | NextAuthVerificationTokenOrderByWithAggregationInput[]
+    by: NextAuthVerificationTokenScalarFieldEnum[] | NextAuthVerificationTokenScalarFieldEnum
+    having?: NextAuthVerificationTokenScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: NextAuthVerificationTokenCountAggregateInputType | true
+    _min?: NextAuthVerificationTokenMinAggregateInputType
+    _max?: NextAuthVerificationTokenMaxAggregateInputType
+  }
+
+  export type NextAuthVerificationTokenGroupByOutputType = {
+    identifier: string
+    token: string
+    expires: Date
+    _count: NextAuthVerificationTokenCountAggregateOutputType | null
+    _min: NextAuthVerificationTokenMinAggregateOutputType | null
+    _max: NextAuthVerificationTokenMaxAggregateOutputType | null
+  }
+
+  type GetNextAuthVerificationTokenGroupByPayload<T extends NextAuthVerificationTokenGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<NextAuthVerificationTokenGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof NextAuthVerificationTokenGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], NextAuthVerificationTokenGroupByOutputType[P]>
+            : GetScalarType<T[P], NextAuthVerificationTokenGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type NextAuthVerificationTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    identifier?: boolean
+    token?: boolean
+    expires?: boolean
+  }, ExtArgs["result"]["nextAuthVerificationToken"]>
+
+  export type NextAuthVerificationTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    identifier?: boolean
+    token?: boolean
+    expires?: boolean
+  }, ExtArgs["result"]["nextAuthVerificationToken"]>
+
+  export type NextAuthVerificationTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    identifier?: boolean
+    token?: boolean
+    expires?: boolean
+  }, ExtArgs["result"]["nextAuthVerificationToken"]>
+
+  export type NextAuthVerificationTokenSelectScalar = {
+    identifier?: boolean
+    token?: boolean
+    expires?: boolean
+  }
+
+  export type NextAuthVerificationTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"identifier" | "token" | "expires", ExtArgs["result"]["nextAuthVerificationToken"]>
+
+  export type $NextAuthVerificationTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "NextAuthVerificationToken"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      identifier: string
+      token: string
+      expires: Date
+    }, ExtArgs["result"]["nextAuthVerificationToken"]>
+    composites: {}
+  }
+
+  type NextAuthVerificationTokenGetPayload<S extends boolean | null | undefined | NextAuthVerificationTokenDefaultArgs> = $Result.GetResult<Prisma.$NextAuthVerificationTokenPayload, S>
+
+  type NextAuthVerificationTokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<NextAuthVerificationTokenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: NextAuthVerificationTokenCountAggregateInputType | true
+    }
+
+  export interface NextAuthVerificationTokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['NextAuthVerificationToken'], meta: { name: 'NextAuthVerificationToken' } }
+    /**
+     * Find zero or one NextAuthVerificationToken that matches the filter.
+     * @param {NextAuthVerificationTokenFindUniqueArgs} args - Arguments to find a NextAuthVerificationToken
+     * @example
+     * // Get one NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends NextAuthVerificationTokenFindUniqueArgs>(args: SelectSubset<T, NextAuthVerificationTokenFindUniqueArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one NextAuthVerificationToken that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {NextAuthVerificationTokenFindUniqueOrThrowArgs} args - Arguments to find a NextAuthVerificationToken
+     * @example
+     * // Get one NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends NextAuthVerificationTokenFindUniqueOrThrowArgs>(args: SelectSubset<T, NextAuthVerificationTokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NextAuthVerificationToken that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenFindFirstArgs} args - Arguments to find a NextAuthVerificationToken
+     * @example
+     * // Get one NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends NextAuthVerificationTokenFindFirstArgs>(args?: SelectSubset<T, NextAuthVerificationTokenFindFirstArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NextAuthVerificationToken that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenFindFirstOrThrowArgs} args - Arguments to find a NextAuthVerificationToken
+     * @example
+     * // Get one NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends NextAuthVerificationTokenFindFirstOrThrowArgs>(args?: SelectSubset<T, NextAuthVerificationTokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more NextAuthVerificationTokens that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all NextAuthVerificationTokens
+     * const nextAuthVerificationTokens = await prisma.nextAuthVerificationToken.findMany()
+     * 
+     * // Get first 10 NextAuthVerificationTokens
+     * const nextAuthVerificationTokens = await prisma.nextAuthVerificationToken.findMany({ take: 10 })
+     * 
+     * // Only select the `identifier`
+     * const nextAuthVerificationTokenWithIdentifierOnly = await prisma.nextAuthVerificationToken.findMany({ select: { identifier: true } })
+     * 
+     */
+    findMany<T extends NextAuthVerificationTokenFindManyArgs>(args?: SelectSubset<T, NextAuthVerificationTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a NextAuthVerificationToken.
+     * @param {NextAuthVerificationTokenCreateArgs} args - Arguments to create a NextAuthVerificationToken.
+     * @example
+     * // Create one NextAuthVerificationToken
+     * const NextAuthVerificationToken = await prisma.nextAuthVerificationToken.create({
+     *   data: {
+     *     // ... data to create a NextAuthVerificationToken
+     *   }
+     * })
+     * 
+     */
+    create<T extends NextAuthVerificationTokenCreateArgs>(args: SelectSubset<T, NextAuthVerificationTokenCreateArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many NextAuthVerificationTokens.
+     * @param {NextAuthVerificationTokenCreateManyArgs} args - Arguments to create many NextAuthVerificationTokens.
+     * @example
+     * // Create many NextAuthVerificationTokens
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends NextAuthVerificationTokenCreateManyArgs>(args?: SelectSubset<T, NextAuthVerificationTokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many NextAuthVerificationTokens and returns the data saved in the database.
+     * @param {NextAuthVerificationTokenCreateManyAndReturnArgs} args - Arguments to create many NextAuthVerificationTokens.
+     * @example
+     * // Create many NextAuthVerificationTokens
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many NextAuthVerificationTokens and only return the `identifier`
+     * const nextAuthVerificationTokenWithIdentifierOnly = await prisma.nextAuthVerificationToken.createManyAndReturn({
+     *   select: { identifier: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends NextAuthVerificationTokenCreateManyAndReturnArgs>(args?: SelectSubset<T, NextAuthVerificationTokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a NextAuthVerificationToken.
+     * @param {NextAuthVerificationTokenDeleteArgs} args - Arguments to delete one NextAuthVerificationToken.
+     * @example
+     * // Delete one NextAuthVerificationToken
+     * const NextAuthVerificationToken = await prisma.nextAuthVerificationToken.delete({
+     *   where: {
+     *     // ... filter to delete one NextAuthVerificationToken
+     *   }
+     * })
+     * 
+     */
+    delete<T extends NextAuthVerificationTokenDeleteArgs>(args: SelectSubset<T, NextAuthVerificationTokenDeleteArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one NextAuthVerificationToken.
+     * @param {NextAuthVerificationTokenUpdateArgs} args - Arguments to update one NextAuthVerificationToken.
+     * @example
+     * // Update one NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends NextAuthVerificationTokenUpdateArgs>(args: SelectSubset<T, NextAuthVerificationTokenUpdateArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more NextAuthVerificationTokens.
+     * @param {NextAuthVerificationTokenDeleteManyArgs} args - Arguments to filter NextAuthVerificationTokens to delete.
+     * @example
+     * // Delete a few NextAuthVerificationTokens
+     * const { count } = await prisma.nextAuthVerificationToken.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends NextAuthVerificationTokenDeleteManyArgs>(args?: SelectSubset<T, NextAuthVerificationTokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NextAuthVerificationTokens.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many NextAuthVerificationTokens
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends NextAuthVerificationTokenUpdateManyArgs>(args: SelectSubset<T, NextAuthVerificationTokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NextAuthVerificationTokens and returns the data updated in the database.
+     * @param {NextAuthVerificationTokenUpdateManyAndReturnArgs} args - Arguments to update many NextAuthVerificationTokens.
+     * @example
+     * // Update many NextAuthVerificationTokens
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more NextAuthVerificationTokens and only return the `identifier`
+     * const nextAuthVerificationTokenWithIdentifierOnly = await prisma.nextAuthVerificationToken.updateManyAndReturn({
+     *   select: { identifier: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends NextAuthVerificationTokenUpdateManyAndReturnArgs>(args: SelectSubset<T, NextAuthVerificationTokenUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one NextAuthVerificationToken.
+     * @param {NextAuthVerificationTokenUpsertArgs} args - Arguments to update or create a NextAuthVerificationToken.
+     * @example
+     * // Update or create a NextAuthVerificationToken
+     * const nextAuthVerificationToken = await prisma.nextAuthVerificationToken.upsert({
+     *   create: {
+     *     // ... data to create a NextAuthVerificationToken
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the NextAuthVerificationToken we want to update
+     *   }
+     * })
+     */
+    upsert<T extends NextAuthVerificationTokenUpsertArgs>(args: SelectSubset<T, NextAuthVerificationTokenUpsertArgs<ExtArgs>>): Prisma__NextAuthVerificationTokenClient<$Result.GetResult<Prisma.$NextAuthVerificationTokenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of NextAuthVerificationTokens.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenCountArgs} args - Arguments to filter NextAuthVerificationTokens to count.
+     * @example
+     * // Count the number of NextAuthVerificationTokens
+     * const count = await prisma.nextAuthVerificationToken.count({
+     *   where: {
+     *     // ... the filter for the NextAuthVerificationTokens we want to count
+     *   }
+     * })
+    **/
+    count<T extends NextAuthVerificationTokenCountArgs>(
+      args?: Subset<T, NextAuthVerificationTokenCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], NextAuthVerificationTokenCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a NextAuthVerificationToken.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends NextAuthVerificationTokenAggregateArgs>(args: Subset<T, NextAuthVerificationTokenAggregateArgs>): Prisma.PrismaPromise<GetNextAuthVerificationTokenAggregateType<T>>
+
+    /**
+     * Group by NextAuthVerificationToken.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NextAuthVerificationTokenGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends NextAuthVerificationTokenGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: NextAuthVerificationTokenGroupByArgs['orderBy'] }
+        : { orderBy?: NextAuthVerificationTokenGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, NextAuthVerificationTokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNextAuthVerificationTokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the NextAuthVerificationToken model
+   */
+  readonly fields: NextAuthVerificationTokenFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for NextAuthVerificationToken.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__NextAuthVerificationTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the NextAuthVerificationToken model
+   */
+  interface NextAuthVerificationTokenFieldRefs {
+    readonly identifier: FieldRef<"NextAuthVerificationToken", 'String'>
+    readonly token: FieldRef<"NextAuthVerificationToken", 'String'>
+    readonly expires: FieldRef<"NextAuthVerificationToken", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * NextAuthVerificationToken findUnique
+   */
+  export type NextAuthVerificationTokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter, which NextAuthVerificationToken to fetch.
+     */
+    where: NextAuthVerificationTokenWhereUniqueInput
+  }
+
+  /**
+   * NextAuthVerificationToken findUniqueOrThrow
+   */
+  export type NextAuthVerificationTokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter, which NextAuthVerificationToken to fetch.
+     */
+    where: NextAuthVerificationTokenWhereUniqueInput
+  }
+
+  /**
+   * NextAuthVerificationToken findFirst
+   */
+  export type NextAuthVerificationTokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter, which NextAuthVerificationToken to fetch.
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NextAuthVerificationTokens to fetch.
+     */
+    orderBy?: NextAuthVerificationTokenOrderByWithRelationInput | NextAuthVerificationTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NextAuthVerificationTokens.
+     */
+    cursor?: NextAuthVerificationTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NextAuthVerificationTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NextAuthVerificationTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NextAuthVerificationTokens.
+     */
+    distinct?: NextAuthVerificationTokenScalarFieldEnum | NextAuthVerificationTokenScalarFieldEnum[]
+  }
+
+  /**
+   * NextAuthVerificationToken findFirstOrThrow
+   */
+  export type NextAuthVerificationTokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter, which NextAuthVerificationToken to fetch.
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NextAuthVerificationTokens to fetch.
+     */
+    orderBy?: NextAuthVerificationTokenOrderByWithRelationInput | NextAuthVerificationTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NextAuthVerificationTokens.
+     */
+    cursor?: NextAuthVerificationTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NextAuthVerificationTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NextAuthVerificationTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NextAuthVerificationTokens.
+     */
+    distinct?: NextAuthVerificationTokenScalarFieldEnum | NextAuthVerificationTokenScalarFieldEnum[]
+  }
+
+  /**
+   * NextAuthVerificationToken findMany
+   */
+  export type NextAuthVerificationTokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter, which NextAuthVerificationTokens to fetch.
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NextAuthVerificationTokens to fetch.
+     */
+    orderBy?: NextAuthVerificationTokenOrderByWithRelationInput | NextAuthVerificationTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing NextAuthVerificationTokens.
+     */
+    cursor?: NextAuthVerificationTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NextAuthVerificationTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NextAuthVerificationTokens.
+     */
+    skip?: number
+    distinct?: NextAuthVerificationTokenScalarFieldEnum | NextAuthVerificationTokenScalarFieldEnum[]
+  }
+
+  /**
+   * NextAuthVerificationToken create
+   */
+  export type NextAuthVerificationTokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * The data needed to create a NextAuthVerificationToken.
+     */
+    data: XOR<NextAuthVerificationTokenCreateInput, NextAuthVerificationTokenUncheckedCreateInput>
+  }
+
+  /**
+   * NextAuthVerificationToken createMany
+   */
+  export type NextAuthVerificationTokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many NextAuthVerificationTokens.
+     */
+    data: NextAuthVerificationTokenCreateManyInput | NextAuthVerificationTokenCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NextAuthVerificationToken createManyAndReturn
+   */
+  export type NextAuthVerificationTokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * The data used to create many NextAuthVerificationTokens.
+     */
+    data: NextAuthVerificationTokenCreateManyInput | NextAuthVerificationTokenCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NextAuthVerificationToken update
+   */
+  export type NextAuthVerificationTokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * The data needed to update a NextAuthVerificationToken.
+     */
+    data: XOR<NextAuthVerificationTokenUpdateInput, NextAuthVerificationTokenUncheckedUpdateInput>
+    /**
+     * Choose, which NextAuthVerificationToken to update.
+     */
+    where: NextAuthVerificationTokenWhereUniqueInput
+  }
+
+  /**
+   * NextAuthVerificationToken updateMany
+   */
+  export type NextAuthVerificationTokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update NextAuthVerificationTokens.
+     */
+    data: XOR<NextAuthVerificationTokenUpdateManyMutationInput, NextAuthVerificationTokenUncheckedUpdateManyInput>
+    /**
+     * Filter which NextAuthVerificationTokens to update
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * Limit how many NextAuthVerificationTokens to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NextAuthVerificationToken updateManyAndReturn
+   */
+  export type NextAuthVerificationTokenUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * The data used to update NextAuthVerificationTokens.
+     */
+    data: XOR<NextAuthVerificationTokenUpdateManyMutationInput, NextAuthVerificationTokenUncheckedUpdateManyInput>
+    /**
+     * Filter which NextAuthVerificationTokens to update
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * Limit how many NextAuthVerificationTokens to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NextAuthVerificationToken upsert
+   */
+  export type NextAuthVerificationTokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * The filter to search for the NextAuthVerificationToken to update in case it exists.
+     */
+    where: NextAuthVerificationTokenWhereUniqueInput
+    /**
+     * In case the NextAuthVerificationToken found by the `where` argument doesn't exist, create a new NextAuthVerificationToken with this data.
+     */
+    create: XOR<NextAuthVerificationTokenCreateInput, NextAuthVerificationTokenUncheckedCreateInput>
+    /**
+     * In case the NextAuthVerificationToken was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<NextAuthVerificationTokenUpdateInput, NextAuthVerificationTokenUncheckedUpdateInput>
+  }
+
+  /**
+   * NextAuthVerificationToken delete
+   */
+  export type NextAuthVerificationTokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
+    /**
+     * Filter which NextAuthVerificationToken to delete.
+     */
+    where: NextAuthVerificationTokenWhereUniqueInput
+  }
+
+  /**
+   * NextAuthVerificationToken deleteMany
+   */
+  export type NextAuthVerificationTokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NextAuthVerificationTokens to delete
+     */
+    where?: NextAuthVerificationTokenWhereInput
+    /**
+     * Limit how many NextAuthVerificationTokens to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * NextAuthVerificationToken without action
+   */
+  export type NextAuthVerificationTokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NextAuthVerificationToken
+     */
+    select?: NextAuthVerificationTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NextAuthVerificationToken
+     */
+    omit?: NextAuthVerificationTokenOmit<ExtArgs> | null
   }
 
 
@@ -17097,12 +18309,24 @@ export namespace Prisma {
 
 
   export const VerificationTokenScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    token: 'token',
+    type: 'type',
+    expires: 'expires',
+    createdAt: 'createdAt'
+  };
+
+  export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
+
+
+  export const NextAuthVerificationTokenScalarFieldEnum: {
     identifier: 'identifier',
     token: 'token',
     expires: 'expires'
   };
 
-  export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
+  export type NextAuthVerificationTokenScalarFieldEnum = (typeof NextAuthVerificationTokenScalarFieldEnum)[keyof typeof NextAuthVerificationTokenScalarFieldEnum]
 
 
   export const ConversationScalarFieldEnum: {
@@ -17315,11 +18539,20 @@ export namespace Prisma {
 
 
   export const VerificationTokenOrderByRelevanceFieldEnum: {
-    identifier: 'identifier',
+    id: 'id',
+    userId: 'userId',
     token: 'token'
   };
 
   export type VerificationTokenOrderByRelevanceFieldEnum = (typeof VerificationTokenOrderByRelevanceFieldEnum)[keyof typeof VerificationTokenOrderByRelevanceFieldEnum]
+
+
+  export const NextAuthVerificationTokenOrderByRelevanceFieldEnum: {
+    identifier: 'identifier',
+    token: 'token'
+  };
+
+  export type NextAuthVerificationTokenOrderByRelevanceFieldEnum = (typeof NextAuthVerificationTokenOrderByRelevanceFieldEnum)[keyof typeof NextAuthVerificationTokenOrderByRelevanceFieldEnum]
 
 
   export const JsonNullValueFilter: {
@@ -17478,6 +18711,20 @@ export namespace Prisma {
    * Reference to a field of type 'UserRole[]'
    */
   export type ListEnumUserRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UserRole[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'TokenType'
+   */
+  export type EnumTokenTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TokenType'>
+    
+
+
+  /**
+   * Reference to a field of type 'TokenType[]'
+   */
+  export type ListEnumTokenTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TokenType[]'>
     
 
 
@@ -17843,6 +19090,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionListRelationFilter
     spiritualProfile?: XOR<SpiritualProfileNullableScalarRelationFilter, SpiritualProfileWhereInput> | null
     preferences?: XOR<UserPreferenceNullableScalarRelationFilter, UserPreferenceWhereInput> | null
+    verificationTokens?: VerificationTokenListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -17867,6 +19115,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionOrderByRelationAggregateInput
     spiritualProfile?: SpiritualProfileOrderByWithRelationInput
     preferences?: UserPreferenceOrderByWithRelationInput
+    verificationTokens?: VerificationTokenOrderByRelationAggregateInput
     _relevance?: UserOrderByRelevanceInput
   }
 
@@ -17895,6 +19144,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionListRelationFilter
     spiritualProfile?: XOR<SpiritualProfileNullableScalarRelationFilter, SpiritualProfileWhereInput> | null
     preferences?: XOR<UserPreferenceNullableScalarRelationFilter, UserPreferenceWhereInput> | null
+    verificationTokens?: VerificationTokenListRelationFilter
   }, "id" | "email" | "emailVerificationToken">
 
   export type UserOrderByWithAggregationInput = {
@@ -17941,32 +19191,46 @@ export namespace Prisma {
     AND?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
     OR?: VerificationTokenWhereInput[]
     NOT?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    identifier?: StringFilter<"VerificationToken"> | string
+    id?: StringFilter<"VerificationToken"> | string
+    userId?: StringFilter<"VerificationToken"> | string
     token?: StringFilter<"VerificationToken"> | string
+    type?: EnumTokenTypeFilter<"VerificationToken"> | $Enums.TokenType
     expires?: DateTimeFilter<"VerificationToken"> | Date | string
+    createdAt?: DateTimeFilter<"VerificationToken"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type VerificationTokenOrderByWithRelationInput = {
-    identifier?: SortOrder
+    id?: SortOrder
+    userId?: SortOrder
     token?: SortOrder
+    type?: SortOrder
     expires?: SortOrder
+    createdAt?: SortOrder
+    user?: UserOrderByWithRelationInput
     _relevance?: VerificationTokenOrderByRelevanceInput
   }
 
   export type VerificationTokenWhereUniqueInput = Prisma.AtLeast<{
-    identifier_token?: VerificationTokenIdentifierTokenCompoundUniqueInput
+    id?: string
+    token?: string
     AND?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
     OR?: VerificationTokenWhereInput[]
     NOT?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    identifier?: StringFilter<"VerificationToken"> | string
-    token?: StringFilter<"VerificationToken"> | string
+    userId?: StringFilter<"VerificationToken"> | string
+    type?: EnumTokenTypeFilter<"VerificationToken"> | $Enums.TokenType
     expires?: DateTimeFilter<"VerificationToken"> | Date | string
-  }, "identifier_token">
+    createdAt?: DateTimeFilter<"VerificationToken"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id" | "token">
 
   export type VerificationTokenOrderByWithAggregationInput = {
-    identifier?: SortOrder
+    id?: SortOrder
+    userId?: SortOrder
     token?: SortOrder
+    type?: SortOrder
     expires?: SortOrder
+    createdAt?: SortOrder
     _count?: VerificationTokenCountOrderByAggregateInput
     _max?: VerificationTokenMaxOrderByAggregateInput
     _min?: VerificationTokenMinOrderByAggregateInput
@@ -17976,9 +19240,56 @@ export namespace Prisma {
     AND?: VerificationTokenScalarWhereWithAggregatesInput | VerificationTokenScalarWhereWithAggregatesInput[]
     OR?: VerificationTokenScalarWhereWithAggregatesInput[]
     NOT?: VerificationTokenScalarWhereWithAggregatesInput | VerificationTokenScalarWhereWithAggregatesInput[]
-    identifier?: StringWithAggregatesFilter<"VerificationToken"> | string
+    id?: StringWithAggregatesFilter<"VerificationToken"> | string
+    userId?: StringWithAggregatesFilter<"VerificationToken"> | string
     token?: StringWithAggregatesFilter<"VerificationToken"> | string
+    type?: EnumTokenTypeWithAggregatesFilter<"VerificationToken"> | $Enums.TokenType
     expires?: DateTimeWithAggregatesFilter<"VerificationToken"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"VerificationToken"> | Date | string
+  }
+
+  export type NextAuthVerificationTokenWhereInput = {
+    AND?: NextAuthVerificationTokenWhereInput | NextAuthVerificationTokenWhereInput[]
+    OR?: NextAuthVerificationTokenWhereInput[]
+    NOT?: NextAuthVerificationTokenWhereInput | NextAuthVerificationTokenWhereInput[]
+    identifier?: StringFilter<"NextAuthVerificationToken"> | string
+    token?: StringFilter<"NextAuthVerificationToken"> | string
+    expires?: DateTimeFilter<"NextAuthVerificationToken"> | Date | string
+  }
+
+  export type NextAuthVerificationTokenOrderByWithRelationInput = {
+    identifier?: SortOrder
+    token?: SortOrder
+    expires?: SortOrder
+    _relevance?: NextAuthVerificationTokenOrderByRelevanceInput
+  }
+
+  export type NextAuthVerificationTokenWhereUniqueInput = Prisma.AtLeast<{
+    identifier_token?: NextAuthVerificationTokenIdentifierTokenCompoundUniqueInput
+    AND?: NextAuthVerificationTokenWhereInput | NextAuthVerificationTokenWhereInput[]
+    OR?: NextAuthVerificationTokenWhereInput[]
+    NOT?: NextAuthVerificationTokenWhereInput | NextAuthVerificationTokenWhereInput[]
+    identifier?: StringFilter<"NextAuthVerificationToken"> | string
+    token?: StringFilter<"NextAuthVerificationToken"> | string
+    expires?: DateTimeFilter<"NextAuthVerificationToken"> | Date | string
+  }, "identifier_token">
+
+  export type NextAuthVerificationTokenOrderByWithAggregationInput = {
+    identifier?: SortOrder
+    token?: SortOrder
+    expires?: SortOrder
+    _count?: NextAuthVerificationTokenCountOrderByAggregateInput
+    _max?: NextAuthVerificationTokenMaxOrderByAggregateInput
+    _min?: NextAuthVerificationTokenMinOrderByAggregateInput
+  }
+
+  export type NextAuthVerificationTokenScalarWhereWithAggregatesInput = {
+    AND?: NextAuthVerificationTokenScalarWhereWithAggregatesInput | NextAuthVerificationTokenScalarWhereWithAggregatesInput[]
+    OR?: NextAuthVerificationTokenScalarWhereWithAggregatesInput[]
+    NOT?: NextAuthVerificationTokenScalarWhereWithAggregatesInput | NextAuthVerificationTokenScalarWhereWithAggregatesInput[]
+    identifier?: StringWithAggregatesFilter<"NextAuthVerificationToken"> | string
+    token?: StringWithAggregatesFilter<"NextAuthVerificationToken"> | string
+    expires?: DateTimeWithAggregatesFilter<"NextAuthVerificationToken"> | Date | string
   }
 
   export type ConversationWhereInput = {
@@ -18842,6 +20153,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -18866,6 +20178,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -18890,6 +20203,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -18914,6 +20228,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -18968,42 +20283,104 @@ export namespace Prisma {
   }
 
   export type VerificationTokenCreateInput = {
-    identifier: string
+    id?: string
     token: string
+    type?: $Enums.TokenType
     expires: Date | string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutVerificationTokensInput
   }
 
   export type VerificationTokenUncheckedCreateInput = {
-    identifier: string
+    id?: string
+    userId: string
     token: string
+    type?: $Enums.TokenType
     expires: Date | string
+    createdAt?: Date | string
   }
 
   export type VerificationTokenUpdateInput = {
-    identifier?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
     token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutVerificationTokensNestedInput
   }
 
   export type VerificationTokenUncheckedUpdateInput = {
-    identifier?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
     token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VerificationTokenCreateManyInput = {
+    id?: string
+    userId: string
+    token: string
+    type?: $Enums.TokenType
+    expires: Date | string
+    createdAt?: Date | string
+  }
+
+  export type VerificationTokenUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type VerificationTokenUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NextAuthVerificationTokenCreateInput = {
     identifier: string
     token: string
     expires: Date | string
   }
 
-  export type VerificationTokenUpdateManyMutationInput = {
+  export type NextAuthVerificationTokenUncheckedCreateInput = {
+    identifier: string
+    token: string
+    expires: Date | string
+  }
+
+  export type NextAuthVerificationTokenUpdateInput = {
     identifier?: StringFieldUpdateOperationsInput | string
     token?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type VerificationTokenUncheckedUpdateManyInput = {
+  export type NextAuthVerificationTokenUncheckedUpdateInput = {
+    identifier?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NextAuthVerificationTokenCreateManyInput = {
+    identifier: string
+    token: string
+    expires: Date | string
+  }
+
+  export type NextAuthVerificationTokenUpdateManyMutationInput = {
+    identifier?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NextAuthVerificationTokenUncheckedUpdateManyInput = {
     identifier?: StringFieldUpdateOperationsInput | string
     token?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -20021,6 +21398,12 @@ export namespace Prisma {
     isNot?: UserPreferenceWhereInput | null
   }
 
+  export type VerificationTokenListRelationFilter = {
+    every?: VerificationTokenWhereInput
+    some?: VerificationTokenWhereInput
+    none?: VerificationTokenWhereInput
+  }
+
   export type AccountOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -20038,6 +21421,10 @@ export namespace Prisma {
   }
 
   export type SubscriptionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type VerificationTokenOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20122,30 +21509,80 @@ export namespace Prisma {
     _max?: NestedEnumUserRoleFilter<$PrismaModel>
   }
 
+  export type EnumTokenTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.TokenType | EnumTokenTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumTokenTypeFilter<$PrismaModel> | $Enums.TokenType
+  }
+
   export type VerificationTokenOrderByRelevanceInput = {
     fields: VerificationTokenOrderByRelevanceFieldEnum | VerificationTokenOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type VerificationTokenIdentifierTokenCompoundUniqueInput = {
+  export type VerificationTokenCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    token?: SortOrder
+    type?: SortOrder
+    expires?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type VerificationTokenMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    token?: SortOrder
+    type?: SortOrder
+    expires?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type VerificationTokenMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    token?: SortOrder
+    type?: SortOrder
+    expires?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumTokenTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TokenType | EnumTokenTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumTokenTypeWithAggregatesFilter<$PrismaModel> | $Enums.TokenType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTokenTypeFilter<$PrismaModel>
+    _max?: NestedEnumTokenTypeFilter<$PrismaModel>
+  }
+
+  export type NextAuthVerificationTokenOrderByRelevanceInput = {
+    fields: NextAuthVerificationTokenOrderByRelevanceFieldEnum | NextAuthVerificationTokenOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type NextAuthVerificationTokenIdentifierTokenCompoundUniqueInput = {
     identifier: string
     token: string
   }
 
-  export type VerificationTokenCountOrderByAggregateInput = {
+  export type NextAuthVerificationTokenCountOrderByAggregateInput = {
     identifier?: SortOrder
     token?: SortOrder
     expires?: SortOrder
   }
 
-  export type VerificationTokenMaxOrderByAggregateInput = {
+  export type NextAuthVerificationTokenMaxOrderByAggregateInput = {
     identifier?: SortOrder
     token?: SortOrder
     expires?: SortOrder
   }
 
-  export type VerificationTokenMinOrderByAggregateInput = {
+  export type NextAuthVerificationTokenMinOrderByAggregateInput = {
     identifier?: SortOrder
     token?: SortOrder
     expires?: SortOrder
@@ -21044,6 +22481,13 @@ export namespace Prisma {
     connect?: UserPreferenceWhereUniqueInput
   }
 
+  export type VerificationTokenCreateNestedManyWithoutUserInput = {
+    create?: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput> | VerificationTokenCreateWithoutUserInput[] | VerificationTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: VerificationTokenCreateOrConnectWithoutUserInput | VerificationTokenCreateOrConnectWithoutUserInput[]
+    createMany?: VerificationTokenCreateManyUserInputEnvelope
+    connect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -21089,6 +22533,13 @@ export namespace Prisma {
     create?: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
     connectOrCreate?: UserPreferenceCreateOrConnectWithoutUserInput
     connect?: UserPreferenceWhereUniqueInput
+  }
+
+  export type VerificationTokenUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput> | VerificationTokenCreateWithoutUserInput[] | VerificationTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: VerificationTokenCreateOrConnectWithoutUserInput | VerificationTokenCreateOrConnectWithoutUserInput[]
+    createMany?: VerificationTokenCreateManyUserInputEnvelope
+    connect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
   }
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
@@ -21189,6 +22640,20 @@ export namespace Prisma {
     update?: XOR<XOR<UserPreferenceUpdateToOneWithWhereWithoutUserInput, UserPreferenceUpdateWithoutUserInput>, UserPreferenceUncheckedUpdateWithoutUserInput>
   }
 
+  export type VerificationTokenUpdateManyWithoutUserNestedInput = {
+    create?: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput> | VerificationTokenCreateWithoutUserInput[] | VerificationTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: VerificationTokenCreateOrConnectWithoutUserInput | VerificationTokenCreateOrConnectWithoutUserInput[]
+    upsert?: VerificationTokenUpsertWithWhereUniqueWithoutUserInput | VerificationTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: VerificationTokenCreateManyUserInputEnvelope
+    set?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    disconnect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    delete?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    connect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    update?: VerificationTokenUpdateWithWhereUniqueWithoutUserInput | VerificationTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: VerificationTokenUpdateManyWithWhereWithoutUserInput | VerificationTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: VerificationTokenScalarWhereInput | VerificationTokenScalarWhereInput[]
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -21277,6 +22742,38 @@ export namespace Prisma {
     delete?: UserPreferenceWhereInput | boolean
     connect?: UserPreferenceWhereUniqueInput
     update?: XOR<XOR<UserPreferenceUpdateToOneWithWhereWithoutUserInput, UserPreferenceUpdateWithoutUserInput>, UserPreferenceUncheckedUpdateWithoutUserInput>
+  }
+
+  export type VerificationTokenUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput> | VerificationTokenCreateWithoutUserInput[] | VerificationTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: VerificationTokenCreateOrConnectWithoutUserInput | VerificationTokenCreateOrConnectWithoutUserInput[]
+    upsert?: VerificationTokenUpsertWithWhereUniqueWithoutUserInput | VerificationTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: VerificationTokenCreateManyUserInputEnvelope
+    set?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    disconnect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    delete?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    connect?: VerificationTokenWhereUniqueInput | VerificationTokenWhereUniqueInput[]
+    update?: VerificationTokenUpdateWithWhereUniqueWithoutUserInput | VerificationTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: VerificationTokenUpdateManyWithWhereWithoutUserInput | VerificationTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: VerificationTokenScalarWhereInput | VerificationTokenScalarWhereInput[]
+  }
+
+  export type UserCreateNestedOneWithoutVerificationTokensInput = {
+    create?: XOR<UserCreateWithoutVerificationTokensInput, UserUncheckedCreateWithoutVerificationTokensInput>
+    connectOrCreate?: UserCreateOrConnectWithoutVerificationTokensInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type EnumTokenTypeFieldUpdateOperationsInput = {
+    set?: $Enums.TokenType
+  }
+
+  export type UserUpdateOneRequiredWithoutVerificationTokensNestedInput = {
+    create?: XOR<UserCreateWithoutVerificationTokensInput, UserUncheckedCreateWithoutVerificationTokensInput>
+    connectOrCreate?: UserCreateOrConnectWithoutVerificationTokensInput
+    upsert?: UserUpsertWithoutVerificationTokensInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutVerificationTokensInput, UserUpdateWithoutVerificationTokensInput>, UserUncheckedUpdateWithoutVerificationTokensInput>
   }
 
   export type UserCreateNestedOneWithoutConversationsInput = {
@@ -21895,6 +23392,23 @@ export namespace Prisma {
     _max?: NestedEnumUserRoleFilter<$PrismaModel>
   }
 
+  export type NestedEnumTokenTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.TokenType | EnumTokenTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumTokenTypeFilter<$PrismaModel> | $Enums.TokenType
+  }
+
+  export type NestedEnumTokenTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.TokenType | EnumTokenTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.TokenType[] | ListEnumTokenTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumTokenTypeWithAggregatesFilter<$PrismaModel> | $Enums.TokenType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumTokenTypeFilter<$PrismaModel>
+    _max?: NestedEnumTokenTypeFilter<$PrismaModel>
+  }
+
   export type NestedEnumConversationStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.ConversationStatus | EnumConversationStatusFieldRefInput<$PrismaModel>
     in?: $Enums.ConversationStatus[] | ListEnumConversationStatusFieldRefInput<$PrismaModel>
@@ -22205,6 +23719,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -22228,6 +23743,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -22267,6 +23783,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -22290,6 +23807,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -22313,6 +23831,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -22336,6 +23855,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -22375,6 +23895,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -22398,6 +23919,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type AccountCreateWithoutUserInput = {
@@ -22628,6 +24150,32 @@ export namespace Prisma {
     create: XOR<UserPreferenceCreateWithoutUserInput, UserPreferenceUncheckedCreateWithoutUserInput>
   }
 
+  export type VerificationTokenCreateWithoutUserInput = {
+    id?: string
+    token: string
+    type?: $Enums.TokenType
+    expires: Date | string
+    createdAt?: Date | string
+  }
+
+  export type VerificationTokenUncheckedCreateWithoutUserInput = {
+    id?: string
+    token: string
+    type?: $Enums.TokenType
+    expires: Date | string
+    createdAt?: Date | string
+  }
+
+  export type VerificationTokenCreateOrConnectWithoutUserInput = {
+    where: VerificationTokenWhereUniqueInput
+    create: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type VerificationTokenCreateManyUserInputEnvelope = {
+    data: VerificationTokenCreateManyUserInput | VerificationTokenCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -22854,6 +24402,146 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type VerificationTokenUpsertWithWhereUniqueWithoutUserInput = {
+    where: VerificationTokenWhereUniqueInput
+    update: XOR<VerificationTokenUpdateWithoutUserInput, VerificationTokenUncheckedUpdateWithoutUserInput>
+    create: XOR<VerificationTokenCreateWithoutUserInput, VerificationTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type VerificationTokenUpdateWithWhereUniqueWithoutUserInput = {
+    where: VerificationTokenWhereUniqueInput
+    data: XOR<VerificationTokenUpdateWithoutUserInput, VerificationTokenUncheckedUpdateWithoutUserInput>
+  }
+
+  export type VerificationTokenUpdateManyWithWhereWithoutUserInput = {
+    where: VerificationTokenScalarWhereInput
+    data: XOR<VerificationTokenUpdateManyMutationInput, VerificationTokenUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type VerificationTokenScalarWhereInput = {
+    AND?: VerificationTokenScalarWhereInput | VerificationTokenScalarWhereInput[]
+    OR?: VerificationTokenScalarWhereInput[]
+    NOT?: VerificationTokenScalarWhereInput | VerificationTokenScalarWhereInput[]
+    id?: StringFilter<"VerificationToken"> | string
+    userId?: StringFilter<"VerificationToken"> | string
+    token?: StringFilter<"VerificationToken"> | string
+    type?: EnumTokenTypeFilter<"VerificationToken"> | $Enums.TokenType
+    expires?: DateTimeFilter<"VerificationToken"> | Date | string
+    createdAt?: DateTimeFilter<"VerificationToken"> | Date | string
+  }
+
+  export type UserCreateWithoutVerificationTokensInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    conversations?: ConversationCreateNestedManyWithoutUserInput
+    insights?: UserInsightCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutVerificationTokensInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    emailVerificationToken?: string | null
+    emailTokenExpires?: Date | string | null
+    image?: string | null
+    password?: string | null
+    preferredLanguage?: string
+    timezone?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastActiveAt?: Date | string | null
+    role?: $Enums.UserRole
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    conversations?: ConversationUncheckedCreateNestedManyWithoutUserInput
+    insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
+    subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
+    spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutVerificationTokensInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutVerificationTokensInput, UserUncheckedCreateWithoutVerificationTokensInput>
+  }
+
+  export type UserUpsertWithoutVerificationTokensInput = {
+    update: XOR<UserUpdateWithoutVerificationTokensInput, UserUncheckedUpdateWithoutVerificationTokensInput>
+    create: XOR<UserCreateWithoutVerificationTokensInput, UserUncheckedCreateWithoutVerificationTokensInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutVerificationTokensInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutVerificationTokensInput, UserUncheckedUpdateWithoutVerificationTokensInput>
+  }
+
+  export type UserUpdateWithoutVerificationTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutVerificationTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    emailVerificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    emailTokenExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    preferredLanguage?: StringFieldUpdateOperationsInput | string
+    timezone?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastActiveAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    conversations?: ConversationUncheckedUpdateManyWithoutUserNestedInput
+    insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
+    subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
+    spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  }
+
   export type UserCreateWithoutConversationsInput = {
     id?: string
     name?: string | null
@@ -22875,6 +24563,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutConversationsInput = {
@@ -22898,6 +24587,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutConversationsInput = {
@@ -23021,6 +24711,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutConversationsInput = {
@@ -23044,6 +24735,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type MessageUpsertWithWhereUniqueWithoutConversationInput = {
@@ -23384,6 +25076,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutInsightsInput = {
@@ -23407,6 +25100,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutInsightsInput = {
@@ -23481,6 +25175,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutInsightsInput = {
@@ -23504,6 +25199,7 @@ export namespace Prisma {
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ConversationUpsertWithoutInsightsInput = {
@@ -23568,6 +25264,7 @@ export namespace Prisma {
     insights?: UserInsightCreateNestedManyWithoutUserInput
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSpiritualProfileInput = {
@@ -23591,6 +25288,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSpiritualProfileInput = {
@@ -23630,6 +25328,7 @@ export namespace Prisma {
     insights?: UserInsightUpdateManyWithoutUserNestedInput
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSpiritualProfileInput = {
@@ -23653,6 +25352,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSubscriptionsInput = {
@@ -23676,6 +25376,7 @@ export namespace Prisma {
     insights?: UserInsightCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSubscriptionsInput = {
@@ -23699,6 +25400,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
     preferences?: UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSubscriptionsInput = {
@@ -23766,6 +25468,7 @@ export namespace Prisma {
     insights?: UserInsightUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSubscriptionsInput = {
@@ -23789,6 +25492,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
     preferences?: UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UsageRecordUpsertWithWhereUniqueWithoutSubscriptionInput = {
@@ -23917,6 +25621,7 @@ export namespace Prisma {
     insights?: UserInsightCreateNestedManyWithoutUserInput
     subscriptions?: SubscriptionCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutPreferencesInput = {
@@ -23940,6 +25645,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedCreateNestedManyWithoutUserInput
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutUserInput
     spiritualProfile?: SpiritualProfileUncheckedCreateNestedOneWithoutUserInput
+    verificationTokens?: VerificationTokenUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutPreferencesInput = {
@@ -23979,6 +25685,7 @@ export namespace Prisma {
     insights?: UserInsightUpdateManyWithoutUserNestedInput
     subscriptions?: SubscriptionUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPreferencesInput = {
@@ -24002,6 +25709,7 @@ export namespace Prisma {
     insights?: UserInsightUncheckedUpdateManyWithoutUserNestedInput
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutUserNestedInput
     spiritualProfile?: SpiritualProfileUncheckedUpdateOneWithoutUserNestedInput
+    verificationTokens?: VerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type AccountCreateManyUserInput = {
@@ -24058,6 +25766,14 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt?: Date | string
+  }
+
+  export type VerificationTokenCreateManyUserInput = {
+    id?: string
+    token: string
+    type?: $Enums.TokenType
+    expires: Date | string
+    createdAt?: Date | string
   }
 
   export type AccountUpdateWithoutUserInput = {
@@ -24234,6 +25950,30 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type VerificationTokenUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type VerificationTokenUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type VerificationTokenUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
+    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MessageCreateManyConversationInput = {

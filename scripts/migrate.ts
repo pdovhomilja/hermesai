@@ -21,7 +21,7 @@ async function migrate() {
 
     logger.info("Database migrations completed successfully");
   } catch (error) {
-    logger.error("Migration failed:", error);
+    logger.error({ error }, "Migration failed");
     process.exit(1);
   }
 }

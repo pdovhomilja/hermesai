@@ -1,47 +1,51 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { verifyUserEmail } from '../../../../lib/db';
-import { sendWelcomeEmail } from '../../../../lib/email';
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/db/client";
+import { verifyToken } from "@/lib/auth/tokens";
+import { sendWelcomeEmail } from "@/lib/email/verification";
+import logger from "@/lib/logger";
 
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await request.json();
-    const { token } = body;
+    const { token } = await req.json();
 
     if (!token) {
-      return NextResponse.json(
-        { error: 'Verification token is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Token is required" }, { status: 400 });
     }
 
-    // Verify the user's email
-    const result = await verifyUserEmail(token);
+    // Verify token
+    const decoded = await verifyToken(token, "email_verification");
 
-    if (!result.success) {
-      return NextResponse.json(
-        { error: result.error },
-        { status: 400 }
-      );
-    }
-
-    // Send welcome email
-    if (result.user) {
-      await sendWelcomeEmail({
-        to: result.user.email,
-        locale: result.user.locale,
-      });
-    }
-
-    return NextResponse.json({
-      message: 'Email verified successfully!',
-      user: result.user
+    // Update user's email verification status
+    const user = await prisma.user.update({
+      where: { id: decoded.userId },
+      data: {
+        emailVerified: new Date(),
+      },
     });
 
+    // Delete used verification token
+    await prisma.verificationToken.deleteMany({
+      where: {
+        userId: decoded.userId,
+        token,
+      },
+    });
+
+    // Send welcome email
+    await sendWelcomeEmail(user.email, user.name || "Seeker");
+
+    logger.info(`Email verified for user: ${user.email}`);
+
+    return NextResponse.json({
+      message: "Email verified successfully",
+      email: user.email,
+    });
   } catch (error) {
-    console.error('Verification error:', error);
+    logger.error({ error }, "Verification error");
+
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : "Verification failed" },
+      { status: 400 }
     );
   }
 }
@@ -56,27 +60,36 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Verify the user's email
-    const result = await verifyUserEmail(token);
+    // Verify token
+    const decoded = await verifyToken(token, "email_verification");
 
-    if (!result.success) {
-      return NextResponse.redirect(new URL(`/auth/error?error=VerificationFailed`, request.url));
-    }
+    // Update user's email verification status
+    const user = await prisma.user.update({
+      where: { id: decoded.userId },
+      data: {
+        emailVerified: new Date(),
+      },
+    });
+
+    // Delete used verification token
+    await prisma.verificationToken.deleteMany({
+      where: {
+        userId: decoded.userId,
+        token,
+      },
+    });
 
     // Send welcome email
-    if (result.user) {
-      await sendWelcomeEmail({
-        to: result.user.email,
-        locale: result.user.locale,
-      });
-    }
+    await sendWelcomeEmail(user.email, user.name || "Seeker");
 
-    // Redirect to success page or sign-in
-    const locale = result.user?.locale || 'en';
+    logger.info(`Email verified for user: ${user.email}`);
+
+    // Redirect to success page
+    const locale = user.preferredLanguage || 'en';
     return NextResponse.redirect(new URL(`/${locale}/auth/verified`, request.url));
 
   } catch (error) {
-    console.error('Verification error:', error);
-    return NextResponse.redirect(new URL('/auth/error?error=ServerError', request.url));
+    logger.error({ error }, 'Verification error');
+    return NextResponse.redirect(new URL('/auth/error?error=VerificationFailed', request.url));
   }
 }

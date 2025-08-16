@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import React from "react";
 
 const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
@@ -14,9 +14,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
         <div>
           {/* For company-specific routes, use href with pathname object */}
           <Link 
-            href={{
-              pathname: `/${cid}/chat`
-            }} 
+            href={`/${cid}/chat`}
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Go to Chat
@@ -24,9 +22,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
         </div>
         <div>
           <Link 
-            href={{
-              pathname: `/${cid}/settings`
-            }} 
+            href={`/${cid}/settings`}
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Company Settings
@@ -34,9 +30,7 @@ const AppPage = async ({ params }: { params: Promise<{ cid: string }> }) => {
         </div>
         <div>
           <Link 
-            href={{
-              pathname: `/${cid}/users`
-            }} 
+            href={`/${cid}/users`}
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Manage Users
